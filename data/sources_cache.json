@@ -5260,6 +5260,17 @@
    "jecfa": "2029"
   }
  },
+ "neryl_acetate": {
+  "cid": 1549025,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "2773",
+   "url": "https://www.femaflavor.org/flavor-library/neryl-acetate",
+   "profil": "Floral, Fruit",
+   "jecfa": "59"
+  }
+ },
  "myrcene": {
   "cid": 31253,
   "odeur": [
@@ -6112,5 +6123,364 @@
   "odeur": [],
   "gout": [],
   "fema": null
+ },
+ "gamma_terpinene": {
+  "cid": 7461,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3559",
+   "url": "https://www.femaflavor.org/flavor-library/p-mentha-14-diene",
+   "profil": "Bitter, Citrus",
+   "jecfa": "1340"
+  }
+ },
+ "terpinolene": {
+  "cid": 11463,
+  "odeur": [
+   {
+    "texte": "SWEET, PINE ODOR",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5702"
+   },
+   {
+    "texte": "PINE-LIKE AROMA",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5702"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "SOMEWHAT SWEET, CITRUS FLAVOR",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5702"
+   },
+   {
+    "texte": "TERPENE TASTE",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5702"
+   }
+  ],
+  "fema": {
+   "numero": "3046",
+   "url": "https://www.femaflavor.org/flavor-library/terpinolene",
+   "profil": "Pine",
+   "jecfa": "1331"
+  }
+ },
+ "p_cymene": {
+  "cid": 7463,
+  "odeur": [
+   {
+    "texte": "Sweetish aromatic odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5128"
+   },
+   {
+    "texte": "Mild pleasant odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5128"
+   },
+   {
+    "texte": "When pure, has a weak citrus odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5128"
+   }
+  ],
+  "gout": [],
+  "fema": {
+   "numero": "2356",
+   "url": "https://www.femaflavor.org/flavor-library/p-cymene",
+   "profil": "Citrus, Fresh, Solvent",
+   "jecfa": "1325"
+  }
+ },
+ "dodecanal": {
+  "cid": 8194,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "2615",
+   "url": "https://www.femaflavor.org/flavor-library/lauric-aldehyde",
+   "profil": "Citrus, Fat, Lily",
+   "jecfa": "110"
+  }
+ },
+ "trans_2_dodecenal": {
+  "cid": 5283361,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "2402",
+   "url": "https://www.femaflavor.org/flavor-library/2-dodecenal",
+   "profil": "Fruit",
+   "jecfa": "1350"
+  }
+ },
+ "perillaldehyde": {
+  "cid": 16441,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3557",
+   "url": "https://www.femaflavor.org/flavor-library/p-mentha-18-dien-7-al",
+   "profil": "Cherry, Fat, Green, Pungent, Sour, Spice",
+   "jecfa": "973"
+  }
+ },
+ "citronellyl_acetate": {
+  "cid": 9017,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "2311",
+   "url": "https://www.femaflavor.org/flavor-library/citronellyl-acetate",
+   "profil": "Dust, Floral, Fragant, Rose",
+   "jecfa": "57"
+  }
+ },
+ "hexyl_butyrate": {
+  "cid": 17525,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "2568",
+   "url": "https://www.femaflavor.org/flavor-library/hexyl-butyrate",
+   "profil": "Apple Peel, Citrus, Fresh",
+   "jecfa": "153"
+  }
+ },
+ "methylbutyl_acetate_2": {
+  "cid": 12209,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3644",
+   "url": "https://www.femaflavor.org/flavor-library/2-methylbutyl-acetate",
+   "profil": "Apple, Banana, Pear",
+   "jecfa": "138"
+  }
+ },
+ "methyl_methylbutyrate": {
+  "cid": 13357,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "2719",
+   "url": "https://www.femaflavor.org/flavor-library/methyl-2-methylbutyrate",
+   "profil": "Apple, Fruit, Green Apple, Strawberry",
+   "jecfa": "205"
+  }
+ },
+ "prenyl_acetate": {
+  "cid": 14489,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "4202",
+   "url": "https://www.femaflavor.org/flavor-library/prenyl-acetate",
+   "profil": "Putty",
+   "jecfa": "1827"
+  }
+ },
+ "allyl_cyclohexylpropionate": {
+  "cid": 17617,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "2026",
+   "url": "https://www.femaflavor.org/flavor-library/allyl-cyclohexanepropionate",
+   "profil": "Pineapple",
+   "jecfa": "13"
+  }
+ },
+ "methyl_hexanoate": {
+  "cid": 7824,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "2708",
+   "url": "https://www.femaflavor.org/flavor-library/methyl-hexanoate",
+   "profil": "Ester, Fresh, Fruit, Pineapple",
+   "jecfa": "1871"
+  }
+ },
+ "cis_6_nonenal": {
+  "cid": 5362720,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3580",
+   "url": "https://www.femaflavor.org/flavor-library/cis-6-nonenal",
+   "profil": "Green",
+   "jecfa": "325"
+  }
+ },
+ "mercaptohexyl_acetate": {
+  "cid": 518810,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3851",
+   "url": "https://www.femaflavor.org/flavor-library/3-mercaptohexyl-acetate",
+   "profil": "Black Currant, Box Tree, Grapefruit, Mango, Passion Fruit",
+   "jecfa": "554"
+  }
+ },
+ "aminoacetophenone": {
+  "cid": 11086,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3906",
+   "url": "https://www.femaflavor.org/flavor-library/2-aminoacetophenone",
+   "profil": "Flower, Foxy, Grape",
+   "jecfa": "2043"
+  }
+ },
+ "beta_pinene": {
+  "cid": 14896,
+  "odeur": [
+   {
+    "texte": "CHARACTERISTIC TURPENTINE ODOR; DRY, WOODY OR RESINOUS AROMA",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5615"
+   },
+   {
+    "texte": "PINEY, TURPENTINE-LIKE ODOR",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5615"
+   },
+   {
+    "texte": "Terpene odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5615"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "PINEY, TURPENTINE-LIKE TASTE",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5615"
+   }
+  ],
+  "fema": {
+   "numero": "2903",
+   "url": "https://www.femaflavor.org/flavor-library/beta-pinene",
+   "profil": "Pine, Polish, Wood",
+   "jecfa": "1330"
+  }
+ },
+ "camphene": {
+  "cid": 6616,
+  "odeur": [
+   {
+    "texte": "Camphoraceous, cooling, piney wood with trephy nuances...citrus and green minty and green spicy notes",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/900"
+   },
+   {
+    "texte": "Insipid odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/900"
+   },
+   {
+    "texte": "Camphor-like",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/900"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Camphoraceous taste",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/900"
+   },
+   {
+    "texte": "Terpene, camphoraceous taste...cooling, minty, with citrus and green spicy nuances",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/900"
+   }
+  ],
+  "fema": {
+   "numero": "2229",
+   "url": "https://www.femaflavor.org/flavor-library/camphene",
+   "profil": "Camphor, Mothball, Oil, Warm",
+   "jecfa": "1323"
+  }
+ },
+ "delta_3_carene": {
+  "cid": 26049,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3821",
+   "url": "https://www.femaflavor.org/flavor-library/delta-3-carene",
+   "profil": "Lemon",
+   "jecfa": "1342"
+  }
+ },
+ "beta_ocimene": {
+  "cid": 5281553,
+  "odeur": [],
+  "gout": [],
+  "fema": null
+ },
+ "borneol": {
+  "cid": 64685,
+  "odeur": [
+   {
+    "texte": "Piney, camphor-like odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/946"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Burning taste somewhat reminiscent of mint",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/946"
+   }
+  ],
+  "fema": {
+   "numero": "2157",
+   "url": "https://www.femaflavor.org/flavor-library/borneol",
+   "profil": "Camphor, Fragrant, Green",
+   "jecfa": "1385"
+  }
+ },
+ "pulegone": {
+  "cid": 442495,
+  "odeur": [
+   {
+    "texte": "Pleasant odor, midway between peppermint and camphor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8146"
+   }
+  ],
+  "gout": [],
+  "fema": {
+   "numero": "2963",
+   "url": "https://www.femaflavor.org/flavor-library/pulegone",
+   "profil": "Mint, Cool",
+   "jecfa": "753"
+  }
+ },
+ "alpha_bisabolol": {
+  "cid": 1549992,
+  "odeur": [],
+  "gout": [],
+  "fema": null
+ },
+ "fenchol": {
+  "cid": 15406,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "2480",
+   "url": "https://www.femaflavor.org/flavor-library/fenchyl-alcohol",
+   "profil": "Camphor, Lemon",
+   "jecfa": "1397"
+  }
  }
 }

@@ -294,6 +294,7 @@ egcg;Gallate d'épigallocatéchine (EGCG);epigallocatechin gallate;989-51-5;marq
 coumarin;Coumarine;coumarin;91-64-5;marqueur
 patchoulol;Patchoulol;patchouli alcohol;5986-55-0;marqueur
 sclareol;Sclaréol;sclareol;515-03-7;marqueur
+neryl_acetate;Acétate de néryle;neryl acetate;141-12-8;theorique
 myrcene;Myrcène;myrcene;123-35-3;marqueur
 msg;Glutamate monosodique;monosodium glutamate;142-47-2;marqueur
 rebaudioside_a;Rébaudioside A;rebaudioside A;58543-16-1;marqueur
@@ -345,3 +346,27 @@ methionol;Méthionol (3-(méthylthio)propan-1-ol);3-(methylthio)-1-propanol;505-
 sulfurol;Sulfurol (4-méthyl-5-thiazoléthanol);4-methyl-5-thiazoleethanol;137-00-8;theorique
 valencene;Valencène;valencene;4630-07-3;theorique
 rotundone;Rotundone;rotundone;18374-76-6;theorique
+gamma_terpinene;γ-Terpinène;gamma-terpinene;99-85-4;theorique
+terpinolene;Terpinolène;terpinolene;586-62-9;theorique
+p_cymene;p-Cymène;p-cymene;99-87-6;theorique
+dodecanal;Dodécanal;dodecanal;112-54-9;theorique
+trans_2_dodecenal;(E)-2-Dodécénal;trans-2-dodecenal;20407-84-5;theorique
+perillaldehyde;Périllaldéhyde;perillaldehyde;2111-75-3;theorique
+citronellyl_acetate;Acétate de citronellyle;citronellyl acetate;150-84-5;theorique
+hexyl_butyrate;Butyrate d'hexyle;hexyl butyrate;2639-63-6;theorique
+methylbutyl_acetate_2;Acétate de 2-méthylbutyle;2-methylbutyl acetate;624-41-9;theorique
+methyl_methylbutyrate;2-Méthylbutyrate de méthyle;methyl 2-methylbutyrate;868-57-5;theorique
+prenyl_acetate;Acétate de prényle (acétate de 3-méthylbut-2-ényle);3-methyl-2-butenyl acetate;1191-16-8;theorique
+allyl_cyclohexylpropionate;3-Cyclohexylpropionate d'allyle;allyl cyclohexanepropionate;2705-87-5;theorique
+methyl_hexanoate;Hexanoate de méthyle;methyl hexanoate;106-70-7;theorique
+cis_6_nonenal;(Z)-6-Nonénal;cis-6-nonenal;2277-19-2;theorique
+mercaptohexyl_acetate;Acétate de 3-mercaptohexyle (3MHA);3-mercaptohexyl acetate;136954-20-6;theorique
+aminoacetophenone;2-Aminoacétophénone;2'-aminoacetophenone;551-93-9;theorique
+beta_pinene;β-Pinène;beta-pinene;127-91-3;theorique
+camphene;Camphène;camphene;79-92-5;theorique
+delta_3_carene;Δ3-Carène;3-carene;13466-78-9;theorique
+beta_ocimene;(E)-β-Ocimène;trans-beta-ocimene;3779-61-1;theorique
+borneol;Bornéol;borneol;507-70-0;theorique
+pulegone;Pulégone;pulegone;89-82-7;theorique
+alpha_bisabolol;α-Bisabolol;alpha-bisabolol;515-69-5;theorique
+fenchol;Fenchol;fenchol;1632-73-1;theorique

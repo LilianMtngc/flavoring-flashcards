@@ -354,6 +354,7 @@ egcg;Astringence et amertume du thé vert.;
 coumarin;Note foin-vanille-amande (fève tonka, flouve, foin).;
 patchoulol;Note boisée-terreuse du patchouli.;
 sclareol;Note ambrée de la sauge sclarée.;
+neryl_acetate;"Note fleur d'oranger-fruitée, plus douce que l'acétate de géranyle ; arômes d'agrumes.";présent dans le néroli et l'immortelle
 myrcene;Note houblon-résineuse.;
 msg;Saveur umami.;
 rebaudioside_a;Édulcorant majeur de la stévia (200 à 300 fois le saccharose).;
@@ -405,3 +406,27 @@ methionol;"Note pomme de terre cuite et chou ; présente dans la sauce soja, le 
 sulfurol;"Note noisette-viande légère ; utilisée dans les arômes de viande, de noisette et de lait.";dégradation de la thiamine
 valencene;"Note boisée-agrume de l'orange ; précurseur de la nootkatone.";sesquiterpène de l'huile d'orange douce
 rotundone;"Note poivre noir ; responsable du caractère poivré de la syrah et du poivre.";sesquiterpène présent dans le poivre noir et le raisin syrah
+gamma_terpinene;"Note agrume-citron vert, terpénique ; donne le côté « zeste » des arômes de citron vert et de mandarine. S'oxyde en p-cymène.";présent dans les huiles de citron, de citron vert et de mandarine
+terpinolene;"Note pin-agrume, terpénique et légèrement boisée ; arômes de citron vert et de fruits.";présent dans le citron vert, la mangue et le pin
+p_cymene;Note agrume-solvant, marqueur du vieillissement des huiles d'agrumes (oxydation des terpènes).;"formé par oxydation du γ-terpinène ; présent dans le cumin et le thym"
+dodecanal;"Note aldéhydée-cireuse d'écorce de mandarine et d'orange ; aldéhyde « C-12 » des arômes d'agrumes.";présent dans les huiles d'agrumes et la coriandre
+trans_2_dodecenal;"Note mandarine et feuille de coriandre, grasse-aldéhydée ; arômes d'agrumes.";présent dans la coriandre (feuilles) et la mandarine
+perillaldehyde;"Note caractéristique du shiso (périlla), épicée-agrume ; arômes d'agrumes et d'épices.";monoterpène de la périlla, présent aussi dans les agrumes
+citronellyl_acetate;"Note rose-fruitée, agrume doux ; arômes de rose, de citron et de fruits.";présent dans la citronnelle et le géranium
+hexyl_butyrate;"Note pomme verte-peau de pomme, fruitée ; arômes de pomme et de fruits frais.";présent dans la pomme
+methylbutyl_acetate_2;"Note pomme-banane-poire ; ester clé de l'arôme de pomme (avec l'acétate d'hexyle).";produit par la pomme et la banane à maturité
+methyl_methylbutyrate;"Note pomme-fraise, fruitée et éthérée ; arômes de pomme et de fruits rouges.";présent dans la pomme, la fraise et l'ananas
+prenyl_acetate;"Note fruitée-verte (banane, poire) ; utilisée dans les arômes de fruits.";présent dans l'ylang-ylang et certains fruits
+allyl_cyclohexylpropionate;"Note ananas puissante et tenace ; base de nombreux arômes ananas.";molécule de synthèse
+methyl_hexanoate;"Note fruitée-ananas, éthérée ; arômes ananas et fruits tropicaux.";présent dans l'ananas et la fraise
+cis_6_nonenal;"Note melon-concombre, verte ; caractéristique du melon et de la pastèque.";"formé par la voie de la lipoxygénase ; présent dans le melon"
+mercaptohexyl_acetate;"Note buis-fruit de la passion à seuil très bas ; marqueur du sauvignon blanc et des fruits tropicaux, avec le 3MH.";formé pendant la fermentation par acétylation du 3-mercaptohexanol
+aminoacetophenone;"Note « foxée » du raisin Concord (Vitis labrusca), avec l'anthranilate de méthyle ; défaut « vieillissement atypique » des vins blancs.";"dégradation du tryptophane ; présent dans le raisin Concord, le maïs et les produits laitiers"
+beta_pinene;"Note pin-résineuse, sèche ; arômes de pin, de genièvre et d'agrumes.";présent dans les essences de pin, de citron et de genièvre
+camphene;"Note camphrée-terpénique, légèrement huileuse ; arômes d'herbes et d'épices.";présent dans le romarin, le gingembre et les conifères
+delta_3_carene;"Note terpénique-citron, résineuse ; arômes de poivre, d'agrumes et de pin.";présent dans le poivre noir, la térébenthine et le romarin
+beta_ocimene;"Note herbacée-florale douce ; contribue aux notes vertes de la mangue, du basilic et du houblon.";présent dans le basilic, la mangue et le houblon
+borneol;"Note camphrée-terreuse, boisée ; arômes d'herbes et de plantes médicinales.";présent dans le romarin, la lavande et le camphrier de Bornéo
+pulegone;"Note menthe pouliot, mentholée-camphrée ; usage limité dans les arômes (teneur réglementée).";présent dans la menthe pouliot et en traces dans la menthe poivrée
+alpha_bisabolol;"Note florale douce, faible ; caractéristique de la camomille matricaire.";sesquiterpène de la camomille matricaire
+fenchol;"Note camphrée-citronnée, terreuse ; arômes de citron vert et d'herbes.";présent dans le basilic, le fenouil et le citron vert

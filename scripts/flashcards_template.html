@@ -63,10 +63,23 @@ input[type=search]{min-width:0;flex:1 1 180px}
 svg.mol{max-width:100%;max-height:300px;height:auto;color:var(--fg)}
 .structs.two svg.mol{max-height:240px}
 .hint{text-align:center;color:var(--fg-3);font-size:13px}
-.back{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:20px}
-.back .thumb{display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:flex-start;border-right:1px solid var(--line);padding-right:16px}
-.back .thumb svg.mol{width:100%!important;height:auto;max-height:160px}
-.back .thumb figcaption{font-size:12px;color:var(--fg-3);text-align:center}
+.hero{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:center;gap:16px 32px;padding:2px 0 18px;margin-bottom:18px;border-bottom:1px solid var(--line)}
+.hero figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0;max-width:100%}
+.hero svg.mol{max-height:230px}
+.hero.two svg.mol{max-height:190px}
+.hero.many svg.mol{max-height:150px}
+figcaption{font-size:12.5px;color:var(--fg-2);text-align:center}
+.structs.many svg.mol{max-height:180px}
+.info{max-width:780px;margin:0 auto}
+.cmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:6px}
+.cmp > div{border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.cmp .t{display:block;font-weight:600;font-size:14px;margin-bottom:2px;text-align:left}
+.cmp small{display:block;color:var(--fg-3);font-size:12px;margin-bottom:6px}
+.sos{display:flex;flex-wrap:wrap;gap:8px}
+.sos button{display:flex;align-items:center;gap:10px;border:1px solid var(--line-2);border-radius:10px;background:var(--surface);padding:6px 12px 6px 8px;font:inherit;font-size:13px;color:inherit;cursor:pointer;text-align:left;max-width:100%}
+.sos button:hover{border-color:var(--fg-3)}
+.sos svg.mol{width:64px!important;height:48px;max-height:48px;flex:none}
+.sos small{display:block;color:var(--fg-3);font-size:12px}
 h2{font-size:24px;margin:0 0 2px;font-weight:650;letter-spacing:-.01em}
 .sub{color:var(--fg-2);font-size:13.5px;margin:0 0 10px;overflow-wrap:anywhere}
 .badge{display:inline-block;font-size:12px;border-radius:6px;padding:2px 9px;margin-right:6px;vertical-align:2px}
@@ -94,6 +107,7 @@ h2{font-size:24px;margin:0 0 2px;font-weight:650;letter-spacing:-.01em}
 .tile .pics{height:100px;display:flex;align-items:center;justify-content:center;gap:6px}
 .tile svg.mol{width:100%!important;height:100px}
 .tile .pics.two svg.mol{width:48%!important}
+.tile .pics.many svg.mol{width:31%!important}
 .tile b{font-size:13px;line-height:1.3;font-weight:600}
 .tile small{color:var(--fg-3);font-size:12px}
 .card.st-sus,.tile.st-sus{background:var(--ok-bg);border-color:var(--ok-line)}
@@ -111,13 +125,14 @@ a{color:var(--accent)}
 .flabel{font-size:12px;color:var(--fg-3);margin-right:-2px}
 footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);font-size:12.5px;color:var(--fg-3)}
 footer p{margin:4px 0}
-.linkbtn{font:inherit;background:none;border:0;padding:0;color:var(--accent);cursor:pointer;text-decoration:underline}
+.linkbtn{font:inherit;background:none;border:0;padding:0;color:var(--accent);cursor:pointer;text-decoration:none}
+footer a{text-decoration:none}
+footer a:hover,.linkbtn:hover{text-decoration:underline}
 .keys{font-size:12.5px;color:var(--fg-3);margin-top:14px;text-align:center}
 @media (max-width:640px){
   .card{padding:16px;min-height:380px}
-  .back{grid-template-columns:1fr}
-  .back .thumb{border-right:0;border-bottom:1px solid var(--line);padding:0 0 12px;flex-direction:row;justify-content:center}
-  .back .thumb svg.mol{max-height:110px;width:45%!important}
+  .hero svg.mol{max-height:170px}
+  .hero.two svg.mol,.hero.many svg.mol{max-height:120px}
   h2{font-size:20px}
   .keys{display:none}
 }
@@ -142,7 +157,8 @@ footer p{margin:4px 0}
     <span class="sep"></span>
     <button class="chip" data-f="type" data-v="mol" aria-pressed="false">Molécules</button>
     <button class="chip" data-f="type" data-v="nat" aria-pressed="false">Produits naturels</button>
-    <button class="chip" data-f="type" data-v="theo" aria-pressed="false" title="Molécules de référence ajoutées pour l'apprentissage ; descripteurs : profil FEMA">Théoriques</button>
+    <button class="chip" data-f="type" data-v="theo" aria-pressed="false" title="Molécules de référence ajoutées pour l'apprentissage ; descripteurs : Wikipédia ou profil FEMA">Théoriques</button>
+    <button class="chip" data-f="type" data-v="sosie" aria-pressed="false" title="Cartes de comparaison : molécules aux structures très proches, différence surlignée">Sosies</button>
     <span class="sep"></span>
     <button class="chip brown" data-f="brune" data-v="1" aria-pressed="false">Notes brunes</button>
     <button class="chip" data-f="etat" data-v="revoir" aria-pressed="false">À revoir</button>
@@ -170,7 +186,7 @@ footer p{margin:4px 0}
   </section>
   <section id="v-catalog" hidden><div class="grid" id="grid"></div></section>
   <footer>
-    <p>Lilian Montagnac (Bioinformatics Engineer) · <a href="https://github.com/LilianMtngc/flavoring-flashcards">méthode et sources</a> · <a href="flavoring-flashcards.apkg">deck Anki</a> · <button class="linkbtn" id="reset">effacer ma progression</button></p>
+    <p>Lilian Montagnac (Bioinformatics Engineer) · <a href="https://github.com/LilianMtngc/flavoring-flashcards" title="github.com/LilianMtngc/flavoring-flashcards">GitHub</a> · <a href="flavoring-flashcards.apkg" title="Paquet à importer dans Anki">Deck Anki</a> · <button class="linkbtn" id="reset">Effacer ma progression</button></p>
   </footer>
 </div>
 <script>
@@ -189,9 +205,13 @@ let deck = [], pos = 0, flipped = false, shuffled = false, order = cards.map((_,
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const norm = s => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+const cap = s => (s = String(s ?? "")) && s[0].toUpperCase() + s.slice(1);
+const byId = Object.fromEntries(cards.map(c => [c.id, c]));
+const sosieOf = {};
+cards.filter(c => c.type === "sosie").forEach(c => c.membres.forEach(m => sosieOf[m.id] = c.id));
 
 const familles = [...new Set(cards.map(c => c.famille))].sort((a, b) => a.localeCompare(b, "fr"));
-$("#famille").insertAdjacentHTML("beforeend", familles.map(f => `<option>${esc(f)}</option>`).join(""));
+$("#famille").insertAdjacentHTML("beforeend", familles.map(f => `<option value="${esc(f)}">${esc(cap(f))}</option>`).join(""));
 
 function matches(c){
   if (filt.niveau.size && !filt.niveau.has(c.niveau)) return false;
@@ -200,7 +220,7 @@ function matches(c){
   if (filt.etat.size && !filt.etat.has(progress[c.id])) return false;
   if (filt.famille && c.famille !== filt.famille) return false;
   if (filt.q){
-    const hay = norm([c.titre, c.iupac, c.cas, c.famille, c.descripteurs.join(" "), c.structures.map(s => s.nom).join(" "), c.marqueur_de.map(p => p.nom).join(" ")].join(" "));
+    const hay = norm([c.titre, c.iupac, c.cas, c.famille, c.descripteurs.join(" "), c.structures.map(s => s.nom).join(" "), c.marqueur_de.map(p => p.nom).join(" "), (c.membres || []).map(m => m.titre).join(" ")].join(" "));
     if (!norm(filt.q).split(/\s+/).every(t => hay.includes(t))) return false;
   }
   return true;
@@ -215,30 +235,42 @@ function rebuild(keepId){
   render();
 }
 
-function structsHTML(c, cls){
-  const two = c.structures.length > 1 ? " two" : "";
-  return `<div class="${cls}${two}">` + c.structures.map(s => `<figure>${s.svg || "<em>structure indisponible</em>"}${cls === "thumb" && c.type === "nat" ? `<figcaption>${esc(s.nom)}</figcaption>` : ""}</figure>`).join("") + `</div>`;
+function structsHTML(c, cls, caption){
+  const n = c.structures.length, size = n > 2 ? " many" : n > 1 ? " two" : "";
+  return `<div class="${cls}${size}">` + c.structures.map((s, k) => `<figure>${s.svg || "<em>Structure indisponible</em>"}${caption ? `<figcaption>${esc(caption(s, k))}</figcaption>` : ""}</figure>`).join("") + `</div>`;
 }
 
 function frontHTML(c){
+  if (c.type === "sosie") return `<div class="front"><div class="kind">Sosies · structures proches</div>${structsHTML(c, "structs", (s, k) => k + 1)}<div class="hint">Nommez chaque molécule : la différence est surlignée</div></div>`;
   const kind = c.type === "nat" ? "Produit naturel · molécule" + (c.structures.length > 1 ? "s marqueurs" : " marqueur") : c.type === "theo" ? "Molécule · théorique" : "Molécule";
   const q = c.type === "nat" ? "De quel produit naturel est-ce le marqueur ?" : "Quelle est cette molécule ?";
   return `<div class="front"><div class="kind">${kind}</div>${structsHTML(c, "structs")}<div class="hint">${q}</div></div>`;
 }
 
+const chipsHTML = l => `<div class="desc">${l.map(d => `<span class="${BROWN.has(d) ? "b" : ""}">${esc(cap(d.toLowerCase()))}</span>`).join("")}</div>`;
+
+function sosieBack(c){
+  const badges = (c.brune ? `<span class="badge brown">Note brune</span>` : "") + `<span class="badge lvl">Complexité : ${esc(c.niveau)}</span>`;
+  const formules = [...new Set(c.membres.map(m => m.formule))].map(f => `<span>${esc(f)}</span>`).join("");
+  const membres = c.membres.map((m, k) => `<div><button class="linkbtn t" data-go="${esc(m.id)}">${k + 1}. ${esc(m.titre)}</button><small>${esc(cap(m.famille))}</small>${m.descripteurs.length ? chipsHTML(m.descripteurs) : ""}</div>`).join("");
+  return `<div class="back">${structsHTML(c, "hero", (s, k) => `${k + 1}. ${s.nom}`)}<div class="info">
+    <h2>Sosies</h2><p class="sub">${esc(c.diff)}</p><div>${badges}</div><div class="meta">${formules}</div>
+    <div class="sec"><h3>Les molécules</h3><div class="cmp">${membres}</div></div>
+    <div class="verif ok">✓ Structures vérifiées · différence calculée et surlignée automatiquement (RDKit) · <a href="verification.html" target="_blank">Rapport</a></div></div></div>`;
+}
+
 function backHTML(c){
+  if (c.type === "sosie") return sosieBack(c);
   const badges = (c.brune ? `<span class="badge brown">Note brune</span>` : "") + `<span class="badge lvl" title="Indice de complexité de Bertz : ${c.bertz} (seuils ${DATA.seuils[0]} / ${DATA.seuils[1]})">Complexité : ${esc(c.niveau)}</span>`;
   let sub, meta = "";
   if (c.type !== "nat"){
     sub = c.iupac ? `IUPAC : ${esc(c.iupac)}` : "";
-    meta = [c.famille, c.formule, `${String(c.masse).replace(".", ",")} g/mol`, `CAS ${c.cas}`].map(x => `<span>${esc(x)}</span>`).join("");
+    meta = [cap(c.famille), c.formule, `${String(c.masse).replace(".", ",")} g/mol`, `CAS ${c.cas}`].map(x => `<span>${esc(x)}</span>`).join("");
   } else {
     sub = "Marqueur" + (c.structures.length > 1 ? "s" : "") + " : " + c.structures.map(s => esc(s.nom)).join(" · ");
     meta = c.structures.map(s => `<span>${esc(s.formule)} · CAS ${esc(s.cas)}</span>`).join("");
   }
-  const desc = c.descripteurs.length
-    ? `<div class="desc">${c.descripteurs.map(d => `<span class="${BROWN.has(d) ? "b" : ""}">${esc(d.toLowerCase())}</span>`).join("")}</div>`
-    : `<div class="note">Descripteurs non renseignés.</div>`;
+  const desc = c.descripteurs.length ? chipsHTML(c.descripteurs) : `<div class="note">Descripteurs non renseignés.</div>`;
   const label = f => ["naturelle", "non précisée"].includes(f.forme) ? "Forme " + f.forme : f.forme === "produit naturel" ? "Produit naturel" : f.forme;
   const ppm = f => f.ppm.length ? f.ppm.map(v => v.replace(".", ",")).join(" / ") + " ppm" : "";
   const F = c.formes.filter(f => !["profil FEMA", "Wikipédia"].includes(f.forme));
@@ -263,10 +295,12 @@ function backHTML(c){
   if (c.cid) src.push(`<li>${a("Fiche PubChem (CID " + c.cid + ")", "https://pubchem.ncbi.nlm.nih.gov/compound/" + c.cid)}</li>`);
   const remarks = c.notes.map(x => `<div class="note">${esc(x)}</div>`);
   if (c.type === "nat" && c.partage.length) remarks.push(`<div class="note">Même(s) marqueur(s) que : ${esc(c.partage.join(", "))}</div>`);
-  const verif = `<div class="verif ok">✓ Structure${c.structures.length > 1 ? "s" : ""} vérifiée${c.structures.length > 1 ? "s" : ""} · ${c.verif.sources} sources concordantes · <a href="verification.html" target="_blank">rapport</a></div>`;
-  return `<div class="back">${structsHTML(c, "thumb")}<div>
+  const verif = `<div class="verif ok">✓ Structure${c.structures.length > 1 ? "s" : ""} vérifiée${c.structures.length > 1 ? "s" : ""} · ${c.verif.sources} sources concordantes · <a href="verification.html" target="_blank">Rapport</a></div>`;
+  const sos = c.sosies.length ? `<div class="sec"><h3>À ne pas confondre avec${sosieOf[c.id] ? ` · <button class="linkbtn" data-go="${esc(sosieOf[c.id])}">Voir la comparaison</button>` : ""}</h3><div class="sos">${c.sosies.map(o => `<button data-go="${esc(o.id)}">${byId[o.id].structures[0].svg}<span>${esc(o.titre)}<small>${esc(o.diff)}</small></span></button>`).join("")}</div></div>` : "";
+  return `<div class="back">${structsHTML(c, "hero", c.type === "nat" ? s => s.nom : null)}<div class="info">
     <h2>${esc(c.titre)}</h2><p class="sub">${sub}</p>${alias}<div>${badges}</div><div class="meta">${meta}</div>
     <div class="sec"><h3>Descripteurs${c.type === "theo" ? " · " + c.formes[0].forme : ""}</h3>${desc}${formes}</div>
+    ${sos}
     <div class="sec"><h3>Usages · synthèse IA</h3>${usage}</div>
     ${src.length ? `<div class="sec"><h3>Sources</h3><ul class="srcs">${src.join("")}</ul></div>` : ""}
     ${remarks.length ? `<div class="sec"><h3>Remarques</h3>${remarks.join("")}</div>` : ""}
@@ -275,7 +309,7 @@ function backHTML(c){
 
 function render(){
   const total = cards.length, sus = cards.filter(c => progress[c.id] === "sus").length, rev = cards.filter(c => progress[c.id] === "revoir").length;
-  $("#stats").textContent = `${total} cartes · ${cards.filter(c => c.brune).length} notes brunes · ${sus} sues · ${rev} à revoir`;
+  $("#stats").textContent = `${total} cartes · ${cards.filter(c => c.brune && c.type !== "sosie").length} notes brunes · ${sus} sues · ${rev} à revoir`;
   const el = $("#card");
   if (!deck.length){
     el.className = "card";
@@ -287,7 +321,7 @@ function render(){
     const st = progress[c.id];
     el.className = "card" + (st ? " st-" + st : "");
     $("#pos").textContent = `Carte ${pos + 1} / ${deck.length}${shuffled ? " · ordre mélangé" : ""}`;
-    $("#score").textContent = st === "sus" ? "✓ je sais" : st === "revoir" ? "à revoir" : "";
+    $("#score").textContent = st === "sus" ? "✓ Je sais" : st === "revoir" ? "À revoir" : "";
     $("#score").className = st || "";
   }
   $("#prev").disabled = pos <= 0;
@@ -303,8 +337,10 @@ function mark(v){ if (!deck.length) return; progress[cards[deck[pos]].id] = v; s
 function renderGrid(){
   $("#grid").innerHTML = deck.length ? deck.map((i, k) => {
     const c = cards[i], st = progress[c.id];
-    return `<button class="tile${st ? " st-" + st : ""}" data-k="${k}"><div class="pics${c.structures.length > 1 ? " two" : ""}">${c.structures.map(s => s.svg || "").join("")}</div>
-      <b>${esc(c.titre)}</b><small>${c.type === "nat" ? "produit naturel" : esc(c.famille) + (c.type === "theo" ? " · théorique" : "")}${c.brune ? " · note brune" : ""}</small></button>`;
+    const n = c.structures.length;
+    const kind = c.type === "nat" ? "Produit naturel" : c.type === "sosie" ? `Sosies · ${n} molécules` : cap(c.famille) + (c.type === "theo" ? " · Théorique" : "");
+    return `<button class="tile${st ? " st-" + st : ""}" data-k="${k}"><div class="pics${n > 2 ? " many" : n > 1 ? " two" : ""}">${c.structures.map(s => s.svg || "").join("")}</div>
+      <b>${esc(c.titre)}</b><small>${kind}${c.brune ? " · Note brune" : ""}</small></button>`;
   }).join("") : `<div class="empty">Aucune carte ne correspond à ces filtres.</div>`;
 }
 
@@ -328,7 +364,22 @@ document.querySelectorAll("#filters .chip").forEach(b => b.onclick = () => {
 });
 $("#famille").onchange = e => { filt.famille = e.target.value; rebuild(); };
 $("#q").oninput = e => { filt.q = e.target.value.trim(); rebuild(); };
-$("#card").onclick = e => { if (!e.target.closest("a")) flip(); };
+$("#card").onclick = e => {
+  const go = e.target.closest("[data-go]");
+  if (go) { e.stopPropagation(); goTo(go.dataset.go); return; }
+  if (!e.target.closest("a")) flip();
+};
+// ouvre une carte précise (sosie, comparaison) ; si elle est masquée par les filtres, ceux-ci sont remis à zéro
+function goTo(id){
+  if (!deck.some(i => cards[i].id === id)){
+    filt.niveau.clear(); filt.type.clear(); filt.etat.clear(); filt.brune = false; filt.famille = ""; filt.q = "";
+    document.querySelectorAll("#filters .chip").forEach(b => b.setAttribute("aria-pressed", "false"));
+    $("#famille").value = ""; $("#q").value = "";
+  }
+  rebuild(id);
+  animate(); focusCard();
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
 $("#flip").onclick = flip;
 $("#prev").onclick = () => go(-1);
 $("#next").onclick = () => go(1);

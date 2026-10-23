@@ -8,21 +8,24 @@ avec un focus sur les **notes brunes** (caramel, cacao, café, grillé, noisette
 - **Recto** : la structure chimique (ou, pour un produit naturel, sa ou ses molécules marqueurs).
 - **Verso** : le nom, la famille chimique, la formule, le numéro CAS, les descripteurs, le dosage, les usages et les sources.
 
-359 cartes : 278 molécules, 32 produits naturels et 49 molécules théoriques, dont 73 notes brunes.
+446 cartes : 278 molécules, 32 produits naturels, 74 molécules théoriques et 62 comparaisons de « sosies », dont 73 notes brunes (hors sosies).
 
-Trois catégories :
+Quatre catégories :
 - **Molécules** et **produits naturels** du jeu de départ, avec leurs descripteurs et leur dosage d'évaluation (ppm) ;
 - **Théoriques** : molécules de référence ajoutées parce qu'il serait gênant de les ignorer quand on apprend l'aromatique
   (2-acétyl-1-pyrroline, thiols du pamplemousse et du cassis, défauts comme le TCA, la géosmine ou le (E)-2-nonénal,
-  énantiomères de la carvone…). Leurs descripteurs viennent de leur page Wikipédia, citation à l'appui
+  énantiomères de la carvone, terpènes et esters fruités…). Leurs descripteurs viennent de leur page Wikipédia, citation à l'appui
   ([`data/theoriques_wiki.csv`](data/theoriques_wiki.csv)), ou à défaut du profil FEMA traduit terme à terme
-  ([`data/glossaire_fema.csv`](data/glossaire_fema.csv)). Elles n'ont pas de dosage.
+  ([`data/glossaire_fema.csv`](data/glossaire_fema.csv)). Elles n'ont pas de dosage ;
+- **Sosies** : cartes de comparaison de 2 à 4 molécules aux structures très proches (furanéol / sotolon,
+  eugénol / isoeugénol, ionones / damascones, géraniol / nérol, carvones…), différence surlignée.
+  Chaque molécule concernée affiche aussi un encart « À ne pas confondre avec ».
 
 ## Utilisation
 - **Navigateur** : [la page en ligne](https://lilianmtngc.github.io/flavoring-flashcards/), ou `index.html`
   téléchargé et ouvert localement. Le fichier est autonome et fonctionne hors connexion.
   - Clic ou `Espace` : retourner la carte ; `←` / `→` : naviguer ; `1` : à revoir ; `2` : je sais.
-  - Filtres : complexité, molécule / produit naturel / théorique, notes brunes, à revoir, je sais, famille chimique, recherche.
+  - Filtres : complexité, molécule / produit naturel / théorique / sosies, notes brunes, à revoir, je sais, famille chimique, recherche.
   - Les cartes sues sont teintées en vert, celles à revoir en rouge. Bouton clair / sombre en haut à droite.
   - La progression est enregistrée dans le navigateur, sur cet appareil uniquement.
 - **Anki** : [`flavoring-flashcards.apkg`](flavoring-flashcards.apkg), à importer avec Fichier → Importer.
@@ -65,9 +68,11 @@ Les liens retenus ont été relus. Les produits sans marqueur confirmé n'ont pa
 Elle est calculée à partir de l'indice de complexité topologique de Bertz
 (S. H. Bertz, *J. Am. Chem. Soc.* 1981, 103, 3599), via RDKit (`BertzCT`). Les trois niveaux correspondent
 aux terciles de cet indice sur l'ensemble des molécules :
-- Facile : indice < 114 ;
-- Moyen : de 114 à 200 ;
-- Difficile : ≥ 200.
+- Facile : indice < 116 ;
+- Moyen : de 116 à 196 ;
+- Difficile : ≥ 196.
+
+Pour une carte de sosies, on retient la molécule la plus complexe.
 
 Pour un produit naturel, on retient le marqueur le plus complexe.
 
@@ -75,6 +80,17 @@ Pour un produit naturel, on retient le marqueur le plus complexe.
 Deux cartes qui auraient exactement le même recto (même structure, stéréochimie comprise, comparée par l'InChIKey complète)
 sont fusionnées. La carte porte le nom de la molécule ; les produits naturels dont elle est l'unique marqueur sont cités
 (« Marqueur de : … »), avec leurs propres descripteurs et dosages. Exemple : filbertone et noisette.
+
+### Sosies
+Calculés avec RDKit ([`scripts/sosies.py`](scripts/sosies.py)). Deux molécules sont sosies si :
+- elles ont la même formule brute, ou ne diffèrent que d'une double liaison C=C en gardant les mêmes fonctions ;
+- leur plus grande sous-structure commune (ordres de liaison ignorés) couvre tous leurs atomes sauf un
+  (sauf deux pour des isomères à cycles non aromatiques, comme furanéol / sotolon) ;
+- elles sont toutes deux des acides carboxyliques, ou aucune des deux.
+
+Les groupes comptent au plus 4 molécules, toutes sosies deux à deux ; les stéréo-isomères forment un groupe à part.
+Les dessins sont alignés sur le squelette commun. Sont surlignés : les atomes placés ailleurs, les liaisons dont l'ordre
+change, ou les centres stéréogènes et doubles liaisons E / Z. La nature de la différence est décrite automatiquement.
 
 ### Notes brunes
 Une carte est classée « note brune » dans deux cas :

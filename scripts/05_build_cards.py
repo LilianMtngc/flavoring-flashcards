@@ -8,6 +8,8 @@ Sorties : data/cartes.json, index.html (flash cards), flavoring-flashcards.apkg 
 Trois catégories de cartes :
 - « mol » : molécule évaluée (descripteurs et dosage du panel) ;
 - « nat » : produit naturel, représenté par sa ou ses molécules marqueurs ;
+- « sosie » : carte de comparaison de 2 à 4 molécules aux structures très proches
+  (détection et description automatiques : scripts/sosies.py) ;
 - « theo » : molécule de référence ajoutée pour l'apprentissage (note « theorique »
   dans molecules_ref.csv) ; ses descripteurs viennent de la page Wikipédia de la
   molécule quand elle figure dans data/theoriques_wiki.csv (citation à l'appui),
@@ -27,6 +29,8 @@ import genanki
 from rdkit import Chem
 from rdkit.Chem import GraphDescriptors
 
+import sosies
+
 # genanki ne connaît pas la balise <svg> : Anki l'affiche pourtant très bien
 warnings.filterwarnings("ignore", message="Field contained the following invalid HTML tags")
 
@@ -41,7 +45,7 @@ BROWN = {
     "BRÛLÉ", "CROÛTE DE PAIN", "SUCRE BRUN", "SUCRE CUIT", "MÉLASSE", "CASSONADE", "TABAC", "NOIX", "FENUGREC", "SÉSAME",
 }
 NIVEAUX = ["Facile", "Moyen", "Difficile"]
-TYPES = {"mol": "Molécule", "theo": "Molécule · théorique", "nat": "Produit naturel"}
+TYPES = {"mol": "Molécule", "theo": "Molécule · théorique", "nat": "Produit naturel", "sosie": "Sosies"}
 
 
 def read_csv(name):
@@ -59,7 +63,10 @@ def is_brown(desc_lists):
 
 
 def svg_for(key):
-    svg = (STRUCT / f"{key}.svg").read_text(encoding="utf-8")
+    return sized((STRUCT / f"{key}.svg").read_text(encoding="utf-8"))
+
+
+def sized(svg):
     m = re.search(r"viewBox='0 0 ([\d.]+) ([\d.]+)'", svg)
     w, h = float(m.group(1)), float(m.group(2))
     # même échelle pour toutes les molécules ; les grosses sont réduites par max-width / max-height
@@ -202,15 +209,50 @@ def build():
         if c["type"] == "nat":
             c["partage"] = sorted(set().union(*(users[s["key"]] for s in c["structures"])) - {c["titre"]})
 
+    cards += sosie_cards(cards, mols)
+
     # niveau de difficulté = tercile de l'indice de complexité de Bertz (calculé sur les molécules)
-    vals = sorted(c["bertz"] for c in cards if c["type"] != "nat")
+    vals = sorted(c["bertz"] for c in cards if c["type"] in ("mol", "theo"))
     t1, t2 = vals[len(vals) // 3], vals[2 * len(vals) // 3]
     for c in cards:
         c["niveau"] = NIVEAUX[0] if c["bertz"] < t1 else NIVEAUX[1] if c["bertz"] < t2 else NIVEAUX[2]
         c["bertz"] = round(c["bertz"])
-    cards.sort(key=lambda c: (["mol", "nat", "theo"].index(c["type"]), c["id"]))
+    cards.sort(key=lambda c: (["mol", "nat", "theo", "sosie"].index(c["type"]), c["id"]))
     (D / "cartes.json").write_text(json.dumps(cards, indent=1, ensure_ascii=False), encoding="utf-8")
     return cards, skipped, (round(t1), round(t2))
+
+
+def sosie_cards(cards, mols):
+    """Sosies : encart « À ne pas confondre avec » sur chaque molécule, et une carte de comparaison par groupe."""
+    cand = [c for c in cards if c["type"] != "nat"]
+    by_id = {c["id"]: c for c in cand}
+    mol_of = {c["id"]: Chem.MolFromSmiles(mols[c["structures"][0]["key"]]["smiles"]) for c in cand}
+    grps, neighbours = sosies.groups([(c["id"], mol_of[c["id"]]) for c in cand])
+    for c in cards:
+        c["sosies"] = [{"id": o, "titre": by_id[o]["titre"], "diff": sosies.describe([mol_of[c["id"]], mol_of[o]])}
+                       for o, _ in neighbours.get(c["id"], [])[:4]]
+    out = []
+    for g in grps:
+        g = sorted(g, key=lambda i: by_id[i]["titre"].lower())
+        ms = [mol_of[i] for i in g]
+        svgs = sosies.draw(ms, sosies.highlight(ms))
+        members = [by_id[i] for i in g]
+        fams = {m["famille"] for m in members}
+        out.append({
+            "id": "sosie:" + "+".join(i.split(":")[1] for i in g), "type": "sosie",
+            "titre": " / ".join(m["titre"] for m in members),
+            "famille": fams.pop() if len(fams) == 1 else "familles mixtes",
+            "diff": sosies.describe(ms),
+            "structures": [{"key": m["structures"][0]["key"], "nom": m["titre"], "svg": sized(svg)}
+                           for m, svg in zip(members, svgs)],
+            "membres": [{"id": m["id"], "titre": m["titre"], "famille": m["famille"], "formule": m["formule"],
+                         "descripteurs": m["descripteurs"][:6]} for m in members],
+            "descripteurs": [], "formes": [], "marqueur_de": [], "sosies": [], "notes": [], "sources": {},
+            "brune": any(m["brune"] for m in members), "usages": "", "origine": "",
+            "verif": {"status": "ok", "sources": min(m["verif"]["sources"] for m in members)},
+            "bertz": max(m["bertz"] for m in members),
+        })
+    return out
 
 
 def nat_card(e, mols, u):
@@ -264,7 +306,7 @@ BACK = """{{FrontSide}}<hr id="answer">
 <div class="nom">{{Nom}}</div><div class="sub">{{Sous_titre}}</div>
 <div class="sec">{{Infos}}</div>
 <div class="sec"><b>Descripteurs</b><br>{{Descripteurs}}</div>
-<div class="sec"><b>Usages (synthèse IA)</b><br>{{Usages}}</div>
+{{#Usages}}<div class="sec"><b>Usages (synthèse IA)</b><br>{{Usages}}</div>{{/Usages}}
 {{#Sources}}<div class="sec"><b>Sources</b><br>{{Sources}}</div>{{/Sources}}"""
 
 
@@ -300,17 +342,28 @@ def sources_html(c):
     return "<br>".join(parts)
 
 
+def cap(s):
+    return s[:1].upper() + s[1:]
+
+
 def chips(descr):
-    return "".join(f"<span class='chip{' b' if d in BROWN else ''}'>{esc(d.lower())}</span>" for d in descr)
+    return "".join(f"<span class='chip{' b' if d in BROWN else ''}'>{esc(cap(d.lower()))}</span>" for d in descr)
 
 
 def anki_fields(c):
+    if c["type"] == "sosie":
+        structs = "".join(f"<figure>{s['svg']}<figcaption>{k}</figcaption></figure>"
+                          for k, s in enumerate(c["structures"], 1))
+        noms = " · ".join(f"{k}. {esc(m['titre'])}" for k, m in enumerate(c["membres"], 1))
+        desc = "<br>".join(f"<b>{esc(m['titre'])}</b> : {chips(m['descripteurs'])}" for m in c["membres"])
+        infos = (f"<span class='badge'>Note brune</span> " if c["brune"] else "")             + f"<span class='chip'>Complexité : {esc(c['niveau'])}</span>"             + "".join(f"<span class='chip'>{esc(f)}</span>" for f in dict.fromkeys(m["formule"] for m in c["membres"]))
+        return ["Sosies · nommez chaque molécule", structs, noms, esc(c["diff"]), infos, desc, "", ""]
     structs = "".join(f"<figure>{s['svg']}</figure>" for s in c["structures"])
     if c["type"] != "nat":
         sub = c.get("iupac", "")
         if c["marqueur_de"]:
             sub += "<br>Marqueur de : " + esc(", ".join(dict.fromkeys(p["nom"] for p in c["marqueur_de"])))
-        infos = (f"<span class='chip'>{esc(c['famille'])}</span><span class='chip'>{esc(c['formule'])}</span>"
+        infos = (f"<span class='chip'>{esc(cap(c['famille']))}</span><span class='chip'>{esc(c['formule'])}</span>"
                  f"<span class='chip'>{c['masse']} g/mol</span><span class='chip'>CAS {esc(c['cas'])}</span>")
     else:
         sub = "Marqueur(s) : " + esc(", ".join(s["nom"] for s in c["structures"]))
@@ -322,6 +375,8 @@ def anki_fields(c):
         desc += "".join(f"<br><small><b>{esc(f['forme'])}</b>{' · ' + fmt_ppm(f['ppm']) if f['ppm'] else ''} : "
                         f"{esc(', '.join(f['descripteurs']).lower())}</small>" for f in c["formes"])
     usage = esc(c["usages"]) + (f"<br><i>Origine : {esc(c['origine'])}</i>" if c["origine"] else "")
+    if c["sosies"]:
+        desc += "<br><small><b>À ne pas confondre avec</b> : " + esc(", ".join(o["titre"] for o in c["sosies"])) + "</small>"
     kind = TYPES[c["type"]] + (" · molécule(s) marqueur(s)" if c["type"] == "nat" else "")
     return [kind, structs, esc(c["titre"]), sub, infos, desc, usage, sources_html(c)]
 
@@ -337,7 +392,7 @@ def build_anki(cards):
     for c in cards:
         tags = [f"complexite_{c['niveau'].lower()}",
                 "famille_" + re.sub(r"\W+", "_", c["famille"].lower()).strip("_"),
-                {"nat": "naturel", "mol": "molecule", "theo": "theorique"}[c["type"]]]
+                {"nat": "naturel", "mol": "molecule", "theo": "theorique", "sosie": "sosies"}[c["type"]]]
         if c["brune"]:
             tags.append("note_brune")
         deck.add_note(genanki.Note(model=model, fields=anki_fields(c), tags=tags, guid=genanki.guid_for(c["id"])))
@@ -349,7 +404,8 @@ def main():
     build_html(cards, seuils)
     build_anki(cards)
     n = {t: sum(c["type"] == t for c in cards) for t in TYPES}
-    print(f"{len(cards)} cartes ({n['mol']} molécules, {n['nat']} produits naturels, {n['theo']} théoriques), "
+    print(f"{len(cards)} cartes ({n['mol']} molécules, {n['nat']} produits naturels, {n['theo']} théoriques, "
+          f"{n['sosie']} comparaisons de sosies), "
           f"{sum(c['brune'] for c in cards)} notes brunes, {sum(bool(c['marqueur_de']) for c in cards)} fusions, "
           f"seuils de Bertz {seuils}")
     print(f"{len(skipped)} produits naturels sans marqueur sourcé : {', '.join(skipped)}")

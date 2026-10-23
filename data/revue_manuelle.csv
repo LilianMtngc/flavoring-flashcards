@@ -14,3 +14,4 @@ linalool_oxide;ok;CID 22310 imposé (forme furanoïde du produit commercial)
 msg;ok;"CID 23672308 imposé (sel anhydre ; PubChem renvoie le monohydrate)"
 acetyltetrahydropyridine;ok;"tautomères en équilibre (énamine 1,4,5,6-tétrahydro / imine 3,4,5,6-tétrahydro) : la fiche CAS de PubChem pointe vers l'imine ; la forme énamine, qui correspond au nom et que donnent PubChem (nom), CACTUS et OPSIN, est dessinée"
 rotundone;ok;"nom trivial lu seulement par PubChem et CACTUS, CAS 18374-76-6 absent de PubChem ; le nom systématique (3S,5R,8S)-3,8-diméthyl-5-(prop-1-én-2-yl)-3,4,5,6,7,8-hexahydroazulén-1(2H)-one donne la même InChIKey complète avec OPSIN et CACTUS"
+allyl_cyclohexylpropionate;ok;"les 5 sources concordent ; la règle « ester propionique » attend un CH3 terminal, ici le propionate porte un cyclohexyle en position 3"
