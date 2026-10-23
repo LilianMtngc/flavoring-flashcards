@@ -154,9 +154,3 @@ python scripts/05_build_cards.py  # index.html, flavoring-flashcards.apkg, data/
 | `data/naturels_ref.csv`, `data/naturels_wiki.csv` | produits naturels, marqueurs, pages Wikipédia consultées |
 | `data/revue_manuelle.csv`, `data/overrides.csv` | décisions manuelles de vérification, avec leur justification |
 | `data/usages.csv` | usages et origine des notes |
-
-## Credit
-
-- Lilian Montagnac (Bioinformatics Engineer)
-- https://github.com/LilianMtngc
-- AI Assisted (Opus 5.5)
