@@ -25,7 +25,9 @@ Quatre catégories :
 - **Navigateur** : [la page en ligne](https://lilianmtngc.github.io/flavoring-flashcards/), ou `index.html`
   téléchargé et ouvert localement. Le fichier est autonome et fonctionne hors connexion.
   - Clic ou `Espace` : retourner la carte ; `←` / `→` : naviguer ; `1` : à revoir ; `2` : je sais.
-  - Bouton « Filtres » : type de carte, complexité, progression (pas encore vues, à revoir, je sais, à réviser aujourd'hui),
+  - Sur ordinateur, les filtres sont dans la colonne de gauche et le verso s'affiche sur deux colonnes ;
+    sur mobile, ils s'ouvrent avec le bouton « Filtres ».
+  - Filtres : type de carte, complexité, progression (pas encore vues, à revoir, je sais, à réviser aujourd'hui),
     défauts, CMR / CIRC, famille chimique, familles olfactives (dont notes brunes), étiquettes.
     Les filtres actifs s'affichent en pastilles, effaçables d'un clic.
   - **Recto** au choix (en haut à droite de la carte) : la structure (par défaut), le nom (retrouver la structure parmi 4)
@@ -33,8 +35,11 @@ Quatre catégories :
   - **Répétition espacée** : « Je sais » repousse la carte (1, 3, 7, 14, 30 puis 60 jours), « À revoir » la garde pour
     aujourd'hui. Le compteur « N à réviser » en haut de page ouvre les cartes du jour.
   - **Statistiques** : onglet sur le bord droit (progression par type, complexité et famille olfactive, cartes les plus ratées).
-  - **Raccourcis** : `/` rechercher, `F` filtres, `E` étiquette, `M` changer de recto, `S` statistiques.
-  - **Lien** : copie l'adresse de la carte affichée avec les filtres en cours.
+  - **Vocabulaire** : onglet sur le bord gauche. Noms usuels et pièges (valéraldéhyde = pentanal, caproïque / caprylique /
+    caprique, « aldéhydes C-n »…), stéréochimie, préfixes, fonctions, hétérocycles, terpènes, chimie des arômes, identifiants.
+    Chaque entrée renvoie vers les cartes concernées ([`data/glossaire.csv`](data/glossaire.csv), rédigé avec assistance IA).
+  - **Raccourcis** : `/` rechercher, `F` filtres, `E` étiquette, `M` changer de recto, `S` statistiques, `V` vocabulaire.
+  - L'adresse de la page suit la carte affichée et les filtres : on peut la copier pour partager une carte.
   - **Installable** sur mobile (« Ajouter à l'écran d'accueil ») et utilisable hors connexion.
   - **Étiquettes personnelles** : « + Étiquette » au verso d'une carte. Nom et couleur au choix ; on peut ensuite filtrer,
     renommer, recolorer ou supprimer une étiquette depuis le panneau des filtres.
@@ -105,8 +110,8 @@ Calculés avec RDKit ([`scripts/sosies.py`](scripts/sosies.py)). Deux molécules
 - elles sont toutes deux des acides carboxyliques, ou aucune des deux.
 
 Les groupes comptent au plus 4 molécules, toutes sosies deux à deux ; les stéréo-isomères forment un groupe à part.
-Les dessins sont alignés sur le squelette commun. Sont surlignés : les atomes placés ailleurs, les liaisons dont l'ordre
-change, ou les centres stéréogènes et doubles liaisons E / Z. La nature de la différence est décrite automatiquement.
+Les dessins sont alignés sur le squelette commun. Sont tracées en couleur : les liaisons vers les atomes placés ailleurs,
+les liaisons dont l'ordre change, ou les coins de stéréochimie et doubles liaisons E / Z. La nature de la différence est décrite automatiquement.
 
 ### Familles olfactives
 Chaque descripteur est rattaché à une famille (agrumes, fruits rouges, floral, vert, lacté, épicé, boisé, soufré, terreux…).

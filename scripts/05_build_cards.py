@@ -3,7 +3,7 @@
 Entrées : data/descripteurs.csv, data/molecules_ref.csv, data/molecules_verified.json,
           data/naturels_ref.csv, data/marqueurs_sources.json, data/sources_cache.json,
           data/usages.csv, data/glossaire_fema.csv, data/theoriques_wiki.csv, data/familles_olfactives.csv,
-          data/defauts.csv, data/securite_cache.json, structures/*.svg
+          data/defauts.csv, data/securite_cache.json, data/glossaire.csv, structures/*.svg
 Sorties : data/cartes.json, index.html (flash cards), flavoring-flashcards.apkg (Anki),
           manifest.webmanifest, sw.js, icon-192.png, icon-512.png (page installable, hors connexion)
 
@@ -322,9 +322,27 @@ def fmt_ppm(values):
 def build_html(cards, seuils):
     template = (ROOT / "scripts" / "flashcards_template.html").read_text(encoding="utf-8")
     olf = [r["famille"] for r in read_csv("familles_olfactives.csv")]
-    payload = json.dumps({"cards": cards, "seuils": seuils, "olf": olf}, ensure_ascii=False).replace("</", "<\\/")
+    payload = json.dumps({"cards": cards, "seuils": seuils, "olf": olf, "glossaire": glossaire(cards)},
+                         ensure_ascii=False).replace("</", "<\\/")
     (ROOT / "index.html").write_text(template.replace("/*__DATA__*/null", payload), encoding="utf-8")
     write_pwa()
+
+
+def glossaire(cards):
+    """Glossaire (rubrique, terme, définition) avec liens vers les cartes des molécules citées."""
+    by_key = {}
+    for c in cards:
+        if c["type"] in ("mol", "theo"):
+            by_key.setdefault(c["structures"][0]["key"], c)
+    out, missing = [], []
+    for r in read_csv("glossaire.csv"):
+        keys = [k for k in r["cles"].split("|") if k]
+        missing += [k for k in keys if k not in by_key]
+        out.append({"rubrique": r["rubrique"], "terme": r["terme"], "definition": r["definition"],
+                    "cartes": [{"id": by_key[k]["id"], "titre": by_key[k]["titre"]} for k in keys if k in by_key]})
+    if missing:
+        raise SystemExit(f"glossaire.csv : molécules sans carte : {', '.join(missing)}")
+    return out
 
 
 SW = """// cache hors connexion : réseau d'abord (la page reste à jour), copie locale si pas de réseau

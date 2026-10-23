@@ -107,9 +107,17 @@ h1{font-size:22px;margin:0;font-weight:650;letter-spacing:-.01em}
 .badge.cmr{background:var(--bad-bg);color:var(--bad);font-weight:600}
 .due{font:inherit;font-size:13px;background:none;border:0;padding:0;color:var(--accent);cursor:pointer}
 .due:hover{text-decoration:underline}
-.statstab{position:fixed;right:0;top:45%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;font:inherit;font-size:12.5px;letter-spacing:.04em;background:var(--surface);color:var(--fg-2);border:1px solid var(--line-2);border-right:0;border-radius:0 8px 8px 0;padding:12px 5px;cursor:pointer;z-index:5;box-shadow:var(--shadow)}
-.statstab:hover{color:var(--fg)}
-.drawer{position:fixed;top:0;right:0;height:100%;width:min(360px,92vw);background:var(--surface);border-left:1px solid var(--line);box-shadow:-8px 0 24px rgba(0,0,0,.18);z-index:10;overflow-y:auto;padding:18px 18px 28px;transform:translateX(105%);transition:transform .22s ease-out}
+.sidetab{position:fixed;top:240px;width:34px;height:116px;text-align:center;box-sizing:border-box;line-height:20px;writing-mode:vertical-rl;font:inherit;font-size:13px;font-weight:500;letter-spacing:.03em;background:var(--surface);color:var(--fg-2);border:1px solid var(--line-2);padding:14px 7px;cursor:pointer;z-index:5;box-shadow:var(--shadow);-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+.sidetab.right{right:0;border-right:0;border-radius:8px 0 0 8px}
+.sidetab.left{left:0;border-left:0;border-radius:0 8px 8px 0;transform:rotate(180deg)}
+.sidetab:hover{color:var(--fg)}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(380px,92vw);background:var(--surface);border-left:1px solid var(--line);box-shadow:-8px 0 24px rgba(0,0,0,.18);z-index:10;overflow-y:auto;padding:18px 18px 28px;transform:translateX(105%);transition:transform .22s ease-out}
+.drawer.left{left:0;right:auto;border-left:0;border-right:1px solid var(--line);box-shadow:8px 0 24px rgba(0,0,0,.18);transform:translateX(-105%)}
+.gsearch{width:100%;margin:10px 0 4px}
+.gentry{padding:8px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.gentry b{display:block;font-size:14px;margin-bottom:2px}
+.gentry p{margin:0;color:var(--fg-2);line-height:1.5}
+.gentry .gl{margin-top:4px;display:flex;flex-wrap:wrap;gap:4px 10px;font-size:12.5px}
 .drawer.open{transform:none}
 .drawer h3{font-size:16px;margin:0 0 4px}
 .drawer h4{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3);margin:18px 0 8px;font-weight:600}
@@ -125,7 +133,6 @@ h1{font-size:22px;margin:0;font-weight:650;letter-spacing:-.01em}
 .missed{list-style:none;padding:0;margin:0;font-size:13px}
 .missed li{display:flex;justify-content:space-between;gap:8px;padding:3px 0;border-bottom:1px solid var(--line)}
 .missed small{color:var(--bad)}
-.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--fg);color:var(--bg);font-size:13px;padding:6px 14px;border-radius:999px;z-index:20}
 .tile .tdots{display:flex;gap:4px;flex-wrap:wrap;margin-top:auto}
 .tile .tdots span{width:9px;height:9px;border-radius:50%;background:var(--c)}
 .chip{border:1px solid var(--line-2);background:var(--surface);color:var(--fg-2);border-radius:999px;padding:4px 12px;font:inherit;font-size:13px;cursor:pointer}
@@ -152,15 +159,45 @@ input[type=search]{min-width:0;flex:1 1 180px}
 svg.mol{max-width:100%;max-height:300px;height:auto;color:var(--fg)}
 .structs.two svg.mol{max-height:240px}
 .hint{text-align:center;color:var(--fg-3);font-size:13px}
+:root{--hl:#d96c12}
+:root[data-theme="dark"]{--hl:#f39a4a}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--hl:#f39a4a}}
 .hero{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:center;gap:16px 32px;padding:2px 0 18px;margin-bottom:18px;border-bottom:1px solid var(--line)}
 .hero figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0;max-width:100%}
 .hero svg.mol{max-height:230px}
 .hero.two svg.mol{max-height:190px}
 .hero.many svg.mol{max-height:150px}
+.hero.many,.structs.many{flex-wrap:nowrap;gap:12px}
+.hero.many figure,.structs.many figure{flex:1 1 0;min-width:0}
+.hero.many svg.mol,.structs.many svg.mol{width:100%!important;height:auto}
+@media (max-width:640px){.hero.many,.structs.many{flex-wrap:wrap}.hero.many figure,.structs.many figure{flex:1 1 40%}}
 figcaption{font-size:12.5px;color:var(--fg-2);text-align:center}
 .structs.many svg.mol{max-height:180px}
-.info{max-width:780px;margin:0 auto}
-.cmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:6px}
+.layout{display:block}
+.keys .more{cursor:help;border-bottom:1px dotted var(--fg-3)}
+/* écran large : filtres en colonne à gauche, verso en deux colonnes */
+@media (min-width:1100px){
+  .wrap{max-width:1500px;padding:20px 52px 48px}
+  .layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:28px;align-items:start}
+  .side{position:sticky;top:14px;max-height:calc(100vh - 28px);overflow-y:auto;padding:0 6px 8px 0;scrollbar-width:thin}
+  .side .toolbar{margin-top:0}
+  #fbtn,#fclose{display:none}
+  .fpanel,.fpanel[hidden]{display:block;box-shadow:none;padding:12px 14px 10px;margin:0 0 10px}
+  .fpanel .fgroup{margin-bottom:14px}
+  .fpanel .chip{font-size:12.5px;padding:3px 10px}
+  .fpanel select{width:100%}
+  .fpanel-foot{padding-top:8px}
+  .main .tabs{margin-bottom:12px}
+  .back{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:0 30px}
+  .back > .hero{grid-column:1/-1}
+  .back .bl .hero{border-bottom:0;padding-bottom:6px;margin-bottom:10px}
+  .back .br{border-left:1px solid var(--line);padding-left:28px}
+  .back .br > .sec:first-child{margin-top:0}
+  .card{min-height:520px}
+  .front{min-height:470px}
+  svg.mol{max-height:340px}
+}
+.cmp{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:6px}
 .cmp > div{border:1px solid var(--line);border-radius:10px;padding:10px 12px}
 .cmp .t{display:block;font-weight:600;font-size:14px;margin-bottom:2px;text-align:left}
 .cmp small{display:block;color:var(--fg-3);font-size:12px;margin-bottom:6px}
@@ -219,7 +256,7 @@ footer a{text-decoration:none}
 footer a:hover,.linkbtn:hover{text-decoration:underline}
 .keys{font-size:12.5px;color:var(--fg-3);margin-top:14px;text-align:center}
 @media (max-width:640px){
-  .statstab{top:auto;bottom:90px}
+  .sidetab{top:auto;bottom:90px}
   .qname{font-size:24px}
   .card{padding:16px;min-height:380px}
   .hero svg.mol{max-height:170px}
@@ -236,10 +273,8 @@ footer a:hover,.linkbtn:hover{text-decoration:underline}
     <h1>Flavoring flashcards</h1>
     <div class="head-r"><div class="stats"><span id="stats"></span><button class="due" id="due" hidden title="Cartes dont la date de révision est arrivée (répétition espacée)"></button></div><button class="theme" id="theme" aria-label="Changer de thème"></button></div>
   </header>
-  <div class="tabs" role="tablist">
-    <button role="tab" data-view="study" aria-selected="true">Étude</button>
-    <button role="tab" data-view="catalog" aria-selected="false">Catalogue</button>
-  </div>
+  <div class="layout">
+  <aside class="side">
   <div class="toolbar">
     <input type="search" id="q" placeholder="Rechercher un nom, un CAS, un descripteur…" aria-label="Rechercher">
     <button class="btn" id="fbtn" aria-expanded="false" aria-controls="fpanel">Filtres<span class="fcount" id="fcount" hidden></span></button>
@@ -280,9 +315,15 @@ footer a:hover,.linkbtn:hover{text-decoration:underline}
   </div>
   <div class="active" id="active"></div>
   <datalist id="taglist"></datalist>
+  </aside>
+  <main class="main">
+  <div class="tabs" role="tablist">
+    <button role="tab" data-view="study" aria-selected="true">Étude</button>
+    <button role="tab" data-view="catalog" aria-selected="false">Catalogue</button>
+  </div>
 
   <section id="v-study">
-    <div class="progress"><span id="pos"></span><span class="r"><span id="score"></span><span class="modes" role="group" aria-label="Contenu du recto">Recto :<button data-mode="structure" title="Structure au recto (raccourci M pour changer)">Structure</button><button data-mode="nom" title="Nom au recto : retrouver la structure parmi 4">Nom</button><button data-mode="odeur" title="Descripteurs au recto : retrouver la molécule parmi 4">Odeur</button></span><button class="linkbtn" id="share" title="Copier le lien vers cette carte et ces filtres">Lien</button></span></div>
+    <div class="progress"><span id="pos"></span><span class="r"><span id="score"></span><span class="modes" role="group" aria-label="Contenu du recto">Recto :<button data-mode="structure" title="Structure au recto (raccourci M pour changer)">Structure</button><button data-mode="nom" title="Nom au recto : retrouver la structure parmi 4">Nom</button><button data-mode="odeur" title="Descripteurs au recto : retrouver la molécule parmi 4">Odeur</button></span></span></div>
     <div class="card" id="card" tabindex="0" aria-live="polite"></div>
     <div class="controls">
       <div class="grp">
@@ -296,11 +337,17 @@ footer a:hover,.linkbtn:hover{text-decoration:underline}
         <button class="btn" id="shuffle">Mélanger</button>
       </div>
     </div>
-    <div class="keys"><kbd>Espace</kbd> retourner · <kbd>←</kbd> <kbd>→</kbd> naviguer · <kbd>1</kbd> à revoir · <kbd>2</kbd> je sais · <kbd>/</kbd> rechercher · <kbd>F</kbd> filtres · <kbd>E</kbd> étiquette · <kbd>M</kbd> recto · <kbd>S</kbd> statistiques</div>
+    <div class="keys"><kbd>Espace</kbd> retourner · <kbd>←</kbd> <kbd>→</kbd> naviguer · <span class="more" title="1 : à revoir · 2 : je sais · / : rechercher · F : filtres · E : étiquette · M : changer de recto · S : statistiques · V : vocabulaire">Autres raccourcis</span></div>
   </section>
   <section id="v-catalog" hidden><div class="grid" id="grid"></div></section>
-  <button class="statstab" id="statstab" aria-controls="drawer" aria-expanded="false">Statistiques</button>
+  </main>
+  </div>
+  <button class="sidetab right" id="statstab" aria-controls="drawer" aria-expanded="false">Statistiques</button>
   <aside class="drawer" id="drawer" aria-label="Statistiques" aria-hidden="true"><button class="btn close" id="drawerclose">Fermer</button><div id="drawerbody"></div></aside>
+  <button class="sidetab left" id="glosstab" aria-controls="gloss" aria-expanded="false">Vocabulaire</button>
+  <aside class="drawer left" id="gloss" aria-label="Vocabulaire" aria-hidden="true"><button class="btn close" id="glossclose">Fermer</button>
+    <h3>Vocabulaire</h3><div class="note">Noms usuels, préfixes et notions utiles. Rédigé avec assistance IA.</div>
+    <input type="search" class="gsearch" id="gq" placeholder="Chercher un terme…" aria-label="Chercher dans le vocabulaire"><div id="glossbody"></div></aside>
   <footer>
     <p>Lilian Montagnac (Bioinformatics Engineer) · <a href="https://github.com/LilianMtngc/flavoring-flashcards" title="github.com/LilianMtngc/flavoring-flashcards">GitHub</a> · <a href="flavoring-flashcards.apkg" title="Paquet à importer dans Anki">Deck Anki</a> · <button class="linkbtn" id="reset">Effacer ma progression</button></p>
   </footer>
@@ -449,10 +496,10 @@ function sosieBack(c){
   const badges = (c.brune ? `<span class="badge brown">Note brune</span>` : "") + `<span class="badge lvl">Complexité : ${esc(c.niveau)}</span>`;
   const formules = [...new Set(c.membres.map(m => m.formule))].map(f => `<span>${esc(f)}</span>`).join("");
   const membres = c.membres.map((m, k) => `<div><button class="linkbtn t" data-go="${esc(m.id)}">${k + 1}. ${esc(m.titre)}</button><small>${esc(cap(m.famille))}</small>${m.descripteurs.length ? chipsHTML(m.descripteurs) : ""}</div>`).join("");
-  return `<div class="back">${structsHTML(c, "hero", (s, k) => `${k + 1}. ${s.nom}`)}<div class="info">
+  return `<div class="back">${structsHTML(c, "hero", (s, k) => `${k + 1}. ${s.nom}`)}<div class="bl">
     <h2>Sosies</h2><p class="sub">${esc(c.diff)}</p><div>${badges}</div><div class="meta">${formules}</div>${tagBoxHTML(c)}
-    <div class="sec"><h3>Les molécules</h3><div class="cmp">${membres}</div></div>
-    <div class="verif ok">✓ Structures vérifiées · différence calculée et surlignée automatiquement (RDKit) · <a href="verification.html" target="_blank">Rapport</a></div></div></div>`;
+    <div class="verif ok">✓ Structures vérifiées · différence calculée et tracée en couleur automatiquement (RDKit) · <a href="verification.html" target="_blank">Rapport</a></div></div>
+    <div class="br"><div class="sec"><h3>Les molécules</h3><div class="cmp">${membres}</div></div></div></div>`;
 }
 
 const CLP = {H340: "mutagène cat. 1", H341: "mutagène cat. 2", H350: "cancérogène cat. 1", H351: "cancérogène cat. 2", H360: "reprotoxique cat. 1", H361: "reprotoxique cat. 2"};
@@ -503,14 +550,14 @@ function backHTML(c){
   if (c.type === "nat" && c.partage.length) remarks.push(`<div class="note">Même(s) marqueur(s) que : ${esc(c.partage.join(", "))}</div>`);
   const verif = `<div class="verif ok">✓ Structure${c.structures.length > 1 ? "s" : ""} vérifiée${c.structures.length > 1 ? "s" : ""} · ${c.verif.sources} sources concordantes · <a href="verification.html" target="_blank">Rapport</a></div>`;
   const sos = c.sosies.length ? `<div class="sec"><h3>À ne pas confondre avec${sosieOf[c.id] ? ` · <button class="linkbtn" data-go="${esc(sosieOf[c.id])}">Voir la comparaison</button>` : ""}</h3><div class="sos">${c.sosies.map(o => `<button data-go="${esc(o.id)}">${byId[o.id].structures[0].svg}<span>${esc(o.titre)}<small>${esc(o.diff)}</small></span></button>`).join("")}</div></div>` : "";
-  return `<div class="back">${structsHTML(c, "hero", c.type === "nat" ? s => s.nom : null)}<div class="info">
+  return `<div class="back"><div class="bl">${structsHTML(c, "hero", c.type === "nat" ? s => s.nom : null)}
     <h2>${esc(c.titre)}</h2><p class="sub">${sub}</p>${alias}<div>${badges}</div><div class="meta">${meta}</div>${c.olf.length ? `<div class="olfs">Familles olfactives : ${esc(c.olf.join(" · "))}</div>` : ""}${secuHTML(c)}${tagBoxHTML(c)}
-    <div class="sec"><h3>Descripteurs${c.type === "theo" ? " · " + c.formes[0].forme : ""}</h3>${desc}${formes}</div>
+    ${verif}</div>
+    <div class="br"><div class="sec"><h3>Descripteurs${c.type === "theo" ? " · " + c.formes[0].forme : ""}</h3>${desc}${formes}</div>
     ${sos}
     <div class="sec"><h3>Usages · synthèse IA</h3>${usage}</div>
     ${src.length ? `<div class="sec"><h3>Sources</h3><ul class="srcs">${src.join("")}</ul></div>` : ""}
-    ${remarks.length ? `<div class="sec"><h3>Remarques</h3>${remarks.join("")}</div>` : ""}
-    ${verif}</div></div>`;
+    ${remarks.length ? `<div class="sec"><h3>Remarques</h3>${remarks.join("")}</div>` : ""}</div></div>`;
 }
 
 function render(){
@@ -759,6 +806,7 @@ document.querySelectorAll(".controls button").forEach(b => b.addEventListener("c
 $("#reset").onclick = () => { if (confirm("Effacer la progression (sues, à revoir, révisions) ? Les étiquettes sont conservées.")) { progress = {}; store.set(progress); srs = {}; saveSrs(); render(); } };
 document.addEventListener("keydown", e => {
   if (e.key === "Escape" && $("#drawer").classList.contains("open")){ toggleDrawer(false); return; }
+  if (e.key === "Escape" && $("#gloss").classList.contains("open")){ toggleGloss(false); return; }
   if (e.key === "Escape" && !$("#fpanel").hidden){ setPanel(false); return; }
   if (e.target.matches("input, select, textarea") || $("#v-study").hidden) return;
   if (e.key === " " || e.key === "Enter"){
@@ -776,6 +824,7 @@ document.addEventListener("keydown", e => {
   if (e.key === "/"){ e.preventDefault(); $("#q").focus(); }
   else if (k === "f") setPanel($("#fpanel").hidden);
   else if (k === "s") toggleDrawer();
+  else if (k === "v") toggleGloss();
   else if (k === "m"){ const m = ["structure", "nom", "odeur"]; setMode(m[(m.indexOf(mode) + 1) % m.length]); }
   else if (k === "e" && !$("#v-study").hidden && deck.length){
     e.preventDefault();
@@ -814,8 +863,25 @@ function readHash(){
   filt.q = p.get("q") || ""; $("#q").value = filt.q;
   return p.get("carte");
 }
-function toast(t){ const d = document.createElement("div"); d.className = "toast"; d.textContent = t; document.body.append(d); setTimeout(() => d.remove(), 1600); }
-$("#share").onclick = () => { updateHash(); navigator.clipboard?.writeText(location.href).then(() => toast("Lien copié"), () => toast(location.href)); };
+
+// ---- vocabulaire (panneau latéral gauche)
+function toggleGloss(open){
+  const d = $("#gloss"), o = open ?? !d.classList.contains("open");
+  d.classList.toggle("open", o); d.setAttribute("aria-hidden", !o); $("#glosstab").setAttribute("aria-expanded", o);
+  if (o) renderGloss();
+}
+function renderGloss(){
+  const q = norm($("#gq").value.trim());
+  const items = DATA.glossaire.filter(g => !q || norm(g.terme + " " + g.definition + " " + g.cartes.map(c => c.titre).join(" ")).includes(q));
+  const rubs = [...new Set(items.map(g => g.rubrique))];
+  $("#glossbody").innerHTML = rubs.length ? rubs.map(r => `<h4>${esc(r)}</h4>` + items.filter(g => g.rubrique === r).map(g =>
+    `<div class="gentry"><b>${esc(g.terme)}</b><p>${esc(g.definition)}</p>${g.cartes.length ? `<div class="gl">${g.cartes.map(c => `<button class="linkbtn" data-ggo="${esc(c.id)}">${esc(c.titre)}</button>`).join("")}</div>` : ""}</div>`).join("")).join("")
+    : `<p class="note">Aucun terme ne correspond.</p>`;
+}
+$("#glosstab").onclick = () => toggleGloss();
+$("#glossclose").onclick = () => toggleGloss(false);
+$("#gq").oninput = renderGloss;
+$("#glossbody").onclick = e => { const b = e.target.closest("[data-ggo]"); if (b){ showView("study"); goTo(b.dataset.ggo); if (innerWidth < 1100) toggleGloss(false); } };
 
 // ---- statistiques (panneau latéral)
 function toggleDrawer(open){

@@ -12,10 +12,10 @@ Cela regroupe les isomères de position (eugénol / isoeugénol), les doubles li
 déplacées ou en plus (β-ionone / β-damascone / β-damascénone), les isomères E/Z et
 les énantiomères (carvones).
 
-La différence est décrite automatiquement et surlignée sur les dessins, alignés sur
-le squelette commun : atomes hors du squelette commun, liaisons dont l'ordre diffère
-d'une molécule à l'autre, ou centres stéréogènes / doubles liaisons E-Z quand la
-connectivité est identique.
+La différence est décrite automatiquement et tracée en couleur sur les dessins, alignés
+sur le squelette commun : liaisons vers les atomes hors du squelette commun, liaisons
+dont l'ordre diffère d'une molécule à l'autre, ou coins de stéréo / doubles liaisons E-Z
+quand la connectivité est identique.
 """
 import re
 from collections import Counter
@@ -27,7 +27,6 @@ from rdkit.Chem.Draw import rdMolDraw2D
 
 MIN_ATOMES = 6
 TAILLE_MAX = 4  # au-delà, le groupe est découpé en sous-groupes plus serrés
-HIGHLIGHT = (0.93, 0.55, 0.13, 0.55)
 ATOM_COLORS = {8: (0.82, 0.19, 0.18), 7: (0.18, 0.44, 0.86), 16: (0.75, 0.54, 0.0), 11: (0.55, 0.35, 0.8)}
 
 
@@ -182,8 +181,20 @@ def highlight(mols):
     return [(sorted(a), sorted(b)) for a, b in out]
 
 
+def recolor(svg, bonds):
+    """Trace les liaisons qui diffèrent dans la couleur d'accent (variable CSS --hl), un peu plus épaisses."""
+    def repl(m):
+        el = m.group(0)
+        el = re.sub(r"stroke:(?:#[0-9A-Fa-f]{6}|currentColor)", "stroke:var(--hl,#e07b1f)", el)
+        el = re.sub(r"fill:(?:#[0-9A-Fa-f]{6}|currentColor)", "fill:var(--hl,#e07b1f)", el)
+        return el.replace("stroke-width:2.0px", "stroke-width:3.4px")
+    for b in bonds:
+        svg = re.sub(rf"<path class='bond-{b} [^>]*>", repl, svg)
+    return svg
+
+
 def draw(mols, hl):
-    """SVG alignés sur le squelette commun (même orientation), différences surlignées."""
+    """SVG alignés sur le squelette commun (même orientation), liaisons qui diffèrent en couleur."""
     rdDepictor.SetPreferCoordGen(True)
     ref = mols[0]
     rdDepictor.Compute2DCoords(ref)
@@ -196,6 +207,12 @@ def draw(mols, hl):
                 rdDepictor.GenerateDepictionMatching2DStructure(m, ref, list(zip(ref_match, m.GetSubstructMatch(patt))), -1, True)
             except ValueError:
                 rdDepictor.Compute2DCoords(m)
+        pm = rdMolDraw2D.PrepareMolForDrawing(m)  # coins de stéréo ; les indices existants sont conservés
+        bonds = set(bonds)
+        for a in atoms:  # atome surligné (centre stéréogène, atome déplacé) : ses liaisons en coin, ou toutes
+            touching = [b for b in pm.GetAtomWithIdx(a).GetBonds()]
+            wedged = [b.GetIdx() for b in touching if b.GetBondDir() in (Chem.BondDir.BEGINWEDGE, Chem.BondDir.BEGINDASH)]
+            bonds |= set(wedged or [b.GetIdx() for b in touching])
         d = rdMolDraw2D.MolDraw2DSVG(-1, -1)
         o = d.drawOptions()
         o.fixedBondLength = 30
@@ -204,20 +221,16 @@ def draw(mols, hl):
         o.clearBackground = False
         o.minFontSize = 13
         o.addStereoAnnotation = False
+        o.prepareMolsBeforeDrawing = False
         o.updateAtomPalette(ATOM_COLORS)
         o.setSymbolColour((0, 0, 0))
         o.setAnnotationColour((0, 0, 0))
-        o.setHighlightColour(HIGHLIGHT)
-        o.highlightBondWidthMultiplier = 10
-        rdMolDraw2D.PrepareAndDrawMolecule(d, m, highlightAtoms=atoms, highlightBonds=bonds,
-                                          highlightAtomColors={a: HIGHLIGHT for a in atoms},
-                                          highlightBondColors={b: HIGHLIGHT for b in bonds},
-                                          highlightAtomRadii={a: 0.35 for a in atoms})
+        d.DrawMolecule(pm)
         d.FinishDrawing()
         svg = d.GetDrawingText()
         svg = re.sub(r"<\?xml[^>]*\?>\s*", "", svg)
         svg = re.sub(r"<!-- .*? -->\s*", "", svg)
         svg = svg.replace("#000000", "currentColor")
         svg = re.sub(r"(<svg[^>]*?)\s+width='[^']*'\s+height='[^']*'", r"\1", svg, count=1)
-        svgs.append(svg)
+        svgs.append(recolor(svg, sorted(bonds)))
     return svgs
