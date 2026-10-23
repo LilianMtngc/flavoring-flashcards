@@ -84,12 +84,20 @@ h1{font-size:22px;margin:0;font-weight:650;letter-spacing:-.01em}
 .modes button{font:inherit;font-size:12.5px;border:0;background:none;color:var(--fg-3);padding:2px 7px;border-radius:6px;cursor:pointer}
 .modes button[aria-pressed="true"]{background:var(--surface-2);color:var(--fg)}
 .progress .r{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-.qname{font-size:21px;font-weight:650;text-align:center;letter-spacing:-.01em;margin:6px 0 2px}
-.qsub{text-align:center;color:var(--fg-3);font-size:13px;margin-bottom:auto}
-.qdesc{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:auto 0 8px}
+.qhead{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;padding:10px 0}
+.qname{font-size:21px;font-weight:650;text-align:center;letter-spacing:-.01em;margin:0}
+.qsub{text-align:center;color:var(--fg-3);font-size:13px}
+.qdesc{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
 .qdesc span{font-size:15px;border:1px solid var(--line-2);border-radius:999px;padding:3px 13px}
 .qdesc span.b{background:var(--accent-bg);border-color:var(--accent-line);color:var(--accent)}
-.choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:14px 0 10px;flex:1;align-content:center}
+.choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:4px 0 10px;align-items:end}
+.choices .ch{display:flex;flex-direction:column;gap:6px;min-width:0}
+.choices .ch > button{width:100%}
+.why{font-size:12px;color:var(--fg-3);line-height:1.6;text-align:center}
+.why span{display:inline-block;border:1px solid var(--line-2);border-radius:999px;padding:0 8px;margin:1px 2px;color:var(--fg-3)}
+.why span.d{border-color:var(--bad-line);background:var(--bad-bg);color:var(--bad)}
+.why b{display:block;font-weight:600;color:var(--fg-2)}
+.qdesc span.miss{box-shadow:0 0 0 2px var(--ok-line)}
 .choices button{font:inherit;color:inherit;background:var(--surface);border:1px solid var(--line-2);border-radius:12px;padding:10px;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:64px}
 .choices button:hover{border-color:var(--fg-3)}
 .choices svg.mol{width:100%!important;height:180px;max-height:180px}
@@ -464,12 +472,25 @@ function choicesFor(c, m){
   }
   return choiceCache[key] = shuffle([c.id, ...picks.slice(0, 3)]);
 }
+// après une erreur en recto « Odeur » : descripteurs de la bonne réponse absents de la molécule choisie
+function missing(c, d){
+  const pick = answered["odeur:" + c.id];
+  return pick && pick !== c.id && !byId[pick].descripteurs.includes(d);
+}
 function quizHTML(c, m){
   const key = m + ":" + c.id, pick = answered[key], ids = choicesFor(c, m);
+  const mine = new Set(c.descripteurs);
   const btn = id => {
     const x = byId[id], cls = pick ? (id === c.id ? "ok" : id === pick ? "ko" : "") : "";
     const body = m === "nom" ? `<div class="pics">${x.structures.slice(0, 2).map(s => s.svg).join("")}</div>` : esc(x.titre);
-    return `<button class="${cls}" data-choice="${esc(id)}" ${pick ? "disabled" : ""}>${body}</button>`;
+    // mauvaise réponse : au-dessus de la case rouge, ce qui distingue la molécule choisie (odeurs, ou nom)
+    let why = "";
+    if (pick && id === pick && id !== c.id){
+      why = m === "odeur"
+        ? `<div class="why"><b>Odeurs de ${esc(x.titre)}</b>${x.descripteurs.slice(0, 8).map(d => `<span class="${mine.has(d) ? "" : "d"}" title="${mine.has(d) ? "Commune aux deux" : "Absente de la bonne réponse"}">${esc(cap(d.toLowerCase()))}</span>`).join("")}</div>`
+        : `<div class="why"><b>C'était : ${esc(x.titre)}</b></div>`;
+    }
+    return `<div class="ch">${why}<button class="${cls}" data-choice="${esc(id)}" ${pick ? "disabled" : ""}>${body}</button></div>`;
   };
   const verdict = pick ? `<div class="verdict ${pick === c.id ? "ok" : "ko"}">${pick === c.id ? "✓ Bonne réponse" : "✗ Raté"} · cliquez sur la carte pour voir le verso</div>` : "";
   return `<div class="choices">${ids.map(btn).join("")}</div>${verdict}`;
@@ -477,9 +498,9 @@ function quizHTML(c, m){
 function frontHTML(c){
   const nat = c.type === "nat";
   if (mode === "nom" && c.type !== "sosie")
-    return `<div class="front"><div class="kind">${nat ? "Produit naturel" : c.type === "theo" ? "Molécule · théorique" : "Molécule"}</div><div class="qname">${esc(c.titre)}</div><div class="qsub">${nat ? "Quelle est sa molécule marqueur ?" : "Quelle est sa structure ?"}</div>${quizHTML(c, "nom")}</div>`;
+    return `<div class="front"><div class="kind">${nat ? "Produit naturel" : c.type === "theo" ? "Molécule · théorique" : "Molécule"}</div><div class="qhead"><div class="qname">${esc(c.titre)}</div><div class="qsub">${nat ? "Quelle est sa molécule marqueur ?" : "Quelle est sa structure ?"}</div></div>${quizHTML(c, "nom")}</div>`;
   if (mode === "odeur" && c.type !== "sosie" && c.descripteurs.length)
-    return `<div class="front"><div class="kind">${nat ? "Produit naturel" : "Molécule"} · descripteurs</div><div class="qdesc">${c.descripteurs.slice(0, 7).map(d => `<span class="${BROWN.has(d) ? "b" : ""}">${esc(cap(d.toLowerCase()))}</span>`).join("")}</div><div class="qsub">${nat ? "Quel produit naturel ?" : "Quelle molécule ?"}</div>${quizHTML(c, "odeur")}</div>`;
+    return `<div class="front"><div class="kind">${nat ? "Produit naturel" : "Molécule"} · descripteurs</div><div class="qhead"><div class="qdesc">${c.descripteurs.slice(0, 7).map(d => `<span class="${BROWN.has(d) ? "b" : ""}${missing(c, d) ? " miss" : ""}" ${missing(c, d) ? `title="Absente de la réponse choisie"` : ""}>${esc(cap(d.toLowerCase()))}</span>`).join("")}</div><div class="qsub">${nat ? "Quel produit naturel ?" : "Quelle molécule ?"}</div></div>${quizHTML(c, "odeur")}</div>`;
   const na = mode !== "structure" ? `<div class="hint" style="margin-top:4px">Le recto « ${mode === "nom" ? "Nom" : "Odeur"} » ne s'applique pas à cette carte.</div>` : "";
   if (c.type === "sosie") return `<div class="front"><div class="kind">Sosies · structures proches</div>${structsHTML(c, "structs", (s, k) => k + 1)}<div class="hint">Nommez chaque molécule : la différence est surlignée</div>${na}</div>`;
   const kind = c.type === "nat" ? "Produit naturel · molécule" + (c.structures.length > 1 ? "s marqueurs" : " marqueur") : c.type === "theo" ? "Molécule · théorique" : "Molécule";
