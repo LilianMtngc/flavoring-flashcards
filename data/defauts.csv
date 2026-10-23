@@ -1,0 +1,32 @@
+key;defaut
+tca;Vin : goût de bouchon
+tba;Vin et emballages : goût de bouchon, moisi
+mdmp;Vin : goût de moisi-bouchon (distinct du TCA)
+geosmin;Eau, vin, poissons d'eau douce : goût de terre
+methylisoborneol;Eau, poissons d'élevage : goût de vase
+octen_3_one;Goût métallique, oxydation des lipides
+octenol;Moisi-champignon (raisins altérés, liège)
+guaiacol;Vin : goût de fumée (incendies), bouchon
+ethylphenol_4;Vin : « Brett » (écurie)
+ethylguaiacol_4;Vin : « Brett » (fumé, épicé)
+vinylguaiacol_4;Bière : goût phénolé (levures non adaptées)
+isopropylmethoxypyrazine;"Vin : goût vert, raisins pas mûrs ; coccinelles"
+isobutylmethoxypyrazine;Vin : goût de poivron vert, raisins pas mûrs
+prenylthiol;Bière : goût de lumière
+diacetyl;Bière et vin : goût de beurre (fermentation incomplète)
+dms;Bière : goût de maïs cuit
+dmts;Bière vieillie : chou cuit
+trans_2_nonenal;Bière vieillie : goût de carton
+methional;Vin et bière oxydés : goût de cuit, pomme de terre
+acetaldehyde;Vin et bière : oxydation (pomme blette)
+sotolon;Vin blanc : oxydation prématurée
+aminoacetophenone;Vin blanc : vieillissement atypique
+acetic_acid;Vin : acidité volatile, piqûre acétique
+ethyl_acetate;Vin : piqûre acétique (vernis, solvant)
+methanethiol;Vin : réduction (œuf pourri, chou)
+hexanal;Rancissement (oxydation des lipides)
+pentylfuran_2;Goût de haricot (soja, huiles oxydées)
+butyric_acid;Rancissement du beurre
+isovaleric_acid;Odeur de sueur, fromage trop affiné
+skatole;Viande de porc : odeur de verrat
+trimethylamine;Produits de la mer : manque de fraîcheur

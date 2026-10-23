@@ -53,7 +53,7 @@ RULES = [
     (lambda n: re.search(r"aldehyde|al$|al\b(?!c)", n) and "alcohol" not in n, S("[CX3H1](=O)[#6]"), "aldéhyde"),
     (lambda n: (re.search(r"one$", n) or "ketone" in n) and not re.search(r"furanone|pyranone|pyran-2-one|trithioacetone|lactone", n),
      S("[#6][CX3](=O)[#6]"), "cétone"),
-    (lambda n: (re.search(r"ol$|diol|alcohol", n)) and not re.search(r"eucalyptol|thiol$", n), S("[OX2H]"), "fonction OH"),
+    (lambda n: (re.search(r"ol$|diol|alcohol", n)) and not re.search(r"eucalyptol|thiol$|olide", n), S("[OX2H]"), "fonction OH"),
     (lambda n: re.search(r"thiol|mercapt", n), S("[SX2H]"), "thiol"),
     (lambda n: "trisulfide" in n, S("[#16][#16][#16]"), "trisulfure"),
     (lambda n: "disulfide" in n, S("[#6][#16][#16][#6]"), "disulfure"),
@@ -61,7 +61,7 @@ RULES = [
     (lambda n: "methoxy" in n, S("[CH3]O[#6]"), "méthoxy"),
     (lambda n: re.search(r"phenyl|benz|anis|cinnam|vanill|guaia", n), S("c1ccccc1"), "cycle benzénique"),
 ]
-N_HINT = re.compile(r"azin|pyri|thiazol|indol|anthranil|amin|quinoxalin|pyrrol|caffeine|capsaicin|glutamate|thialdine|nitr|cyanat|piperin")
+N_HINT = re.compile(r"azin|pyri|thiazol|indol|anthranil|amin|quinoxalin|pyrrol|caffeine|capsaicin|glutamate|thialdine|nitr|cyanat|piperin|amid")
 S_HINT = re.compile(r"thi|sulf|mercapt|methional")
 STEREO_EZ = re.compile(r"\btrans\b|\bcis\b|\(e\)|\(z\)|\(\d?e,|\(2e|\(e,|,\d?z\)|\be-|\bz-")
 STEREO_CHIRAL = re.compile(r"\bl-|\bd-|\(\+\)|\(-\)|\(r\)|\(s\)|\(r\)-")

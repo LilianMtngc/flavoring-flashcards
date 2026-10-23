@@ -8,13 +8,13 @@ avec un focus sur les **notes brunes** (caramel, cacao, café, grillé, noisette
 - **Recto** : la structure chimique (ou, pour un produit naturel, sa ou ses molécules marqueurs).
 - **Verso** : le nom, la famille chimique, la formule, le numéro CAS, les descripteurs, le dosage, les usages et les sources.
 
-446 cartes : 278 molécules, 32 produits naturels, 74 molécules théoriques et 62 comparaisons de « sosies », dont 73 notes brunes (hors sosies).
+459 cartes : 278 molécules, 32 produits naturels, 86 molécules théoriques et 63 comparaisons de « sosies », dont 73 notes brunes (hors sosies), 31 molécules de défaut et 8 cartes avec une mention CMR / CIRC.
 
 Quatre catégories :
 - **Molécules** et **produits naturels** du jeu de départ, avec leurs descripteurs et leur dosage d'évaluation (ppm) ;
 - **Théoriques** : molécules de référence ajoutées parce qu'il serait gênant de les ignorer quand on apprend l'aromatique
   (2-acétyl-1-pyrroline, thiols du pamplemousse et du cassis, défauts comme le TCA, la géosmine ou le (E)-2-nonénal,
-  énantiomères de la carvone, terpènes et esters fruités…). Leurs descripteurs viennent de leur page Wikipédia, citation à l'appui
+  énantiomères de la carvone et du limonène, terpènes, esters fruités, agents rafraîchissants, chauffants et picotants…). Leurs descripteurs viennent de leur page Wikipédia, citation à l'appui
   ([`data/theoriques_wiki.csv`](data/theoriques_wiki.csv)), ou à défaut du profil FEMA traduit terme à terme
   ([`data/glossaire_fema.csv`](data/glossaire_fema.csv)). Elles n'ont pas de dosage ;
 - **Sosies** : cartes de comparaison de 2 à 4 molécules aux structures très proches (furanéol / sotolon,
@@ -25,12 +25,21 @@ Quatre catégories :
 - **Navigateur** : [la page en ligne](https://lilianmtngc.github.io/flavoring-flashcards/), ou `index.html`
   téléchargé et ouvert localement. Le fichier est autonome et fonctionne hors connexion.
   - Clic ou `Espace` : retourner la carte ; `←` / `→` : naviguer ; `1` : à revoir ; `2` : je sais.
-  - Bouton « Filtres » : type de carte, complexité, progression (pas encore vues, à revoir, je sais), notes brunes,
-    famille chimique, étiquettes. Les filtres actifs s'affichent en pastilles, effaçables d'un clic.
+  - Bouton « Filtres » : type de carte, complexité, progression (pas encore vues, à revoir, je sais, à réviser aujourd'hui),
+    défauts, CMR / CIRC, famille chimique, familles olfactives (dont notes brunes), étiquettes.
+    Les filtres actifs s'affichent en pastilles, effaçables d'un clic.
+  - **Recto** au choix (en haut à droite de la carte) : la structure (par défaut), le nom (retrouver la structure parmi 4)
+    ou les descripteurs (retrouver la molécule parmi 4 ; les leurres sont les sosies et les molécules aux descripteurs proches).
+  - **Répétition espacée** : « Je sais » repousse la carte (1, 3, 7, 14, 30 puis 60 jours), « À revoir » la garde pour
+    aujourd'hui. Le compteur « N à réviser » en haut de page ouvre les cartes du jour.
+  - **Statistiques** : onglet sur le bord droit (progression par type, complexité et famille olfactive, cartes les plus ratées).
+  - **Raccourcis** : `/` rechercher, `F` filtres, `E` étiquette, `M` changer de recto, `S` statistiques.
+  - **Lien** : copie l'adresse de la carte affichée avec les filtres en cours.
+  - **Installable** sur mobile (« Ajouter à l'écran d'accueil ») et utilisable hors connexion.
   - **Étiquettes personnelles** : « + Étiquette » au verso d'une carte. Nom et couleur au choix ; on peut ensuite filtrer,
     renommer, recolorer ou supprimer une étiquette depuis le panneau des filtres.
   - Les cartes sues sont teintées en vert, celles à revoir en rouge. Bouton clair / sombre en haut à droite.
-  - La progression et les étiquettes sont enregistrées dans le navigateur, sur cet appareil uniquement.
+  - La progression, les révisions et les étiquettes sont enregistrées dans le navigateur, sur cet appareil uniquement.
     « Exporter mes données » (panneau des filtres) les sauvegarde dans un fichier JSON, à réimporter ailleurs.
 - **Anki** : [`flavoring-flashcards.apkg`](flavoring-flashcards.apkg), à importer avec Fichier → Importer.
   Les cartes sont taguées `note_brune`, `complexite_*`, `famille_*` et `molecule` / `naturel` / `theorique`.
@@ -46,6 +55,9 @@ Quatre catégories :
 | Descripteurs et dosages (ppm) | Évaluation sensorielle interne ; pour les molécules théoriques, Wikipédia ou profil FEMA |
 | Complexité | Calculée à partir de la structure (voir plus bas) |
 | Usages et origine des notes | Synthèse rédigée avec assistance IA, non sourcée ligne à ligne |
+| Classification CMR et CIRC | PubChem : classification harmonisée européenne (règlement CLP, annexe VI) et groupes du CIRC |
+| Défauts | Liste éditoriale ([`data/defauts.csv`](data/defauts.csv)), rédigée avec assistance IA |
+| Familles olfactives | Calculées à partir des descripteurs ([`data/familles_olfactives.csv`](data/familles_olfactives.csv)) |
 
 ### Vérification des structures
 Chaque molécule est cherchée dans 5 sources : PubChem par le nom, PubChem par le n° CAS, NCI CACTUS par le nom
@@ -72,9 +84,9 @@ Les liens retenus ont été relus. Les produits sans marqueur confirmé n'ont pa
 Elle est calculée à partir de l'indice de complexité topologique de Bertz
 (S. H. Bertz, *J. Am. Chem. Soc.* 1981, 103, 3599), via RDKit (`BertzCT`). Les trois niveaux correspondent
 aux terciles de cet indice sur l'ensemble des molécules :
-- Facile : indice < 116 ;
-- Moyen : de 116 à 196 ;
-- Difficile : ≥ 196.
+- Facile : indice < 119 ;
+- Moyen : de 119 à 200 ;
+- Difficile : ≥ 200.
 
 Pour une carte de sosies, on retient la molécule la plus complexe.
 
@@ -96,6 +108,20 @@ Les groupes comptent au plus 4 molécules, toutes sosies deux à deux ; les sté
 Les dessins sont alignés sur le squelette commun. Sont surlignés : les atomes placés ailleurs, les liaisons dont l'ordre
 change, ou les centres stéréogènes et doubles liaisons E / Z. La nature de la différence est décrite automatiquement.
 
+### Familles olfactives
+Chaque descripteur est rattaché à une famille (agrumes, fruits rouges, floral, vert, lacté, épicé, boisé, soufré, terreux…).
+Une carte appartient à une famille selon la même règle que les notes brunes : un descripteur de la famille parmi ses deux premiers,
+ou au moins deux descripteurs de la famille.
+
+### Mention CMR / CIRC
+Une carte porte la mention dans deux cas :
+- la substance a une **classification harmonisée européenne** (règlement CLP, annexe VI) comme cancérogène (H350, H351),
+  mutagène (H340, H341) ou toxique pour la reproduction (H360, H361) ;
+- le **CIRC** la classe dans le groupe 1, 2A ou 2B.
+
+Ces données viennent de PubChem ([`scripts/08_securite.py`](scripts/08_securite.py)). Il s'agit du danger de la substance pure,
+pas d'une évaluation du risque aux doses d'usage alimentaire. Les autoclassifications d'autres pays ne sont pas retenues.
+
 ### Notes brunes
 Une carte est classée « note brune » dans deux cas :
 - un descripteur brun figure parmi ses deux premiers descripteurs ;
@@ -116,6 +142,7 @@ python scripts/03_verify.py       # vote entre sources et contrôles chimiques -
 python scripts/04_render.py       # dessins 2D (RDKit) -> structures/*.svg
 python scripts/06_sources.py      # FEMA et PubChem (cache : data/sources_cache.json)
 python scripts/07_markers.py      # sources Wikipédia des marqueurs -> data/marqueurs_sources.json
+python scripts/08_securite.py     # classifications CLP harmonisées et CIRC (cache : data/securite_cache.json)
 python scripts/05_build_cards.py  # index.html, flavoring-flashcards.apkg, data/cartes.json
 ```
 

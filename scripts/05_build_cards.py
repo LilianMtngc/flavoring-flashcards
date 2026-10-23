@@ -2,8 +2,10 @@
 
 Entrées : data/descripteurs.csv, data/molecules_ref.csv, data/molecules_verified.json,
           data/naturels_ref.csv, data/marqueurs_sources.json, data/sources_cache.json,
-          data/usages.csv, data/glossaire_fema.csv, data/theoriques_wiki.csv, structures/*.svg
-Sorties : data/cartes.json, index.html (flash cards), flavoring-flashcards.apkg (Anki)
+          data/usages.csv, data/glossaire_fema.csv, data/theoriques_wiki.csv, data/familles_olfactives.csv,
+          data/defauts.csv, data/securite_cache.json, structures/*.svg
+Sorties : data/cartes.json, index.html (flash cards), flavoring-flashcards.apkg (Anki),
+          manifest.webmanifest, sw.js, icon-192.png, icon-512.png (page installable, hors connexion)
 
 Trois catégories de cartes :
 - « mol » : molécule évaluée (descripteurs et dosage du panel) ;
@@ -210,6 +212,7 @@ def build():
             c["partage"] = sorted(set().union(*(users[s["key"]] for s in c["structures"])) - {c["titre"]})
 
     cards += sosie_cards(cards, mols)
+    enrich(cards)
 
     # niveau de difficulté = tercile de l'indice de complexité de Bertz (calculé sur les molécules)
     vals = sorted(c["bertz"] for c in cards if c["type"] in ("mol", "theo"))
@@ -255,6 +258,45 @@ def sosie_cards(cards, mols):
     return out
 
 
+def enrich(cards):
+    """Familles olfactives (calculées), défauts (liste éditoriale) et classifications CMR / CIRC (PubChem)."""
+    fam_of = {}
+    for r in read_csv("familles_olfactives.csv"):
+        for d in r["descripteurs"].split("|"):
+            fam_of[d] = r["famille"]
+    order = [r["famille"] for r in read_csv("familles_olfactives.csv")]
+    defauts = {r["key"]: r["defaut"] for r in read_csv("defauts.csv")}
+    secu_path = D / "securite_cache.json"
+    secu = json.loads(secu_path.read_text(encoding="utf-8")) if secu_path.exists() else {}
+    unmapped = defaultdict(int)
+    for c in cards:
+        if c["type"] == "sosie":
+            lists = [m["descripteurs"] for m in c["membres"]]
+        else:
+            lists = [f["descripteurs"] for f in c["formes"]] or [c["descripteurs"]]
+        # même règle que les notes brunes : un descripteur de la famille parmi les 2 premiers, ou au moins 2
+        top = defaultdict(int)
+        for l in lists:
+            for i, d in enumerate(l):
+                if d in fam_of:
+                    top[fam_of[d]] += 2 if i < 2 else 1
+                elif d not in BROWN:
+                    unmapped[d] += 1
+        c["olf"] = [f for f in order if top[f] >= 2]
+        key = c["structures"][0]["key"] if c["type"] in ("mol", "theo") else None
+        c["defaut"] = defauts.get(key, "")
+        sc, marqueur = secu.get(key) or {}, ""
+        if c["type"] == "nat":  # produit naturel : classification de son marqueur, s'il y en a une
+            flagged = [st for st in c["structures"] if (secu.get(st["key"]) or {}).get("clp") or (secu.get(st["key"]) or {}).get("iarc")]
+            if flagged:
+                sc, marqueur = secu[flagged[0]["key"]], flagged[0]["nom"]
+        c["securite"] = {"clp": sc["clp"], "iarc": sc["iarc"], "iarc_url": sc.get("iarc_url", ""),
+                         "cid": sc["cid"], "marqueur": marqueur} if sc.get("clp") or sc.get("iarc") else None
+        c["cmr"] = bool(c["securite"])
+    if unmapped:
+        print(f"descripteurs sans famille olfactive ({len(unmapped)}) : {', '.join(sorted(unmapped))}")
+
+
 def nat_card(e, mols, u):
     structs = [mols[k] for k in e["markers"]]
     return {
@@ -279,8 +321,57 @@ def fmt_ppm(values):
 
 def build_html(cards, seuils):
     template = (ROOT / "scripts" / "flashcards_template.html").read_text(encoding="utf-8")
-    payload = json.dumps({"cards": cards, "seuils": seuils}, ensure_ascii=False).replace("</", "<\\/")
+    olf = [r["famille"] for r in read_csv("familles_olfactives.csv")]
+    payload = json.dumps({"cards": cards, "seuils": seuils, "olf": olf}, ensure_ascii=False).replace("</", "<\\/")
     (ROOT / "index.html").write_text(template.replace("/*__DATA__*/null", payload), encoding="utf-8")
+    write_pwa()
+
+
+SW = """// cache hors connexion : réseau d'abord (la page reste à jour), copie locale si pas de réseau
+const CACHE = "flavoring-flashcards";
+self.addEventListener("install", e => {
+  self.skipWaiting();
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(["./", "index.html", "manifest.webmanifest", "icon-192.png"])));
+});
+self.addEventListener("activate", e => e.waitUntil(self.clients.claim()));
+self.addEventListener("fetch", e => {
+  if (e.request.method !== "GET" || new URL(e.request.url).origin !== location.origin) return;
+  e.respondWith(fetch(e.request)
+    .then(r => { const copy = r.clone(); caches.open(CACHE).then(c => c.put(e.request, copy)); return r; })
+    .catch(() => caches.match(e.request, {ignoreSearch: true}).then(r => r || caches.match("index.html"))));
+});
+"""
+
+
+def write_pwa():
+    """Manifeste, service worker et icônes : la page s'installe sur mobile et marche hors connexion."""
+    import io
+    from PIL import Image
+    from rdkit.Chem.Draw import rdMolDraw2D
+    manifest = {
+        "name": "Flavoring flashcards", "short_name": "Flashcards", "lang": "fr",
+        "description": "Flash cards de molécules aromatiques : structure, descripteurs, usages.",
+        "start_url": "./", "scope": "./", "display": "standalone",
+        "background_color": "#171614", "theme_color": "#7a4a1c",
+        "icons": [{"src": f"icon-{n}.png", "sizes": f"{n}x{n}", "type": "image/png", "purpose": "any maskable"} for n in (192, 512)],
+    }
+    (ROOT / "manifest.webmanifest").write_text(json.dumps(manifest, indent=1, ensure_ascii=False), encoding="utf-8")
+    (ROOT / "sw.js").write_text(SW, encoding="utf-8")
+    d = rdMolDraw2D.MolDraw2DCairo(360, 360)
+    o = d.drawOptions()
+    o.setBackgroundColour((0.478, 0.29, 0.11, 1))
+    o.updateAtomPalette({6: (1, 0.97, 0.9), 8: (1, 0.85, 0.6), 1: (1, 0.97, 0.9)})
+    o.bondLineWidth = 6
+    o.padding = 0.12
+    o.minFontSize = 40
+    rdMolDraw2D.PrepareAndDrawMolecule(d, Chem.MolFromSmiles("COc1cc(C=O)ccc1O"))  # vanilline
+    d.FinishDrawing()
+    mol = Image.open(io.BytesIO(d.GetDrawingText())).convert("RGB")
+    for n in (192, 512):
+        canvas = Image.new("RGB", (n, n), (122, 74, 28))
+        inner = mol.resize((int(n * 0.8), int(n * 0.8)), Image.LANCZOS)
+        canvas.paste(inner, ((n - inner.width) // 2, (n - inner.height) // 2))
+        canvas.save(ROOT / f"icon-{n}.png")
 
 
 # ---------------------------------------------------------------- Anki
@@ -342,6 +433,19 @@ def sources_html(c):
     return "<br>".join(parts)
 
 
+CLP_TXT = {"H340": "mutagène cat. 1", "H341": "mutagène cat. 2", "H350": "cancérogène cat. 1", "H351": "cancérogène cat. 2",
+           "H360": "reprotoxique cat. 1", "H361": "reprotoxique cat. 2"}
+
+
+def secu_text(sc):
+    parts = []
+    if sc["clp"]:
+        parts.append("CMR (CLP) : " + ", ".join(dict.fromkeys(CLP_TXT[c[:4]] for c in sc["clp"])))
+    if sc["iarc"]:
+        parts.append("CIRC groupe " + " / ".join(sc["iarc"]))
+    return " · ".join(parts)
+
+
 def cap(s):
     return s[:1].upper() + s[1:]
 
@@ -368,6 +472,10 @@ def anki_fields(c):
     else:
         sub = "Marqueur(s) : " + esc(", ".join(s["nom"] for s in c["structures"]))
         infos = ""
+    if c.get("defaut"):
+        infos = f"<span class='badge'>Défaut : {esc(c['defaut'])}</span> " + infos
+    if c.get("securite"):
+        infos = f"<span class='badge'>{esc(secu_text(c['securite']))}</span> " + infos
     infos = (f"<span class='badge'>Note brune</span> " if c["brune"] else "") \
         + f"<span class='chip'>Complexité : {esc(c['niveau'])}</span>" + infos
     desc = chips(c["descripteurs"]) or "<i>descripteurs non renseignés</i>"
@@ -395,6 +503,11 @@ def build_anki(cards):
                 {"nat": "naturel", "mol": "molecule", "theo": "theorique", "sosie": "sosies"}[c["type"]]]
         if c["brune"]:
             tags.append("note_brune")
+        if c.get("defaut"):
+            tags.append("defaut")
+        if c.get("cmr"):
+            tags.append("cmr_circ")
+        tags += ["olf_" + re.sub(r"\W+", "_", f.lower()).strip("_") for f in c.get("olf", [])]
         deck.add_note(genanki.Note(model=model, fields=anki_fields(c), tags=tags, guid=genanki.guid_for(c["id"])))
     genanki.Package(deck).write_to_file(str(ROOT / "flavoring-flashcards.apkg"))
 

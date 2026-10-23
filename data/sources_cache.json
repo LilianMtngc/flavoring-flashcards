@@ -6482,5 +6482,108 @@
    "profil": "Camphor, Lemon",
    "jecfa": "1397"
   }
+ },
+ "wine_lactone": {
+  "cid": 10820954,
+  "odeur": [],
+  "gout": [],
+  "fema": null
+ },
+ "s_limonene": {
+  "cid": 439250,
+  "odeur": [],
+  "gout": [],
+  "fema": null
+ },
+ "dihydroactinidiolide": {
+  "cid": 6432173,
+  "odeur": [],
+  "gout": [],
+  "fema": null
+ },
+ "ws3": {
+  "cid": 62907,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3455",
+   "url": "https://www.femaflavor.org/flavor-library/n-ethyl-2-isopropyl-5-methylcyclohexane-carboxamide",
+   "profil": "Cooling",
+   "jecfa": "1601"
+  }
+ },
+ "ws23": {
+  "cid": 65300,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3804",
+   "url": "https://www.femaflavor.org/flavor-library/2-isopropyl-n23-trimethylbutyramide",
+   "profil": "Cooling",
+   "jecfa": "1595"
+  }
+ },
+ "menthyl_lactate": {
+  "cid": 7076215,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3748",
+   "url": "https://www.femaflavor.org/flavor-library/l-menthyl-lactate",
+   "profil": "Mint, Cool",
+   "jecfa": "433"
+  }
+ },
+ "isopulegol": {
+  "cid": 170833,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "2962",
+   "url": "https://www.femaflavor.org/flavor-library/isopulegol",
+   "profil": "Mint, Cool",
+   "jecfa": "755"
+  }
+ },
+ "vanillyl_butyl_ether": {
+  "cid": 5084146,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3796",
+   "url": "https://www.femaflavor.org/flavor-library/vanillyl-butyl-ether",
+   "profil": "Fruit",
+   "jecfa": "888"
+  }
+ },
+ "spilanthol": {
+  "cid": 5353001,
+  "odeur": [],
+  "gout": [],
+  "fema": null
+ },
+ "sanshool": {
+  "cid": 10084135,
+  "odeur": [],
+  "gout": [],
+  "fema": null
+ },
+ "tba": {
+  "cid": 11839,
+  "odeur": [
+   {
+    "texte": "Musty odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7814"
+   }
+  ],
+  "gout": [],
+  "fema": null
+ },
+ "mdmp": {
+  "cid": 6429218,
+  "odeur": [],
+  "gout": [],
+  "fema": null
  }
 }

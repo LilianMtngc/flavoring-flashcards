@@ -430,3 +430,15 @@ borneol;"Note camphrée-terreuse, boisée ; arômes d'herbes et de plantes médi
 pulegone;"Note menthe pouliot, mentholée-camphrée ; usage limité dans les arômes (teneur réglementée).";présent dans la menthe pouliot et en traces dans la menthe poivrée
 alpha_bisabolol;"Note florale douce, faible ; caractéristique de la camomille matricaire.";sesquiterpène de la camomille matricaire
 fenchol;"Note camphrée-citronnée, terreuse ; arômes de citron vert et d'herbes.";présent dans le basilic, le fenouil et le citron vert
+wine_lactone;"Note noix de coco-boisée-sucrée à seuil extrêmement bas ; contribue aux vins blancs aromatiques et aux jus d'agrumes.";"présente dans le vin, le jus d'orange et de pamplemousse ; formée à partir du linalol pendant la vinification"
+s_limonene;Note pin-térébenthine : à comparer avec le (R)-limonène (orange). Exemple classique d'énantiomères d'odeurs différentes.;présent dans le carvi, l'aneth et les conifères
+dihydroactinidiolide;"Note thé-foin sucrée ; contribue à l'arôme du thé noir et du tabac.";"dégradation des caroténoïdes ; présente dans le thé et le tabac"
+ws3;Agent rafraîchissant sans odeur de menthe : effet de fraîcheur sur la langue et le palais (récepteur TRPM8). Chewing-gums, confiseries, boissons.;molécule de synthèse
+ws23;"Agent rafraîchissant, fraîcheur plus diffuse que le N-éthyl-p-menthane-3-carboxamide et sans amertume ; très utilisé dans les boissons et les confiseries.";molécule de synthèse
+menthyl_lactate;"Fraîcheur douce et durable, peu d'odeur de menthe ; confiseries et produits d'hygiène bucco-dentaire.";ester du menthol et de l'acide lactique, obtenu par synthèse
+isopulegol;"Note menthe-herbacée ; renforce l'effet rafraîchissant du menthol.";"présent dans les huiles de menthe et de citronnelle ; intermédiaire de synthèse du menthol"
+vanillyl_butyl_ether;Agent chauffant : sensation de chaleur progressive (récepteur TRPV1), sans le piquant de la capsaïcine. Confiseries « chaud-froid ».;molécule de synthèse dérivée de l'alcool vanillique
+spilanthol;"Effet picotant et salivant du jambu (cresson de Para) ; utilisé dans les boissons et confiseries « électriques ».";amide présent dans les fleurs d'Acmella oleracea (jambu)
+sanshool;Sensation de picotement et d'engourdissement du poivre du Sichuan (« ma » de la cuisine sichuanaise).;amide présent dans le poivre du Sichuan (Zanthoxylum)
+tba;"Défaut de bouchon et de contenant : note moisie-terreuse à seuil très bas ; contamination des vins et des emballages.";méthylation microbienne du 2,4,6-tribromophénol (traitements du bois)
+mdmp;"Défaut « moisi-bouchon » du vin, distinct du TCA ; aussi responsable d'odeurs de moisi dans l'eau et le café.";produite par des bactéries du sol et du liège

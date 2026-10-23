@@ -1,0 +1,2320 @@
+{
+ "acetal": {
+  "cid": 7765,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "allyl_heptanoate": {
+  "cid": 8878,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "allyl_hexanoate": {
+  "cid": 31266,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isoamyl_alcohol": {
+  "cid": 31260,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "amyl_butyrate": {
+  "cid": 10890,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isoamyl_butyrate": {
+  "cid": 7795,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "benzyl_alcohol": {
+  "cid": 244,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isobutyl_alcohol": {
+  "cid": 6560,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "butyl_butyrate": {
+  "cid": 7983,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "butyl_butyryl_lactate": {
+  "cid": 24114,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "decanal": {
+  "cid": 8175,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "diethyl_malonate": {
+  "cid": 7761,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "dimethoxybenzene_13": {
+  "cid": 9025,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_cinnamate": {
+  "cid": 637758,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_heptanoate": {
+  "cid": 7797,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_levulinate": {
+  "cid": 10883,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_2_methylbutyrate": {
+  "cid": 24020,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_propionate": {
+  "cid": 7749,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_valerate": {
+  "cid": 10882,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_isovalerate": {
+  "cid": 7945,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "gamma_heptalactone": {
+  "cid": 7742,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ambrettolide": {
+  "cid": 5365703,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "hexanedione_23": {
+  "cid": 19707,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "trans_2_hexenal": {
+  "cid": 5281168,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "trans_2_hexenol": {
+  "cid": 5318042,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "lactic_acid": {
+  "cid": 612,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "lauric_acid": {
+  "cid": 3893,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "menthyl_acetate": {
+  "cid": 220674,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methylguaiacol_4": {
+  "cid": 7144,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "vinylguaiacol_4": {
+  "cid": 332,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methylacetophenone_4": {
+  "cid": 8500,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methylfurfural_5": {
+  "cid": 12097,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methyl_furoate": {
+  "cid": 11902,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methylheptenone": {
+  "cid": 9862,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methanethiol": {
+  "cid": 878,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methyl_n_methylanthranilate": {
+  "cid": 6826,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "myristic_acid": {
+  "cid": 11005,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "nonanoic_acid": {
+  "cid": 8158,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "octanal": {
+  "cid": 454,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "octanone_2": {
+  "cid": 8093,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "pentanone_2": {
+  "cid": 7895,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "alpha_phellandrene": {
+  "cid": 7460,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "phenethyl_alcohol": {
+  "cid": 6054,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "phenethyl_phenylacetate": {
+  "cid": 7601,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "phenylacetaldehyde": {
+  "cid": 998,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "propenyl_guaethol": {
+  "cid": 5354280,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "cinnamyl_alcohol": {
+  "cid": 5315892,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "alpha_terpineol": {
+  "cid": 17100,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "undecanone_2": {
+  "cid": 8163,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "tetramethylpyrazine": {
+  "cid": 14296,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "difurfuryl_disulfide": {
+  "cid": 20499,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "trimethylpyrazine": {
+  "cid": 26808,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "furfuryl_methyl_sulfide": {
+  "cid": 518937,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "furfuryl_thioacetate": {
+  "cid": 61660,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methoxycinnamaldehyde_2": {
+  "cid": 641298,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "dimethylpyrazine_23": {
+  "cid": 22201,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "dimethylpyrazine_25": {
+  "cid": 31252,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "cocoa_hexenal": {
+  "cid": 5370602,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methylquinoxaline_5": {
+  "cid": 61670,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methylthiophenecarboxaldehyde": {
+  "cid": 61663,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "trans_2_octenal": {
+  "cid": 5283324,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "dipropyl_disulfide": {
+  "cid": 12377,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "delta_undecalactone": {
+  "cid": 61204,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ketoisophorone": {
+  "cid": 62374,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "acetic_acid": {
+  "cid": 176,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "acetoin": {
+  "cid": 179,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "acetophenone": {
+  "cid": 7410,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isoamyl_acetate": {
+  "cid": 31276,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "anethole": {
+  "cid": 637563,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "anisyl_acetate": {
+  "cid": 7695,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "anisyl_alcohol": {
+  "cid": 7738,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "benzaldehyde": {
+  "cid": 240,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "benzyl_acetate": {
+  "cid": 8785,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": "https://monographs.iarc.who.int/list-of-classifications"
+ },
+ "isobutyraldehyde": {
+  "cid": 6561,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "butyric_acid": {
+  "cid": 264,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isobutyric_acid": {
+  "cid": 6590,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "caffeine": {
+  "cid": 2519,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": "https://monographs.iarc.who.int/list-of-classifications"
+ },
+ "terpinen_4_ol": {
+  "cid": 11230,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "caryophyllene": {
+  "cid": 5281515,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "cinnamaldehyde": {
+  "cid": 637511,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "cinnamic_acid": {
+  "cid": 444539,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "citral": {
+  "cid": 638011,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "citronellal": {
+  "cid": 7794,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "citronellol": {
+  "cid": 8842,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "p_cresol": {
+  "cid": 2879,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "gamma_decalactone": {
+  "cid": 12813,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "delta_decalactone": {
+  "cid": 12810,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "decanoic_acid": {
+  "cid": 2969,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "diacetyl": {
+  "cid": 650,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "dihydrocoumarin": {
+  "cid": 660,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "melonal": {
+  "cid": 61016,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "gamma_dodecalactone": {
+  "cid": 16821,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "delta_dodecalactone": {
+  "cid": 12844,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_acetate": {
+  "cid": 8857,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_butyrate": {
+  "cid": 7762,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_decanoate": {
+  "cid": 8048,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethylguaiacol_4": {
+  "cid": 62465,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_hexanoate": {
+  "cid": 31265,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_laurate": {
+  "cid": 7800,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_phenylacetate": {
+  "cid": 7590,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_vanillin": {
+  "cid": 8467,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "eugenol": {
+  "cid": 3314,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": "https://monographs.iarc.who.int/list-of-classifications"
+ },
+ "isoeugenol": {
+  "cid": 853433,
+  "clp": [],
+  "iarc": [
+   "2B"
+  ],
+  "iarc_url": "https://monographs.iarc.who.int/list-of-classifications"
+ },
+ "furfurylthiol": {
+  "cid": 7363,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "geraniol": {
+  "cid": 637566,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "geranyl_acetate": {
+  "cid": 1549026,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "guaiacol": {
+  "cid": 460,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "heptanal": {
+  "cid": 8130,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "heptanone_2": {
+  "cid": 8051,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "gamma_hexalactone": {
+  "cid": 12756,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "hexanal": {
+  "cid": 6184,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "hexanoic_acid": {
+  "cid": 8892,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "cis_3_hexenol": {
+  "cid": 5281167,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "trans_2_hexenyl_acetate": {
+  "cid": 2733294,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "hexyl_acetate": {
+  "cid": 8908,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "raspberry_ketone": {
+  "cid": 21648,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "indole": {
+  "cid": 798,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "beta_ionone": {
+  "cid": 638014,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "limonene": {
+  "cid": 440917,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": "https://monographs.iarc.who.int/list-of-classifications"
+ },
+ "linalool": {
+  "cid": 6549,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "linalyl_acetate": {
+  "cid": 8294,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "maltol": {
+  "cid": 8369,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "menthol": {
+  "cid": 16666,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "anisaldehyde": {
+  "cid": 31244,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methyl_anthranilate": {
+  "cid": 8635,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "styrallyl_acetate": {
+  "cid": 62341,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isovaleraldehyde": {
+  "cid": 11552,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methyl_cinnamate": {
+  "cid": 637520,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "mcp": {
+  "cid": 6660,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methyl_salicylate": {
+  "cid": 4133,
+  "clp": [
+   "H361d"
+  ],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "dms": {
+  "cid": 1068,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methional": {
+  "cid": 18635,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "naringin": {
+  "cid": 442428,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "nerol": {
+  "cid": 643820,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "nerolidol": {
+  "cid": 5284507,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "nonadienol": {
+  "cid": 5362833,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "gamma_nonalactone": {
+  "cid": 7710,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "nonanone_2": {
+  "cid": 13187,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "gamma_octalactone": {
+  "cid": 7704,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "octanoic_acid": {
+  "cid": 379,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "octenol": {
+  "cid": 18827,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "oleic_acid": {
+  "cid": 445639,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "pentanedione_23": {
+  "cid": 11747,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "phenethyl_acetate": {
+  "cid": 7654,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "phenylacetic_acid": {
+  "cid": 999,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "alpha_pinene": {
+  "cid": 6654,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "piperonal": {
+  "cid": 8438,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "propionic_acid": {
+  "cid": 1032,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "vanillin": {
+  "cid": 1183,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "veratraldehyde": {
+  "cid": 8419,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "acetylpyrazine": {
+  "cid": 30914,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isopropylmethoxypyrazine": {
+  "cid": 33166,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "decadienal": {
+  "cid": 5283349,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "cis_3_hexenyl_acetate": {
+  "cid": 5363388,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "furaneol": {
+  "cid": 19309,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "thiomenthone": {
+  "cid": 61982,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methylfuranthiol": {
+  "cid": 34286,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "dimethylpyrazine_26": {
+  "cid": 7938,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "delta_octalactone": {
+  "cid": 12777,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "o_thiocresol": {
+  "cid": 8712,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "beta_damascone": {
+  "cid": 5374527,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "acetylpyridine_2": {
+  "cid": 14286,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "dmts": {
+  "cid": 19310,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "furfurylpyrrole": {
+  "cid": 15037,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "cis_4_heptenal": {
+  "cid": 5362814,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methyl_thiobutyrate": {
+  "cid": 62444,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "butylidenephthalide": {
+  "cid": 5352899,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "nonadienal": {
+  "cid": 643731,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "safranal": {
+  "cid": 61041,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "beta_damascenone": {
+  "cid": 5366074,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "cis_6_nonenol": {
+  "cid": 5362792,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_crotonate": {
+  "cid": 429065,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_maltol": {
+  "cid": 21059,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "dmds": {
+  "cid": 12232,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isopropylmethylthiazole": {
+  "cid": 61808,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "sotolon": {
+  "cid": 62835,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "massoia_lactone": {
+  "cid": 642793,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "filbertone": {
+  "cid": 5362588,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methyl_thioacetate": {
+  "cid": 73750,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "thialdine": {
+  "cid": 13072565,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_formate": {
+  "cid": 8025,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "acetanisole": {
+  "cid": 7476,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isoamyl_hexanoate": {
+  "cid": 16617,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isoamyl_phenylacetate": {
+  "cid": 7600,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isoamyl_isovalerate": {
+  "cid": 12613,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "benzyl_benzoate": {
+  "cid": 2345,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "benzyl_butyrate": {
+  "cid": 7650,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "benzyl_phenylacetate": {
+  "cid": 60999,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "bornyl_acetate": {
+  "cid": 93009,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "butyl_acetate": {
+  "cid": 31272,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isobutyl_acetate": {
+  "cid": 8038,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "butanol": {
+  "cid": 263,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isobutyl_isobutyrate": {
+  "cid": 7351,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "butyl_lactate": {
+  "cid": 8738,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isobutyl_phenylacetate": {
+  "cid": 60998,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "butyl_isovalerate": {
+  "cid": 7981,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "diethyl_succinate": {
+  "cid": 31249,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "dimethyl_succinate": {
+  "cid": 7820,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_benzoate": {
+  "cid": 7165,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_lactate": {
+  "cid": 7344,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_myristate": {
+  "cid": 31283,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_nonanoate": {
+  "cid": 31251,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_octanoate": {
+  "cid": 7799,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_palmitate": {
+  "cid": 12366,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "farnesol": {
+  "cid": 445070,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "fenchone": {
+  "cid": 1201521,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "furfuryl_acetate": {
+  "cid": 12170,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "hexanol": {
+  "cid": 8103,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "styrallyl_propionate": {
+  "cid": 8432,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methylbutanal_2": {
+  "cid": 7284,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methyl_butyrate": {
+  "cid": 12180,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methylbutyric_acid_2": {
+  "cid": 8314,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methyl_laurate": {
+  "cid": 8139,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methyl_phenylacetate": {
+  "cid": 7559,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "octyl_acetate": {
+  "cid": 8164,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "octyl_butyrate": {
+  "cid": 61030,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "palmitic_acid": {
+  "cid": 985,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "propyl_acetate": {
+  "cid": 7997,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "propanol": {
+  "cid": 1031,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isopropanol": {
+  "cid": 3776,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": "https://monographs.iarc.who.int/list-of-classifications"
+ },
+ "propyl_butyrate": {
+  "cid": 7770,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "gamma_undecalactone": {
+  "cid": 7714,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "pentanal": {
+  "cid": 8063,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "valeric_acid": {
+  "cid": 7991,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isovaleric_acid": {
+  "cid": 10430,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "syringol": {
+  "cid": 7041,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "beta_sinensal": {
+  "cid": 5281535,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_cyclopentenolone": {
+  "cid": 62752,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "maple_furanone": {
+  "cid": 61199,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "diethylpyrazine_23": {
+  "cid": 27458,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "acetylfuran_2": {
+  "cid": 14505,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "hexanedione_34": {
+  "cid": 62539,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "acetyl_ethylpyrazine": {
+  "cid": 61918,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "acetyl_methylpyrazine": {
+  "cid": 32093,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "acetyl_dimethylpyrazine": {
+  "cid": 104721,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "undecylenic_acid": {
+  "cid": 5634,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_dimethylpyrazine": {
+  "cid": 26334,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "tetrahydrothiophenone_3": {
+  "cid": 61252,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_methylpyrazine": {
+  "cid": 27457,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isobutylmethoxypyrazine": {
+  "cid": 32594,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methoxy_methylpyrazine": {
+  "cid": 17898,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methoxypyrazine": {
+  "cid": 18467,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "dimethylthiazole_45": {
+  "cid": 62510,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "gamma_butyrolactone": {
+  "cid": 7302,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": "https://monographs.iarc.who.int/list-of-classifications"
+ },
+ "methylpyrazine": {
+  "cid": 7976,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methylvinylthiazole": {
+  "cid": 15654,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "tetrahydroquinoxaline": {
+  "cid": 36822,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "trimethylthiazole": {
+  "cid": 61653,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methylthio_methylpyrazine": {
+  "cid": 76152,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "acetylthiazole": {
+  "cid": 520108,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "heptanoic_acid": {
+  "cid": 8094,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "delta_nonalactone": {
+  "cid": 18698,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methyl_methylthiofuran": {
+  "cid": 61657,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methyltetrahydrofuranone": {
+  "cid": 18522,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "tridecanone_2": {
+  "cid": 11622,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethylpyridine_3": {
+  "cid": 10823,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "cis_3_hexenyl_butyrate": {
+  "cid": 5352438,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "trimethyldioxolane": {
+  "cid": 62384,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "dimethyl_dihydroxy_dithiane": {
+  "cid": 62105,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "trithioacetone": {
+  "cid": 13233,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methyltetrahydrothiophenone": {
+  "cid": 61664,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "octanol_3": {
+  "cid": 11527,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "delta_tetradecalactone": {
+  "cid": 520296,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "xylenol_25": {
+  "cid": 7267,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methylthiobutanol": {
+  "cid": 519793,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "propionylthiazole": {
+  "cid": 65288,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "homofuraneol": {
+  "cid": 33931,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "diphenyl_oxide": {
+  "cid": 7583,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_furfurylthiopropionate": {
+  "cid": 556940,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "pentadecanone_2": {
+  "cid": 61303,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "milk_lactone": {
+  "cid": 5362593,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "linalool_oxide": {
+  "cid": 22310,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "amyl_acetate": {
+  "cid": 12348,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_salicylate": {
+  "cid": 8365,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "furfural": {
+  "cid": 7362,
+  "clp": [
+   "H351"
+  ],
+  "iarc": [],
+  "iarc_url": "https://monographs.iarc.who.int/list-of-classifications"
+ },
+ "tartaric_acid": {
+  "cid": 444305,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isobutyl_angelate": {
+  "cid": 5367807,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "davanone": {
+  "cid": 519782,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "glycyrrhizic_acid": {
+  "cid": 14982,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "benzyl_cinnamate": {
+  "cid": 5273469,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "diosphenol": {
+  "cid": 79023,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "capsaicin": {
+  "cid": 1548943,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "cineole": {
+  "cid": 2758,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "zingiberene": {
+  "cid": 92776,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "gingerol": {
+  "cid": 442793,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "menthone": {
+  "cid": 26447,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "myristicin": {
+  "cid": 4276,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "sabinene": {
+  "cid": 18818,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "whisky_lactone": {
+  "cid": 62900,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "santalol": {
+  "cid": 11085337,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "carvone": {
+  "cid": 439570,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "egcg": {
+  "cid": 65064,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "coumarin": {
+  "cid": 323,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": "https://monographs.iarc.who.int/list-of-classifications"
+ },
+ "patchoulol": {
+  "cid": 10955174,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "sclareol": {
+  "cid": 163263,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "neryl_acetate": {
+  "cid": 1549025,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "myrcene": {
+  "cid": 31253,
+  "clp": [],
+  "iarc": [
+   "2B"
+  ],
+  "iarc_url": "https://monographs.iarc.who.int/list-of-classifications"
+ },
+ "msg": {
+  "cid": 23672308,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "rebaudioside_a": {
+  "cid": 6918840,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "acetylpyrroline": {
+  "cid": 522834,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "acetaldehyde": {
+  "cid": 177,
+  "clp": [
+   "H341",
+   "H350"
+  ],
+  "iarc": [
+   "1",
+   "2B"
+  ],
+  "iarc_url": "https://monographs.iarc.who.int/list-of-classifications"
+ },
+ "nonanal": {
+  "cid": 31289,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "cis_3_hexenal": {
+  "cid": 643941,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "trans_2_nonenal": {
+  "cid": 5283335,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "octen_3_one": {
+  "cid": 61346,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "pentylfuran_2": {
+  "cid": 19602,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "acetylthiazoline": {
+  "cid": 169110,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "acetyltetrahydropyridine": {
+  "cid": 520194,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "acetylpyrrole_2": {
+  "cid": 14079,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "diethylmethylpyrazine": {
+  "cid": 28905,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "mercaptomethylbutyl_formate": {
+  "cid": 526487,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "bis_methylfuryl_disulfide": {
+  "cid": 526624,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "mesifurane": {
+  "cid": 61325,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "furfuryl_alcohol": {
+  "cid": 7361,
+  "clp": [
+   "H351"
+  ],
+  "iarc": [
+   "2B"
+  ],
+  "iarc_url": "https://monographs.iarc.who.int/list-of-classifications"
+ },
+ "pentyl_pyrone": {
+  "cid": 33960,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "nootkatone": {
+  "cid": 1268142,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "menthenethiol": {
+  "cid": 6427135,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "mmp_4": {
+  "cid": 88290,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "mercaptohexanol_3": {
+  "cid": 521348,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_decadienoate": {
+  "cid": 5281162,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_methylphenylglycidate": {
+  "cid": 6501,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethyl_methylthiopropionate": {
+  "cid": 61592,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "allyl_isothiocyanate": {
+  "cid": 5971,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": "https://monographs.iarc.who.int/list-of-classifications"
+ },
+ "diallyl_disulfide": {
+  "cid": 16590,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "dithiapentane": {
+  "cid": 15380,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "estragole": {
+  "cid": 8815,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "thymol": {
+  "cid": 6989,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "carvacrol": {
+  "cid": 10364,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "s_carvone": {
+  "cid": 16724,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "alpha_ionone": {
+  "cid": 5282108,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "cis_jasmone": {
+  "cid": 1549018,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "rose_oxide": {
+  "cid": 27866,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "cuminaldehyde": {
+  "cid": 326,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "camphor": {
+  "cid": 2537,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "zingerone": {
+  "cid": 31211,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "piperine": {
+  "cid": 638024,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "skatole": {
+  "cid": 6736,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "trimethylamine": {
+  "cid": 1146,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethylphenol_4": {
+  "cid": 31242,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "prenylthiol": {
+  "cid": 146586,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "geosmin": {
+  "cid": 15559490,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methylisoborneol": {
+  "cid": 11062802,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "tca": {
+  "cid": 6884,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methionol": {
+  "cid": 10448,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "sulfurol": {
+  "cid": 1136,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "valencene": {
+  "cid": 9855795,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "rotundone": {
+  "cid": 5321003,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "gamma_terpinene": {
+  "cid": 7461,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "terpinolene": {
+  "cid": 11463,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "p_cymene": {
+  "cid": 7463,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "dodecanal": {
+  "cid": 8194,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "trans_2_dodecenal": {
+  "cid": 5283361,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "perillaldehyde": {
+  "cid": 16441,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "citronellyl_acetate": {
+  "cid": 9017,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "hexyl_butyrate": {
+  "cid": 17525,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methylbutyl_acetate_2": {
+  "cid": 12209,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methyl_methylbutyrate": {
+  "cid": 13357,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "prenyl_acetate": {
+  "cid": 14489,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "allyl_cyclohexylpropionate": {
+  "cid": 17617,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "methyl_hexanoate": {
+  "cid": 7824,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "cis_6_nonenal": {
+  "cid": 5362720,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "mercaptohexyl_acetate": {
+  "cid": 518810,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "aminoacetophenone": {
+  "cid": 11086,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "beta_pinene": {
+  "cid": 14896,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "camphene": {
+  "cid": 6616,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "delta_3_carene": {
+  "cid": 26049,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "beta_ocimene": {
+  "cid": 5281553,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "borneol": {
+  "cid": 64685,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "pulegone": {
+  "cid": 442495,
+  "clp": [],
+  "iarc": [
+   "2B"
+  ],
+  "iarc_url": "https://monographs.iarc.who.int/list-of-classifications"
+ },
+ "alpha_bisabolol": {
+  "cid": 1549992,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "fenchol": {
+  "cid": 15406,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "wine_lactone": {
+  "cid": 10820954,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "s_limonene": {
+  "cid": 439250,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "dihydroactinidiolide": {
+  "cid": 6432173,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ws3": {
+  "cid": 62907,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ws23": {
+  "cid": 65300,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "menthyl_lactate": {
+  "cid": 7076215,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "isopulegol": {
+  "cid": 170833,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "vanillyl_butyl_ether": {
+  "cid": 5084146,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "spilanthol": {
+  "cid": 5353001,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "sanshool": {
+  "cid": 10084135,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "tba": {
+  "cid": 11839,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "mdmp": {
+  "cid": 6429218,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ }
+}
