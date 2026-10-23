@@ -5,7 +5,7 @@ Entrées : data/descripteurs.csv, data/molecules_ref.csv, data/molecules_verifie
           data/usages.csv, data/glossaire_fema.csv, data/theoriques_wiki.csv, data/familles_olfactives.csv,
           data/defauts.csv, data/securite_cache.json, data/glossaire.csv, structures/*.svg
 Sorties : data/cartes.json, index.html (flash cards), flavoring-flashcards.apkg (Anki),
-          manifest.webmanifest, sw.js, icon-192.png, icon-512.png (page installable, hors connexion)
+          manifest.webmanifest, sw.js, icônes (scripts/icone.py) : page installable, hors connexion
 
 Trois catégories de cartes :
 - « mol » : molécule évaluée (descripteurs et dosage du panel) ;
@@ -363,33 +363,17 @@ self.addEventListener("fetch", e => {
 
 def write_pwa():
     """Manifeste, service worker et icônes : la page s'installe sur mobile et marche hors connexion."""
-    import io
-    from PIL import Image
-    from rdkit.Chem.Draw import rdMolDraw2D
+    import icone
     manifest = {
         "name": "Flavoring flashcards", "short_name": "Flashcards", "lang": "fr",
         "description": "Flash cards de molécules aromatiques : structure, descripteurs, usages.",
         "start_url": "./", "scope": "./", "display": "standalone",
-        "background_color": "#171614", "theme_color": "#7a4a1c",
-        "icons": [{"src": f"icon-{n}.png", "sizes": f"{n}x{n}", "type": "image/png", "purpose": "any maskable"} for n in (192, 512)],
+        "background_color": "#171614", "theme_color": "#3d2414",
+        "icons": [{"src": f"icon-{n}.png", "sizes": f"{n}x{n}", "type": "image/png", "purpose": "any"} for n in (192, 512)],
     }
     (ROOT / "manifest.webmanifest").write_text(json.dumps(manifest, indent=1, ensure_ascii=False), encoding="utf-8")
     (ROOT / "sw.js").write_text(SW, encoding="utf-8")
-    d = rdMolDraw2D.MolDraw2DCairo(360, 360)
-    o = d.drawOptions()
-    o.setBackgroundColour((0.478, 0.29, 0.11, 1))
-    o.updateAtomPalette({6: (1, 0.97, 0.9), 8: (1, 0.85, 0.6), 1: (1, 0.97, 0.9)})
-    o.bondLineWidth = 6
-    o.padding = 0.12
-    o.minFontSize = 40
-    rdMolDraw2D.PrepareAndDrawMolecule(d, Chem.MolFromSmiles("COc1cc(C=O)ccc1O"))  # vanilline
-    d.FinishDrawing()
-    mol = Image.open(io.BytesIO(d.GetDrawingText())).convert("RGB")
-    for n in (192, 512):
-        canvas = Image.new("RGB", (n, n), (122, 74, 28))
-        inner = mol.resize((int(n * 0.8), int(n * 0.8)), Image.LANCZOS)
-        canvas.paste(inner, ((n - inner.width) // 2, (n - inner.height) // 2))
-        canvas.save(ROOT / f"icon-{n}.png")
+    icone.write_all(ROOT)  # icônes « application » (fond dégradé) et « onglet » (sans fond)
 
 
 # ---------------------------------------------------------------- Anki
