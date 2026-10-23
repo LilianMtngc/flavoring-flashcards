@@ -38,7 +38,46 @@ h1{font-size:22px;margin:0;font-weight:650;letter-spacing:-.01em}
 .tabs{display:flex;gap:4px;background:var(--surface-2);padding:3px;border-radius:9px;width:max-content;max-width:100%;overflow-x:auto}
 .tabs button{border:0;background:transparent;color:var(--fg-2);padding:6px 14px;border-radius:7px;font:inherit;font-size:14px;cursor:pointer;white-space:nowrap}
 .tabs button[aria-selected="true"]{background:var(--surface);color:var(--fg);box-shadow:var(--shadow)}
-.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0 18px}
+.toolbar{display:flex;gap:8px;margin:14px 0 8px}
+.toolbar input[type=search]{flex:1;min-width:0;padding:7px 12px;font-size:14px}
+#fbtn{display:inline-flex;align-items:center;gap:7px}
+#fbtn[aria-expanded="true"]{border-color:var(--fg-3);background:var(--surface-2)}
+.fcount{background:var(--accent);color:var(--surface);border-radius:999px;font-size:11.5px;padding:0 7px;min-width:19px;text-align:center;line-height:18px}
+.fpanel{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:14px 16px 12px;margin-bottom:10px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px 24px}
+.fpanel[hidden]{display:none}
+.fgroup h4{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3);margin:0 0 7px;font-weight:600}
+.fgroup.wide{grid-column:1/-1}
+.fchips{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.tagtools{margin-top:8px;font-size:12.5px;color:var(--fg-3)}
+.fpanel-foot{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:10px;font-size:13px}
+.active{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 14px;font-size:12.5px}
+.active:empty{margin:0 0 6px}
+.pill{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:12.5px;border:1px solid var(--line-2);background:var(--surface-2);color:var(--fg-2);border-radius:999px;padding:2px 8px 2px 10px;cursor:pointer}
+.pill::after{content:"×";font-size:15px;line-height:1;color:var(--fg-3)}
+.pill:hover{border-color:var(--fg-3)}
+.tag{--c:#8d8d86;display:inline-flex;align-items:center;gap:6px;font-size:12.5px;border:1px solid var(--c);background:color-mix(in srgb,var(--c) 15%,var(--surface));color:var(--fg);border-radius:999px;padding:2px 10px}
+.tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--c);flex:none}
+.chip.tag{font-size:13px;padding:4px 12px}
+.chip.tag small{color:var(--fg-3);font-size:11.5px}
+.chip.tag[aria-pressed="true"]{background:var(--c);border-color:var(--c);color:#fff}
+.chip.tag[aria-pressed="true"]::before{background:#fff}
+.chip.tag[aria-pressed="true"] small{color:rgba(255,255,255,.8)}
+.tagitem{display:inline-flex;align-items:center;gap:2px}
+.tagitem .linkbtn{color:var(--fg-3);padding:0 4px}
+.tag .x{border:0;background:none;color:var(--fg-3);cursor:pointer;padding:0 0 0 2px;font-size:15px;line-height:1}
+.tagbox{margin:0 0 12px}
+.mytags{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.addtag{font:inherit;font-size:12.5px;border:1px dashed var(--line-2);background:none;color:var(--fg-3);border-radius:999px;padding:2px 10px;cursor:pointer}
+.addtag:hover{color:var(--fg-2);border-color:var(--fg-3)}
+.tagform{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--surface-2);cursor:default}
+.tagform input[type=text]{font:inherit;font-size:13px;padding:6px 10px;border:1px solid var(--line-2);border-radius:8px;background:var(--surface);color:var(--fg);min-width:0;flex:1 1 180px}
+.tagform .btn{padding:5px 12px;font-size:13px}
+.swatches{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.sw{width:22px;height:22px;border-radius:50%;border:2px solid var(--surface);background:var(--c);cursor:pointer;padding:0;box-shadow:0 0 0 1px var(--line-2)}
+.sw[aria-pressed="true"]{box-shadow:0 0 0 2px var(--fg)}
+.swatches input[type=color]{width:26px;height:26px;border:0;padding:0;background:none;cursor:pointer}
+.tile .tdots{display:flex;gap:4px;flex-wrap:wrap;margin-top:auto}
+.tile .tdots span{width:9px;height:9px;border-radius:50%;background:var(--c)}
 .chip{border:1px solid var(--line-2);background:var(--surface);color:var(--fg-2);border-radius:999px;padding:4px 12px;font:inherit;font-size:13px;cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--fg);border-color:var(--fg);color:var(--bg)}
 .chip.brown[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
@@ -149,23 +188,39 @@ footer a:hover,.linkbtn:hover{text-decoration:underline}
     <button role="tab" data-view="study" aria-selected="true">Étude</button>
     <button role="tab" data-view="catalog" aria-selected="false">Catalogue</button>
   </div>
-  <div class="filters" id="filters">
-    <span class="flabel" title="Complexité structurale : tercile de l'indice de Bertz">Complexité</span>
-    <button class="chip" data-f="niveau" data-v="Facile" aria-pressed="false">Facile</button>
-    <button class="chip" data-f="niveau" data-v="Moyen" aria-pressed="false">Moyen</button>
-    <button class="chip" data-f="niveau" data-v="Difficile" aria-pressed="false">Difficile</button>
-    <span class="sep"></span>
-    <button class="chip" data-f="type" data-v="mol" aria-pressed="false">Molécules</button>
-    <button class="chip" data-f="type" data-v="nat" aria-pressed="false">Produits naturels</button>
-    <button class="chip" data-f="type" data-v="theo" aria-pressed="false" title="Molécules de référence ajoutées pour l'apprentissage ; descripteurs : Wikipédia ou profil FEMA">Théoriques</button>
-    <button class="chip" data-f="type" data-v="sosie" aria-pressed="false" title="Cartes de comparaison : molécules aux structures très proches, différence surlignée">Sosies</button>
-    <span class="sep"></span>
-    <button class="chip brown" data-f="brune" data-v="1" aria-pressed="false">Notes brunes</button>
-    <button class="chip" data-f="etat" data-v="revoir" aria-pressed="false">À revoir</button>
-    <button class="chip" data-f="etat" data-v="sus" aria-pressed="false">Je sais</button>
-    <select id="famille" aria-label="Famille chimique"><option value="">Toutes les familles</option></select>
+  <div class="toolbar">
     <input type="search" id="q" placeholder="Rechercher un nom, un CAS, un descripteur…" aria-label="Rechercher">
+    <button class="btn" id="fbtn" aria-expanded="false" aria-controls="fpanel">Filtres<span class="fcount" id="fcount" hidden></span></button>
   </div>
+  <div class="fpanel" id="fpanel" hidden>
+    <div class="fgroup"><h4>Type de carte</h4><div class="fchips">
+      <button class="chip" data-f="type" data-v="mol" aria-pressed="false">Molécules</button>
+      <button class="chip" data-f="type" data-v="nat" aria-pressed="false">Produits naturels</button>
+      <button class="chip" data-f="type" data-v="theo" aria-pressed="false" title="Molécules de référence ajoutées pour l'apprentissage ; descripteurs : Wikipédia ou profil FEMA">Théoriques</button>
+      <button class="chip" data-f="type" data-v="sosie" aria-pressed="false" title="Cartes de comparaison : molécules aux structures très proches, différence surlignée">Sosies</button>
+    </div></div>
+    <div class="fgroup"><h4 title="Complexité structurale : tercile de l'indice de Bertz">Complexité</h4><div class="fchips">
+      <button class="chip" data-f="niveau" data-v="Facile" aria-pressed="false">Facile</button>
+      <button class="chip" data-f="niveau" data-v="Moyen" aria-pressed="false">Moyen</button>
+      <button class="chip" data-f="niveau" data-v="Difficile" aria-pressed="false">Difficile</button>
+    </div></div>
+    <div class="fgroup"><h4>Progression</h4><div class="fchips">
+      <button class="chip" data-f="etat" data-v="none" aria-pressed="false">Pas encore vues</button>
+      <button class="chip" data-f="etat" data-v="revoir" aria-pressed="false">À revoir</button>
+      <button class="chip" data-f="etat" data-v="sus" aria-pressed="false">Je sais</button>
+    </div></div>
+    <div class="fgroup"><h4>Notes et famille</h4><div class="fchips">
+      <button class="chip brown" data-f="brune" data-v="1" aria-pressed="false">Notes brunes</button>
+      <select id="famille" aria-label="Famille chimique"><option value="">Toutes les familles</option></select>
+    </div></div>
+    <div class="fgroup wide"><h4>Mes étiquettes</h4><div class="fchips" id="tagfilters"></div>
+      <div id="tagedit"></div>
+      <div class="tagtools"><button class="linkbtn" id="tagnew">+ Nouvelle étiquette</button> · <button class="linkbtn" id="export" title="Progression et étiquettes, dans un fichier JSON">Exporter mes données</button> · <button class="linkbtn" id="import">Importer</button><input type="file" id="importfile" accept=".json,application/json" hidden></div>
+    </div>
+    <div class="fpanel-foot"><button class="linkbtn" id="fclear">Tout réinitialiser</button><button class="btn" id="fclose">Fermer</button></div>
+  </div>
+  <div class="active" id="active"></div>
+  <datalist id="taglist"></datalist>
 
   <section id="v-study">
     <div class="progress"><span id="pos"></span><span id="score"></span></div>
@@ -199,7 +254,17 @@ const store = {
   set(v){ try { localStorage.setItem(KEY, JSON.stringify(v)); } catch(e){} }
 };
 let progress = store.get();
-const filt = {niveau:new Set(), type:new Set(), etat:new Set(), brune:false, famille:"", q:""};
+const filt = {niveau:new Set(), type:new Set(), etat:new Set(), tags:new Set(), brune:false, famille:"", q:""};
+
+// étiquettes personnelles : enregistrées dans ce navigateur uniquement (exportables en JSON)
+const TKEY = "flavoring-flashcards-tags-v1";
+const COLORS = ["#e5484d", "#f76b15", "#e2a300", "#30a46c", "#12a594", "#0090ff", "#6e56cf", "#d6409f", "#8d8d86"];
+let T = (() => { try { const v = JSON.parse(localStorage.getItem(TKEY)); if (v && v.defs && v.cards) return v; } catch(e){} return {defs: {}, cards: {}}; })();
+const saveT = () => { try { localStorage.setItem(TKEY, JSON.stringify(T)); } catch(e){} };
+const tagsOf = id => (T.cards[id] || []).filter(t => T.defs[t]);
+const tagByName = n => Object.keys(T.defs).find(id => norm(T.defs[id].nom) === norm(n));
+const nextColor = () => COLORS.find(c => !Object.values(T.defs).some(d => d.couleur === c)) || COLORS[Object.keys(T.defs).length % COLORS.length];
+let tagFormFor = null;  // carte dont le formulaire « + Étiquette » est ouvert
 let deck = [], pos = 0, flipped = false, shuffled = false, order = cards.map((_, i) => i);
 
 const $ = s => document.querySelector(s);
@@ -217,10 +282,11 @@ function matches(c){
   if (filt.niveau.size && !filt.niveau.has(c.niveau)) return false;
   if (filt.type.size && !filt.type.has(c.type)) return false;
   if (filt.brune && !c.brune) return false;
-  if (filt.etat.size && !filt.etat.has(progress[c.id])) return false;
+  if (filt.etat.size && !filt.etat.has(progress[c.id] || "none")) return false;
+  if (filt.tags.size && !tagsOf(c.id).some(t => filt.tags.has(t))) return false;
   if (filt.famille && c.famille !== filt.famille) return false;
   if (filt.q){
-    const hay = norm([c.titre, c.iupac, c.cas, c.famille, c.descripteurs.join(" "), c.structures.map(s => s.nom).join(" "), c.marqueur_de.map(p => p.nom).join(" "), (c.membres || []).map(m => m.titre).join(" ")].join(" "));
+    const hay = norm([c.titre, c.iupac, c.cas, c.famille, c.descripteurs.join(" "), c.structures.map(s => s.nom).join(" "), c.marqueur_de.map(p => p.nom).join(" "), (c.membres || []).map(m => m.titre).join(" "), tagsOf(c.id).map(t => T.defs[t].nom).join(" ")].join(" "));
     if (!norm(filt.q).split(/\s+/).every(t => hay.includes(t))) return false;
   }
   return true;
@@ -232,6 +298,7 @@ function rebuild(keepId){
   const idx = deck.findIndex(i => cards[i].id === current);
   pos = idx >= 0 ? idx : 0;
   flipped = false;
+  renderActive();
   render();
 }
 
@@ -249,12 +316,29 @@ function frontHTML(c){
 
 const chipsHTML = l => `<div class="desc">${l.map(d => `<span class="${BROWN.has(d) ? "b" : ""}">${esc(cap(d.toLowerCase()))}</span>`).join("")}</div>`;
 
+function tagFormHTML(kind, id){
+  const t = id ? T.defs[id] : null, col = t ? t.couleur : nextColor();
+  const ph = kind === "add" ? "Nom de l'étiquette (nouvelle ou existante)" : "Nom de l'étiquette";
+  return `<div class="tagform" data-kind="${kind}" data-id="${id || ""}" data-color="${col}">
+    <input type="text" class="tagname" list="taglist" maxlength="40" placeholder="${ph}" value="${t ? esc(t.nom) : ""}" aria-label="${ph}">
+    <div class="swatches" title="Couleur (pour une nouvelle étiquette)">${COLORS.map(c => `<button type="button" class="sw" data-act="sw" data-c="${c}" style="--c:${c}" aria-pressed="${c === col}" aria-label="Couleur ${c}"></button>`).join("")}<input type="color" data-act="swc" value="${col}" title="Autre couleur"></div>
+    <button type="button" class="btn primary" data-act="tag-save">${kind === "edit" ? "Enregistrer" : "Ajouter"}</button>
+    ${kind === "edit" ? `<button type="button" class="btn again" data-act="tag-del">Supprimer</button>` : ""}
+    <button type="button" class="btn" data-act="tag-cancel">Annuler</button></div>`;
+}
+
+function tagBoxHTML(c){
+  const chips = tagsOf(c.id).map(t => `<span class="tag" style="--c:${esc(T.defs[t].couleur)}">${esc(T.defs[t].nom)}<button class="x" data-act="tag-rm" data-tag="${t}" aria-label="Retirer l'étiquette ${esc(T.defs[t].nom)}">×</button></span>`).join("");
+  const open = tagFormFor === c.id;
+  return `<div class="tagbox"><div class="mytags">${chips}${open ? "" : `<button class="addtag" data-act="tag-open">+ Étiquette</button>`}</div>${open ? tagFormHTML("add") : ""}</div>`;
+}
+
 function sosieBack(c){
   const badges = (c.brune ? `<span class="badge brown">Note brune</span>` : "") + `<span class="badge lvl">Complexité : ${esc(c.niveau)}</span>`;
   const formules = [...new Set(c.membres.map(m => m.formule))].map(f => `<span>${esc(f)}</span>`).join("");
   const membres = c.membres.map((m, k) => `<div><button class="linkbtn t" data-go="${esc(m.id)}">${k + 1}. ${esc(m.titre)}</button><small>${esc(cap(m.famille))}</small>${m.descripteurs.length ? chipsHTML(m.descripteurs) : ""}</div>`).join("");
   return `<div class="back">${structsHTML(c, "hero", (s, k) => `${k + 1}. ${s.nom}`)}<div class="info">
-    <h2>Sosies</h2><p class="sub">${esc(c.diff)}</p><div>${badges}</div><div class="meta">${formules}</div>
+    <h2>Sosies</h2><p class="sub">${esc(c.diff)}</p><div>${badges}</div><div class="meta">${formules}</div>${tagBoxHTML(c)}
     <div class="sec"><h3>Les molécules</h3><div class="cmp">${membres}</div></div>
     <div class="verif ok">✓ Structures vérifiées · différence calculée et surlignée automatiquement (RDKit) · <a href="verification.html" target="_blank">Rapport</a></div></div></div>`;
 }
@@ -298,7 +382,7 @@ function backHTML(c){
   const verif = `<div class="verif ok">✓ Structure${c.structures.length > 1 ? "s" : ""} vérifiée${c.structures.length > 1 ? "s" : ""} · ${c.verif.sources} sources concordantes · <a href="verification.html" target="_blank">Rapport</a></div>`;
   const sos = c.sosies.length ? `<div class="sec"><h3>À ne pas confondre avec${sosieOf[c.id] ? ` · <button class="linkbtn" data-go="${esc(sosieOf[c.id])}">Voir la comparaison</button>` : ""}</h3><div class="sos">${c.sosies.map(o => `<button data-go="${esc(o.id)}">${byId[o.id].structures[0].svg}<span>${esc(o.titre)}<small>${esc(o.diff)}</small></span></button>`).join("")}</div></div>` : "";
   return `<div class="back">${structsHTML(c, "hero", c.type === "nat" ? s => s.nom : null)}<div class="info">
-    <h2>${esc(c.titre)}</h2><p class="sub">${sub}</p>${alias}<div>${badges}</div><div class="meta">${meta}</div>
+    <h2>${esc(c.titre)}</h2><p class="sub">${sub}</p>${alias}<div>${badges}</div><div class="meta">${meta}</div>${tagBoxHTML(c)}
     <div class="sec"><h3>Descripteurs${c.type === "theo" ? " · " + c.formes[0].forme : ""}</h3>${desc}${formes}</div>
     ${sos}
     <div class="sec"><h3>Usages · synthèse IA</h3>${usage}</div>
@@ -330,8 +414,8 @@ function render(){
 }
 
 function animate(){ const el = $("#card"); el.classList.remove("anim"); void el.offsetWidth; el.classList.add("anim"); }
-function flip(){ if (!deck.length) return; flipped = !flipped; render(); animate(); }
-function go(d){ const n = pos + d; if (n < 0 || n >= deck.length) return; pos = n; flipped = false; render(); }
+function flip(){ if (!deck.length) return; flipped = !flipped; tagFormFor = null; render(); animate(); }
+function go(d){ const n = pos + d; if (n < 0 || n >= deck.length) return; pos = n; flipped = false; tagFormFor = null; render(); }
 function mark(v){ if (!deck.length) return; progress[cards[deck[pos]].id] = v; store.set(progress); if (pos < deck.length - 1) { pos++; flipped = false; } render(); }
 
 function renderGrid(){
@@ -340,7 +424,7 @@ function renderGrid(){
     const n = c.structures.length;
     const kind = c.type === "nat" ? "Produit naturel" : c.type === "sosie" ? `Sosies · ${n} molécules` : cap(c.famille) + (c.type === "theo" ? " · Théorique" : "");
     return `<button class="tile${st ? " st-" + st : ""}" data-k="${k}"><div class="pics${n > 2 ? " many" : n > 1 ? " two" : ""}">${c.structures.map(s => s.svg || "").join("")}</div>
-      <b>${esc(c.titre)}</b><small>${kind}${c.brune ? " · Note brune" : ""}</small></button>`;
+      <b>${esc(c.titre)}</b><small>${kind}${c.brune ? " · Note brune" : ""}</small>${tagsOf(c.id).length ? `<div class="tdots">${tagsOf(c.id).map(t => `<span style="--c:${esc(T.defs[t].couleur)}" title="${esc(T.defs[t].nom)}"></span>`).join("")}</div>` : ""}</button>`;
   }).join("") : `<div class="empty">Aucune carte ne correspond à ces filtres.</div>`;
 }
 
@@ -354,28 +438,172 @@ function showView(v){
 const focusCard = () => $("#card").focus({preventScroll: true});
 
 document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => showView(b.dataset.view));
-document.querySelectorAll("#filters .chip").forEach(b => b.onclick = () => {
-  const on = b.getAttribute("aria-pressed") !== "true";
-  b.setAttribute("aria-pressed", on);
-  const f = b.dataset.f;
-  if (filt[f] instanceof Set) on ? filt[f].add(b.dataset.v) : filt[f].delete(b.dataset.v);
-  else filt[f] = on;
-  rebuild();
+// ---- filtres : panneau repliable + filtres actifs en pastilles
+const LABELS = {type: {mol: "Molécules", nat: "Produits naturels", theo: "Théoriques", sosie: "Sosies"},
+                etat: {none: "Pas encore vues", revoir: "À revoir", sus: "Je sais"}};
+let removers = [];
+function syncChips(){
+  document.querySelectorAll("#fpanel .chip[data-f]").forEach(b => {
+    const f = filt[b.dataset.f];
+    b.setAttribute("aria-pressed", f instanceof Set ? f.has(b.dataset.v) : !!f);
+  });
+  $("#famille").value = filt.famille;
+  renderTagFilters();
+}
+function renderActive(){
+  const items = [];
+  filt.type.forEach(v => items.push([LABELS.type[v], () => filt.type.delete(v)]));
+  filt.niveau.forEach(v => items.push(["Complexité : " + v, () => filt.niveau.delete(v)]));
+  filt.etat.forEach(v => items.push([LABELS.etat[v], () => filt.etat.delete(v)]));
+  if (filt.brune) items.push(["Notes brunes", () => filt.brune = false]);
+  if (filt.famille) items.push([cap(filt.famille), () => filt.famille = ""]);
+  filt.tags.forEach(id => T.defs[id] && items.push([T.defs[id].nom, () => filt.tags.delete(id), T.defs[id].couleur]));
+  removers = items.map(i => i[1]);
+  $("#active").innerHTML = items.map((it, k) => `<button class="pill${it[2] ? " tag" : ""}" data-k="${k}" ${it[2] ? `style="--c:${esc(it[2])}"` : ""} title="Retirer ce filtre">${esc(it[0])}</button>`).join("")
+    + (items.length > 1 ? `<button class="linkbtn" id="clearall">Tout effacer</button>` : "");
+  $("#fcount").hidden = !items.length;
+  $("#fcount").textContent = items.length;
+}
+function renderTagFilters(){
+  const ids = Object.keys(T.defs).sort((a, b) => T.defs[a].nom.localeCompare(T.defs[b].nom, "fr"));
+  const count = id => Object.values(T.cards).filter(l => l.includes(id)).length;
+  $("#tagfilters").innerHTML = ids.length
+    ? ids.map(id => `<span class="tagitem"><button class="chip tag" style="--c:${esc(T.defs[id].couleur)}" data-tagf="${id}" aria-pressed="${filt.tags.has(id)}">${esc(T.defs[id].nom)} <small>${count(id)}</small></button><button class="linkbtn" data-edit="${id}" title="Renommer, changer la couleur ou supprimer" aria-label="Modifier l'étiquette ${esc(T.defs[id].nom)}">✎</button></span>`).join("")
+    : `<span class="note">Aucune étiquette pour l'instant. Ajoutez-en au verso d'une carte (« + Étiquette ») ou ci-dessous.</span>`;
+  $("#taglist").innerHTML = ids.map(id => `<option value="${esc(T.defs[id].nom)}">`).join("");
+}
+function clearFilters(){
+  filt.niveau.clear(); filt.type.clear(); filt.etat.clear(); filt.tags.clear(); filt.brune = false; filt.famille = ""; filt.q = "";
+  $("#q").value = "";
+  syncChips();
+}
+const setPanel = open => { $("#fpanel").hidden = !open; $("#fbtn").setAttribute("aria-expanded", open); };
+$("#fbtn").onclick = () => setPanel($("#fpanel").hidden);
+$("#fclose").onclick = () => setPanel(false);
+$("#fclear").onclick = () => { clearFilters(); rebuild(); };
+$("#fpanel").addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if (!b) return;
+  if (b.dataset.f){
+    const on = b.getAttribute("aria-pressed") !== "true", f = b.dataset.f;
+    if (filt[f] instanceof Set) on ? filt[f].add(b.dataset.v) : filt[f].delete(b.dataset.v);
+    else filt[f] = on;
+    syncChips(); rebuild();
+  } else if (b.dataset.tagf){
+    const id = b.dataset.tagf;
+    filt.tags.has(id) ? filt.tags.delete(id) : filt.tags.add(id);
+    syncChips(); rebuild();
+  } else if (b.dataset.edit){
+    $("#tagedit").innerHTML = tagFormHTML("edit", b.dataset.edit);
+    $("#tagedit .tagname").focus();
+  }
 });
+$("#tagnew").onclick = () => { $("#tagedit").innerHTML = tagFormHTML("new"); $("#tagedit .tagname").focus(); };
+$("#active").onclick = e => {
+  if (e.target.id === "clearall"){ clearFilters(); rebuild(); return; }
+  const p = e.target.closest(".pill");
+  if (p){ removers[+p.dataset.k](); syncChips(); rebuild(); }
+};
 $("#famille").onchange = e => { filt.famille = e.target.value; rebuild(); };
+
+// ---- étiquettes : formulaires (verso d'une carte et panneau des filtres)
+function closeTagForm(form){
+  if (form.dataset.kind === "add"){ tagFormFor = null; render(); focusCard(); }
+  else $("#tagedit").innerHTML = "";
+}
+function submitTagForm(form){
+  const nom = form.querySelector(".tagname").value.trim().replace(/\s+/g, " ");
+  if (!nom){ form.querySelector(".tagname").focus(); return; }
+  const kind = form.dataset.kind, couleur = form.dataset.color;
+  if (kind === "edit"){
+    const id = form.dataset.id, other = tagByName(nom);
+    if (other && other !== id){ alert(`L'étiquette « ${nom} » existe déjà.`); return; }
+    T.defs[id] = {nom, couleur};
+  } else {
+    let id = tagByName(nom);
+    if (!id){ id = "t" + Date.now().toString(36); T.defs[id] = {nom, couleur}; }
+    if (kind === "add"){
+      const cid = cards[deck[pos]].id;
+      T.cards[cid] = [...new Set([...(T.cards[cid] || []), id])];
+    }
+  }
+  saveT();
+  if (kind === "add") tagFormFor = null;
+  else $("#tagedit").innerHTML = "";
+  renderTagFilters(); renderActive(); render();
+  if (kind === "add") focusCard();
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-act]");
+  if (!b) return;
+  const form = b.closest(".tagform"), act = b.dataset.act;
+  if (act === "sw"){
+    form.dataset.color = b.dataset.c;
+    form.querySelectorAll(".sw").forEach(x => x.setAttribute("aria-pressed", x === b));
+    form.querySelector("input[type=color]").value = b.dataset.c;
+  } else if (act === "tag-save") submitTagForm(form);
+  else if (act === "tag-cancel") closeTagForm(form);
+  else if (act === "tag-del"){
+    const id = form.dataset.id;
+    if (!confirm(`Supprimer l'étiquette « ${T.defs[id].nom} » de toutes les cartes ?`)) return;
+    delete T.defs[id];
+    Object.keys(T.cards).forEach(k => { T.cards[k] = T.cards[k].filter(t => t !== id); if (!T.cards[k].length) delete T.cards[k]; });
+    filt.tags.delete(id); saveT();
+    $("#tagedit").innerHTML = ""; syncChips(); rebuild();
+  } else if (act === "tag-open"){
+    tagFormFor = cards[deck[pos]].id; render();
+    $("#card .tagname").focus();
+  } else if (act === "tag-rm"){
+    const cid = cards[deck[pos]].id;
+    T.cards[cid] = tagsOf(cid).filter(t => t !== b.dataset.tag);
+    if (!T.cards[cid].length) delete T.cards[cid];
+    saveT(); renderTagFilters(); render(); focusCard();
+  }
+});
+document.addEventListener("input", e => {
+  if (e.target.dataset.act !== "swc") return;
+  const form = e.target.closest(".tagform");
+  form.dataset.color = e.target.value;
+  form.querySelectorAll(".sw").forEach(x => x.setAttribute("aria-pressed", "false"));
+});
+document.addEventListener("keydown", e => {
+  if (!e.target.matches(".tagname")) return;
+  if (e.key === "Enter"){ e.preventDefault(); submitTagForm(e.target.closest(".tagform")); }
+  else if (e.key === "Escape"){ e.stopPropagation(); closeTagForm(e.target.closest(".tagform")); }
+});
+
+// ---- sauvegarde : progression et étiquettes dans un fichier JSON
+$("#export").onclick = () => {
+  const data = {app: "flavoring-flashcards", version: 1, date: new Date().toISOString(), progression: progress, etiquettes: T};
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 1)], {type: "application/json"}));
+  a.download = `flavoring-flashcards-${new Date().toISOString().slice(0, 10)}.json`;
+  a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+};
+$("#import").onclick = () => $("#importfile").click();
+$("#importfile").onchange = async e => {
+  const f = e.target.files[0]; e.target.value = "";
+  if (!f) return;
+  try {
+    const d = JSON.parse(await f.text());
+    if (d.app !== "flavoring-flashcards" || !d.etiquettes || !d.progression) throw new Error("format");
+    if (!confirm("Fusionner ce fichier avec vos données ? En cas de conflit, le fichier l'emporte.")) return;
+    Object.assign(progress, d.progression); store.set(progress);
+    Object.assign(T.defs, d.etiquettes.defs || {});
+    Object.entries(d.etiquettes.cards || {}).forEach(([k, l]) => T.cards[k] = [...new Set([...(T.cards[k] || []), ...l])]);
+    saveT(); syncChips(); rebuild();
+  } catch(err){ alert("Fichier non reconnu : il doit venir de « Exporter mes données »."); }
+};
 $("#q").oninput = e => { filt.q = e.target.value.trim(); rebuild(); };
 $("#card").onclick = e => {
   const go = e.target.closest("[data-go]");
   if (go) { e.stopPropagation(); goTo(go.dataset.go); return; }
-  if (!e.target.closest("a")) flip();
+  if (!e.target.closest("a, .tagbox")) flip();
 };
 // ouvre une carte précise (sosie, comparaison) ; si elle est masquée par les filtres, ceux-ci sont remis à zéro
 function goTo(id){
-  if (!deck.some(i => cards[i].id === id)){
-    filt.niveau.clear(); filt.type.clear(); filt.etat.clear(); filt.brune = false; filt.famille = ""; filt.q = "";
-    document.querySelectorAll("#filters .chip").forEach(b => b.setAttribute("aria-pressed", "false"));
-    $("#famille").value = ""; $("#q").value = "";
-  }
+  if (!deck.some(i => cards[i].id === id)) clearFilters();
+  tagFormFor = null;
   rebuild(id);
   animate(); focusCard();
   window.scrollTo({top: 0, behavior: "smooth"});
@@ -394,8 +622,12 @@ $("#grid").onclick = e => { const t = e.target.closest(".tile"); if (!t) return;
 document.querySelectorAll(".controls button").forEach(b => b.addEventListener("click", focusCard));
 $("#reset").onclick = () => { if (confirm("Effacer la progression (sues / à revoir) ?")) { progress = {}; store.set(progress); render(); } };
 document.addEventListener("keydown", e => {
-  if (e.target.matches("input, select") || $("#v-study").hidden) return;
-  if (e.key === " " || e.key === "Enter"){ e.preventDefault(); flip(); }
+  if (e.key === "Escape" && !$("#fpanel").hidden){ setPanel(false); return; }
+  if (e.target.matches("input, select, textarea") || $("#v-study").hidden) return;
+  if (e.key === " " || e.key === "Enter"){
+    if (e.target.closest("button")) return;  // laisse le bouton réagir normalement
+    e.preventDefault(); flip();
+  }
   else if (e.key === "ArrowRight") go(1);
   else if (e.key === "ArrowLeft") go(-1);
   else if (e.key === "1") mark("revoir");
@@ -411,6 +643,7 @@ $("#theme").onclick = () => {
 };
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change", themeLabel);
 themeLabel();
+syncChips();
 rebuild(null);
 </script>
 </body>

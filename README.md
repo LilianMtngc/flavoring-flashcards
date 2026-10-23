@@ -25,9 +25,13 @@ Quatre catégories :
 - **Navigateur** : [la page en ligne](https://lilianmtngc.github.io/flavoring-flashcards/), ou `index.html`
   téléchargé et ouvert localement. Le fichier est autonome et fonctionne hors connexion.
   - Clic ou `Espace` : retourner la carte ; `←` / `→` : naviguer ; `1` : à revoir ; `2` : je sais.
-  - Filtres : complexité, molécule / produit naturel / théorique / sosies, notes brunes, à revoir, je sais, famille chimique, recherche.
+  - Bouton « Filtres » : type de carte, complexité, progression (pas encore vues, à revoir, je sais), notes brunes,
+    famille chimique, étiquettes. Les filtres actifs s'affichent en pastilles, effaçables d'un clic.
+  - **Étiquettes personnelles** : « + Étiquette » au verso d'une carte. Nom et couleur au choix ; on peut ensuite filtrer,
+    renommer, recolorer ou supprimer une étiquette depuis le panneau des filtres.
   - Les cartes sues sont teintées en vert, celles à revoir en rouge. Bouton clair / sombre en haut à droite.
-  - La progression est enregistrée dans le navigateur, sur cet appareil uniquement.
+  - La progression et les étiquettes sont enregistrées dans le navigateur, sur cet appareil uniquement.
+    « Exporter mes données » (panneau des filtres) les sauvegarde dans un fichier JSON, à réimporter ailleurs.
 - **Anki** : [`flavoring-flashcards.apkg`](flavoring-flashcards.apkg), à importer avec Fichier → Importer.
   Les cartes sont taguées `note_brune`, `complexite_*`, `famille_*` et `molecule` / `naturel` / `theorique`.
 
