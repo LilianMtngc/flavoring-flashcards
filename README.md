@@ -35,7 +35,8 @@ Quatre catégories :
   - **Répétition espacée** : « Je sais » repousse la carte (1, 3, 7, 14, 30 puis 60 jours), « À revoir » la garde pour
     aujourd'hui. Le compteur « N à réviser » en haut de page ouvre les cartes du jour.
   - **Statistiques** : onglet sur le bord droit (progression par type, complexité et famille olfactive, cartes les plus ratées).
-  - **Vocabulaire** : onglet sur le bord gauche. Noms usuels et pièges (valéraldéhyde = pentanal, caproïque / caprylique /
+  - **Catalogue** : tri alphabétique (par défaut) ou par famille chimique, bouton en haut à droite.
+  - **Vocabulaire** : onglet sur le bord gauche, par ordre alphabétique. Noms usuels et pièges (valéraldéhyde = pentanal, caproïque / caprylique /
     caprique, « aldéhydes C-n »…), stéréochimie, préfixes, fonctions, hétérocycles, terpènes, chimie des arômes, identifiants.
     Chaque entrée renvoie vers les cartes concernées ([`data/glossaire.csv`](data/glossaire.csv), rédigé avec assistance IA).
   - **Raccourcis** : `/` rechercher, `F` filtres, `E` étiquette, `M` changer de recto, `S` statistiques, `V` vocabulaire.
@@ -45,7 +46,7 @@ Quatre catégories :
     renommer, recolorer ou supprimer une étiquette depuis le panneau des filtres.
   - Les cartes sues sont teintées en vert, celles à revoir en rouge. Bouton clair / sombre en haut à droite.
   - La progression, les révisions et les étiquettes sont enregistrées dans le navigateur, sur cet appareil uniquement.
-    « Exporter mes données » (panneau des filtres) les sauvegarde dans un fichier JSON, à réimporter ailleurs.
+    « Exporter » (onglet Statistiques, rubrique « Mes données ») les sauvegarde dans un fichier JSON, à réimporter ailleurs.
 - **Anki** : [`flavoring-flashcards.apkg`](flavoring-flashcards.apkg), à importer avec Fichier → Importer.
   Les cartes sont taguées `note_brune`, `complexite_*`, `famille_*` et `molecule` / `naturel` / `theorique`.
 
@@ -110,11 +111,11 @@ Calculés avec RDKit ([`scripts/sosies.py`](scripts/sosies.py)). Deux molécules
 - elles sont toutes deux des acides carboxyliques, ou aucune des deux.
 
 Les groupes comptent au plus 4 molécules, toutes sosies deux à deux ; les stéréo-isomères forment un groupe à part.
-Les dessins sont alignés sur le squelette commun. Sont tracées en couleur : les liaisons vers les atomes placés ailleurs,
-les liaisons dont l'ordre change, ou les coins de stéréochimie et doubles liaisons E / Z. La nature de la différence est décrite automatiquement.
+Les dessins sont alignés sur le squelette commun. Un halo orange semi-transparent souligne les liaisons vers les atomes
+placés ailleurs, les liaisons dont l'ordre change, ou les coins de stéréochimie et doubles liaisons E / Z. La nature de la différence est décrite automatiquement.
 
 ### Familles olfactives
-Chaque descripteur est rattaché à une famille (agrumes, fruits rouges, floral, vert, lacté, épicé, boisé, soufré, terreux…).
+Chaque descripteur est rattaché à une famille (hespéridé, fruité, floral, vert, lacté, épicé, boisé, soufré, terreux, phénolé…).
 Une carte appartient à une famille selon la même règle que les notes brunes : un descripteur de la famille parmi ses deux premiers,
 ou au moins deux descripteurs de la famille.
 

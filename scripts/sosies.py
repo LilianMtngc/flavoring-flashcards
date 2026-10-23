@@ -12,10 +12,10 @@ Cela regroupe les isomères de position (eugénol / isoeugénol), les doubles li
 déplacées ou en plus (β-ionone / β-damascone / β-damascénone), les isomères E/Z et
 les énantiomères (carvones).
 
-La différence est décrite automatiquement et tracée en couleur sur les dessins, alignés
-sur le squelette commun : liaisons vers les atomes hors du squelette commun, liaisons
-dont l'ordre diffère d'une molécule à l'autre, ou coins de stéréo / doubles liaisons E-Z
-quand la connectivité est identique.
+La différence est décrite automatiquement et surlignée (halo semi-transparent sous la
+liaison) sur les dessins, alignés sur le squelette commun : liaisons vers les atomes hors
+du squelette commun, liaisons dont l'ordre diffère d'une molécule à l'autre, ou coins de
+stéréo / doubles liaisons E-Z quand la connectivité est identique.
 """
 import re
 from collections import Counter
@@ -182,15 +182,19 @@ def highlight(mols):
 
 
 def recolor(svg, bonds):
-    """Trace les liaisons qui diffèrent dans la couleur d'accent (variable CSS --hl), un peu plus épaisses."""
-    def repl(m):
-        el = m.group(0)
-        el = re.sub(r"stroke:(?:#[0-9A-Fa-f]{6}|currentColor)", "stroke:var(--hl,#e07b1f)", el)
-        el = re.sub(r"fill:(?:#[0-9A-Fa-f]{6}|currentColor)", "fill:var(--hl,#e07b1f)", el)
-        return el.replace("stroke-width:2.0px", "stroke-width:3.4px")
+    """Surligne les liaisons qui diffèrent : un trait large et semi-transparent (couleur CSS --hl) passe
+    sous la liaison, qui reste dessinée normalement (on voit donc toujours s'il s'agit d'une double liaison)."""
+    under = []
     for b in bonds:
-        svg = re.sub(rf"<path class='bond-{b} [^>]*>", repl, svg)
-    return svg
+        for m in re.finditer(rf"<path class='bond-{b} [^>]*>", svg):
+            d = re.search(r"d='([^']*)'", m.group(0))
+            if d:
+                under.append(f"<path d='{d.group(1)}'/>")
+    if not under:
+        return svg
+    g = ("<g class='hl' style='opacity:.42;fill:none;stroke:var(--hl,#e07b1f);stroke-width:9px;"
+         "stroke-linecap:round;stroke-linejoin:round'>" + "".join(under) + "</g>")
+    return re.sub(r"<svg[^>]*>", lambda m: m.group(0) + g, svg, count=1)
 
 
 def draw(mols, hl):
