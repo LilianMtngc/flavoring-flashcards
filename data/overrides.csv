@@ -1,0 +1,3 @@
+key;cid;raison
+linalool_oxide;22310;"oxyde de linalol commercial (CAS 1365-19-1) = forme furanoïde ; CACTUS et OPSIN renvoient la forme pyranoïde"
+msg;23672308;PubChem renvoie le monohydrate par nom et par CAS : on dessine le sel anhydre (même InChIKey que CACTUS)

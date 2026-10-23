@@ -1,0 +1,453 @@
+type;key;forme;descripteurs
+mol;acetal;naturelle;SOLVANT|YAOURT|FERMENTÉ|POMME|VERT|NOIX
+mol;acetal;non précisée;SOLVANT|YAOURT|FERMENTÉ|POMME|VERT|NOIX
+mol;allyl_heptanoate;non précisée;FRUITÉ|ANANAS|FERMENTÉ|POUSSIÉREUX|TUTTI FRUITY|FRUIT TROPICAL
+mol;allyl_hexanoate;non précisée;FRUITÉ|ANANAS|FERMENTÉ|POUSSIÉREUX
+mol;isoamyl_alcohol;naturelle;CACAO|FRUITÉ|POUDRÉ CACAO|ALCOOLIQUE|FERMENTÉ|ALDEHYDÉ
+mol;isoamyl_alcohol;non précisée;CACAO|ALDEHYDÉ|ALCOOLIQUE|FERMENTÉ|FRUITÉ
+mol;amyl_butyrate;non précisée;FRUITÉ|FERMENTÉ|ANANAS|VOMI|POUSSIÉREUX
+mol;isoamyl_butyrate;naturelle;FRUITÉ|FRAISE|BANANE|POIRE|VOMI|FERMENTÉ|POMME
+mol;isoamyl_butyrate;non précisée;FRUITÉ|FRAISE|BANANE|POIRE|VOMI|FERMENTÉ|POMME
+mol;benzyl_alcohol;naturelle;AMANDÉ|CERISE|SOLVANT
+mol;benzyl_alcohol;non précisée;SOLVANT|PLASTIQUE|AMANDÉ|CERISE
+mol;isobutyl_alcohol;naturelle;PLASTIQUE|ALCOOLIQUE|ETHER|FRUITÉ|WHISKY
+mol;isobutyl_alcohol;non précisée;PLASTIQUE|ALCOOLIQUE|ETHER|FRUITÉ|WHISKY
+mol;butyl_butyrate;non précisée;FRUITÉ|FRAISE|SOLVANT|ANANAS|POUSSIÉREUX|GRAS|BANANE
+mol;butyl_butyryl_lactate;non précisée;FLORAL|MÉTALLIQUE|PLASTIQUE|CIREUX|CRÉMEUX
+mol;butyl_butyryl_lactate;naturelle;VERT|FLORAL|ROSE|CIREUX|POUSSIÉREUX
+nat;chamomile_roman;produit naturel;FLORAL|CAMOMILLE|FRAIS|CORIANDRE GRAINE|FOIN|LAVANDE|THÉ|GRAS
+nat;coriander_oil;produit naturel;CORIANDRE GRAINE|LINALOL|AGRUME|TERPENIQUE
+nat;davana_oil;produit naturel;FRUITÉ|FIGUE|FRUITS SECS|CINNAMIQUE|CONFITURE|FERMENTÉ|BOISÉ|FOIN|FLORAL
+mol;decanal;non précisée;ALDÉHYDÉ|ORANGE|GRAS|AGRUME|MÉTALLIQUE|FER CHAUD
+mol;diethyl_malonate;non précisée;ALCOOLIQUE|FRUITÉ|POMME|VERT
+mol;dimethoxybenzene_13;non précisée;NOISETTE FRAÎCHE|NAPHTALINE|MOISI|MÉDICINAL|WINTER GREEN|AMANDÉ
+mol;ethyl_cinnamate;non précisée;CINNAMATE|FERMENTÉ|FRAISE|CONFITURE|ROSE
+mol;ethyl_heptanoate;non précisée;FRUITÉ|ANANAS|FRAISE|POUSSIÉREUX|SAVON
+mol;ethyl_levulinate;naturelle;ALCOOLIQUE|THYM|SALICYLÉ|POUSSIÉREUX
+mol;ethyl_levulinate;non précisée;PHÉNOLIQUE|PLASTIQUE|SALICYLÉ|THYM|ALCOOLIQUE|POUSSIÉREUX
+mol;ethyl_2_methylbutyrate;naturelle;FRUITÉ|FRAISE|FRUIT CUIT|FERMENTÉ|POMME
+mol;ethyl_2_methylbutyrate;non précisée;FRUITÉ|FRAISE|FRUIT CUIT|FERMENTÉ|POMME
+mol;ethyl_propionate;non précisée;ETHER|FRUITÉ|FRAISE|ANANAS|RHUMÉ|FERMENTÉ
+mol;ethyl_propionate;naturelle;ETHER|FRUITÉ|FRAISE|ANANAS|RHUMÉ|FERMENTÉ
+mol;ethyl_valerate;non précisée;FRUITÉ|FRAISE|FROMAGE|FRUIT TROPICAL|ANANAS|POMME|FERMENTÉ
+mol;ethyl_isovalerate;naturelle;FRUITÉ|MYRTILLE|FERMENTÉ|FRAISE|MENTHE|POUSSIÉREUX
+mol;ethyl_isovalerate;non précisée;FRUITÉ|MYRTILLE|FERMENTÉ|FRAISE|MENTHE
+mol;gamma_heptalactone;non précisée;COUMARINÉ|LACTONÉ|NOIX DE COCO|CARAMEL|LAIT
+mol;ambrettolide;naturelle;MUSQUE|BOISÉ|MURE|FRAMBOISE|FRUITS ROUGES|POUDRÉ FRUITÉ
+mol;hexanedione_23;non précisée;PLASTIQUE|SOLVANT|FRUITÉ|BEURRÉ|GRAS|VERT
+mol;hexanedione_23;naturelle;FRUITÉ|GRAS|FRAMBOISE|BARBE À PAPA|BEURRÉ|PLASTIQUE|SOLVANT|VERT
+mol;trans_2_hexenal;non précisée;POMME|FRUITÉ|VERT|ALDÉHYDÉ|LÉGUME|GRAS|AMANDÉ
+mol;trans_2_hexenol;non précisée;VERT|POMME|FRUITÉ|CAOUTCHOUC|SOLVANT|GRAS
+mol;lactic_acid;naturelle;ACIDE|LAIT
+mol;lactic_acid;non précisée;ACIDE|LAIT
+mol;lauric_acid;naturelle;GRAS|SAVON|BOUGIE|CIREUX|LAIT
+nat;licorice;produit naturel;AMER|BOISÉ|MINE DE CRAYON|MÉTALLIQUE
+mol;menthyl_acetate;naturelle;FRUITÉ|FRUIT CUIT|FRUITS ROUGES|MENTHE|FRAIS|MOISI
+mol;menthyl_acetate;non précisée;FRUITÉ|FRUIT CUIT|FRUITS ROUGES|MENTHE|FRAIS|MOISI
+mol;methylguaiacol_4;naturelle;PHÉNOLIQUE|FUMÉ|CLOU DE GIROFLE|CUIRÉ|ANIMAL|BOISÉ|POUDRÉ VANILLÉ
+mol;methylguaiacol_4;non précisée;PHÉNOLIQUE|FUMÉ|CLOU DE GIROFLE|CUIRÉ|ANIMAL|BOISÉ|POUDRÉ VANILLÉ
+mol;vinylguaiacol_4;naturelle;PHÉNOLIQUE|FUMÉ|CLOU DE GIROFLE|CUIRÉ|MÉTALLIQUE|BOISÉ
+mol;vinylguaiacol_4;non précisée;PHÉNOLIQUE|FUMÉ|CLOU DE GIROFLE|CUIRÉ|MÉTALLIQUE|BOISÉ
+mol;methylacetophenone_4;non précisée;NAPHTALINE|CERISE|AMANDÉ|MIMOSA|FLORAL|NOISETTE FRAÎCHE|SOLVANT
+mol;methylfurfural_5;naturelle;COUMARINÉ|AMANDÉ|BOISÉ|SOLVANT|NUTTY|CARAMEL
+mol;methylfurfural_5;non précisée;AMANDÉ|PEAU D'AMANDE|BOISÉ|NOISETTE FRAÎCHE
+mol;methyl_furoate;non précisée;CAOUTCHOUC|SALICYLÉ|AMANDÉ|CHAMPIGNON
+mol;methylheptenone;non précisée;FRUITÉ|POIRE|VERT|FLORAL|SAVON|BANANE|FROMAGE BLEU
+mol;methanethiol;non précisée;SOUFRÉ|GAZ|ALLIACÉ|CAMEMBERT|CHOU
+mol;methyl_n_methylanthranilate;naturelle;BOISÉ|NAPHTALINE|POUSSIÉREUX|CONCORD|CAMPHRE|MOISI
+mol;methyl_n_methylanthranilate;non précisée;NAPHTALINE|BOISÉ|MÉDICINAL|CONCORD|MOISI|POUSSIÉREUX
+nat;mountain_maple;produit naturel;ÉRABLE|BOISÉ|CAVE|CHAMPIGNON
+mol;myristic_acid;naturelle;GRAS|MASQUANT|MOUTHCOATING
+mol;nonanoic_acid;non précisée;GRAS|CIREUX|POUSSIEREUX|CHÈVRE|SAVON|LAIT
+mol;octanal;non précisée;ALDÉHYDÉ|GRAS|ORANGE|AGRUME|VERT|MÉTALLIQUE
+mol;octanone_2;non précisée;FROMAGE BLEU|CHAMPIGNON|CRÉMEUX|POUSSIÉREUX|FRUITÉ|POIRE
+mol;octanal;naturelle;ALDÉHYDÉ|GRAS|ORANGE|AGRUME|VERT|MÉTALLIQUE
+mol;pentanone_2;non précisée;SOLVANT|ETHER|BANANE|FRUITÉ
+nat;black_pepper;produit naturel;POIVRE|BOISÉ|TERPENIQUE|AGRUME|ÉPICE
+mol;alpha_phellandrene;naturelle;TERPENIQUE|LIMETTE|MÉDICINAL|ORANGE|POIVRE
+mol;phenethyl_alcohol;naturelle;FLORAL|ROSE|MUGUET|VERT|VIN|MIEL
+mol;phenethyl_alcohol;non précisée;FLORAL|ROSE|MUGUET|VERT|VIN|MIEL
+mol;phenethyl_phenylacetate;non précisée;FLORAL|ROSE|VERT|MIEL|CIREUX|CACAO
+mol;phenylacetaldehyde;non précisée;FLORAL|JACINTHE|ROSE|VERT|ALDÉHYDÉ|MIEL
+mol;phenylacetaldehyde;naturelle;FLORAL|JACINTHE|ROSE|VERT|ALDEHYDÉ|MIEL|AGRUME|LILAS|CACAO
+mol;propenyl_guaethol;non précisée;PHÉNOLIQUE|ANISÉ|POUDRÉ VANILLÉ|FUMÉ|ARTICHAUT
+mol;cinnamyl_alcohol;naturelle;ROSE|ALCOOLIQUE|VIN|CINNAMIQUE|FERMENTÉ
+mol;alpha_terpineol;naturelle;TERPENIQUE|DETERGENT|TERREUX|CAMPHRE|PIN|CITRON VERT|HERBAL|MÉDICINAL
+mol;alpha_terpineol;non précisée;TERPENIQUE|DETERGENT|TERREUX|CAMPHRE|PIN|HERBAL|CITRON VERT
+mol;undecanone_2;naturelle;POIRE|GRAS|SAVON|CHAMPIGNON|FROMAGE BLEU|CORIANDRE
+mol;undecanone_2;non précisée;POIRE|GRAS|SAVON|CHAMPIGNON|FROMAGE BLEU|CORIANDRE
+mol;tetramethylpyrazine;non précisée;SOLVANT|VERT|CACAHUÈTE|ASPERGE|NUTTY|TERREUX
+mol;tetramethylpyrazine;naturelle;SOLVANT|VERT|CACAHUÈTE|ASPERGE|NUTTY|TERREUX
+mol;difurfuryl_disulfide;non précisée;SOUFRÉ|CAFÉ|ALLIACÉ|CHOU|PLASTIQUE|GRILLÉ|BRÛLÉ|GAZ
+mol;difurfuryl_disulfide;naturelle;SOUFRÉ|CAFÉ|ALLIACÉ|CHOU|PLASTIQUE|GRILLÉ|BRÛLÉ|GAZ
+mol;trimethylpyrazine;non précisée;SOLVANT|VERT|TERREUX|CACAO|GRILLÉ|NOISETTE|NUTTY
+mol;furfuryl_methyl_sulfide;non précisée;SOUFRÉ|ALLIACÉ|GRILLÉ|CAOUTCHOUC|MÉTALLIQUE|MOUTARDE
+mol;furfuryl_thioacetate;non précisée;SOUFRÉ|GRILLÉ|ALLIACÉ|CAFÉ
+mol;methoxycinnamaldehyde_2;naturelle;BOISÉ|PEAU D'AMANDE|CARTON|CINNAMIQUE|MINE DE CRAYON
+mol;dimethylpyrazine_23;non précisée;GRILLÉ|POP-CORN|MOISI|NUTTY|NOISETTE|SOLVANT|AMINÉ|VERT|TERREUX
+mol;dimethylpyrazine_25;non précisée;SOLVANT|VERT|ETHER|NOISETTE|GRILLÉ
+mol;cocoa_hexenal;naturelle;POUDRÉ CACAO|PLASTIQUE|AMANDÉ|MIEL|ROSE|ALDEHYDÉ|FRUITÉ|SOLVANT
+mol;cocoa_hexenal;non précisée;POUDRÉ CACAO|AMANDÉ|MIEL|FLORAL|ALDEHYDÉ|FRUITÉ|SOLVANT|ROSE
+mol;methylquinoxaline_5;non précisée;RIZ BASMATI|GRILLÉ|MOISI|NUTTY|POP-CORN|AMINÉ|CACAHUÈTE
+mol;methylthiophenecarboxaldehyde;non précisée;AMANDÉ|BOISÉ|PEAU D'AMANDE|CERISE
+mol;trans_2_octenal;non précisée;ALDÉHYDÉ|GRAS|FRIT|VERT|ORANGE
+mol;dipropyl_disulfide;non précisée;SOUFRÉ|ALLIACÉ|OIGNON|POIREAU|VERT|GAZ|CHOU
+mol;delta_undecalactone;non précisée;CHAMPIGNON|MOUSSE DE CHÊNE|LACTONÉ|LAIT|CRÉMEUX|GRAS|PÊCHE
+mol;ketoisophorone;non précisée;MIEL|SAFRAN|BOISÉ|FLORAL|MOISI
+mol;acetic_acid;naturelle;VINAIGRE|ACETIQUE|ACIDE
+mol;acetic_acid;non précisée;VINAIGRE|ACETIQUE|ACIDE
+mol;acetoin;naturelle;BEURRÉ|CRÉMEUX|GRAS|SOLVANT
+mol;acetophenone;naturelle;NAPHTALINE|NOISETTE FRAÎCHE|PEAU D'AMANDE|PLASTIQUE|FRAISE DES BOIS|AMANDÉ
+mol;acetophenone;non précisée;NAPHTALINE|NOISETTE FRAÎCHE|PEAU D'AMANDE|PLASTIQUE|FRAISE DES BOIS|AMANDÉ
+nat;bitter_almond_oil;produit naturel;AMANDE AMÈRE|CERISE|BOISÉ|NAPHTALINE|FLORAL|YLANG
+mol;isoamyl_acetate;naturelle;BANANE|FRUITÉ|TUTTI FRUTTI|SOLVANT
+mol;isoamyl_acetate;non précisée;BANANE|FRUITÉ|TUTTI FRUTTI|SOLVANT
+mol;anethole;naturelle;ANISÉ|RÉGLISSE|FRAIS
+mol;anethole;non précisée;ANISÉ|RÉGLISSE|FRAIS
+mol;anisyl_acetate;naturelle;POUDRÉ FRUITÉ|FRAMBOISE|CERISE|ANISÉ|CRÉMEUX
+mol;anisyl_acetate;non précisée;POUDRÉ FRUITÉ|FRAMBOISE|CERISE|ANISÉ|VERT
+mol;anisyl_alcohol;naturelle;ANISÉ|AMANDÉ
+mol;anisyl_alcohol;non précisée;ANISÉ|AMANDÉ
+nat;peru_balsam;produit naturel;BALSAMIQUE|BAUME|NAPHTALINE|COUMARINÉ|CINNAMIQUE|GOUSSE|MÉDICINAL
+mol;benzaldehyde;naturelle;AMANDE AMÈRE|COLLE|CERISE
+mol;benzaldehyde;non précisée;AMANDE AMÈRE|COLLE|CERISE
+nat;benzoin_sumatra;produit naturel;BALSAMIQUE|GRAS|VANILLE|CINNAMIQUE
+mol;benzyl_acetate;naturelle;FLORAL|JASMIN|BANANE|FRUITÉ|SOLVANT
+mol;benzyl_acetate;non précisée;FLORAL|JASMIN|BANANE|FRUITÉ|SOLVANT
+nat;bergamot_oil;produit naturel;BERGAMOTE|AGRUME|LAVANDE|FLORAL|ZESTÉ|CITRON|ORANGE
+nat;buchu_oil;produit naturel;SOUFRÉ (CASSIS)|CASSIS|MENTHE|VERT|VÉGÉTAL|PIPI DE CHAT|FRAIS
+mol;isobutyraldehyde;non précisée;ALDÉHYDÉ|MALT|FRUITÉ|VERT|ALCOOLIQUE|CACAO|FERMENTÉ
+mol;isobutyraldehyde;naturelle;ALDÉHYDÉ|MALT|FRUITÉ|VERT|ALCOOLIQUE|CACAO|FERMENTÉ
+mol;butyric_acid;naturelle;VOMI|FROMAGE|FERMENTÉ|ACIDE|BEURRÉ|FRUITÉ
+mol;butyric_acid;non précisée;VOMI|FROMAGE|FERMENTÉ|ACIDE|BEURRÉ|FRUITÉ
+mol;isobutyric_acid;non précisée;FROMAGE|PIED|VOMI|CACAO|FERMENTÉ
+mol;isobutyric_acid;naturelle;FROMAGE|PIED|VOMI|CACAO|FERMENTÉ
+mol;caffeine;non précisée;AMER
+mol;caffeine;naturelle;AMER
+nat;capsicum;produit naturel;PIQUANT
+nat;cardamom_oil;produit naturel;CAMPHRE|TERPENIQUE|POIVRE|AGRUME|FRAIS|RÉSINEUX|CARDAMOME
+mol;terpinen_4_ol;naturelle;DETERGENT|TERPENIQUE|TERREUX|FRAIS|MOISI|BOISÉ|CAMPHRE|MÉDICINAL|MASTIC|PIN
+mol;caryophyllene;non précisée;TERPENIQUE|CLOU DE GIROFLE|MOISI|TERREUX|CAROTTE|BOISÉ
+mol;caryophyllene;naturelle;TERPENIQUE|CLOU DE GIROFLE|MOISI|TERREUX|CAROTTE|BOISÉ
+nat;cassia_oil;produit naturel;CANNELLE|BOISÉ|CINNAMIQUE|ÉPICE|POIVRE|TERPENIQUE|COUMARINÉ
+mol;cinnamaldehyde;naturelle;CANNELLE|MIEL|CINNAMIQUE|BOISÉ|AMANDÉ|ÉPICE|COUMARINÉ
+mol;cinnamaldehyde;non précisée;CANNELLE|MIEL|CINNAMIQUE|BOISÉ|AMANDÉ|ÉPICE|COUMARINÉ
+mol;cinnamic_acid;naturelle;FRUITÉ|FRUITS ROUGES|CINNAMIQUE
+nat;cinnamon_ceylon;produit naturel;CANNELLE|BOISÉ|CINNAMIQUE|THYM|TERPENIQUE|COUMARINÉ|POIVRE|CLOU DE GIROFLE|AGRUME
+mol;cinnamyl_alcohol;non précisée;ROSE|ALCOOLIQUE|VIN|CINNAMIQUE|FERMENTÉ
+mol;citral;naturelle;CITRON|AGRUME|ALDÉHYDÉ|GRAS|ZESTÉ|CITRONNELLE
+mol;citral;non précisée;CITRONNELLE|CITRON|AGRUME|ALDÉHYDÉ|GRAS|SAVON|ZESTÉ
+mol;citronellal;non précisée;CITRONNELLE|ALDEHYDÉ|GRAS|AGRUME|ROSE
+nat;lemongrass_oil;produit naturel;CITRONNELLE|CITRON|ROSE|GRAS|SAVON
+mol;citronellol;non précisée;CITRONNELLE|FLORAL|GÉRANIUM|ROSE|SAVON|AGRUME
+mol;p_cresol;non précisée;ANIMAL|FUMIER|PHÉNOLIQUE|FOIN|FUMÉ
+mol;p_cresol;naturelle;ANIMAL|FUMIER|PHÉNOLIQUE|FOIN|FUMÉ
+mol;gamma_decalactone;naturelle;LACTONÉ|PÊCHE|CARTON|GRAS|LAIT|CRÉMEUX|CHAMPIGNON|NOIX DE COCO
+mol;gamma_decalactone;non précisée;LACTONÉ|PÊCHE|CARTON|GRAS|LAIT|CRÉMEUX|CHAMPIGNON|NOIX DE COCO
+mol;delta_decalactone;naturelle;LACTONÉ|CARTON|NOIX DE COCO|PÊCHE|LAIT|CRÉMEUX|GRAS|BEURRÉ
+mol;delta_decalactone;non précisée;LACTONÉ|CARTON|NOIX DE COCO|PÊCHE|LAIT|CRÉMEUX|GRAS|BEURRÉ
+mol;decanoic_acid;non précisée;CIREUX|SAVON|GRAS|LAIT
+mol;decanoic_acid;naturelle;CIREUX|SAVON|GRAS|LAIT
+mol;diacetyl;naturelle;BEURRÉ|CRÉMEUX|VERT|SOLVANT
+mol;dihydrocoumarin;naturelle;COUMARINÉ|FOIN|CARAMEL|NOIX DE COCO|AMANDÉ
+mol;dihydrocoumarin;non précisée;COUMARINÉ|FOIN|CARAMEL|NOIX DE COCO|AMANDÉ
+mol;melonal;naturelle;MELON|PASTÈQUE|CONCOMBRE|ALDEHYDÉ|FRUITÉ|GRAS|CITRONNELLE
+mol;gamma_dodecalactone;naturelle;LACTONÉ|PÊCHE|CARTON|CRÉMEUX|GRAS|AMER
+mol;gamma_dodecalactone;non précisée;LACTONÉ|PÊCHE|CARTON|CRÉMEUX|GRAS|AMER
+mol;delta_dodecalactone;non précisée;AMER|PÊCHE|FLORAL|CRÉMEUX|GRAS|CHAMPIGNON
+mol;ethyl_acetate;naturelle;ETHER|SOLVANT|FRUITÉ
+mol;ethyl_acetate;non précisée;ETHER|SOLVANT|FRUITÉ
+mol;ethyl_butyrate;naturelle;FRUITÉ|FRAISE|BUTYRIQUE|FERMENTÉ|KIWI|VOMI
+mol;ethyl_butyrate;non précisée;FRUITÉ|FRAISE|BUTYRIQUE|FERMENTÉ|KIWI|VOMI
+mol;ethyl_decanoate;naturelle;FRUITÉ|POIRE|WHISKY|LIE DE VIN|SAVON|CIREUX|GRAS|POUSSIÉREUX
+mol;ethyl_decanoate;non précisée;FRUITÉ|POIRE|WHISKY|LIE DE VIN|SAVON|CIREUX|GRAS|POUSSIÉREUX
+mol;ethylguaiacol_4;naturelle;PHÉNOLIQUE|FUMÉ|BOISÉ|CUIRÉ|MÉDICINAL|CLOU DE GIROFLE
+mol;ethylguaiacol_4;non précisée;PHÉNOLIQUE|FUMÉ|BOISÉ|CUIRÉ|MÉDICINAL|CLOU DE GIROFLE
+mol;ethyl_hexanoate;naturelle;FRUITÉ|ANANAS|FRAISE|POUSSIÉREUX|CHÈVRE
+mol;ethyl_hexanoate;non précisée;FRUITÉ|ANANAS|FRAISE|POUSSIÉREUX|CHÈVRE
+mol;ethyl_laurate;naturelle;CIREUX|SAVON|GRAS|ALCOOLIQUE|FER CHAUD
+mol;ethyl_laurate;non précisée;CIREUX|SAVON|GRAS|ALCOOLIQUE|FER CHAUD
+mol;ethyl_phenylacetate;naturelle;CIREUX|VERT|MIEL|ROSE|CACAO|ANISÉ
+mol;ethyl_phenylacetate;non précisée;CIREUX|VERT|MIEL|ROSE|CACAO|ANISÉ
+mol;ethyl_vanillin;non précisée;POUDRÉ VANILLÉ|PHÉNOLIQUE|CLOU DE GIROFLE
+nat;eucalyptus_oil;produit naturel;EUCALYPTUS|FRAIS|CAMPHRE|TERREUX
+mol;eugenol;naturelle;CLOU DE GIROFLE|ÉPICE|MÉTALLIQUE|FRUIT CUIT|PRUNE|BOISÉ|TERREUX|MÉDICINAL
+mol;isoeugenol;naturelle;CLOU DE GIROFLE|ÉPICE|MÉTALLIQUE|BOISÉ|MÉDICINAL|TERREUX
+mol;isoeugenol;non précisée;CLOU DE GIROFLE|ÉPICE|MÉTALLIQUE|BOISÉ|MÉDICINAL|TERREUX
+nat;fenugreek;produit naturel;NOIX|ÉRABLE|GRILLÉ|BOISÉ|CELERI|FENUGREC
+mol;furfurylthiol;non précisée;SOUFRÉ|GRILLÉ|ALLIACÉ|CAFÉ|BRÛLÉ|VIANDÉ
+mol;furfurylthiol;naturelle;SOUFRÉ|GRILLÉ|ALLIACÉ|CAFÉ|BRÛLÉ|VIANDÉ
+mol;geraniol;non précisée;ROSE|CITRONNELLE|AGRUME|SAVON|FRUITÉ
+nat;geranium_oil;produit naturel;GÉRANIUM|ROSE|LITCHI|MÉTALLIQUE|SAVON|CITRONNELLE|ALDEHYDÉ|FLORAL
+mol;geranyl_acetate;naturelle;ROSE|GÉRANIUM|FLORAL|POIRE|GRAS|SAVON
+nat;ginger_oil;produit naturel;GINGEMBRE|ÉPICE|SAVON|BOISÉ|AGRUME|POIVRE|TERPÉNIQUE
+nat;ginger_oleoresin;produit naturel;GINGEMBRE|PIQUANT|ÉPICE|BOISÉ|SAVON|AGRUME|POIVRE
+mol;guaiacol;naturelle;PHÉNOLIQUE|FUMÉ|BOISÉ|POUDRÉ VANILLÉ|MÉDICINAL|CLOU DE GIROFLE
+mol;heptanal;naturelle;ALDÉHYDÉ|GRAS|ORANGE|VERT
+mol;heptanone_2;naturelle;FROMAGE BLEU|CHAMPIGNON|SOLVANT|GRAS|BANANE|POIRE
+mol;heptanone_2;non précisée;FROMAGE BLEU|CHAMPIGNON|SOLVANT|GRAS|BANANE|POIRE
+mol;gamma_hexalactone;naturelle;COUMARINÉ|AMANDÉ|BOISÉ
+mol;gamma_hexalactone;non précisée;COUMARINÉ|AMANDÉ|BOISÉ
+mol;hexanal;non précisée;ALDÉHYDÉ|POMME|FRUITÉ|GRAS|VERT|AMANDÉ
+mol;hexanal;naturelle;ALDÉHYDÉ|POMME|FRUITÉ|GRAS|VERT|AMANDÉ
+mol;hexanoic_acid;non précisée;CHÈVRE|POUSSIÉREUX|FROMAGE|FRUITÉ|GRAS
+mol;hexanoic_acid;naturelle;CHÈVRE|POUSSIÉREUX|FROMAGE|FRUITÉ|GRAS
+mol;cis_3_hexenol;naturelle;VERT|HERBE COUPÉE|VÉGÉTAL|POMME
+mol;trans_2_hexenyl_acetate;non précisée;FRUITÉ|POIRE|AMANDÉ|POMME|BANANE|VERT
+mol;hexyl_acetate;naturelle;FRUITÉ|VERT|POIRE|BANANE
+mol;hexyl_acetate;non précisée;FRUITÉ|VERT|POIRE|BANANE
+mol;raspberry_ketone;non précisée;POUDRÉ FRUITÉ|FRAMBOISE|BARBE À PAPA|CONFITURE|FRUITS ROUGES
+mol;raspberry_ketone;naturelle;POUDRÉ FRUITÉ|FRAMBOISE|BARBE À PAPA|CONFITURE|FRUITS ROUGES
+mol;indole;naturelle;ANIMAL|FÉCAL|FLORAL|JASMIN|NAPHTALINE|ESSENCE
+mol;indole;non précisée;ANIMAL|FÉCAL|FLORAL|JASMIN|NAPHTALINE|ESSENCE
+mol;beta_ionone;naturelle;FRUITS ROUGES|SOLVANT|FRAMBOISE|FLORAL|VIOLETTE|PARFUM|BOISÉ
+mol;beta_ionone;non précisée;VIOLETTE|FLORAL|PARFUM|FRUITS ROUGES|FRAMBOISE|BOISÉ
+nat;lavender_oil;produit naturel;LAVANDE|FLORAL|CAMPHRE|AGREST|MÉDICINAL|BERGAMOTE|SAVON
+nat;lemon_zest;produit naturel;CITRON|CITRAL|GRAS|ALDEHYDÉ|CITRON VERT|ZESTÉ|JUS
+mol;limonene;non précisée;ORANGE|AGRUME|TERPENIQUE|ZESTÉ|JUS
+mol;linalool;naturelle;LAVANDE|FLORAL|CORIANDRE|SAVON|BERGAMOTE|FRAIS
+mol;linalool;non précisée;CORIANDRE|LAVANDE|FLORAL|FRAIS|BERGAMOTE|SAVON
+mol;linalyl_acetate;naturelle;BERGAMOTE|LAVANDE|FLORAL|CORIANDRE|POIVRE
+mol;linalyl_acetate;non précisée;BERGAMOTE|LAVANDE|FLORAL|CORIANDRE|AGRUME
+mol;maltol;naturelle;CARAMEL|CARAMEL AMBRÉ|BARBE À PAPA|CONFITURE
+mol;maltol;non précisée;CARAMEL|CARAMEL AMBRÉ|BARBE À PAPA|CONFITURE
+mol;menthol;naturelle;MENTHE|FRAIS
+mol;anisaldehyde;naturelle;ANISÉ|AMANDÉ|POUDRÉ VANILLÉ|COUMARINÉ|FLORAL
+mol;anisaldehyde;non précisée;ANISÉ|AMANDÉ|POUDRÉ VANILLÉ|COUMARINÉ|FLORAL
+mol;methyl_anthranilate;naturelle;WINTERGREEN|FLORAL|MÉDICINAL|NAPHTALINE|CONCORD|FLEUR D'ORANGER
+mol;methyl_anthranilate;non précisée;WINTERGREEN|FLORAL|MÉDICINAL|NAPHTALINE|CONCORD|FLEUR D'ORANGER
+mol;styrallyl_acetate;naturelle;RHUBARBE|FRUITÉ|VERT|PLASTIQUE|MÉTALLIQUE|NOISETTE
+mol;styrallyl_acetate;non précisée;RHUBARBE|FRUITÉ|VERT|PLASTIQUE|MÉTALLIQUE|NOISETTE
+mol;isovaleraldehyde;non précisée;ALDÉHYDÉ|CACAO|FERMENTÉ|MALT|VERT
+mol;isovaleraldehyde;naturelle;ALDÉHYDÉ|CACAO|FERMENTÉ|MALT|VERT
+mol;methyl_cinnamate;non précisée;CINNAMATE|FERMENTÉ|FRAISE|CONFITURE|ROSE
+mol;methyl_cinnamate;naturelle;CINNAMATE|FERMENTÉ|FRAISE|CONFITURE|ROSE
+mol;mcp;naturelle;GRILLÉ|NOIX|ÉRABLE|CELERI|CARAMEL AMBRÉ|CAFÉ|RÉGLISSE
+mol;mcp;non précisée;GRILLÉ|NOIX|ÉRABLE|CELERI|CARAMEL AMBRÉ|CAFÉ|RÉGLISSE
+mol;methyl_salicylate;naturelle;WINTERGREEN|CAMPHRE|NAPHTALINE|ROOT BEER|MÉDICINAL|FRAIS|CONCORD
+mol;dms;non précisée;SOUFRÉ (DMS)|MAIS|CRABE|LÉGUME|CHOU
+mol;dms;naturelle;SOUFRÉ|MAIS|CRABE|LÉGUME|CHOU
+mol;methional;non précisée;POMME DE TERRE|SOUFRÉ|BOUILLON|CHOU|LÉGUME|ALLIACÉ|VIANDÉ|MALT
+mol;methional;naturelle;POMME DE TERRE|SOUFRÉ|BOUILLON|CHOU|LÉGUME|ALLIACÉ|VIANDÉ|MALT
+mol;naringin;non précisée;AMER|ALBEDO|PAMPLEMOUSSE
+mol;nerol;non précisée;CITRONNELLE|ROSE|GÉRANIUM|SAVON|ZESTÉ|MÉTALLIQUE
+nat;neroli_oil;produit naturel;FLORAL|NÉROLI|LAVANDE|SAVON|FLEUR D'ORANGER|VERT|VÉGÉTAL
+mol;nerolidol;naturelle;SAVON|FLORAL|VERT|FRUITÉ|MÉTALLIQUE
+mol;nerolidol;non précisée;SAVON|FLORAL|VERT|FRUITÉ|MÉTALLIQUE
+mol;nonadienol;non précisée;GRAS|VERT|CONCOMBRE|HUILEUX|PASTÈQUE|MELON
+mol;gamma_nonalactone;non précisée;LACTONÉ|PÊCHE|CRÉMEUX|NOIX DE COCO
+mol;nonanone_2;naturelle;FROMAGE BLEU|LAITIER|GRAS|BANANE|POIRE|SAVON|VERT|CHAMPIGNON
+nat;nutmeg_oil;produit naturel;NOIX DE MUSCADE|POIVRE|BOISÉ
+nat;oak_chips;produit naturel;BOISÉ|ALCOOLIQUE|FUMÉ|CHENE
+mol;gamma_octalactone;naturelle;LACTONÉ|NOIX DE COCO|PÊCHE|CRÉMEUX|LAIT|COUMARINÉ|CARTON|BISCUITÉ
+mol;gamma_octalactone;non précisée;LACTONÉ|NOIX DE COCO|PÊCHE|CRÉMEUX|LAIT|COUMARINÉ|CARTON|BISCUITÉ
+mol;octanoic_acid;naturelle;GRAS|CIREUX|CHÈVRE|SAVON
+mol;octanoic_acid;non précisée;GRAS|CIREUX|CHÈVRE|SAVON
+mol;octenol;naturelle;CHAMPIGNON|TERREUX|MOUSSE DE CHÊNE|VERT
+mol;octenol;non précisée;CHAMPIGNON|TERREUX|MOUSSE DE CHÊNE|VERT
+mol;oleic_acid;naturelle;GRAS|HUILEUX|POP-CORN|RANCE|FRIT|OLIVE
+nat;orange_flower;produit naturel;FLEUR D'ORANGER|NEROLI|FLORAL|NAPHTALINE|SAVON|VERT
+nat;orange_deterpenated;produit naturel;ORANGE|AGRUME|VERT|GRAS|ALDEHYDÉ
+mol;limonene;naturelle;AGRUME|ORANGE|JUS|TERPENIQUE
+nat;orange_oil;produit naturel;ORANGE|AGRUME|JUS|ZESTÉ|ALDEHYDÉ
+mol;geraniol;naturelle;FRUITÉ|ROSE|CITRONNELLE|SAVON|AGRUME
+mol;pentanedione_23;naturelle;BEURRE FONDU|VERT|BEURRÉ|PLASTIQUE|BISCUITÉ
+nat;peppermint_oil;produit naturel;MENTHE|FRAIS|VÉGÉTAL
+mol;phenethyl_acetate;naturelle;ROSE|CIREUX|VERT|VIN|CHAMPIGNON|MIEL|FRUITÉ|CACAO
+mol;phenethyl_acetate;non précisée;ROSE|CIREUX|VERT|VIN|CHAMPIGNON|MIEL|FRUITÉ|CACAO
+mol;phenylacetic_acid;non précisée;FLORAL|MIEL|CIREUX|CACAO|ROSE|VERT
+mol;phenylacetic_acid;naturelle;FLORAL|MIEL|CIREUX|CACAO|ROSE|VERT
+mol;alpha_pinene;naturelle;TERPENIQUE|TEREBENTHINE|RÉSINEUX|CAMPHRE|BOISÉ|CAROTTE|MÉDICINAL|TERREUX|PIN
+mol;alpha_pinene;non précisée;TERPENIQUE|TEREBENTHINE|RÉSINEUX|CAMPHRE|BOISÉ|CAROTTE|TERREUX|PEAU D'AMANDE
+mol;piperonal;non précisée;AMANDÉ|POUDRÉ VANILLÉ|DRAGÉE|ANISÉ
+mol;piperonal;naturelle;PEAU D'AMANDE|POUDRÉ VANILLÉ|DRAGÉE|ANISÉ
+mol;propionic_acid;naturelle;ACIDE|ACETIQUE|VINAIGRE|FROMAGE|FRUITÉ
+mol;propionic_acid;non précisée;ACIDE|ACETIQUE|VINAIGRE|FROMAGE|FRUITÉ
+nat;saffron;produit naturel;SAFRAN|ÉPICÉ|CHLORÉ
+nat;sandalwood_oil;produit naturel;SANTAL|CÈDRE|PARFUM|MUSQUE|BOISÉ
+nat;tolu_balsam;produit naturel;BALSAMIQUE|BAUME|MÉDICINAL|BOISÉ|NAPHTALINE|CINNAMIQUE|COUMARINÉ
+mol;vanillin;naturelle;POUDRÉ VANILLÉ|PHÉNOLIQUE
+mol;vanillin;non précisée;POUDRÉ VANILLÉ|PHÉNOLIQUE
+mol;veratraldehyde;non précisée;POUDRÉ VANILLÉ|DRAGÉE|MOISI
+mol;veratraldehyde;naturelle;POUDRÉ VANILLÉ|DRAGÉE|MOISI
+mol;acetylpyrazine;naturelle;RIZ BASMATI|POP-CORN|CÉRÉALE|BISCUITÉ|GRILLÉ|PAIN
+mol;isopropylmethoxypyrazine;non précisée;ASPERGE|POIVRON|VERT|TERREUX|NUTTY|CACAHUÈTE
+mol;decadienal;non précisée;GRAS|HUILEUX|FRIT|ALDÉHYDÉ|CONCOMBRE|POULET
+mol;decadienal;naturelle;GRAS|HUILEUX|FRIT|ALDÉHYDÉ|CONCOMBRE|POULET
+mol;cis_3_hexenyl_acetate;naturelle;VERT|HERBE COUPÉE|POMME|POIRE|AKENE
+mol;cis_3_hexenyl_acetate;non précisée;VERT|HERBE COUPÉE|POMME|POIRE|AKENE
+mol;furaneol;non précisée;CARAMEL|GRILLÉ|BRÛLÉ|SOLVANT|FRAISE|BARBE À PAPA|CONFITURE
+mol;furaneol;naturelle;CARAMEL|GRILLÉ|BRÛLÉ|SOLVANT|FRAISE|BARBE À PAPA|CONFITURE
+mol;thiomenthone;non précisée;SOUFRÉ|FRUIT TROPICAL|CASSIS|VERT|PIPI DE CHAT|OEUF|MENTHE
+mol;thiomenthone;naturelle;SOUFRÉ|FRUIT TROPICAL|CASSIS|VERT|PIPI DE CHAT|OEUF|MENTHE
+mol;methylfuranthiol;non précisée;LAIT CUIT|SOUFRÉ|MÉTALLIQUE|ALLIACÉ|VIANDÉ|POULET|THON
+mol;methylfuranthiol;naturelle;LAIT CUIT|SOUFRÉ|MÉTALLIQUE|ALLIACÉ|VIANDÉ|POULET|THON|OIGNON|GAZ|VÉGÉTAL
+mol;dimethylpyrazine_26;non précisée;PRALINÉ|NOISETTE|CHOCOLAT|GRILLÉ|NUTTY|SOLVANT
+mol;delta_octalactone;non précisée;COUMARINÉ|NOIX DE COCO|PÊCHE|CRÉMEUX
+mol;o_thiocresol;non précisée;SOUFRÉ|CAMEMBERT|VIANDÉ|ALLIACÉ|CAOUTCHOUC|BRÛLÉ|VÉGÉTAL
+mol;beta_damascone;non précisée;COING|POMME|FRUIT CUIT|MENTHE|BOISÉ|MOISI
+mol;acetylpyrazine;non précisée;RIZ BASMATI|POP-CORN|CÉRÉALE|BISCUITÉ|GRILLÉ|PAIN
+mol;acetylpyridine_2;non précisée;GRILLÉ|NAPHTALINE|MAIS|VERT|RIZ BASMATI|AMANDÉ|BISCUITÉ|POP-CORN
+mol;dmts;non précisée;SOUFRÉ|ALLIACÉ|OIGNON|CHOU|CAMEMBERT|VIANDÉ
+mol;furfurylpyrrole;non précisée;RADIS NOIR|SOUFRÉ|CHAMPIGNON|ALLIACÉ|MÉTALLIQUE|SOLVANT|TERREUX|VERT
+mol;cis_4_heptenal;non précisée;ALDÉHYDÉ|GRAS|CONCOMBRE|VERT|POISSON|THÉ
+mol;methyl_thiobutyrate;non précisée;CAMEMBERT|FROMAGE|SOUFRÉ|MÉTALLIQUE|ALLIACÉ|SOLVANT|CRÉMEUX|LAIT CUIT
+mol;methyl_thiobutyrate;naturelle;CAMEMBERT|FROMAGE|SOUFRÉ|MÉTALLIQUE|ALLIACÉ|SOLVANT|CRÉMEUX|LAIT CUIT
+mol;butylidenephthalide;non précisée;CELERI|LIVÈCHE|BOISÉ|FENUGREC|ÉPICE|CURRY|NOIX|GRAINE
+mol;nonadienal;non précisée;ALDÉHYDÉ|VERT|CONCOMBRE|GRAS|MELON|PASTÈQUE
+mol;safranal;non précisée;CHLORÉ|SAFRAN|ÉPICÉ|PLASTIQUE|ALDEHYDÉ|MÉTALLIQUE
+mol;beta_damascenone;naturelle;PRUNE|FRUIT CUIT|COING|POMME|BOISÉ|FRAIS
+mol;beta_damascenone;non précisée;POMME|COING|CONFITURE|FRUITS SECS|MENTHE
+mol;cis_6_nonenol;non précisée;MELON|PASTÈQUE|GRAS|VERT|CONCOMBRE
+mol;ethyl_crotonate;non précisée;SOLVANT|ALLIACÉ|SOUFRÉ|GAZ|PLASTIQUE|MÉTALLIQUE|ANANAS
+mol;ethyl_maltol;non précisée;CARAMEL|BARBE À PAPA|CONFITURE|FRAISE|FRUITS ROUGES|BRÛLÉ
+mol;dmds;non précisée;SOUFRÉ|ALLIACÉ|CRABE|GAZ|MAIS|CHOU|LÉGUME
+mol;isopropylmethylthiazole;non précisée;FRUIT TROPICAL|PÊCHE|SOUFRÉ|CAOUTCHOUC|FRUITÉ ALCOOLIQUE
+mol;sotolon;naturelle;ÉRABLE|NOIX|CARAMEL|CELERI|BOISÉ
+mol;massoia_lactone;non précisée;LACTONÉ|NOIX DE COCO|GRAS|PÊCHE|COUMARINÉ|CHAMPIGNON|CELERI|BOISÉ
+mol;filbertone;naturelle;NOISETTE|MÉTALLIQUE|CAOUTCHOUC|PRALINÉ
+mol;filbertone;non précisée;NOISETTE|MÉTALLIQUE|CAOUTCHOUC|PRALINÉ
+mol;methyl_thioacetate;non précisée;CAMEMBERT|FROMAGE|CHOU|SOUFRÉ|ALLIACÉ|CRÉMEUX|LAIT CUIT
+mol;thialdine;naturelle;GAZ|ALLIACÉ|SOUFRÉ|FRUIT EXOTIQUE
+nat;green_tea;produit naturel;THÉ|THÉ VERT|HERBAL|FOIN|VÉGÉTAL|FRUITS SECS|PARFUM|TABAC|TANIQUE|ASTRINGENT
+nat;mate;produit naturel;THÉ|FOIN|HERBAL|TABAC|FIGUE|FRUITS SECS|BOISÉ|FLORAL
+nat;tonka;produit naturel;FEVE TONKA|COUMARINÉ|FOIN|CARAMEL|AMANDÉ|CINNAMIQUE|BOISÉ
+nat;patchouli;produit naturel;BOISÉ|TERREUX|CAMPHRE|PARFUM|MOISI|ENCENS|POUDRÉ
+nat;matcha;produit naturel;THÉ|THÉ MATCHA|VÉGÉTAL|ÉPINARD|VERT|ALGUE|GRILLÉ|FOIN|AMER|SUCRÉ
+mol;ethyl_crotonate;naturelle;ALCOOLIQUE|MÉTALLIQUE|FERMENTÉ|RHUMÉ|SOUFRÉ
+mol;ethyl_formate;naturelle;SOLVANT|ALCOOLIQUE
+nat;cocoa_butter;produit naturel;GRAS|RANCE|CRÉMEUX
+mol;acetanisole;non précisée;ANISÉ|PEAU D'AMANDE|POUDRÉ FRUITÉ|NOISETTE FRAÎCHE
+mol;isoamyl_hexanoate;naturelle;POIRE|SAVON|MÉTALLIQUE|FRUITÉ
+mol;isoamyl_phenylacetate;naturelle;ROSE|FRAIS|VERT|CACAO|CIREUX|MIEL
+mol;isoamyl_phenylacetate;non précisée;ROSE|FRAIS|VERT|CACAO|CIREUX|MIEL
+mol;isoamyl_isovalerate;non précisée;FRUITÉ|MYRTILLE|FRAISE|FERMENTÉ|BANANE|CONFITURE
+mol;benzyl_benzoate;naturelle;ALCOOL BENZYLIQUE|MÉDICINAL|BALSAMIQUE|CHAMPIGNON|FRUITÉ
+mol;benzyl_benzoate;non précisée;ALCOOL BENZYLIQUE|MÉDICINAL|BALSAMIQUE|CHAMPIGNON|FRUITÉ
+mol;benzyl_butyrate;non précisée;FRUITÉ|BUTYRIQUE|FRAISE|BANANE|SOLVANT|JASMIN
+mol;benzyl_phenylacetate;non précisée;FLORAL|MIEL|ROSE|CIREUX|SAVON
+mol;bornyl_acetate;non précisée;PIN|RÉSINEUX|TERREUX|MÉDICINAL|CAMPHRE|BOISÉ|FRAIS
+nat;butter_extract;produit naturel;CRÉMEUX|BEURRÉ|GRAS|FROMAGE|LACTONÉ
+mol;butyl_acetate;naturelle;SOLVANT|FRUITÉ|BANANE|TUTTI FRUTTI|POIRE|ETHER|FERMENTÉ
+mol;isobutyl_acetate;non précisée;FRUITÉ|BANANE|TUTTI FRUTTI|POIRE|FERMENTÉ|SOLVANT|ETHER
+mol;butanol;non précisée;ALCOOLIQUE|ETHER|CACAO|FERMENTÉ|FRUITÉ
+mol;isobutyl_isobutyrate;non précisée;FRUITÉ|SOLVANT|LAVANDE|FRUIT EXOTIQUE
+mol;butyl_lactate;non précisée;LAIT|NOIX DE COCO|CARTON|CHAMPIGNON|CRÉMEUX|FRAIS|MENTHE
+mol;isobutyl_phenylacetate;non précisée;ROSE|MIEL|VERT|CACAO|CIREUX
+mol;butyl_isovalerate;non précisée;MYRTILLE|FRUITÉ|BUTYRIQUE|VOMI|FERMENTÉ|BANANE
+nat;clary_sage;produit naturel;FOIN|THÉ|LAVANDE|BOISÉ|VÉGÉTAL|BERGAMOTE|CAMPHRE
+nat;clove_leaf;produit naturel;EUGENOL|CLOU DE GIROFLE|BOISÉ|ÉPICÉ|MOISI|PHÉNOLIQUE|FUMÉ
+mol;diethyl_succinate;non précisée;VERT|FRUITÉ|PARFUM|FRUIT EXOTIQUE
+mol;dimethyl_succinate;non précisée;FRUITÉ|ALCOOLIQUE|FRAIS
+mol;ethyl_benzoate;naturelle;NAPHTALINE|PLASTIQUE|BAUME|MÉDICINAL|FLORAL
+mol;ethyl_benzoate;non précisée;NAPHTALINE|PLASTIQUE|BAUME|MÉDICINAL|FLORAL
+mol;ethyl_lactate;naturelle;SOLVANT|FRUITÉ|FRAISE
+mol;ethyl_lactate;non précisée;SOLVANT|FRUITÉ|FRAISE
+mol;ethyl_myristate;naturelle;GRAS|CIREUX
+mol;ethyl_nonanoate;non précisée;FRUITÉ|POIRE|LIE DE VIN|CIREUX|GRAS|SAVON
+mol;ethyl_nonanoate;naturelle;FRUITÉ|POIRE|LIE DE VIN|SAVON|POUSSIÉREUX|CIREUX
+mol;ethyl_octanoate;naturelle;FRUITÉ|POIRE|SAVON|LIE DE VIN|ANANAS|POUSSIÉREUX
+mol;ethyl_octanoate;non précisée;FRUITÉ|POIRE|SAVON|LIE DE VIN
+mol;ethyl_palmitate;naturelle;LAIT|GRAS
+mol;ethyl_palmitate;non précisée;GRAS|LAIT
+mol;farnesol;non précisée;POIRE|SAVON|VERT|FLORAL
+mol;fenchone;naturelle;CAMPHRE|MENTHE|LAVANDE|TERREUX|MOISI|MASTIC|ANISÉ|PIN|FRAIS
+mol;furfuryl_acetate;non précisée;FRUITÉ|SOLVANT|BANANE|POIRE|VERT|CHAMPIGNON|SOUFRÉ
+mol;hexanol;naturelle;VERT|POMME|FRUITÉ|ETHER|DETERGENT|FLORAL|AMANDÉ
+mol;hexanol;non précisée;VERT|POMME|FRUITÉ|ETHER|DETERGENT|FLORAL|AMANDÉ
+nat;juniper;produit naturel;GENIEVRE|POIVRE|BOISÉ|MINE DE CRAYON|TERPENIQUE|PIN|AGRUME|ÉPICE
+mol;styrallyl_propionate;non précisée;FRUITÉ|PAMPLEMOUSSE|ROSE|FRUIT TROPICAL|VERT|PARFUM|RHUBARBE|POIRE|MÉTALLIQUE
+mol;methylbutanal_2;non précisée;SOLVANT|CACAO|FRUITÉ|FERMENTÉ
+mol;methyl_butyrate;non précisée;VOMI|BUTYRIQUE|FRUITÉ|FRAISE|ETHER
+mol;methylbutyric_acid_2;non précisée;FRUITÉ|FRAISE|FROMAGE|VOMI
+mol;methyl_laurate;non précisée;SAVON|FRUITÉ|GRAS|POIRE|CIREUX|FER CHAUD
+mol;methyl_phenylacetate;non précisée;FLORAL|CIREUX|SOLVANT|TUTTI FRUTTI|VERT|MIEL
+mol;octyl_acetate;non précisée;SAVON|POIRE|FRUITÉ|AGRUME|CHAMPIGNON
+mol;octyl_butyrate;naturelle;SAVON|FRUITÉ|POIRE|SOLVANT|AGRUME|CHAMPIGNON
+mol;palmitic_acid;naturelle;GRAS|MOUTHCOATING
+mol;propyl_acetate;naturelle;SOLVANT|ETHER|BANANE|FRUITÉ|POMME|POIRE|ALCOOLIQUE
+mol;propyl_acetate;non précisée;SOLVANT|ETHER|BANANE|FRUITÉ|POMME|POIRE|ALCOOLIQUE
+mol;propanol;naturelle;FRUITÉ|BANANE|VERT
+mol;isopropanol;non précisée;ALCOOLIQUE|ETHER
+mol;propyl_butyrate;naturelle;FRUITÉ|FERMENTÉ|ANANAS|FRAISE|SOLVANT
+mol;gamma_undecalactone;naturelle;LACTONÉ|GRAS|CRÉMEUX|LAIT|PÊCHE|NOIX DE COCO
+mol;gamma_undecalactone;non précisée;LACTONÉ|GRAS|CRÉMEUX|LAIT|PÊCHE|NOIX DE COCO
+mol;pentanal;non précisée;ALDÉHYDÉ|CACAO|VERT|FERMENTÉ|CÉRÉALE|GRAS
+mol;valeric_acid;non précisée;FROMAGE|MYRTILLE|BEURRÉ|ACÉTIQUE|MALT
+mol;isovaleric_acid;non précisée;FROMAGE|PIED|FERMENTÉ|MYRTILLE|CACAO
+mol;isovaleric_acid;naturelle;FROMAGE|PIED|FERMENTÉ|MYRTILLE|CACAO
+mol;syringol;non précisée;PHÉNOLIQUE|FUMÉ|BACON|BOISÉ|MÉDICINAL|CLOU DE GIROFLE
+mol;syringol;naturelle;PHÉNOLIQUE|FUMÉ|BACON|BOISÉ|MÉDICINAL|CLOU DE GIROFLE
+mol;beta_sinensal;naturelle;ORANGE|ALDEHYDÉ|JUS|CIREUX|GRAS|VERT|ZESTÉ
+mol;ethyl_cyclopentenolone;non précisée;SOLVANT|GRILLÉ|CELERI|CARAMEL|ÉRABLE|FRUIT CUIT|BRÛLÉ
+mol;maple_furanone;naturelle;LIVÈCHE|CELERI|ÉRABLE|NOIX|GRILLÉ|VERT
+mol;diethylpyrazine_23;non précisée;MOISI|TERREUX|VERT
+mol;acetylfuran_2;non précisée;SOLVANT|CARAMEL|CAOUTCHOUC|AMANDÉ
+mol;acetylfuran_2;naturelle;SOLVANT|CARAMEL|CAOUTCHOUC|AMANDÉ
+mol;hexanedione_34;non précisée;BEURRÉ|GRAS|GRILLÉ|NOISETTE
+mol;acetyl_ethylpyrazine;non précisée;MOISI|TERREUX|MOUSSE DE CHÊNE|VERT|SOLVANT
+mol;acetyl_methylpyrazine;non précisée;RIZ BASMATI|GRILLÉ|BISCUITÉ|TERREUX|CÉRÉALE|NUTTY
+mol;acetyl_dimethylpyrazine;non précisée;NOISETTE|VERT|POIS|TERREUX|CACAHUÈTE
+mol;undecylenic_acid;naturelle;CHÈVRE|GRAS|FROMAGE|CIREUX
+mol;ethyl_dimethylpyrazine;non précisée;SOLVANT|GRILLÉ|CACAHUÈTE|BRÛLÉ|TERREUX
+mol;tetrahydrothiophenone_3;non précisée;SOUFRÉ|ALLIACÉ|CAOUTCHOUC|SÉSAME|BRÛLÉ|CAFÉ|LÉGUME|GRILLÉ
+mol;ethyl_methylpyrazine;non précisée;TERREUX|GRILLÉ|NOISETTE|CACAHUÈTE|NUTTY|SOLVANT|VERT|CÉRÉALE
+mol;isobutylmethoxypyrazine;non précisée;POIVRON|VERT|HARICOT VERT|TERREUX
+mol;methoxy_methylpyrazine;non précisée;GRILLÉ|CACAO|NUTTY|CACAHUÈTE|SOLVANT|TERREUX|MOISI|NOISETTE
+mol;methoxypyrazine;non précisée;GRILLÉ|NUTTY|NOISETTE|AMANDÉ|CACAHUÈTE
+mol;dimethylthiazole_45;non précisée;AMINÉ|GRILLÉ|POISSON|NUTTY|SOUFRÉ|SAFRAN
+mol;gamma_butyrolactone;non précisée;FRUITÉ|LAIT|LACTONÉ|GRAS|CIREUX
+mol;methoxy_methylpyrazine;naturelle;GRILLÉ|CACAO|NUTTY|CACAHUÈTE|SOLVANT|TERREUX|MOISI|NOISETTE
+mol;methylpyrazine;non précisée;AMINÉ|SOLVANT|VERT|PYRAZINE|NUTTY
+mol;methylvinylthiazole;non précisée;NUTTY|MOISI|TERREUX|CACAO|PLASTIQUE|AMINÉ|RIZ BASMATI
+mol;tetrahydroquinoxaline;non précisée;GRILLÉ|RIZ BASMATI|LÉGUME|POP-CORN|AMINÉ|VERT|NUTTY|MOISI
+mol;trimethylthiazole;non précisée;AMINÉ|GRILLÉ|SOLVANT|CACAO|MOISI|TERREUX|RIZ
+mol;methylthio_methylpyrazine;non précisée;GRILLÉ|TERREUX|LÉGUME|AMINÉ|SOUFRÉ|NUTTY
+mol;acetylthiazole;non précisée;GRILLÉ|RIZ BASMATI|POP-CORN|AMINÉ|NUTTY|BISCUITÉ
+mol;heptanoic_acid;naturelle;CHÈVRE|CIREUX|FROMAGE|RANCE
+mol;heptanoic_acid;non précisée;CHÈVRE|CIREUX|FROMAGE|RANCE
+mol;delta_nonalactone;non précisée;LACTONÉ|PÊCHE|NOIX DE COCO|CRÉMEUX|LAIT|CARTON
+mol;methyl_methylthiofuran;non précisée;SOUFRÉ|SOLVANT|CAMEMBERT|CAOUTCHOUC|ALLIACÉ
+mol;methyltetrahydrofuranone;non précisée;GRILLÉ|SUCRE BRUN|CARAMEL|SOLVANT|WHISKY|RHUMÉ|ALCOOLIQUE|NOISETTE
+mol;tridecanone_2;non précisée;GRAS|SAVON|FER CHAUD|MÉTALLIQUE|FROMAGE
+mol;ethylpyridine_3;non précisée;SOLVANT|SOUFRÉ|GRILLÉ|CARAMEL|AMINÉ|NOISETTE
+mol;cis_3_hexenyl_butyrate;non précisée;FRUITÉ|VERT|POMME|POIRE|FRAISE|FERMENTÉ
+mol;trimethyldioxolane;non précisée;SOLVANT|ETHER|TERREUX|MOISI
+mol;dimethyl_dihydroxy_dithiane;non précisée;SOUFRÉ|GAZ|POP-CORN|GRILLÉ|VIANDÉ|OIGNON|VERT|NUTTY|SOLVANT
+mol;trithioacetone;non précisée;SOUFRÉ|MENTHE|VIANDÉ|FRUIT TROPICAL|GOYAVE|CASSIS|VERT|CAMPHRE|GAZ
+mol;methyltetrahydrothiophenone;non précisée;SOUFRÉ|CASSIS|GAZ|FRUITÉ|ALLIACÉ
+mol;octanol_3;non précisée;ANETH|CHAMPIGNON|LACTONÉ|FROMAGE BLEU|CAPRIN|PÊCHE
+mol;delta_tetradecalactone;non précisée;BEURRÉ|GRAS|CRÉMEUX|FRAIS|AMER|VERT
+mol;xylenol_25;non précisée;PHÉNOLIQUE|FUMÉ|BOISÉ|MÉDICINAL|POUDRÉ VANILLÉ|NAPHTALINE
+mol;methylthiobutanol;non précisée;MÉTALLIQUE|SANG|CHAMPIGNON|SOUFRÉ|ALLIACÉ|LAIT CUIT
+mol;propionylthiazole;non précisée;POP-CORN|RIZ BASMATI|CÉRÉALE|NUTTY|GRILLÉ|PAIN
+mol;homofuraneol;non précisée;CARAMEL|SOLVANT|GRILLÉ|CAFÉ|MOISI|FERMENTÉ
+mol;sotolon;non précisée;ÉRABLE|CARAMEL|GRILLÉ|NOIX|FENUGREC|CAFÉ|RÉGLISSE|CELERI|BOISÉ
+mol;diphenyl_oxide;non précisée;FRUITÉ|FRUIT TROPICAL|ROSE|VERT|MÉTALLIQUE|MANGUE|TERPENIQUE
+mol;ethyl_furfurylthiopropionate;non précisée;PLASTIQUE|GAZ|CAOUTCHOUC|SOLVANT|SOUFRÉ|ALLIACÉ|CACAHUÈTE
+mol;pentadecanone_2;non précisée;SAVON|GRAS|CELERI|MÉTALLIQUE
+mol;milk_lactone;non précisée;LAIT|CRÉMEUX|GRAS DU LAIT|FROMAGE|CIREUX|BEURRÉ|LACTONÉ
+mol;linalool_oxide;non précisée;AGRUME|PAMPLEMOUSSE|FLORAL|LAVANDE|POIVRE
+nat;litsea;produit naturel;CITRON|CITRAL|CITRON VERT|ALDEHYDÉ|GRAS|ZESTÉ|AGRUME
+mol;amyl_acetate;non précisée;BANANE|FRUITÉ|SOLVANT|POIRE|FROMAGE BLEU|CHAMPIGNON
+nat;sweet_vernal_grass;produit naturel;FOIN|VÉGÉTAL|COUMARINÉ|THÉ|BOISÉ|FRUITS SECS|FLORAL|ANIMAL|FRUIT CUIT
+nat;coffee;produit naturel;CAFÉ|MOUTURE|POIVRON|CASSIS|VERT|TERREUX|GRILLÉ|CENDRE|TABAC|SOUFRÉ|SOUFRÉ (CASSIS)|BRÛLÉ|ALCOOLIQUE|SOUFRÉ/ CASSIS
+nat;hazelnut;produit naturel;NOISETTE|GRILLÉ|NOISETTE FRAÎCHE|AMANDÉ|GRAS|SOLVANT|PRALINÉ|BOISÉ|NAPHTALINE
+nat;honey;produit naturel;CACAO|ALCOOLIQUE|ROSE|MIEL|CÉRÉALE|LEVURE|FERMENTÉ|CIRE D'ABEILLE|VERT|FLORAL
+nat;cocoa;produit naturel;CACAO|FUMÉ|GRILLÉ|POUDRÉ|ALDEHYDÉ|FERMENTÉ|ANIMAL|MIEL|FRUITS SECS|CHOCOLAT NOIR|ALCOOLIQUE|FRUITTE ALCOOLIQUE|CÉRÉALE|MALT|TABAC|TERREUX|FRUITÉ|FRUITÉ ALCOOLIQUE|POUDRÉ CACAO|AMER|BOISÉ|AMINÉ
+nat;smoked_paprika;produit naturel;BOISÉ|CENDRE|FUMÉ|FOIN|PHÉNOLIQUE
+nat;tamarind;produit naturel;FRUIT CUIT|CARAMEL|CITRON ZESTE|COLA
+mol;trimethylpyrazine;naturelle;SOLVANT|VERT|TERREUX|CACAO|GRILLÉ|NOISETTE|NUTTY
+nat;almond_alcoholate;produit naturel;AMANDÉ|GRILLÉ|BOISÉ|GRAS|DRAGÉE
+mol;ethyl_salicylate;non précisée;WINTERGREEN|CAMPHRE|NAPHTALINE|ROOT BEER|MÉDICINAL|FRAIS|CONCORD
+nat;cinnamon_oleoresin;produit naturel;CANNELLE|CINNAMIQUE|BOISÉ|ÉPICÉ|BISCUITÉ
+nat;yeast_umami;produit naturel;BOUILLON|MÉTALLIQUE|UMAMI|MOUTHCOATING|SALÉ|GRILLÉ|VIANDÉ
+nat;stevia;produit naturel;SUCRÉ|PERSISTANT|POUDRÉ|ÉDULCORÉ
+mol;cis_4_heptenal;naturelle;ALDÉHYDÉ|GRAS|CONCOMBRE|VERT|POISSON|THÉ
+nat;hop;produit naturel;VÉGÉTAL|HOUBLON|FRUIT EXOTIQUE|FLORAL|POIVRE|TERPENIQUE
+nat;seaweed;produit naturel;ALGUE|IODÉ|MOISI|TERREUX|LÉGUME|POISSON|EAU CROUPIE|ÉPINARD
+nat;galangal;produit naturel;RACINE|POIVRE|MUSQUE|GINGEMBRE|BOISÉ|SAVON|GRAS
+mol;furfural;naturelle;
+nat;maraschino_cherry;produit naturel;
+mol;tartaric_acid;non précisée;
+nat;rum_ether;produit naturel;RHUMÉ|RAISIN|ANANAS|VINEUX|CARAMEL|TUTTI|FRAISE

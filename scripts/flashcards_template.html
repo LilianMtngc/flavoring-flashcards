@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flavoring flashcards</title>
+<meta name="description" content="Flash cards de molécules aromatiques : structure chimique au recto, nom, descripteurs, usages et sources au verso. Focus sur les notes brunes.">
+<style>
+:root{
+  --bg:#f6f4ef; --surface:#fffdf9; --surface-2:#f0ede6; --fg:#1f1e1b; --fg-2:#5d5b55; --fg-3:#8b8880;
+  --line:#e2ded4; --line-2:#cfcac0; --accent:#7a4a1c; --accent-bg:#f6e7d3; --accent-line:#e3c49c;
+  --ok:#2f6b3a; --ok-bg:#e3f0e3; --warn:#8a5a00; --warn-bg:#fbf0d8; --bad:#9b2c2c; --bad-bg:#f9e3e1;
+  --radius:10px; --shadow:0 1px 2px rgba(40,30,10,.06),0 4px 16px rgba(40,30,10,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#171614; --surface:#211f1c; --surface-2:#2a2824; --fg:#ecebe6; --fg-2:#b5b2aa; --fg-3:#8a877f;
+    --line:#35322d; --line-2:#48443d; --accent:#e9b77d; --accent-bg:#3a2a18; --accent-line:#6b4a24;
+    --ok:#8fd19a; --ok-bg:#1f3324; --warn:#f0c46a; --warn-bg:#3a2e14; --bad:#f0a0a0; --bad-bg:#3d1f1f;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#171614; --surface:#211f1c; --surface-2:#2a2824; --fg:#ecebe6; --fg-2:#b5b2aa; --fg-3:#8a877f;
+  --line:#35322d; --line-2:#48443d; --accent:#e9b77d; --accent-bg:#3a2a18; --accent-line:#6b4a24;
+  --ok:#8fd19a; --ok-bg:#1f3324; --warn:#f0c46a; --warn-bg:#3a2e14; --bad:#f0a0a0; --bad-bg:#3d1f1f;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:20px 16px 48px}
+header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px;margin-bottom:14px}
+h1{font-size:22px;margin:0;font-weight:650;letter-spacing:-.01em}
+.stats{color:var(--fg-3);font-size:13px}
+.tabs{display:flex;gap:4px;background:var(--surface-2);padding:3px;border-radius:9px;width:max-content;max-width:100%;overflow-x:auto}
+.tabs button{border:0;background:transparent;color:var(--fg-2);padding:6px 14px;border-radius:7px;font:inherit;font-size:14px;cursor:pointer;white-space:nowrap}
+.tabs button[aria-selected="true"]{background:var(--surface);color:var(--fg);box-shadow:var(--shadow)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0 18px}
+.chip{border:1px solid var(--line-2);background:var(--surface);color:var(--fg-2);border-radius:999px;padding:4px 12px;font:inherit;font-size:13px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--fg);border-color:var(--fg);color:var(--bg)}
+.chip.brown[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
+.sep{width:1px;height:20px;background:var(--line-2);margin:0 2px}
+select,input[type=search]{font:inherit;font-size:13px;color:var(--fg);background:var(--surface);border:1px solid var(--line-2);border-radius:8px;padding:5px 10px}
+input[type=search]{min-width:0;flex:1 1 180px}
+.btn{font:inherit;font-size:14px;border:1px solid var(--line-2);background:var(--surface);color:var(--fg);border-radius:8px;padding:7px 14px;cursor:pointer}
+.btn:hover{border-color:var(--fg-3)}
+.btn.primary{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.btn.good{border-color:var(--ok);color:var(--ok)}
+.btn.again{border-color:var(--bad);color:var(--bad)}
+.btn:disabled{opacity:.4;cursor:default}
+.progress{display:flex;justify-content:space-between;font-size:13px;color:var(--fg-3);margin-bottom:8px;gap:8px;flex-wrap:wrap}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);min-height:440px;padding:22px 24px;cursor:pointer;position:relative;outline:none}
+.card:focus-visible{box-shadow:0 0 0 3px var(--accent-line)}
+.card.anim{animation:flip .28s ease-out}
+@keyframes flip{from{transform:perspective(900px) rotateY(80deg);opacity:.2}to{transform:none;opacity:1}}
+.kind{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3);text-align:center}
+.front{display:flex;flex-direction:column;min-height:390px}
+.structs{flex:1;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:28px;padding:12px 0}
+.structs figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:6px}
+svg.mol{max-width:100%;max-height:300px;height:auto;color:var(--fg)}
+.structs.two svg.mol{max-height:240px}
+.hint{text-align:center;color:var(--fg-3);font-size:13px}
+.back{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:20px}
+.back .thumb{display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:flex-start;border-right:1px solid var(--line);padding-right:16px}
+.back .thumb svg.mol{width:100%!important;height:auto;max-height:160px}
+.back .thumb figcaption{font-size:12px;color:var(--fg-3);text-align:center}
+h2{font-size:24px;margin:0 0 2px;font-weight:650;letter-spacing:-.01em}
+.sub{color:var(--fg-2);font-size:13.5px;margin:0 0 10px;overflow-wrap:anywhere}
+.badge{display:inline-block;font-size:12px;border-radius:6px;padding:2px 9px;margin-right:6px;vertical-align:2px}
+.badge.brown{background:var(--accent-bg);color:var(--accent);border:1px solid var(--accent-line)}
+.badge.lvl{background:var(--surface-2);color:var(--fg-2)}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 14px}
+.meta span{font-size:12.5px;background:var(--surface-2);border-radius:6px;padding:2px 8px;color:var(--fg-2)}
+.sec{margin:12px 0 0}
+.sec h3{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3);margin:0 0 5px;font-weight:600}
+.desc{display:flex;flex-wrap:wrap;gap:5px}
+.desc span{font-size:13px;border:1px solid var(--line-2);border-radius:999px;padding:1px 10px}
+.desc span.b{background:var(--accent-bg);border-color:var(--accent-line);color:var(--accent)}
+.usage{background:var(--surface-2);border-radius:var(--radius);padding:10px 12px;font-size:14px}
+.usage.brown{background:var(--accent-bg);border:1px solid var(--accent-line)}
+.usage .orig{display:block;margin-top:4px;font-size:13px;color:var(--fg-2)}
+.note{font-size:13px;color:var(--fg-2)}
+.note.warn{color:var(--warn)}
+.verif{font-size:12.5px;margin-top:12px}
+.verif.ok{color:var(--ok)}.verif.warn{color:var(--warn)}
+.controls{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:14px}
+.controls .grp{display:flex;gap:8px;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;cursor:pointer;display:flex;flex-direction:column;gap:6px;text-align:left;font:inherit;color:inherit}
+.tile:hover{border-color:var(--line-2)}
+.tile .pics{height:100px;display:flex;align-items:center;justify-content:center;gap:6px}
+.tile svg.mol{width:100%!important;height:100px}
+.tile .pics.two svg.mol{width:48%!important}
+.tile b{font-size:13px;line-height:1.3;font-weight:600}
+.tile small{color:var(--fg-3);font-size:12px}
+.tile .dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px}
+.dot.sus{background:var(--ok)}.dot.revoir{background:var(--bad)}
+.empty{text-align:center;color:var(--fg-3);padding:60px 0}
+kbd{font:12px ui-monospace,Consolas,monospace;border:1px solid var(--line-2);border-bottom-width:2px;border-radius:4px;padding:0 5px;color:var(--fg-2)}
+.srcs{margin:0;padding-left:18px;font-size:13px;color:var(--fg-2)}
+.srcs li{margin:2px 0;overflow-wrap:anywhere}
+a{color:var(--accent)}
+.flabel{font-size:12px;color:var(--fg-3);margin-right:-2px}
+footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);font-size:12.5px;color:var(--fg-3)}
+footer p{margin:4px 0}
+.linkbtn{font:inherit;background:none;border:0;padding:0;color:var(--accent);cursor:pointer;text-decoration:underline}
+.keys{font-size:12.5px;color:var(--fg-3);margin-top:14px;text-align:center}
+@media (max-width:640px){
+  .card{padding:16px;min-height:380px}
+  .back{grid-template-columns:1fr}
+  .back .thumb{border-right:0;border-bottom:1px solid var(--line);padding:0 0 12px;flex-direction:row;justify-content:center}
+  .back .thumb svg.mol{max-height:110px;width:45%!important}
+  h2{font-size:20px}
+  .keys{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Flavoring flashcards</h1>
+    <div class="stats" id="stats"></div>
+  </header>
+  <div class="tabs" role="tablist">
+    <button role="tab" data-view="study" aria-selected="true">Étude</button>
+    <button role="tab" data-view="catalog" aria-selected="false">Catalogue</button>
+  </div>
+  <div class="filters" id="filters">
+    <span class="flabel" title="Complexité structurale : tercile de l'indice de Bertz">Complexité</span>
+    <button class="chip" data-f="niveau" data-v="Facile" aria-pressed="false">Facile</button>
+    <button class="chip" data-f="niveau" data-v="Moyen" aria-pressed="false">Moyen</button>
+    <button class="chip" data-f="niveau" data-v="Difficile" aria-pressed="false">Difficile</button>
+    <span class="sep"></span>
+    <button class="chip" data-f="type" data-v="mol" aria-pressed="false">Molécules</button>
+    <button class="chip" data-f="type" data-v="nat" aria-pressed="false">Produits naturels</button>
+    <span class="sep"></span>
+    <button class="chip brown" data-f="brune" data-v="1" aria-pressed="false">Notes brunes</button>
+    <button class="chip" data-f="revoir" data-v="1" aria-pressed="false">À revoir</button>
+    <select id="famille" aria-label="Famille chimique"><option value="">Toutes les familles</option></select>
+    <input type="search" id="q" placeholder="Rechercher un nom, un CAS, un descripteur…" aria-label="Rechercher">
+  </div>
+
+  <section id="v-study">
+    <div class="progress"><span id="pos"></span><span id="score"></span></div>
+    <div class="card" id="card" tabindex="0" aria-live="polite"></div>
+    <div class="controls">
+      <div class="grp">
+        <button class="btn" id="prev">← Précédent</button>
+        <button class="btn primary" id="flip">Retourner</button>
+        <button class="btn" id="next">Suivant →</button>
+      </div>
+      <div class="grp">
+        <button class="btn again" id="again">À revoir</button>
+        <button class="btn good" id="good">Je sais</button>
+        <button class="btn" id="shuffle">Mélanger</button>
+      </div>
+    </div>
+    <div class="keys"><kbd>Espace</kbd> retourner · <kbd>←</kbd> <kbd>→</kbd> naviguer · <kbd>1</kbd> à revoir · <kbd>2</kbd> je sais</div>
+  </section>
+  <section id="v-catalog" hidden><div class="grid" id="grid"></div></section>
+  <footer>
+    <p>Structures vérifiées sur PubChem, NCI CACTUS et OPSIN (<a href="verification.html">rapport de vérification</a>) · remarques sourcées : FEMA Flavor Library, PubChem (HSDB) · marqueurs des produits naturels : Wikipédia.
+    Descripteurs issus d'un panel de dégustation ; usages : synthèse rédigée avec assistance IA.</p>
+    <p>Lilian Montagnac (bioinformatique) · <a href="https://github.com/LilianMtngc/flavoring-flashcards">code source et méthode</a> · <a href="flavoring-flashcards.apkg">deck Anki</a> · <button class="linkbtn" id="reset">Effacer ma progression</button></p>
+  </footer>
+</div>
+<script>
+const DATA = /*__DATA__*/null;
+const BROWN = new Set(["CARAMEL","CARAMEL AMBRÉ","CARAMEL BRÛLÉ","CACAO","POUDRÉ CACAO","CHOCOLAT","CHOCOLAT NOIR","CAFÉ","MOUTURE","GRILLÉ","NOISETTE","NUTTY","PRALINÉ","CACAHUÈTE","ÉRABLE","POUDRÉ VANILLÉ","VANILLE","FUMÉ","BACON","CENDRE","MALT","BISCUITÉ","PAIN","CÉRÉALE","POP-CORN","RIZ BASMATI","BRÛLÉ","SUCRE BRUN","SUCRE CUIT","MÉLASSE","CASSONADE","TABAC","NOIX","FENUGREC","SÉSAME"]);
+const cards = DATA.cards;
+const KEY = "flavoring-flashcards-progress-v1";
+const store = {
+  get(){ try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ return {}; } },
+  set(v){ try { localStorage.setItem(KEY, JSON.stringify(v)); } catch(e){} }
+};
+let progress = store.get();
+const filt = {niveau:new Set(), type:new Set(), brune:false, revoir:false, famille:"", q:""};
+let deck = [], pos = 0, flipped = false, shuffled = false, order = cards.map((_, i) => i);
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const norm = s => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+
+const familles = [...new Set(cards.map(c => c.famille))].sort((a, b) => a.localeCompare(b, "fr"));
+$("#famille").insertAdjacentHTML("beforeend", familles.map(f => `<option>${esc(f)}</option>`).join(""));
+
+function matches(c){
+  if (filt.niveau.size && !filt.niveau.has(c.niveau)) return false;
+  if (filt.type.size && !filt.type.has(c.type)) return false;
+  if (filt.brune && !c.brune) return false;
+  if (filt.revoir && progress[c.id] !== "revoir") return false;
+  if (filt.famille && c.famille !== filt.famille) return false;
+  if (filt.q){
+    const hay = norm([c.titre, c.iupac, c.cas, c.famille, c.descripteurs.join(" "), c.structures.map(s => s.nom).join(" ")].join(" "));
+    if (!norm(filt.q).split(/\s+/).every(t => hay.includes(t))) return false;
+  }
+  return true;
+}
+
+function rebuild(keepId){
+  const current = keepId ?? (deck[pos] !== undefined ? cards[deck[pos]].id : null);
+  deck = order.filter(i => matches(cards[i]));
+  const idx = deck.findIndex(i => cards[i].id === current);
+  pos = idx >= 0 ? idx : 0;
+  flipped = false;
+  render();
+}
+
+function structsHTML(c, cls){
+  const two = c.structures.length > 1 ? " two" : "";
+  return `<div class="${cls}${two}">` + c.structures.map(s => `<figure>${s.svg || "<em>structure indisponible</em>"}${cls === "thumb" && c.type === "nat" ? `<figcaption>${esc(s.nom)}</figcaption>` : ""}</figure>`).join("") + `</div>`;
+}
+
+function frontHTML(c){
+  const kind = c.type === "mol" ? "Molécule" : "Produit naturel · molécule" + (c.structures.length > 1 ? "s marqueurs" : " marqueur");
+  const q = c.type === "mol" ? "Quelle est cette molécule ?" : "De quel produit naturel est-ce le marqueur ?";
+  return `<div class="front"><div class="kind">${kind}</div>${structsHTML(c, "structs")}<div class="hint">${q}</div></div>`;
+}
+
+function backHTML(c){
+  const badges = (c.brune ? `<span class="badge brown">Note brune</span>` : "") + `<span class="badge lvl" title="Indice de complexité de Bertz : ${c.bertz} (seuils ${DATA.seuils[0]} / ${DATA.seuils[1]})">Complexité : ${esc(c.niveau)}</span>`;
+  let sub, meta = "";
+  if (c.type === "mol"){
+    sub = c.iupac ? `IUPAC : ${esc(c.iupac)}` : "";
+    meta = [c.famille, c.formule, `${String(c.masse).replace(".", ",")} g/mol`, `CAS ${c.cas}`].map(x => `<span>${esc(x)}</span>`).join("");
+  } else {
+    sub = "Marqueur" + (c.structures.length > 1 ? "s" : "") + " : " + c.structures.map(s => esc(s.nom)).join(" · ");
+    meta = c.structures.map(s => `<span>${esc(s.formule)} · CAS ${esc(s.cas)}</span>`).join("");
+  }
+  const desc = c.descripteurs.length
+    ? `<div class="desc">${c.descripteurs.map(d => `<span class="${BROWN.has(d) ? "b" : ""}">${esc(d.toLowerCase())}</span>`).join("")}</div>`
+    : `<div class="note">Descripteurs non renseignés.</div>`;
+  const parForme = c.descripteurs_par_forme ? `<div class="note" style="margin-top:6px">${c.descripteurs_par_forme.map(p => `<b>Forme ${esc(p.forme)}</b> : ${esc(p.descripteurs.join(", ").toLowerCase())}`).join("<br>")}</div>` : "";
+  const formes = c.type === "mol" && c.formes.length ? `<div class="note" style="margin-top:4px">Formes évaluées : ${esc(c.formes.join(", "))}</div>` : "";
+  const usage = `<div class="usage${c.brune ? " brown" : ""}">${esc(c.usages)}${c.origine ? `<span class="orig">Origine : ${esc(c.origine)}</span>` : ""}</div>`;
+  const a = (text, url) => url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(text)}</a>` : esc(text);
+  const src = [];
+  if (c.type === "nat"){
+    c.structures.forEach(s => src.push(`<li><b>${esc(s.nom)}</b> cité(e) par ${a("Wikipédia — " + s.source, s.url)}</li>`));
+  }
+  const S = c.sources || {};
+  if (S.fema) src.push(`<li>${a("FEMA n° " + S.fema.numero, S.fema.url)}${S.fema.profil ? ` · profil aromatique : <i>${esc(S.fema.profil)}</i>` : ""}${S.fema.jecfa ? ` · JECFA n° ${esc(S.fema.jecfa)}` : ""}</li>`);
+  (S.odeur || []).forEach(o => src.push(`<li>Odeur : « ${esc(o.texte)} » — ${a(o.source || "PubChem", o.url)}</li>`));
+  (S.gout || []).forEach(o => src.push(`<li>Goût : « ${esc(o.texte)} » — ${a(o.source || "PubChem", o.url)}</li>`));
+  if (c.cid) src.push(`<li>${a("Fiche PubChem (CID " + c.cid + ")", "https://pubchem.ncbi.nlm.nih.gov/compound/" + c.cid)}</li>`);
+  const remarks = c.notes.map(x => `<div class="note">${esc(x)}</div>`);
+  if (c.type === "nat" && c.partage.length) remarks.push(`<div class="note">Même(s) marqueur(s) que : ${esc(c.partage.join(", "))}</div>`);
+  const verif = `<div class="verif ok">✓ Structure${c.structures.length > 1 ? "s" : ""} vérifiée${c.structures.length > 1 ? "s" : ""} · ${c.verif.sources} sources concordantes · <a href="verification.html" target="_blank">rapport</a></div>`;
+  return `<div class="back">${structsHTML(c, "thumb")}<div>
+    <h2>${esc(c.titre)}</h2><p class="sub">${sub}</p><div>${badges}</div><div class="meta">${meta}</div>
+    <div class="sec"><h3>Descripteurs</h3>${desc}${parForme}${formes}</div>
+    <div class="sec"><h3>Usages${c.brune ? " · note brune" : ""}</h3>${usage}</div>
+    ${src.length ? `<div class="sec"><h3>Sources</h3><ul class="srcs">${src.join("")}</ul></div>` : ""}
+    ${remarks.length ? `<div class="sec"><h3>Remarques</h3>${remarks.join("")}</div>` : ""}
+    ${verif}</div></div>`;
+}
+
+function render(){
+  const total = cards.length, sus = cards.filter(c => progress[c.id] === "sus").length, rev = cards.filter(c => progress[c.id] === "revoir").length;
+  $("#stats").textContent = `${total} cartes · ${cards.filter(c => c.brune).length} notes brunes · ${sus} sues · ${rev} à revoir`;
+  const el = $("#card");
+  if (!deck.length){
+    el.innerHTML = `<div class="empty">Aucune carte ne correspond à ces filtres.</div>`;
+    $("#pos").textContent = ""; $("#score").textContent = "";
+  } else {
+    const c = cards[deck[pos]];
+    el.innerHTML = flipped ? backHTML(c) : frontHTML(c);
+    const st = progress[c.id];
+    $("#pos").textContent = `Carte ${pos + 1} / ${deck.length}${shuffled ? " · ordre mélangé" : ""}`;
+    $("#score").innerHTML = st ? `<span class="dot ${st}"></span>${st === "sus" ? "sue" : "à revoir"}` : "";
+  }
+  $("#prev").disabled = pos <= 0;
+  $("#next").disabled = pos >= deck.length - 1;
+  if (!$("#v-catalog").hidden) renderGrid();
+}
+
+function animate(){ const el = $("#card"); el.classList.remove("anim"); void el.offsetWidth; el.classList.add("anim"); }
+function flip(){ if (!deck.length) return; flipped = !flipped; render(); animate(); }
+function go(d){ const n = pos + d; if (n < 0 || n >= deck.length) return; pos = n; flipped = false; render(); }
+function mark(v){ if (!deck.length) return; progress[cards[deck[pos]].id] = v; store.set(progress); if (pos < deck.length - 1) { pos++; flipped = false; } render(); }
+
+function renderGrid(){
+  $("#grid").innerHTML = deck.length ? deck.map((i, k) => {
+    const c = cards[i], st = progress[c.id];
+    return `<button class="tile" data-k="${k}"><div class="pics${c.structures.length > 1 ? " two" : ""}">${c.structures.map(s => s.svg || "").join("")}</div>
+      <b>${st ? `<span class="dot ${st}"></span>` : ""}${esc(c.titre)}</b><small>${c.type === "nat" ? "produit naturel" : esc(c.famille)}${c.brune ? " · note brune" : ""}</small></button>`;
+  }).join("") : `<div class="empty">Aucune carte ne correspond à ces filtres.</div>`;
+}
+
+function showView(v){
+  document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.view === v));
+  ["study", "catalog"].forEach(x => $("#v-" + x).hidden = x !== v);
+  if (v === "catalog") renderGrid();
+  window.scrollTo(0, 0);
+}
+// après un clic, le focus revient sur la carte : Espace la retourne au lieu de réactiver le bouton cliqué
+const focusCard = () => $("#card").focus({preventScroll: true});
+
+document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => showView(b.dataset.view));
+document.querySelectorAll("#filters .chip").forEach(b => b.onclick = () => {
+  const on = b.getAttribute("aria-pressed") !== "true";
+  b.setAttribute("aria-pressed", on);
+  const f = b.dataset.f;
+  if (f === "niveau" || f === "type") on ? filt[f].add(b.dataset.v) : filt[f].delete(b.dataset.v);
+  else filt[f] = on;
+  rebuild();
+});
+$("#famille").onchange = e => { filt.famille = e.target.value; rebuild(); };
+$("#q").oninput = e => { filt.q = e.target.value.trim(); rebuild(); };
+$("#card").onclick = e => { if (!e.target.closest("a")) flip(); };
+$("#flip").onclick = flip;
+$("#prev").onclick = () => go(-1);
+$("#next").onclick = () => go(1);
+$("#good").onclick = () => mark("sus");
+$("#again").onclick = () => mark("revoir");
+$("#shuffle").onclick = () => {
+  order = cards.map((_, i) => i);
+  for (let i = order.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
+  shuffled = true; pos = 0; rebuild(null);
+};
+$("#grid").onclick = e => { const t = e.target.closest(".tile"); if (!t) return; pos = +t.dataset.k; flipped = false; showView("study"); render(); focusCard(); };
+document.querySelectorAll(".controls button").forEach(b => b.addEventListener("click", focusCard));
+$("#reset").onclick = () => { if (confirm("Effacer la progression (sues / à revoir) ?")) { progress = {}; store.set(progress); render(); } };
+document.addEventListener("keydown", e => {
+  if (e.target.matches("input, select") || $("#v-study").hidden) return;
+  if (e.key === " " || e.key === "Enter"){ e.preventDefault(); flip(); }
+  else if (e.key === "ArrowRight") go(1);
+  else if (e.key === "ArrowLeft") go(-1);
+  else if (e.key === "1") mark("revoir");
+  else if (e.key === "2") mark("sus");
+});
+rebuild(null);
+</script>
+</body>
+</html>

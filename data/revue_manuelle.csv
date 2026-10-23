@@ -1,0 +1,14 @@
+key;verdict;commentaire
+butyl_butyryl_lactate;ok;"PubChem nom + CAS et CACTUS CAS concordent ; CACTUS par nom renvoie un autre composé"
+ambrettolide;ok;"ambrettolide = (8Z)-oxacycloheptadec-8-en-2-one ; la fiche PubChem trouvée par le CAS est l'isomère (7E)"
+furfuryl_thioacetate;ok;"S-ester (CC(=O)SCH2-furyle) confirmé par PubChem nom + CAS et CACTUS CAS ; CACTUS nom et OPSIN lisent un O-ester"
+terpinen_4_ol;ok;"PubChem nom + CAS, CACTUS CAS et OPSIN concordent ; seul CACTUS par nom diverge"
+ethylguaiacol_4;ok;"4-éthyl-2-méthoxyphénol confirmé par PubChem nom + CAS et CACTUS CAS ; CACTUS nom et OPSIN numérotent le gaïacol autrement"
+furaneol;ok;"PubChem nom + CAS et CACTUS CAS concordent ; CACTUS par nom diverge"
+homofuraneol;ok;"l'homofuranéol est un équilibre de deux tautomères (2-éthyl-5-méthyl et 5-éthyl-2-méthyl) ; la forme 2-éthyl, nommée dans le CSV, est dessinée"
+ethyl_furfurylthiopropionate;ok;"les 5 sources concordent ; la règle « propionate » ne s'applique pas à un propionate substitué en 3"
+davanone;ok;"seule PubChem connaît la davanone ; structure vérifiée : 6-méthyl-2-(5-méthyl-5-vinyltétrahydrofuran-2-yl)hept-5-én-3-one"
+gingerol;ok;"PubChem nom + CAS concordent sur le (S)-[6]-gingérol ; CACTUS renvoie d'autres gingérols"
+rebaudioside_a;ok;seule PubChem connaît le rébaudioside A (nom + CAS concordent)
+linalool_oxide;ok;CID 22310 imposé (forme furanoïde du produit commercial)
+msg;ok;"CID 23672308 imposé (sel anhydre ; PubChem renvoie le monohydrate)"

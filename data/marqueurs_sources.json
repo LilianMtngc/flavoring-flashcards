@@ -1,0 +1,522 @@
+{
+ "almond_alcoholate": [
+  {
+   "marqueur": "benzaldehyde",
+   "source": "Almond",
+   "url": "https://en.wikipedia.org/wiki/Almond"
+  }
+ ],
+ "benzoin_sumatra": [
+  {
+   "marqueur": "cinnamic_acid",
+   "source": "Benzoin resin",
+   "url": "https://en.wikipedia.org/wiki/Benzoin_resin"
+  }
+ ],
+ "bergamot_oil": [
+  {
+   "marqueur": "linalyl_acetate",
+   "source": "Bergamot essential oil",
+   "url": "https://en.wikipedia.org/wiki/Bergamot_essential_oil"
+  },
+  {
+   "marqueur": "limonene",
+   "source": "Bergamot essential oil",
+   "url": "https://en.wikipedia.org/wiki/Bergamot_essential_oil"
+  }
+ ],
+ "bitter_almond_oil": [
+  {
+   "marqueur": "benzaldehyde",
+   "source": "Almond",
+   "url": "https://en.wikipedia.org/wiki/Almond"
+  }
+ ],
+ "black_pepper": [
+  {
+   "marqueur": "caryophyllene",
+   "source": "Black pepper",
+   "url": "https://en.wikipedia.org/wiki/Black_pepper"
+  },
+  {
+   "marqueur": "sabinene",
+   "source": "Sabinene",
+   "url": "https://en.wikipedia.org/wiki/Sabinene"
+  }
+ ],
+ "buchu_oil": [
+  {
+   "marqueur": "thiomenthone",
+   "source": "P-Mentha-8-thiol-3-one",
+   "url": "https://en.wikipedia.org/wiki/P-Mentha-8-thiol-3-one"
+  },
+  {
+   "marqueur": "diosphenol",
+   "source": "Agathosma betulina",
+   "url": "https://en.wikipedia.org/wiki/Agathosma_betulina"
+  }
+ ],
+ "butter_extract": [
+  {
+   "marqueur": "diacetyl",
+   "source": "Butter",
+   "url": "https://en.wikipedia.org/wiki/Butter"
+  }
+ ],
+ "capsicum": [
+  {
+   "marqueur": "capsaicin",
+   "source": "Capsicum",
+   "url": "https://en.wikipedia.org/wiki/Capsicum"
+  }
+ ],
+ "cardamom_oil": [
+  {
+   "marqueur": "cineole",
+   "source": "Cardamom",
+   "url": "https://en.wikipedia.org/wiki/Cardamom"
+  }
+ ],
+ "cassia_oil": [
+  {
+   "marqueur": "cinnamaldehyde",
+   "source": "Cinnamomum cassia",
+   "url": "https://en.wikipedia.org/wiki/Cinnamomum_cassia"
+  },
+  {
+   "marqueur": "coumarin",
+   "source": "Cinnamomum cassia",
+   "url": "https://en.wikipedia.org/wiki/Cinnamomum_cassia"
+  }
+ ],
+ "chamomile_roman": [
+  {
+   "marqueur": "isobutyl_angelate",
+   "source": "Angelic acid",
+   "url": "https://en.wikipedia.org/wiki/Angelic_acid"
+  }
+ ],
+ "cinnamon_ceylon": [
+  {
+   "marqueur": "cinnamaldehyde",
+   "source": "Cinnamaldehyde",
+   "url": "https://en.wikipedia.org/wiki/Cinnamaldehyde"
+  },
+  {
+   "marqueur": "eugenol",
+   "source": "Eugenol",
+   "url": "https://en.wikipedia.org/wiki/Eugenol"
+  }
+ ],
+ "cinnamon_oleoresin": [
+  {
+   "marqueur": "cinnamaldehyde",
+   "source": "Cinnamon",
+   "url": "https://en.wikipedia.org/wiki/Cinnamon"
+  }
+ ],
+ "clary_sage": [
+  {
+   "marqueur": "sclareol",
+   "source": "Sclareol",
+   "url": "https://en.wikipedia.org/wiki/Sclareol"
+  }
+ ],
+ "clove_leaf": [
+  {
+   "marqueur": "eugenol",
+   "source": "Clove",
+   "url": "https://en.wikipedia.org/wiki/Clove"
+  },
+  {
+   "marqueur": "caryophyllene",
+   "source": "Clove",
+   "url": "https://en.wikipedia.org/wiki/Clove"
+  }
+ ],
+ "cocoa": [
+  {
+   "marqueur": "tetramethylpyrazine",
+   "source": "Tetramethylpyrazine",
+   "url": "https://en.wikipedia.org/wiki/Tetramethylpyrazine"
+  }
+ ],
+ "cocoa_butter": [
+  {
+   "marqueur": "oleic_acid",
+   "source": "Cocoa butter",
+   "url": "https://en.wikipedia.org/wiki/Cocoa_butter"
+  },
+  {
+   "marqueur": "palmitic_acid",
+   "source": "Palmitic acid",
+   "url": "https://en.wikipedia.org/wiki/Palmitic_acid"
+  }
+ ],
+ "coffee": [
+  {
+   "marqueur": "furfurylthiol",
+   "source": "Furan-2-ylmethanethiol",
+   "url": "https://en.wikipedia.org/wiki/Furan-2-ylmethanethiol"
+  }
+ ],
+ "coriander_oil": [
+  {
+   "marqueur": "linalool",
+   "source": "Coriander",
+   "url": "https://en.wikipedia.org/wiki/Coriander"
+  }
+ ],
+ "davana_oil": [
+  {
+   "marqueur": "davanone",
+   "source": "Artemisia pallens",
+   "url": "https://en.wikipedia.org/wiki/Artemisia_pallens"
+  }
+ ],
+ "eucalyptus_oil": [
+  {
+   "marqueur": "cineole",
+   "source": "Eucalyptus oil",
+   "url": "https://en.wikipedia.org/wiki/Eucalyptus_oil"
+  }
+ ],
+ "fenugreek": [
+  {
+   "marqueur": "sotolon",
+   "source": "Fenugreek",
+   "url": "https://en.wikipedia.org/wiki/Fenugreek"
+  }
+ ],
+ "galangal": [
+  {
+   "marqueur": "cineole",
+   "source": "Alpinia galanga",
+   "url": "https://en.wikipedia.org/wiki/Alpinia_galanga"
+  }
+ ],
+ "geranium_oil": [
+  {
+   "marqueur": "citronellol",
+   "source": "Pelargonium graveolens",
+   "url": "https://en.wikipedia.org/wiki/Pelargonium_graveolens"
+  },
+  {
+   "marqueur": "geraniol",
+   "source": "Pelargonium graveolens",
+   "url": "https://en.wikipedia.org/wiki/Pelargonium_graveolens"
+  }
+ ],
+ "ginger_oil": [
+  {
+   "marqueur": "zingiberene",
+   "source": "Ginger",
+   "url": "https://en.wikipedia.org/wiki/Ginger"
+  }
+ ],
+ "ginger_oleoresin": [
+  {
+   "marqueur": "gingerol",
+   "source": "Ginger",
+   "url": "https://en.wikipedia.org/wiki/Ginger"
+  },
+  {
+   "marqueur": "zingiberene",
+   "source": "Ginger",
+   "url": "https://en.wikipedia.org/wiki/Ginger"
+  }
+ ],
+ "green_tea": [
+  {
+   "marqueur": "egcg",
+   "source": "Green tea",
+   "url": "https://en.wikipedia.org/wiki/Green_tea"
+  }
+ ],
+ "hazelnut": [
+  {
+   "marqueur": "filbertone",
+   "source": "Hazelnut",
+   "url": "https://en.wikipedia.org/wiki/Hazelnut"
+  }
+ ],
+ "honey": [
+  {
+   "marqueur": "phenylacetaldehyde",
+   "source": "Honey",
+   "url": "https://en.wikipedia.org/wiki/Honey"
+  },
+  {
+   "marqueur": "phenylacetic_acid",
+   "source": "Phenylacetic acid",
+   "url": "https://en.wikipedia.org/wiki/Phenylacetic_acid"
+  }
+ ],
+ "hop": [
+  {
+   "marqueur": "myrcene",
+   "source": "Hops",
+   "url": "https://en.wikipedia.org/wiki/Hops"
+  }
+ ],
+ "juniper": [
+  {
+   "marqueur": "alpha_pinene",
+   "source": "Juniper berry",
+   "url": "https://en.wikipedia.org/wiki/Juniper_berry"
+  },
+  {
+   "marqueur": "myrcene",
+   "source": "Juniper berry",
+   "url": "https://en.wikipedia.org/wiki/Juniper_berry"
+  }
+ ],
+ "lavender_oil": [
+  {
+   "marqueur": "linalool",
+   "source": "Lavender oil",
+   "url": "https://en.wikipedia.org/wiki/Lavender_oil"
+  },
+  {
+   "marqueur": "linalyl_acetate",
+   "source": "Lavender oil",
+   "url": "https://en.wikipedia.org/wiki/Lavender_oil"
+  }
+ ],
+ "lemon_zest": [
+  {
+   "marqueur": "limonene",
+   "source": "Limonene",
+   "url": "https://en.wikipedia.org/wiki/Limonene"
+  },
+  {
+   "marqueur": "citral",
+   "source": "Citral",
+   "url": "https://en.wikipedia.org/wiki/Citral"
+  }
+ ],
+ "lemongrass_oil": [
+  {
+   "marqueur": "citral",
+   "source": "Cymbopogon citratus",
+   "url": "https://en.wikipedia.org/wiki/Cymbopogon_citratus"
+  },
+  {
+   "marqueur": "geraniol",
+   "source": "Cymbopogon citratus",
+   "url": "https://en.wikipedia.org/wiki/Cymbopogon_citratus"
+  }
+ ],
+ "licorice": [
+  {
+   "marqueur": "glycyrrhizic_acid",
+   "source": "Liquorice",
+   "url": "https://en.wikipedia.org/wiki/Liquorice"
+  }
+ ],
+ "litsea": [
+  {
+   "marqueur": "citral",
+   "source": "Litsea cubeba",
+   "url": "https://en.wikipedia.org/wiki/Litsea_cubeba"
+  }
+ ],
+ "maraschino_cherry": [
+  {
+   "marqueur": "benzaldehyde",
+   "source": "Benzaldehyde",
+   "url": "https://en.wikipedia.org/wiki/Benzaldehyde"
+  }
+ ],
+ "matcha": [
+  {
+   "marqueur": "dms",
+   "source": "Matcha",
+   "url": "https://en.wikipedia.org/wiki/Matcha"
+  }
+ ],
+ "mate": [
+  {
+   "marqueur": "caffeine",
+   "source": "Mate (drink)",
+   "url": "https://en.wikipedia.org/wiki/Mate_(drink)"
+  }
+ ],
+ "mountain_maple": [
+  {
+   "marqueur": "mcp",
+   "source": "2-Hydroxy-3-methyl-2-cyclopenten-1-one",
+   "url": "https://en.wikipedia.org/wiki/2-Hydroxy-3-methyl-2-cyclopenten-1-one"
+  }
+ ],
+ "neroli_oil": [
+  {
+   "marqueur": "linalool",
+   "source": "Neroli",
+   "url": "https://en.wikipedia.org/wiki/Neroli"
+  }
+ ],
+ "nutmeg_oil": [
+  {
+   "marqueur": "myristicin",
+   "source": "Nutmeg",
+   "url": "https://en.wikipedia.org/wiki/Nutmeg"
+  },
+  {
+   "marqueur": "sabinene",
+   "source": "Sabinene",
+   "url": "https://en.wikipedia.org/wiki/Sabinene"
+  }
+ ],
+ "oak_chips": [
+  {
+   "marqueur": "whisky_lactone",
+   "source": "Oak (wine)",
+   "url": "https://en.wikipedia.org/wiki/Oak_(wine)"
+  },
+  {
+   "marqueur": "vanillin",
+   "source": "Oak (wine)",
+   "url": "https://en.wikipedia.org/wiki/Oak_(wine)"
+  }
+ ],
+ "orange_deterpenated": [
+  {
+   "marqueur": "octanal",
+   "source": "Orange oil",
+   "url": "https://en.wikipedia.org/wiki/Orange_oil"
+  }
+ ],
+ "orange_flower": [
+  {
+   "marqueur": "methyl_anthranilate",
+   "source": "Methyl anthranilate",
+   "url": "https://en.wikipedia.org/wiki/Methyl_anthranilate"
+  }
+ ],
+ "orange_oil": [
+  {
+   "marqueur": "limonene",
+   "source": "Orange oil",
+   "url": "https://en.wikipedia.org/wiki/Orange_oil"
+  }
+ ],
+ "patchouli": [
+  {
+   "marqueur": "patchoulol",
+   "source": "Patchouli",
+   "url": "https://en.wikipedia.org/wiki/Patchouli"
+  }
+ ],
+ "peppermint_oil": [
+  {
+   "marqueur": "menthol",
+   "source": "Peppermint",
+   "url": "https://en.wikipedia.org/wiki/Peppermint"
+  },
+  {
+   "marqueur": "menthone",
+   "source": "Peppermint",
+   "url": "https://en.wikipedia.org/wiki/Peppermint"
+  }
+ ],
+ "peru_balsam": [
+  {
+   "marqueur": "benzyl_benzoate",
+   "source": "Balsam of Peru",
+   "url": "https://en.wikipedia.org/wiki/Balsam_of_Peru"
+  }
+ ],
+ "rum_ether": [
+  {
+   "marqueur": "ethyl_formate",
+   "source": "Ethyl formate",
+   "url": "https://en.wikipedia.org/wiki/Ethyl_formate"
+  },
+  {
+   "marqueur": "ethyl_acetate",
+   "source": "Rum",
+   "url": "https://en.wikipedia.org/wiki/Rum"
+  }
+ ],
+ "saffron": [
+  {
+   "marqueur": "safranal",
+   "source": "Saffron",
+   "url": "https://en.wikipedia.org/wiki/Saffron"
+  }
+ ],
+ "sandalwood_oil": [
+  {
+   "marqueur": "santalol",
+   "source": "Sandalwood oil",
+   "url": "https://en.wikipedia.org/wiki/Sandalwood_oil"
+  }
+ ],
+ "seaweed": [
+  {
+   "marqueur": "dms",
+   "source": "Dimethyl sulfide",
+   "url": "https://en.wikipedia.org/wiki/Dimethyl_sulfide"
+  }
+ ],
+ "smoked_paprika": [
+  {
+   "marqueur": "guaiacol",
+   "source": "Guaiacol",
+   "url": "https://en.wikipedia.org/wiki/Guaiacol"
+  },
+  {
+   "marqueur": "syringol",
+   "source": "Syringol",
+   "url": "https://en.wikipedia.org/wiki/Syringol"
+  }
+ ],
+ "stevia": [
+  {
+   "marqueur": "rebaudioside_a",
+   "source": "Stevia",
+   "url": "https://en.wikipedia.org/wiki/Stevia"
+  }
+ ],
+ "sweet_vernal_grass": [
+  {
+   "marqueur": "coumarin",
+   "source": "Anthoxanthum odoratum",
+   "url": "https://en.wikipedia.org/wiki/Anthoxanthum_odoratum"
+  }
+ ],
+ "tamarind": [
+  {
+   "marqueur": "tartaric_acid",
+   "source": "Tamarind",
+   "url": "https://en.wikipedia.org/wiki/Tamarind"
+  }
+ ],
+ "tolu_balsam": [
+  {
+   "marqueur": "benzyl_benzoate",
+   "source": "Tolu balsam",
+   "url": "https://en.wikipedia.org/wiki/Tolu_balsam"
+  },
+  {
+   "marqueur": "benzyl_cinnamate",
+   "source": "Tolu balsam",
+   "url": "https://en.wikipedia.org/wiki/Tolu_balsam"
+  }
+ ],
+ "tonka": [
+  {
+   "marqueur": "coumarin",
+   "source": "Dipteryx odorata",
+   "url": "https://en.wikipedia.org/wiki/Dipteryx_odorata"
+  }
+ ],
+ "yeast_umami": [
+  {
+   "marqueur": "msg",
+   "source": "Yeast extract",
+   "url": "https://en.wikipedia.org/wiki/Yeast_extract"
+  }
+ ]
+}

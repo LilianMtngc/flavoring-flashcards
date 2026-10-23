@@ -1,0 +1,102 @@
+# Flavoring flashcards
+
+Flash cards pour apprendre à reconnaître les molécules aromatiques à partir de leur structure chimique,
+avec un focus sur les **notes brunes** (caramel, cacao, café, grillé, noisette, érable, vanille, fumé…).
+
+**▶ Ouvrir les cartes : https://lilianmtngc.github.io/flavoring-flashcards/**
+
+- **Recto** : la structure chimique (ou, pour un produit naturel, sa ou ses molécules marqueurs).
+- **Verso** : le nom, la famille chimique, la formule, le numéro CAS, les descripteurs, les usages et les sources.
+
+336 cartes : 276 molécules et 60 produits naturels, dont 68 notes brunes.
+
+## Utilisation
+- **Navigateur** : [la page en ligne](https://lilianmtngc.github.io/flavoring-flashcards/), ou `index.html`
+  téléchargé et ouvert localement. Le fichier est autonome et fonctionne hors connexion.
+  - Clic ou `Espace` : retourner la carte ; `←` / `→` : naviguer ; `1` : à revoir ; `2` : je sais.
+  - Filtres : complexité, molécule / produit naturel, notes brunes, famille chimique, recherche.
+  - La progression est enregistrée dans le navigateur, sur cet appareil uniquement.
+- **Anki** : [`flavoring-flashcards.apkg`](flavoring-flashcards.apkg), à importer avec Fichier → Importer.
+  Les cartes sont taguées `note_brune`, `complexite_*` et `famille_*`.
+
+## D'où viennent les informations
+
+| Information | Source |
+|---|---|
+| Structure (SMILES, InChIKey, formule, masse) | [PubChem](https://pubchem.ncbi.nlm.nih.gov/), recoupée avec [NCI CACTUS](https://cactus.nci.nih.gov/) et [OPSIN](https://opsin.ch.cam.ac.uk/) |
+| N° FEMA, profil aromatique, n° JECFA | [FEMA Flavor Library](https://www.femaflavor.org/flavor-library), lien sur chaque carte |
+| Descriptions d'odeur et de goût | PubChem, en majorité Hazardous Substances Data Bank (HSDB), lien sur chaque carte |
+| Marqueurs des produits naturels | Wikipédia (anglais), lien sur chaque carte |
+| Descripteurs | Panel de dégustation (évaluation sensorielle en interne) |
+| Complexité | Calculée à partir de la structure (voir plus bas) |
+| Usages et origine des notes | Synthèse rédigée avec assistance IA, non sourcée ligne à ligne |
+
+### Vérification des structures
+Chaque molécule est cherchée dans 5 sources : PubChem par le nom, PubChem par le n° CAS, NCI CACTUS par le nom
+et par le CAS, et OPSIN. On compare la connectivité (1er bloc de l'InChIKey).
+
+La structure retenue est celle de la majorité. Elle doit être confirmée par au moins 3 sources, dont une hors PubChem.
+
+Des contrôles chimiques automatiques s'ajoutent : cycle des γ- et δ-lactones, groupes fonctionnels attendus d'après le nom,
+présence de N et S, stéréo E/Z ou énantiomère quand le nom l'exige.
+
+Les rares désaccords ont été tranchés à la main, avec la raison tracée. Le détail figure dans
+[`verification.html`](https://lilianmtngc.github.io/flavoring-flashcards/verification.html).
+
+### Marqueurs des produits naturels
+Un couple « produit → molécule » n'est retenu que dans deux cas :
+- la page Wikipédia du produit cite la molécule ;
+- la page de la molécule cite le produit dans une phrase qui indique sa présence (« found in », « component of », « responsible for »…).
+
+Une molécule qui « sent comme » le produit ne suffit pas.
+
+Les liens retenus ont été relus. Les produits sans marqueur confirmé n'ont pas de carte.
+
+### Complexité (Facile / Moyen / Difficile)
+Elle est calculée à partir de l'indice de complexité topologique de Bertz
+(S. H. Bertz, *J. Am. Chem. Soc.* 1981, 103, 3599), via RDKit (`BertzCT`). Les trois niveaux correspondent
+aux terciles de cet indice sur l'ensemble des molécules :
+- Facile : indice < 112 ;
+- Moyen : de 112 à 193 ;
+- Difficile : ≥ 193.
+
+Pour un produit naturel, on retient le marqueur le plus complexe.
+
+### Notes brunes
+Une carte est classée « note brune » dans deux cas :
+- un descripteur brun figure parmi ses deux premiers descripteurs ;
+- elle compte au moins deux descripteurs bruns.
+
+Descripteurs bruns : caramel, cacao, café, grillé, noisette, nutty, praliné, érable, vanillé, fumé, malt, biscuité, pain, pop-corn,
+riz basmati, brûlé, sucre brun, tabac, noix, fenugrec…
+
+### Ce qui n'est pas publié
+- **Dosages de dégustation** : aucune source ouverte ne permet de les valider. Les niveaux d'usage FEMA ne sont
+  pas accessibles librement.
+- **Correspondances fondées sur un nom commercial** que PubChem ou CACTUS ne confirment pas.
+- **Mélanges de composition non communiquée** et produits sans marqueur sourcé.
+
+## Reproduire
+```bash
+pip install -r requirements.txt
+python scripts/02_resolve.py      # PubChem, CACTUS, OPSIN (cache : data/resolve_cache.json)
+python scripts/03_verify.py       # vote entre sources et contrôles chimiques -> verification.html
+python scripts/04_render.py       # dessins 2D (RDKit) -> structures/*.svg
+python scripts/06_sources.py      # FEMA et PubChem (cache : data/sources_cache.json)
+python scripts/07_markers.py      # sources Wikipédia des marqueurs -> data/marqueurs_sources.json
+python scripts/05_build_cards.py  # index.html, flavoring-flashcards.apkg, data/cartes.json
+```
+
+| Fichier | Contenu |
+|---|---|
+| `data/descripteurs.csv` | descripteurs par molécule ou produit, et par forme (naturelle / non précisée) |
+| `data/molecules_ref.csv` | nom affiché, nom de requête et n° CAS de chaque molécule |
+| `data/naturels_ref.csv`, `data/naturels_wiki.csv` | produits naturels, marqueurs, pages Wikipédia consultées |
+| `data/revue_manuelle.csv`, `data/overrides.csv` | décisions manuelles de vérification, avec leur justification |
+| `data/usages.csv` | usages et origine des notes |
+
+## Credit
+
+- Lilian Montagnac (Bioinformatics)
+- https://github.com/LilianMtngc
+- AI Assisted (Opus 5.5)

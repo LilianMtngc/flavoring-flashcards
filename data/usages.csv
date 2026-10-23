@@ -1,0 +1,358 @@
+key;usages;origine
+acetal;Rehausse les notes fraîches et « éthérées » des arômes de fruits (pomme, poire), de spiritueux et de yaourt.;
+allyl_heptanoate;Arômes ananas, fruits tropicaux et tutti frutti (bonbons, boissons).;
+allyl_hexanoate;Note clé de l'ananas dans les boissons, confiseries et produits laitiers aromatisés.;
+isoamyl_alcohol;"Fond « alcool de fermentation » des arômes de cacao, whisky, bière et fruits fermentés ; renforce le côté cacao des chocolats et des pâtes à tartiner.";"formé par la fermentation (levures, voie d'Ehrlich à partir de la leucine) ; présent dans les fèves de cacao fermentées et les spiritueux"
+amyl_butyrate;Arômes banane, abricot et ananas dans les bonbons et les boissons.;
+isoamyl_butyrate;Arômes banane, fraise et poire (confiseries, sirops).;
+benzyl_alcohol;"Solvant d'arôme et touche amande/cerise douce ; très utilisé comme support.";
+isobutyl_alcohol;Note alcoolique pour les arômes de spiritueux (whisky) et de fruits fermentés.;
+butyl_butyrate;Arômes ananas, fraise et banane (confiseries, boissons).;
+butyl_butyryl_lactate;Notes crémeuses et beurrées pour les arômes laitiers, vanille et beurre.;
+decanal;Note « peau d'orange » des arômes agrumes (orange, mandarine) dans les boissons.;
+diethyl_malonate;Touche fruitée verte (pomme, poire) et liant dans les arômes de fruits.;
+dimethoxybenzene_13;"Note noisette fraîche et médicinale ; utilisée à l'état de traces (noisette, notes boisées).";
+ethyl_cinnamate;Arômes fraise, cerise et cannelle douce (confitures, bonbons).;
+ethyl_heptanoate;Arômes de fruits (ananas, raisin) et de cognac / brandy.;
+ethyl_levulinate;"Note fruitée-phénolique de fond ; arômes de fruits cuits et de rhum.";
+ethyl_2_methylbutyrate;Note clé de la pomme et de la fraise (jus, confiseries, yaourts).;
+ethyl_propionate;"Arômes rhum, fraise et ananas ; donne une attaque éthérée.";
+ethyl_valerate;Arômes pomme verte, ananas et fruits tropicaux.;
+ethyl_isovalerate;Arômes myrtille, pomme et fraise.;
+gamma_heptalactone;Notes caramel-noix de coco et lactées pour les arômes de noix de coco, caramel et noisette.;
+ambrettolide;"Muscs naturels ; utilisé à l'état de traces pour arrondir les arômes de fruits rouges.";
+hexanedione_23;Note beurrée-fruitée pour les arômes de beurre, caramel et fraise.;
+trans_2_hexenal;Note « verte » des fruits frais (pomme, fraise, raisin) et des feuilles.;
+trans_2_hexenol;Note verte fruitée (pomme, kiwi) dans les arômes de fruits frais.;
+lactic_acid;"Acidulant des produits laitiers et des boissons ; renforce l'impression lactée.";
+lauric_acid;Note grasse-savonneuse pour les arômes de lait, beurre et noix de coco.;
+menthyl_acetate;"Note menthe douce et fruitée ; adoucit les arômes de menthe.";
+methylguaiacol_4;Note fumée-girofle pour les arômes fumés (viandes, bacon), vanille, whisky tourbé et café.;"produit de dégradation thermique de la lignine (fumée de bois, torréfaction) ; présent dans le café, le whisky et la vanille"
+vinylguaiacol_4;Note fumée-épicée-girofle pour les arômes de café, de bière de blé et les notes fumées.;formé par décarboxylation de l'acide férulique (torréfaction du café, levures de bière de blé)
+methylacetophenone_4;Note amande-cerise-mimosa pour les arômes de fruits et les notes florales.;
+methylfurfural_5;Note caramel-amande-boisée pour les arômes de caramel, d'amande grillée, de rhum et de pain.;issu de la caramélisation et de la réaction de Maillard (sucres chauffés)
+methyl_furoate;"Note amandée-champignon de fond ; arômes de fruits secs et de rhum.";
+methylheptenone;Note fruitée-verte des agrumes, de la poire et de la tomate.;
+methanethiol;Note soufrée de fromage affiné (camembert), de chou et de bouillon.;
+methyl_n_methylanthranilate;"Note mandarine / raisin Concord ; arômes de mandarine.";
+myristic_acid;Note grasse et effet « mouthcoating » pour les arômes laitiers.;
+nonanoic_acid;Note grasse-cireuse pour les arômes de fromage de chèvre et de lait.;
+octanal;Note grasse « zeste d'orange » des arômes d'agrumes.;
+octanone_2;Note fromage bleu et champignon pour les arômes de fromage.;
+pentanone_2;"Note éthérée-fruitée (banane) ; arômes de fruits et de fromage.";
+alpha_phellandrene;"Note terpénique poivrée-citronnée ; arômes d'agrumes et d'épices.";
+phenethyl_alcohol;Note rose-miel pour les arômes de fruits, de miel, de vin et de bière.;
+phenethyl_phenylacetate;Note rose-miel-cacao pour les arômes de miel et de cacao.;
+phenylacetaldehyde;Note miel-jacinthe pour les arômes de miel, de cacao et de chocolat.;produit de la dégradation de Strecker de la phénylalanine (cacao, miel)
+propenyl_guaethol;Note vanille-anisée-fumée (vanille artificielle, confiserie).;
+cinnamyl_alcohol;Note rose-cannelle douce pour les arômes épicés et de fruits.;
+alpha_terpineol;"Note pin-lilas-citron vert ; arômes de citron vert, cola et épices.";
+undecanone_2;"Note grasse fruitée (fromage bleu, poire) ; arômes de fromage.";
+tetramethylpyrazine;Note noisette-arachide grillée et cacao pour les arômes de chocolat, de cacao, de café et de noix grillées.;formée par la réaction de Maillard et par fermentation (fèves de cacao, natto)
+difurfuryl_disulfide;Note café torréfié-soufrée très puissante pour les arômes de café, de viandes grillées et de sésame.;dérivé du 2-furfurylthiol (café torréfié)
+trimethylpyrazine;Note cacao-noisette grillée pour les arômes de chocolat, de café, de cacahuète grillée, de biscuit et de pain.;réaction de Maillard (torréfaction des fèves de cacao et du café, cuisson)
+furfuryl_methyl_sulfide;Note grillée-soufrée pour les arômes de café et de viandes rôties.;réaction de Maillard (café torréfié)
+furfuryl_thioacetate;Note café torréfié pour les arômes de café et de viandes grillées.;précurseur stable du 2-furfurylthiol (café)
+methoxycinnamaldehyde_2;Note cannelle-boisée douce pour les arômes de cannelle et d'épices.;
+dimethylpyrazine_23;Note grillée-pop-corn-noisette pour les arômes de noisette, de pop-corn, de café et de pain grillé.;réaction de Maillard (torréfaction, cuisson)
+dimethylpyrazine_25;Note noisette-grillée pour les arômes de cacao, de café, de cacahuète et de pain.;réaction de Maillard (torréfaction)
+cocoa_hexenal;"Note cacao en poudre-miel ; renforce le côté « poudre de cacao » des arômes de chocolat et de cacao.";présent dans le cacao (condensation aldolique des aldéhydes de Strecker)
+methylquinoxaline_5;Note grillée-riz basmati-noisette pour les arômes de café, de cacao, de noisette et de céréales.;réaction de Maillard (torréfaction)
+methylthiophenecarboxaldehyde;Note amande-cerise pour les arômes d'amande et de fruits à noyau.;
+trans_2_octenal;"Note grasse-frite verte ; arômes de friture et de concombre.";
+dipropyl_disulfide;Note oignon-poireau pour les arômes salés (oignon, ail).;
+delta_undecalactone;Note crémeuse-pêche pour les arômes laitiers et de pêche.;
+ketoisophorone;Note miel-safran-boisée pour les arômes de miel, de tabac et de thé.;
+acetic_acid;"Acidulant ; note vinaigre des sauces, des condiments et des fruits fermentés.";
+acetoin;Note beurre-crème pour les arômes de beurre et de produits laitiers.;
+acetophenone;"Note amande-fraise des bois ; arômes d'amande, de cerise et de fraise.";
+isoamyl_acetate;Note clé de la banane (confiseries, boissons, chewing-gums).;
+anethole;Saveur anisée des boissons (pastis, ouzo), des confiseries et de la réglisse.;
+anisyl_acetate;"Note fruitée-anisée (framboise, cerise) ; arômes de fruits rouges.";
+anisyl_alcohol;Note anisée-amandée douce pour les arômes de vanille et de fruits.;
+benzaldehyde;Note amande amère et cerise (massepain, amaretto, cerise, cola).;
+benzyl_acetate;Note jasmin-banane pour les arômes de fruits (banane, poire, fraise).;
+isobutyraldehyde;Note malt-cacao pour les arômes de cacao, de chocolat, de bière, de malt et de pain.;dégradation de Strecker de la valine (cacao, malt, pain)
+butyric_acid;Note fromagère-beurrée pour les arômes de fromage, de beurre et (à l'état de traces) de fruits.;
+isobutyric_acid;"Note fromagère pour les arômes de fromage ; à l'état de traces dans le cacao et les fruits.";
+caffeine;Amertume des colas, des boissons énergisantes et des arômes de café.;
+terpinen_4_ol;"Note terpénique-épicée ; arômes de muscade, de citron vert et de poivre.";
+caryophyllene;Note épicée-boisée pour les arômes de poivre, de girofle et de cannelle.;
+cinnamaldehyde;Note cannelle (pâtisseries, chewing-gums, colas, boissons chaudes).;
+cinnamic_acid;"Note fruitée-cinnamique douce et faible ; arômes de fruits rouges.";
+citral;Note citron des boissons, des confiseries et des arômes d'agrumes.;
+citronellal;Note citronnelle des arômes d'agrumes et de fruits.;
+citronellol;Note rose-agrume pour les arômes de fruits rouges, de rose et d'agrumes.;
+p_cresol;Note animale-fumée à l'état de traces : cuir, tabac, notes fumées.;
+gamma_decalactone;"Note clé de la pêche ; arômes de pêche, d'abricot et de produits laitiers.";
+delta_decalactone;Note crème-noix de coco pour les arômes de beurre, de crème, de noix de coco et de pêche.;
+decanoic_acid;Note cireuse-lactée pour les arômes de fromage, de lait et de beurre.;
+diacetyl;Note beurre (beurre, popcorn, caramel au beurre, produits laitiers).;
+dihydrocoumarin;"Note coumarinée-caramel ; arômes de vanille, de tonka et de caramel.";
+melonal;Note melon-concombre des arômes de melon et de pastèque.;
+gamma_dodecalactone;Note pêche-crème pour les arômes de pêche, de beurre et de produits laitiers.;
+delta_dodecalactone;Note crème-pêche pour les arômes de beurre, de crème et de fromage frais.;
+ethyl_acetate;"Note éthérée-fruitée (rhum, fruits, confiseries) ; aussi solvant d'extraction.";
+ethyl_butyrate;Note fruitée « jus » (ananas, fraise, kiwi, orange).;
+ethyl_decanoate;Note cognac-poire pour les arômes de spiritueux et de poire.;
+ethylguaiacol_4;Note fumée-épicée pour les arômes de whisky, de vin vieilli en fût, de bacon et de café.;dégradation de l'acide férulique (fût de chêne toasté, Brettanomyces, fumée)
+ethyl_hexanoate;Note ananas-pomme (fruits, cidre, spiritueux).;
+ethyl_laurate;"Note cireuse ; arômes de spiritueux (cognac).";
+ethyl_phenylacetate;Note miel-rose pour les arômes de miel et de cacao.;
+ethyl_vanillin;Note vanille, 2 à 4 fois plus puissante que la vanilline (chocolat, biscuits, crèmes glacées, sucre vanillé).;synthétique (absent de la vanille naturelle)
+eugenol;Note clou de girofle (épices, pain d'épices, sauces, colas).;
+isoeugenol;"Note girofle-boisée plus douce ; arômes d'épices et de fumé.";
+furfurylthiol;Odorant clé du café torréfié : arômes de café, de viandes rôties et de sésame.;réaction de Maillard (torréfaction du café, à partir du furfural et de la cystéine)
+geraniol;Note rose-agrume pour les arômes de fruits, de rose et de litchi.;
+geranyl_acetate;"Note rose-poire fruitée ; arômes de fruits et d'agrumes.";
+guaiacol;Note fumée de bois pour les arômes fumés (viandes, poisson, fromage), de whisky tourbé, de café et de vanille.;dégradation thermique de la lignine (fumée de bois, torréfaction du café)
+heptanal;"Note grasse-verte ; arômes d'agrumes et de noix.";
+heptanone_2;Note fromage bleu-banane pour les arômes de fromage bleu et de fruits.;
+gamma_hexalactone;"Note coumarinée-amandée douce ; arômes de caramel et de fruits.";
+hexanal;Note verte « herbe coupée / pomme » des arômes de fruits frais.;
+hexanoic_acid;Note fromage de chèvre pour les arômes de fromage.;
+cis_3_hexenol;Note « herbe coupée » des fruits verts, de la menthe et du thé vert.;
+trans_2_hexenyl_acetate;Note poire-banane verte des arômes de poire et de pomme.;
+hexyl_acetate;Note poire-pomme verte des arômes de fruits.;
+raspberry_ketone;Note clé de la framboise (confiseries, boissons, yaourts).;
+indole;Note animale-jasmin à l'état de traces (jasmin, fleur d'oranger, fruits mûrs).;
+beta_ionone;Note violette-framboise pour les arômes de framboise, de fruits rouges et de thé.;
+limonene;Note orange « jus » des boissons et arômes d'agrumes.;
+linalool;Note florale-lavande-bergamote des arômes d'agrumes, de thé et de fruits.;
+linalyl_acetate;Note bergamote (thé Earl Grey, agrumes).;
+maltol;"Note caramel sucré pour les arômes de caramel, de pain, de biscuits et de fraise ; exhausteur de sucré.";produit de la caramélisation et de la réaction de Maillard (malt torréfié, pain, mélèze)
+menthol;Fraîcheur menthe (chewing-gums, confiseries, dentifrices, boissons).;
+anisaldehyde;Note anisée-aubépine pour les arômes d'anis, de vanille et de fruits.;
+methyl_anthranilate;Note raisin Concord et fleur d'oranger (boissons au raisin, confiseries).;
+styrallyl_acetate;Note rhubarbe-fruitée verte pour les arômes de rhubarbe et de fruits.;
+isovaleraldehyde;Note malt-cacao pour les arômes de chocolat, de cacao, de pain, de malt et de bière.;dégradation de Strecker de la leucine (cacao torréfié, malt, croûte de pain)
+methyl_cinnamate;Note fraise-cannelle pour les arômes de fraise et de cerise.;
+mcp;Note caramel-érable-grillé pour les arômes d'érable, de caramel, de café, de réglisse et de pain grillé.;réaction de Maillard et caramélisation (sirop d'érable, café, bois torréfié)
+methyl_salicylate;Note wintergreen (root beer, chewing-gums, confiseries).;
+dms;"Note maïs-crabe-légume ; arômes de maïs doux, de fruits de mer et de thé vert.";
+methional;Note pomme de terre cuite pour les arômes salés (chips, bouillon, viande).;
+naringin;Amertume du pamplemousse (boissons aux agrumes, tonics).;
+nerol;"Note rose-agrume douce ; arômes d'agrumes et de fruits.";
+nerolidol;"Note florale-boisée de fond ; arômes de fruits et de thé.";
+nonadienol;Note concombre-melon des arômes de melon, de pastèque et de concombre.;
+gamma_nonalactone;Note noix de coco pour les arômes de noix de coco, de pêche et de vanille.;
+nonanone_2;Note fromage bleu-fruitée pour les arômes de fromage.;
+gamma_octalactone;Note noix de coco-crème pour les arômes de noix de coco et de produits laitiers.;
+octanoic_acid;Note grasse-chèvre pour les arômes de fromage et de lait.;
+octenol;Note champignon pour les arômes de champignon et de fromage à croûte fleurie.;
+oleic_acid;"Note grasse-huileuse ; arômes d'huile et de friture.";
+pentanedione_23;Note beurre-biscuit pour les arômes de beurre, de caramel et de biscuit.;
+phenethyl_acetate;Note rose-miel pour les arômes de fruits, de miel et de bière.;
+phenylacetic_acid;Note miel pour les arômes de miel, de tabac et de cacao.;
+alpha_pinene;Note pin-résine des arômes d'épices, d'agrumes et de gin.;
+piperonal;Note vanille-amande-dragée (vanille, cerise, confiseries).;
+propionic_acid;Note acide-fromagère (fromage, conservateur).;
+vanillin;"Note vanille (chocolat, crèmes glacées, biscuits, boissons, confiserie) ; la note brune la plus utilisée.";"composant principal de la gousse de vanille ; aussi issue de la lignine (fût de chêne, fumée)"
+veratraldehyde;Note vanille-dragée douce pour les arômes de vanille et de fruits.;
+acetylpyrazine;Note pop-corn-pain grillé pour les arômes de pop-corn, de céréales, de noisette et de pain.;réaction de Maillard (cuisson, torréfaction)
+isopropylmethoxypyrazine;"Note pois-poivron-terreux ; arômes de légumes et de cacahuète crue.";
+decadienal;Note friture-poulet pour les arômes salés (friture, poulet, chips).;
+cis_3_hexenyl_acetate;Note verte-fruitée (pomme, poire, banane verte).;
+furaneol;Note caramel-fraise cuite pour les arômes de fraise, de caramel, d'ananas et de produits cuits.;"réaction de Maillard et caramélisation ; présent naturellement dans la fraise et l'ananas"
+thiomenthone;Note cassis-fruit tropical soufrée pour les arômes de cassis et de pamplemousse.;
+methylfuranthiol;Note viande cuite pour les arômes de viande, de bouillon et de thon.;
+dimethylpyrazine_26;Note praliné-chocolat-noisette pour les arômes de chocolat, de praliné, de café et de noisette.;réaction de Maillard (torréfaction du cacao et du café)
+delta_octalactone;Note noix de coco-crème des arômes de noix de coco et de lait.;
+o_thiocresol;Note soufrée-viande-caoutchouc à l'état de traces (viandes, fromages).;
+beta_damascone;Note pomme cuite-coing-prune pour les arômes de fruits cuits et de tabac.;
+acetylpyridine_2;Note grillée-pop-corn pour les arômes de pop-corn, de céréales et de noisette.;réaction de Maillard (cuisson, torréfaction)
+dmts;"Note chou-oignon soufrée ; arômes de légumes et de fromage.";
+furfurylpyrrole;"Note champignon-soufrée-terreuse ; arômes de café et de légumes.";
+cis_4_heptenal;Note crème-poisson pour les arômes de beurre, de crème et de fruits de mer.;
+methyl_thiobutyrate;Note fromage affiné (camembert, cheddar).;
+butylidenephthalide;Note céleri-livèche pour les arômes de céleri et de bouillon.;
+nonadienal;Note concombre (concombre, melon).;
+safranal;Note safran pour les arômes de safran et d'épices.;
+beta_damascenone;"Note prune-pomme cuite, très puissante ; arômes de fruits cuits, de rhum, de thé et de tabac.";
+cis_6_nonenol;Note melon-pastèque.;
+ethyl_crotonate;"Note rhum-fruitée soufrée ; arômes de rhum et de fruits fermentés.";
+ethyl_maltol;Note caramel-barbe à papa, 4 à 6 fois plus puissante que le maltol (confiseries, pâtisseries, fraise).;synthétique (analogue du maltol)
+dmds;Note chou-oignon-maïs pour les arômes salés.;
+isopropylmethylthiazole;Note fruit tropical (fruit de la passion, pêche).;
+sotolon;Note érable-fenugrec-caramel, très puissante, pour les arômes d'érable, de curry, de caramel et de vins oxydés.;formé par condensation aldolique (sirop d'érable, fenugrec, vins jaunes et vins doux, sucres chauffés)
+massoia_lactone;Note noix de coco-crème pour les arômes de noix de coco et de beurre.;
+filbertone;Odorant clé de la noisette : arômes de noisette, de praliné, de chocolat et de pâtes à tartiner.;présent dans la noisette, renforcé par la torréfaction
+methyl_thioacetate;"Note fromage-chou soufrée ; arômes de fromage.";
+thialdine;"Note soufrée-fruit exotique ; arômes salés et tropicaux.";
+ethyl_formate;Note rhum éther (rhum, arak, fruits).;
+acetanisole;"Note anisée-amande douce ; arômes de vanille, de noisette et de fruits.";
+isoamyl_hexanoate;Note poire-fruitée.;
+isoamyl_phenylacetate;"Note rose-miel-cacao ; arômes de miel et de cacao.";
+isoamyl_isovalerate;Note pomme-myrtille-banane.;
+benzyl_benzoate;"Solvant d'arôme ; note balsamique faible.";
+benzyl_butyrate;Note fruitée-jasmin (fraise, banane).;
+benzyl_phenylacetate;"Note miel-rose ; arômes de miel.";
+bornyl_acetate;Note pin-camphrée (épicéa, gin, épices).;
+butyl_acetate;Note banane-poire éthérée.;
+isobutyl_acetate;Note banane-tutti frutti.;
+butanol;"Note alcoolique-fermentée ; arômes de fruits et de spiritueux.";
+isobutyl_isobutyrate;Note fruitée exotique.;
+butyl_lactate;Note lactée-crème douce.;
+isobutyl_phenylacetate;Note miel-rose.;
+butyl_isovalerate;Note myrtille-fruitée.;
+diethyl_succinate;"Note fruitée douce ; arômes de vin et de fruits.";
+dimethyl_succinate;Note fruitée-vineuse douce.;
+ethyl_benzoate;"Note balsamique-cerise ; arômes de cerise et de fruits.";
+ethyl_lactate;"Note fruitée douce ; arômes de fruits et de produits laitiers ; aussi solvant.";
+ethyl_myristate;"Note cireuse faible ; arômes de spiritueux.";
+ethyl_nonanoate;Note cognac-poire.;
+ethyl_octanoate;Note cognac-poire-ananas.;
+ethyl_palmitate;"Note cireuse-lactée faible ; arômes de spiritueux et de produits laitiers.";
+farnesol;"Note florale-verte ; arômes de fruits et d'agrumes.";
+fenchone;"Note camphrée-menthée ; arômes de fenouil et de réglisse.";
+furfuryl_acetate;"Note fruitée-banane légèrement soufrée ; arômes de fruits et de café.";
+hexanol;Note verte-fruitée.;
+styrallyl_propionate;Note fruitée-pamplemousse-rhubarbe.;
+methylbutanal_2;Note cacao-malt fermenté pour les arômes de cacao, de chocolat et de malt.;dégradation de Strecker de l'isoleucine (cacao torréfié, malt)
+methyl_butyrate;Note fruitée (pomme, ananas).;
+methylbutyric_acid_2;"Note fruitée-fromagère ; arômes de fraise et de fromage.";
+methyl_laurate;Note cireuse-fruitée.;
+methyl_phenylacetate;Note miel-florale.;
+octyl_acetate;Note orange-poire-savon.;
+octyl_butyrate;Note fruitée-agrume.;
+palmitic_acid;Effet « mouthcoating » gras.;
+propyl_acetate;Note poire-banane éthérée.;
+propanol;Note fruitée-alcoolique.;
+isopropanol;"Solvant ; note alcoolique.";
+propyl_butyrate;Note ananas-fraise.;
+gamma_undecalactone;Note pêche-crème (aldéhyde C14) des arômes de pêche, d'abricot et de crème.;
+pentanal;Note cacao-malt-verte pour les arômes de cacao, de céréales et de pain.;oxydation des lipides et dégradation de Strecker
+valeric_acid;Note fromage-myrtille.;
+isovaleric_acid;"Note fromage-pied ; à l'état de traces dans les arômes de cacao et de fruits.";
+syringol;Note fumée-bacon pour les arômes fumés (bacon, jambon, saumon fumé), de whisky et de mezcal.;dégradation thermique de la lignine de feuillus (fumée de hêtre ou de chêne)
+beta_sinensal;Note orange « jus » fraîche, très puissante.;
+ethyl_cyclopentenolone;Note caramel-érable-grillé pour les arômes d'érable, de caramel, de café et de pain grillé.;synthétique (analogue du MCP)
+maple_furanone;Note érable-céleri-noix pour les arômes d'érable, de caramel et de curry.;
+diethylpyrazine_23;"Note terreuse-noisette ; arômes de noix et de pomme de terre.";
+acetylfuran_2;Note caramel-amande grillée pour les arômes de caramel, de café et d'amande.;réaction de Maillard et caramélisation
+hexanedione_34;Note beurrée-grillée-noisette pour les arômes de beurre, de noisette et de caramel.;réaction de Maillard
+acetyl_ethylpyrazine;"Note terreuse-pomme de terre-noisette ; arômes de noix et de légumes grillés.";réaction de Maillard
+acetyl_methylpyrazine;Note grillée-riz-biscuit pour les arômes de céréales, de biscuit, de pop-corn et de noisette.;réaction de Maillard (cuisson, torréfaction)
+acetyl_dimethylpyrazine;Note noisette-cacahuète grillée pour les arômes de noisette, de cacahuète et de café.;réaction de Maillard (torréfaction)
+undecylenic_acid;Note grasse-chèvre.;
+ethyl_dimethylpyrazine;Note cacahuète grillée-cacao pour les arômes de cacahuète, de cacao, de café et de noisette.;réaction de Maillard (torréfaction de l'arachide, du cacao et du café)
+tetrahydrothiophenone_3;Note grillée-sésame-café soufrée pour les arômes de café, de sésame et de viande rôtie.;réaction de Maillard (aminoacides soufrés)
+ethyl_methylpyrazine;Note noisette-cacahuète grillée pour les arômes de noisette, de cacahuète, de café et de céréales.;réaction de Maillard (torréfaction)
+isobutylmethoxypyrazine;Note poivron vert (poivron, petits pois, vin Sauvignon) à l'état de traces.;
+methoxy_methylpyrazine;Note noisette-cacahuète grillée-cacao pour les arômes de noisette, d'arachide, de cacao et de café.;réaction de Maillard (torréfaction)
+methoxypyrazine;Note noisette-grillée pour les arômes de noisette, d'amande et de cacahuète.;
+dimethylthiazole_45;Note grillée-noisette-amine pour les arômes de viande rôtie, de noix et de café.;réaction de Maillard
+gamma_butyrolactone;Note lactée-crème faible.;
+methylpyrazine;Note grillée-noisette faible pour les arômes de cacao, de café et de noisette.;réaction de Maillard
+methylvinylthiazole;Note noisette-cacao pour les arômes de cacao, de noisette et de céréales.;réaction de Maillard
+tetrahydroquinoxaline;Note grillée-pop-corn-riz pour les arômes de céréales, de café et de noisette.;réaction de Maillard
+trimethylthiazole;Note cacao-grillé-noisette pour les arômes de cacao, de café, de viande rôtie et de noix.;réaction de Maillard
+methylthio_methylpyrazine;Note grillée-noisette-soufrée pour les arômes de noisette, d'amande et de café.;réaction de Maillard
+acetylthiazole;Note pop-corn-pain grillé pour les arômes de pop-corn, de céréales, de pain et de noisette.;réaction de Maillard (cystéine + sucres)
+heptanoic_acid;Note fromage de chèvre-rance.;
+delta_nonalactone;Note noix de coco-pêche-crème.;
+methyl_methylthiofuran;"Note soufrée-fromage ; arômes de café et de viande.";
+methyltetrahydrofuranone;Note caramel-sucre brun-noisette pour les arômes de caramel, de rhum, de café et de noisette (en synergie).;réaction de Maillard (café, rhum)
+tridecanone_2;"Note grasse-métallique ; arômes de fromage et de noix de coco.";
+ethylpyridine_3;Note grillée-caramel-tabac pour les arômes de tabac, de café et de noisette.;réaction de Maillard
+cis_3_hexenyl_butyrate;Note fruitée-verte (pomme, poire).;
+trimethyldioxolane;Note éthérée-terreuse.;
+dimethyl_dihydroxy_dithiane;Précurseur d'arôme « viande grillée / pop-corn » pour les arômes salés et de pop-corn.;libère du mercaptoacétone à la chauffe (arômes de réaction)
+trithioacetone;"Note soufrée-fruit tropical-cassis ; arômes de viande et de fruits tropicaux.";
+methyltetrahydrothiophenone;"Note cassis soufrée ; arômes de cassis et de viande.";
+octanol_3;Note champignon-aneth-fromage bleu.;
+delta_tetradecalactone;Note beurre-crème pour les arômes de beurre et de crème.;
+xylenol_25;Note fumée-phénolique pour les arômes fumés et de vanille.;fumée de bois et goudrons
+methylthiobutanol;Note soufrée-champignon-lait cuit.;
+propionylthiazole;Note pop-corn-pain grillé-riz pour les arômes de céréales, de pop-corn, de pain et de noisette.;réaction de Maillard
+homofuraneol;Note caramel-grillé-café pour les arômes de caramel, de café, de pain et de sauce soja.;"réaction de Maillard ; formé aussi par fermentation (sauce soja, miso)"
+diphenyl_oxide;Note fruitée-géranium-rose.;
+ethyl_furfurylthiopropionate;Note soufrée-café-arachide grillée à l'état de traces.;
+pentadecanone_2;Note grasse-céleri.;
+milk_lactone;Note lait-crème pour les arômes laitiers (lait, beurre, crème).;
+linalool_oxide;Note florale-agrume (thé, fruits).;
+amyl_acetate;Note banane-poire.;
+ethyl_salicylate;Note wintergreen douce.;
+furfural;Note pain-amande-caramel (classé CMR : non utilisé ici).;réaction de Maillard et caramélisation (pentoses)
+tartaric_acid;Acidulant (vins, boissons, confiseries).;
+chamomile_roman;Arômes de tisanes, de liqueurs et de boissons aux plantes.;
+coriander_oil;Épices, charcuterie, gin, boissons aux agrumes.;
+davana_oil;Notes fruitées-figue de fond (fruits secs, tabac, boissons).;
+licorice;"Réglisse, confiseries, boissons ; exhausteur de sucré.";
+mountain_maple;Notes érable et boisées (sirop d'érable, pâtisseries).;
+black_pepper;Épices, sauces, charcuterie, boissons épicées.;
+bitter_almond_oil;Massepain, amaretto, cerise, pâtisseries.;
+peru_balsam;Notes balsamiques-vanillées (confiseries, cola, liqueurs).;
+benzoin_sumatra;Notes balsamiques-vanillées (chocolat, vanille, confiseries).;
+bergamot_oil;Thé Earl Grey, agrumes, liqueurs.;
+buchu_oil;Cassis, fruits rouges, fruits tropicaux.;
+capsicum;Piquant (sauces, snacks, boissons chaudes).;
+cardamom_oil;Épices, café arabe, chai, pâtisseries.;
+cassia_oil;Cannelle (pâtisseries, colas, chewing-gums).;
+cinnamon_ceylon;Cannelle fine (pâtisseries, boissons chaudes, liqueurs).;
+cinnamon_oleoresin;Cannelle (biscuits, pâtisseries, boissons).;
+lemongrass_oil;Citron, boissons, thés et tisanes.;
+eucalyptus_oil;Confiseries rafraîchissantes, pastilles.;
+fenugreek;Érable artificiel, curry, notes caramel-noix.;
+geranium_oil;Fruits rouges, rose, litchi.;
+ginger_oil;Gingembre (ginger ale, pâtisseries, boissons).;
+ginger_oleoresin;Gingembre piquant (ginger beer, sauces).;
+lavender_oil;Notes florales (confiseries, boissons).;
+lemon_zest;Citron (boissons, pâtisseries).;
+neroli_oil;Fleur d'oranger, agrumes, cola.;
+nutmeg_oil;Épices, cola, sauces, pâtisseries.;
+oak_chips;Notes boisées-vanillées de fût (whisky, cognac, rhum, vin).;
+orange_flower;Fleur d'oranger (pâtisseries, boissons).;
+orange_deterpenated;Orange concentrée et stable (boissons claires).;
+orange_oil;Orange (boissons, confiseries, pâtisseries).;
+peppermint_oil;Menthe (chewing-gums, confiseries, dentifrices).;
+saffron;Safran (riz, pâtisseries, boissons).;
+sandalwood_oil;Notes boisées douces (traces).;
+tolu_balsam;Notes balsamiques (sirops, confiseries).;
+green_tea;Thé vert (boissons, glaces).;
+mate;Maté (boissons énergisantes, thés).;
+tonka;Fève tonka (pâtisseries, desserts, notes vanille-caramel).;
+patchouli;Notes boisées-terreuses (traces).;
+matcha;Matcha (pâtisseries, boissons, glaces).;
+cocoa_butter;Notes grasses du chocolat et du beurre de cacao.;
+butter_extract;Beurre (pâtisseries, sauces, popcorn).;
+clary_sage;Notes herbacées-ambrées (liqueurs, vermouth).;
+clove_leaf;Girofle (épices, sauces).;
+juniper;Gin, choucroute, liqueurs.;
+sweet_vernal_grass;Notes foin-coumarine (liqueurs, tisanes).;
+coffee;Café (boissons, desserts, glaces, chocolats).;
+hazelnut;Noisette (praliné, pâtes à tartiner, chocolats).;
+honey;Miel (confiseries, céréales, boissons).;
+cocoa;Cacao et chocolat (boissons, pâtisseries, glaces).;
+smoked_paprika;Paprika fumé (sauces, snacks, charcuterie).;
+tamarind;Tamarin (sauces, boissons, confiseries).;
+almond_alcoholate;Amande (pâtisseries, massepain).;
+yeast_umami;Umami salé (bouillons, snacks, sauces).;
+stevia;Édulcorant naturel (boissons, produits allégés).;
+hop;Houblon (bière, boissons sans alcool).;
+seaweed;Notes marines (sauces, produits de la mer).;
+galangal;Épices asiatiques (curry thaï, soupes).;
+maraschino_cherry;Cerise marasque (liqueurs, cerises confites).;
+rum_ether;Rhum (pâtisseries, confiseries, baba).;
+litsea;Citron (boissons, confiseries).;
+isobutyl_angelate;Marqueur de la camomille romaine.;
+davanone;Marqueur de l'essence de davana.;
+glycyrrhizic_acid;Saveur sucrée-réglisse (50 fois plus sucrée que le saccharose).;
+benzyl_cinnamate;Note balsamique douce des baumes.;
+diosphenol;Marqueur du buchu.;
+capsaicin;Principe piquant des piments.;
+cineole;Note fraîche-camphrée (eucalyptus, cardamome, laurier).;
+zingiberene;Note gingembre frais (huile essentielle).;
+gingerol;Principe piquant du gingembre frais.;
+menthone;Note menthe mentholée.;
+myristicin;Note muscade.;
+sabinene;Note poivrée-boisée.;
+whisky_lactone;Note noix de coco-boisée du chêne (fût de whisky ou de vin).;
+santalol;Note boisée crémeuse du santal.;
+egcg;Astringence et amertume du thé vert.;
+coumarin;Note foin-vanille-amande (fève tonka, flouve, foin).;
+patchoulol;Note boisée-terreuse du patchouli.;
+sclareol;Note ambrée de la sauge sclarée.;
+myrcene;Note houblon-résineuse.;
+msg;Saveur umami.;
+rebaudioside_a;Édulcorant majeur de la stévia (200 à 300 fois le saccharose).;
