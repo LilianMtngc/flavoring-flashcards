@@ -35,8 +35,9 @@ RULES = [
     # (condition sur le nom, SMARTS attendu, libellé)
     (lambda n: "pyrazine" in n, S("c1cnccn1"), "cycle pyrazine"),
     (lambda n: "quinoxaline" in n, S("c1cnccn1"), "cycle pyrazine"),
-    (lambda n: "thiazol" in n, S("s1cncc1"), "cycle thiazole"),
-    (lambda n: "pyridine" in n, S("n1ccccc1"), "cycle pyridine"),
+    (lambda n: "thiazol" in n and "thiazolin" not in n, S("s1cncc1"), "cycle thiazole"),
+    (lambda n: "thiazolin" in n, S("[#16;R]1~[#6;R]~[#7;R]~[#6;R]~[#6;R]1"), "cycle thiazoline"),
+    (lambda n: "pyridine" in n and "hydropyridine" not in n, S("n1ccccc1"), "cycle pyridine"),
     (lambda n: "pyrrol" in n, S("[#7]1~[#6]~[#6]~[#6]~[#6]~1"), "cycle pyrrole"),
     (lambda n: re.search(r"furan(?!one|eol)|furfur|furoate", n) and "tetrahydro" not in n and "furanone" not in n,
      S("c1ccoc1"), "cycle furane"),
@@ -50,7 +51,7 @@ RULES = [
     (lambda n: "formate" in n, S("[CH1](=O)O[#6]"), "ester formique"),
     (lambda n: re.search(r"(?<!thio)propionate", n) and not re.search(r"\d-\(", n), S("[CH3][CH2]C(=O)O[#6]"), "ester propionique"),
     (lambda n: re.search(r"aldehyde|al$|al\b(?!c)", n) and "alcohol" not in n, S("[CX3H1](=O)[#6]"), "aldéhyde"),
-    (lambda n: (re.search(r"one$", n) or "ketone" in n) and not re.search(r"furanone|pyranone|trithioacetone|lactone", n),
+    (lambda n: (re.search(r"one$", n) or "ketone" in n) and not re.search(r"furanone|pyranone|pyran-2-one|trithioacetone|lactone", n),
      S("[#6][CX3](=O)[#6]"), "cétone"),
     (lambda n: (re.search(r"ol$|diol|alcohol", n)) and not re.search(r"eucalyptol|thiol$", n), S("[OX2H]"), "fonction OH"),
     (lambda n: re.search(r"thiol|mercapt", n), S("[SX2H]"), "thiol"),
@@ -60,7 +61,7 @@ RULES = [
     (lambda n: "methoxy" in n, S("[CH3]O[#6]"), "méthoxy"),
     (lambda n: re.search(r"phenyl|benz|anis|cinnam|vanill|guaia", n), S("c1ccccc1"), "cycle benzénique"),
 ]
-N_HINT = re.compile(r"azin|pyri|thiazol|indol|anthranil|amin|quinoxalin|pyrrol|caffeine|capsaicin|glutamate|thialdine|nitr")
+N_HINT = re.compile(r"azin|pyri|thiazol|indol|anthranil|amin|quinoxalin|pyrrol|caffeine|capsaicin|glutamate|thialdine|nitr|cyanat|piperin")
 S_HINT = re.compile(r"thi|sulf|mercapt|methional")
 STEREO_EZ = re.compile(r"\btrans\b|\bcis\b|\(e\)|\(z\)|\(\d?e,|\(2e|\(e,|,\d?z\)|\be-|\bz-")
 STEREO_CHIRAL = re.compile(r"\bl-|\bd-|\(\+\)|\(-\)|\(r\)|\(s\)|\(r\)-")
@@ -203,7 +204,7 @@ def main():
             "controles_chimiques": passed,
             "status": status,
             "problems": problems,
-            "notes": notes + ([e["note"]] if e["note"] and e["note"] != "marqueur" else []),
+            "notes": notes + ([e["note"]] if e["note"] and e["note"] not in ("marqueur", "theorique") else []),
             "marqueur_seul": e["note"] == "marqueur",
         }
         rows.append((e, votes, rec, status, problems, notes, winner))

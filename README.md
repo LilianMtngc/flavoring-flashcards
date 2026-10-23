@@ -6,18 +6,27 @@ avec un focus sur les **notes brunes** (caramel, cacao, café, grillé, noisette
 **▶ Ouvrir les cartes : https://lilianmtngc.github.io/flavoring-flashcards/**
 
 - **Recto** : la structure chimique (ou, pour un produit naturel, sa ou ses molécules marqueurs).
-- **Verso** : le nom, la famille chimique, la formule, le numéro CAS, les descripteurs, les usages et les sources.
+- **Verso** : le nom, la famille chimique, la formule, le numéro CAS, les descripteurs, le dosage, les usages et les sources.
 
-336 cartes : 276 molécules et 60 produits naturels, dont 68 notes brunes.
+359 cartes : 278 molécules, 32 produits naturels et 49 molécules théoriques, dont 73 notes brunes.
+
+Trois catégories :
+- **Molécules** et **produits naturels** du jeu de départ, avec leurs descripteurs et leur dosage d'évaluation (ppm) ;
+- **Théoriques** : molécules de référence ajoutées parce qu'il serait gênant de les ignorer quand on apprend l'aromatique
+  (2-acétyl-1-pyrroline, thiols du pamplemousse et du cassis, défauts comme le TCA, la géosmine ou le (E)-2-nonénal,
+  énantiomères de la carvone…). Leurs descripteurs viennent de leur page Wikipédia, citation à l'appui
+  ([`data/theoriques_wiki.csv`](data/theoriques_wiki.csv)), ou à défaut du profil FEMA traduit terme à terme
+  ([`data/glossaire_fema.csv`](data/glossaire_fema.csv)). Elles n'ont pas de dosage.
 
 ## Utilisation
 - **Navigateur** : [la page en ligne](https://lilianmtngc.github.io/flavoring-flashcards/), ou `index.html`
   téléchargé et ouvert localement. Le fichier est autonome et fonctionne hors connexion.
   - Clic ou `Espace` : retourner la carte ; `←` / `→` : naviguer ; `1` : à revoir ; `2` : je sais.
-  - Filtres : complexité, molécule / produit naturel, notes brunes, famille chimique, recherche.
+  - Filtres : complexité, molécule / produit naturel / théorique, notes brunes, à revoir, je sais, famille chimique, recherche.
+  - Les cartes sues sont teintées en vert, celles à revoir en rouge. Bouton clair / sombre en haut à droite.
   - La progression est enregistrée dans le navigateur, sur cet appareil uniquement.
 - **Anki** : [`flavoring-flashcards.apkg`](flavoring-flashcards.apkg), à importer avec Fichier → Importer.
-  Les cartes sont taguées `note_brune`, `complexite_*` et `famille_*`.
+  Les cartes sont taguées `note_brune`, `complexite_*`, `famille_*` et `molecule` / `naturel` / `theorique`.
 
 ## D'où viennent les informations
 
@@ -27,7 +36,7 @@ avec un focus sur les **notes brunes** (caramel, cacao, café, grillé, noisette
 | N° FEMA, profil aromatique, n° JECFA | [FEMA Flavor Library](https://www.femaflavor.org/flavor-library), lien sur chaque carte |
 | Descriptions d'odeur et de goût | PubChem, en majorité Hazardous Substances Data Bank (HSDB), lien sur chaque carte |
 | Marqueurs des produits naturels | Wikipédia (anglais), lien sur chaque carte |
-| Descripteurs | Panel de dégustation (évaluation sensorielle en interne) |
+| Descripteurs et dosages (ppm) | Évaluation sensorielle interne ; pour les molécules théoriques, Wikipédia ou profil FEMA |
 | Complexité | Calculée à partir de la structure (voir plus bas) |
 | Usages et origine des notes | Synthèse rédigée avec assistance IA, non sourcée ligne à ligne |
 
@@ -56,11 +65,16 @@ Les liens retenus ont été relus. Les produits sans marqueur confirmé n'ont pa
 Elle est calculée à partir de l'indice de complexité topologique de Bertz
 (S. H. Bertz, *J. Am. Chem. Soc.* 1981, 103, 3599), via RDKit (`BertzCT`). Les trois niveaux correspondent
 aux terciles de cet indice sur l'ensemble des molécules :
-- Facile : indice < 112 ;
-- Moyen : de 112 à 193 ;
-- Difficile : ≥ 193.
+- Facile : indice < 114 ;
+- Moyen : de 114 à 200 ;
+- Difficile : ≥ 200.
 
 Pour un produit naturel, on retient le marqueur le plus complexe.
+
+### Une carte par structure
+Deux cartes qui auraient exactement le même recto (même structure, stéréochimie comprise, comparée par l'InChIKey complète)
+sont fusionnées. La carte porte le nom de la molécule ; les produits naturels dont elle est l'unique marqueur sont cités
+(« Marqueur de : … »), avec leurs propres descripteurs et dosages. Exemple : filbertone et noisette.
 
 ### Notes brunes
 Une carte est classée « note brune » dans deux cas :
@@ -71,8 +85,6 @@ Descripteurs bruns : caramel, cacao, café, grillé, noisette, nutty, praliné, 
 riz basmati, brûlé, sucre brun, tabac, noix, fenugrec…
 
 ### Ce qui n'est pas publié
-- **Dosages de dégustation** : aucune source ouverte ne permet de les valider. Les niveaux d'usage FEMA ne sont
-  pas accessibles librement.
 - **Correspondances fondées sur un nom commercial** que PubChem ou CACTUS ne confirment pas.
 - **Mélanges de composition non communiquée** et produits sans marqueur sourcé.
 
@@ -89,14 +101,15 @@ python scripts/05_build_cards.py  # index.html, flavoring-flashcards.apkg, data/
 
 | Fichier | Contenu |
 |---|---|
-| `data/descripteurs.csv` | descripteurs par molécule ou produit, et par forme (naturelle / non précisée) |
-| `data/molecules_ref.csv` | nom affiché, nom de requête et n° CAS de chaque molécule |
+| `data/descripteurs.csv` | descripteurs et dosage (ppm) par molécule ou produit, et par forme (naturelle / non précisée) |
+| `data/glossaire_fema.csv` | traduction des termes du profil FEMA (molécules théoriques) |
+| `data/molecules_ref.csv` | nom affiché, nom de requête et n° CAS de chaque molécule (`note=theorique` : molécule théorique) |
 | `data/naturels_ref.csv`, `data/naturels_wiki.csv` | produits naturels, marqueurs, pages Wikipédia consultées |
 | `data/revue_manuelle.csv`, `data/overrides.csv` | décisions manuelles de vérification, avec leur justification |
 | `data/usages.csv` | usages et origine des notes |
 
 ## Credit
 
-- Lilian Montagnac (Bioinformatics)
+- Lilian Montagnac (Bioinformatics Engineer)
 - https://github.com/LilianMtngc
 - AI Assisted (Opus 5.5)

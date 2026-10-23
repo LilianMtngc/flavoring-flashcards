@@ -349,6 +349,7 @@ myristicin;Note muscade.;
 sabinene;Note poivrée-boisée.;
 whisky_lactone;Note noix de coco-boisée du chêne (fût de whisky ou de vin).;
 santalol;Note boisée crémeuse du santal.;
+carvone;"Note menthe verte (spearmint) ; à comparer avec l'énantiomère (S), qui sent le carvi.";présente dans la menthe verte
 egcg;Astringence et amertume du thé vert.;
 coumarin;Note foin-vanille-amande (fève tonka, flouve, foin).;
 patchoulol;Note boisée-terreuse du patchouli.;
@@ -356,3 +357,51 @@ sclareol;Note ambrée de la sauge sclarée.;
 myrcene;Note houblon-résineuse.;
 msg;Saveur umami.;
 rebaudioside_a;Édulcorant majeur de la stévia (200 à 300 fois le saccharose).;
+acetylpyrroline;"Note riz basmati et pop-corn ; l'une des molécules clés de la croûte de pain, du riz parfumé et du pandan.";"réaction de Maillard (proline + sucres) ; produite aussi par le riz parfumé"
+acetaldehyde;"Note fraîche « pomme verte » et éthérée ; donne l'effet « jus frais » des arômes d'agrumes et de fruits, et de certains yaourts.";"produit de la fermentation alcoolique et de l'oxydation de l'éthanol ; défaut d'oxydation dans les vins et bières"
+nonanal;"Note grasse-cireuse d'agrume et de rose, utilisée à l'état de traces dans les arômes d'agrumes ; repère des notes d'oxydation des lipides.";"oxydation de l'acide oléique ; présent dans les huiles d'agrumes"
+cis_3_hexenal;"Odeur d'herbe fraîchement coupée ; donne l'effet « vert » des tomates, fruits frais et légumes.";"formé par la voie de la lipoxygénase quand on coupe des feuilles ; s'isomérise facilement en (E)-2-hexénal"
+trans_2_nonenal;"Note carton mouillé, référence du goût de vieillissement de la bière ; à très faible dose, note concombre-melon.";oxydation de l'acide linoléique
+octen_3_one;"Odeur métallique et champignon à seuil très bas ; responsable de l'odeur « métallique » de la peau au contact du fer et de défauts d'oxydation.";"oxydation de l'acide linoléique ; présent dans les champignons"
+pentylfuran_2;"Note haricot, végétale-grasse ; défaut typique des produits à base de soja et des huiles oxydées.";oxydation de l'acide linoléique
+acetylthiazoline;Note grillée-pop-corn intense, l'une des molécules clés des croûtes, viandes rôties et pop-corn.;réaction de Maillard (cystéine + sucres)
+acetyltetrahydropyridine;"Note biscuit-cracker, croûte de pain et pop-corn ; molécule clé des produits céréaliers cuits. En équilibre avec son tautomère 1,4,5,6-tétrahydro.";réaction de Maillard (proline + sucres), comme la 2-acétyl-1-pyrroline
+acetylpyrrole_2;Note pain-noisette légèrement sucrée, présente dans le pain, le café, le cacao et la réglisse.;réaction de Maillard
+diethylmethylpyrazine;Pyrazine « terreuse-grillée » à seuil très bas, l'une des plus puissantes du café torréfié et du cacao.;réaction de Maillard pendant la torréfaction
+mercaptomethylbutyl_formate;"Note « pipi de chat » et cassis ; contribue à l'arôme du café torréfié à l'état de traces.";formé pendant la torréfaction du café
+bis_methylfuryl_disulfide;Note viande cuite très puissante, utilisée dans les arômes de viande et de bouillon.;oxydation du 2-méthyl-3-furanthiol (dégradation de la thiamine, réaction de Maillard)
+mesifurane;"Note sherry-caramel-fraise mûre ; complète le furanéol dans les arômes fraise et mangue.";éther méthylique du furanéol, présent dans la fraise et la mangue
+furfuryl_alcohol;"Note brûlée-caramel léger et pain ; abondante dans le café torréfié.";"dégradation des sucres à la chaleur ; réduction du furfural"
+pentyl_pyrone;"Note noix de coco-crème, lactonée ; utilisée dans les arômes de noix de coco et de pêche.";"produite par des moisissures du genre Trichoderma ; présente dans la pêche"
+nootkatone;"Note caractéristique du pamplemousse, boisée-agrume ; base des arômes de pamplemousse.";"sesquiterpène du pamplemousse ; produit par oxydation du valencène"
+menthenethiol;"Thiol à seuil extrêmement bas (de l'ordre du ng/L), note pamplemousse frais ; utilisé à l'état de traces dans les arômes d'agrumes.";présent dans le jus de pamplemousse
+mmp_4;"Note buis et cassis ; molécule clé du sauvignon blanc et des arômes cassis.";libéré pendant la fermentation à partir d'un précurseur cystéinylé du raisin
+mercaptohexanol_3;"Note pamplemousse-fruit de la passion ; marqueur des vins de sauvignon et des fruits tropicaux.";libéré pendant la fermentation à partir de précurseurs du raisin
+ethyl_decadienoate;« Ester de poire » : note caractéristique de la poire Williams, base des arômes de poire.;présent dans la poire
+ethyl_methylphenylglycidate;"Note fraise de bonbon ; arôme fraise synthétique classique (confiseries, boissons).";molécule de synthèse, non identifiée dans la fraise
+ethyl_methylthiopropionate;"Note soufrée-fruitée de l'ananas mûr ; utilisée dans les arômes ananas.";présent dans l'ananas
+allyl_isothiocyanate;Principe piquant de la moutarde, du raifort et du wasabi (perception trigéminale).;libéré par la myrosinase à partir de la sinigrine quand on broie les graines ou la racine
+diallyl_disulfide;"Note ail cuit ; base des arômes d'ail.";dégradation de l'allicine de l'ail
+dithiapentane;"Note truffe blanche ; base de la plupart des arômes de truffe.";présent dans la truffe blanche
+estragole;"Note anisée-herbacée de l'estragon et du basilic ; usage encadré en Europe.";présent dans l'estragon, le basilic et le fenouil
+thymol;"Note thym, médicinale-phénolée ; arômes d'herbes, bonbons, bains de bouche.";présent dans le thym
+carvacrol;"Note origan, phénolée-épicée ; isomère du thymol.";présent dans l'origan et la sarriette
+s_carvone;"Note carvi et aneth ; même connectivité que la (R)-carvone (menthe verte) : exemple classique d'énantiomères d'odeurs différentes.";présente dans le carvi et l'aneth
+alpha_ionone;"Note violette-framboise ; complète la β-ionone dans les arômes de framboise et de violette.";dégradation des caroténoïdes
+cis_jasmone;"Note jasmin-herbacée-fruitée ; utilisée dans les arômes de thé et de fruits.";présent dans le jasmin et le thé
+rose_oxide;"Note rose-géranium et litchi ; marqueur du gewurztraminer et du litchi.";présent dans la rose, le géranium et le litchi
+cuminaldehyde;"Note caractéristique du cumin ; arômes d'épices et de curry.";présent dans le cumin
+camphor;"Note camphrée-fraîche de référence ; arômes de plantes médicinales et de romarin.";présent dans le romarin, la sauge et le camphrier
+zingerone;Note gingembre cuit, douce-épicée, peu piquante.;formée par chauffage du gingérol (rétro-aldolisation)
+piperine;"Principe piquant du poivre noir (perception trigéminale) ; l'odeur du poivre vient surtout des terpènes.";présente dans le poivre noir
+skatole;"Note fécale à forte dose, florale-animale très diluée ; défaut « odeur de verrat » de la viande de porc.";dégradation du tryptophane par les bactéries
+trimethylamine;"Odeur de poisson ; défaut de fraîcheur des produits de la mer, utilisée à l'état de traces dans les arômes de fruits de mer.";réduction de l'oxyde de triméthylamine des poissons marins après la mort
+ethylphenol_4;"Note écurie-sueur de cheval, défaut « Brett » des vins rouges ; note fumée-phénolée à faible dose.";produit par la levure Brettanomyces à partir de l'acide p-coumarique
+prenylthiol;Note « mouffette », défaut « goût de lumière » de la bière exposée aux UV.;photodégradation des iso-acides du houblon
+geosmin;"Odeur de terre humide et de betterave ; défaut « terreux » de l'eau, du vin et des poissons d'eau douce.";produite par des actinomycètes (Streptomyces) et des cyanobactéries
+methylisoborneol;Note moisi-terreux, défaut « goût de vase » de l'eau et des poissons d'élevage.;produit par des actinomycètes et des cyanobactéries
+tca;Référence du « goût de bouchon » : note moisie-carton à des seuils de l'ordre du ng/L.;méthylation microbienne du 2,4,6-trichlorophénol (traitements du bois et du liège)
+methionol;"Note pomme de terre cuite et chou ; présente dans la sauce soja, le fromage et le vin.";réduction du méthional (voie d'Ehrlich à partir de la méthionine)
+sulfurol;"Note noisette-viande légère ; utilisée dans les arômes de viande, de noisette et de lait.";dégradation de la thiamine
+valencene;"Note boisée-agrume de l'orange ; précurseur de la nootkatone.";sesquiterpène de l'huile d'orange douce
+rotundone;"Note poivre noir ; responsable du caractère poivré de la syrah et du poivre.";sesquiterpène présent dans le poivre noir et le raisin syrah

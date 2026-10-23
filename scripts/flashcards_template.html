@@ -9,23 +9,26 @@
 :root{
   --bg:#f6f4ef; --surface:#fffdf9; --surface-2:#f0ede6; --fg:#1f1e1b; --fg-2:#5d5b55; --fg-3:#8b8880;
   --line:#e2ded4; --line-2:#cfcac0; --accent:#7a4a1c; --accent-bg:#f6e7d3; --accent-line:#e3c49c;
-  --ok:#2f6b3a; --ok-bg:#e3f0e3; --warn:#8a5a00; --warn-bg:#fbf0d8; --bad:#9b2c2c; --bad-bg:#f9e3e1;
-  --radius:10px; --shadow:0 1px 2px rgba(40,30,10,.06),0 4px 16px rgba(40,30,10,.06);
+  --ok:#2f6b3a; --ok-bg:#e6f2e4; --ok-line:#9cc79f; --warn:#8a5a00; --warn-bg:#fbf0d8; --bad:#9b2c2c; --bad-bg:#faeae7; --bad-line:#e2aaa3;
+  --tint:rgba(255,255,255,.55); --radius:10px; --shadow:0 1px 2px rgba(40,30,10,.06),0 4px 16px rgba(40,30,10,.06);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#171614; --surface:#211f1c; --surface-2:#2a2824; --fg:#ecebe6; --fg-2:#b5b2aa; --fg-3:#8a877f;
     --line:#35322d; --line-2:#48443d; --accent:#e9b77d; --accent-bg:#3a2a18; --accent-line:#6b4a24;
-    --ok:#8fd19a; --ok-bg:#1f3324; --warn:#f0c46a; --warn-bg:#3a2e14; --bad:#f0a0a0; --bad-bg:#3d1f1f;
-    --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
+    --ok:#8fd19a; --ok-bg:#1c2e20; --ok-line:#3d6b46; --warn:#f0c46a; --warn-bg:#3a2e14; --bad:#f0a0a0; --bad-bg:#33201e; --bad-line:#6e3a36;
+    --tint:rgba(0,0,0,.22); --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
   }
 }
 :root[data-theme="dark"]{
   --bg:#171614; --surface:#211f1c; --surface-2:#2a2824; --fg:#ecebe6; --fg-2:#b5b2aa; --fg-3:#8a877f;
   --line:#35322d; --line-2:#48443d; --accent:#e9b77d; --accent-bg:#3a2a18; --accent-line:#6b4a24;
-  --ok:#8fd19a; --ok-bg:#1f3324; --warn:#f0c46a; --warn-bg:#3a2e14; --bad:#f0a0a0; --bad-bg:#3d1f1f;
-  --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
+  --ok:#8fd19a; --ok-bg:#1c2e20; --ok-line:#3d6b46; --warn:#f0c46a; --warn-bg:#3a2e14; --bad:#f0a0a0; --bad-bg:#33201e; --bad-line:#6e3a36;
+  --tint:rgba(0,0,0,.22); --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
 }
+:root{color-scheme:light}
+:root[data-theme="dark"]{color-scheme:dark}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark}}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 .wrap{max-width:980px;margin:0 auto;padding:20px 16px 48px}
@@ -93,13 +96,18 @@ h2{font-size:24px;margin:0 0 2px;font-weight:650;letter-spacing:-.01em}
 .tile .pics.two svg.mol{width:48%!important}
 .tile b{font-size:13px;line-height:1.3;font-weight:600}
 .tile small{color:var(--fg-3);font-size:12px}
-.tile .dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:4px}
-.dot.sus{background:var(--ok)}.dot.revoir{background:var(--bad)}
+.card.st-sus,.tile.st-sus{background:var(--ok-bg);border-color:var(--ok-line)}
+.card.st-revoir,.tile.st-revoir{background:var(--bad-bg);border-color:var(--bad-line)}
+.card.st-sus .usage,.card.st-revoir .usage,.card.st-sus .meta span,.card.st-revoir .meta span,.card.st-sus .badge.lvl,.card.st-revoir .badge.lvl{background:var(--tint)}
+#score.sus{color:var(--ok)}#score.revoir{color:var(--bad)}
+.theme{font:inherit;font-size:13px;border:1px solid var(--line-2);background:var(--surface);color:var(--fg-2);border-radius:999px;padding:3px 11px;cursor:pointer}
+.head-r{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .empty{text-align:center;color:var(--fg-3);padding:60px 0}
 kbd{font:12px ui-monospace,Consolas,monospace;border:1px solid var(--line-2);border-bottom-width:2px;border-radius:4px;padding:0 5px;color:var(--fg-2)}
 .srcs{margin:0;padding-left:18px;font-size:13px;color:var(--fg-2)}
 .srcs li{margin:2px 0;overflow-wrap:anywhere}
 a{color:var(--accent)}
+.alias{font-size:13.5px;margin:-4px 0 10px;color:var(--fg-2)}
 .flabel{font-size:12px;color:var(--fg-3);margin-right:-2px}
 footer{margin-top:36px;padding-top:14px;border-top:1px solid var(--line);font-size:12.5px;color:var(--fg-3)}
 footer p{margin:4px 0}
@@ -114,12 +122,13 @@ footer p{margin:4px 0}
   .keys{display:none}
 }
 </style>
+<script>try { const t = localStorage.getItem("flavoring-flashcards-theme"); if (t) document.documentElement.dataset.theme = t; } catch(e){}</script>
 </head>
 <body>
 <div class="wrap">
   <header>
     <h1>Flavoring flashcards</h1>
-    <div class="stats" id="stats"></div>
+    <div class="head-r"><div class="stats" id="stats"></div><button class="theme" id="theme" aria-label="Changer de thème"></button></div>
   </header>
   <div class="tabs" role="tablist">
     <button role="tab" data-view="study" aria-selected="true">Étude</button>
@@ -133,9 +142,11 @@ footer p{margin:4px 0}
     <span class="sep"></span>
     <button class="chip" data-f="type" data-v="mol" aria-pressed="false">Molécules</button>
     <button class="chip" data-f="type" data-v="nat" aria-pressed="false">Produits naturels</button>
+    <button class="chip" data-f="type" data-v="theo" aria-pressed="false" title="Molécules de référence ajoutées pour l'apprentissage ; descripteurs : profil FEMA">Théoriques</button>
     <span class="sep"></span>
     <button class="chip brown" data-f="brune" data-v="1" aria-pressed="false">Notes brunes</button>
-    <button class="chip" data-f="revoir" data-v="1" aria-pressed="false">À revoir</button>
+    <button class="chip" data-f="etat" data-v="revoir" aria-pressed="false">À revoir</button>
+    <button class="chip" data-f="etat" data-v="sus" aria-pressed="false">Je sais</button>
     <select id="famille" aria-label="Famille chimique"><option value="">Toutes les familles</option></select>
     <input type="search" id="q" placeholder="Rechercher un nom, un CAS, un descripteur…" aria-label="Rechercher">
   </div>
@@ -159,14 +170,12 @@ footer p{margin:4px 0}
   </section>
   <section id="v-catalog" hidden><div class="grid" id="grid"></div></section>
   <footer>
-    <p>Structures vérifiées sur PubChem, NCI CACTUS et OPSIN (<a href="verification.html">rapport de vérification</a>) · remarques sourcées : FEMA Flavor Library, PubChem (HSDB) · marqueurs des produits naturels : Wikipédia.
-    Descripteurs issus d'un panel de dégustation ; usages : synthèse rédigée avec assistance IA.</p>
-    <p>Lilian Montagnac (bioinformatique) · <a href="https://github.com/LilianMtngc/flavoring-flashcards">code source et méthode</a> · <a href="flavoring-flashcards.apkg">deck Anki</a> · <button class="linkbtn" id="reset">Effacer ma progression</button></p>
+    <p>Lilian Montagnac (Bioinformatics Engineer) · <a href="https://github.com/LilianMtngc/flavoring-flashcards">méthode et sources</a> · <a href="flavoring-flashcards.apkg">deck Anki</a> · <button class="linkbtn" id="reset">effacer ma progression</button></p>
   </footer>
 </div>
 <script>
 const DATA = /*__DATA__*/null;
-const BROWN = new Set(["CARAMEL","CARAMEL AMBRÉ","CARAMEL BRÛLÉ","CACAO","POUDRÉ CACAO","CHOCOLAT","CHOCOLAT NOIR","CAFÉ","MOUTURE","GRILLÉ","NOISETTE","NUTTY","PRALINÉ","CACAHUÈTE","ÉRABLE","POUDRÉ VANILLÉ","VANILLE","FUMÉ","BACON","CENDRE","MALT","BISCUITÉ","PAIN","CÉRÉALE","POP-CORN","RIZ BASMATI","BRÛLÉ","SUCRE BRUN","SUCRE CUIT","MÉLASSE","CASSONADE","TABAC","NOIX","FENUGREC","SÉSAME"]);
+const BROWN = new Set(["CARAMEL","CARAMEL AMBRÉ","CARAMEL BRÛLÉ","CACAO","POUDRÉ CACAO","CHOCOLAT","CHOCOLAT NOIR","CAFÉ","MOUTURE","GRILLÉ","NOISETTE","NUTTY","PRALINÉ","CACAHUÈTE","ÉRABLE","POUDRÉ VANILLÉ","VANILLE","FUMÉ","BACON","CENDRE","MALT","BISCUITÉ","PAIN","CÉRÉALE","POP-CORN","RIZ BASMATI","BRÛLÉ","CROÛTE DE PAIN","SUCRE BRUN","SUCRE CUIT","MÉLASSE","CASSONADE","TABAC","NOIX","FENUGREC","SÉSAME"]);
 const cards = DATA.cards;
 const KEY = "flavoring-flashcards-progress-v1";
 const store = {
@@ -174,7 +183,7 @@ const store = {
   set(v){ try { localStorage.setItem(KEY, JSON.stringify(v)); } catch(e){} }
 };
 let progress = store.get();
-const filt = {niveau:new Set(), type:new Set(), brune:false, revoir:false, famille:"", q:""};
+const filt = {niveau:new Set(), type:new Set(), etat:new Set(), brune:false, famille:"", q:""};
 let deck = [], pos = 0, flipped = false, shuffled = false, order = cards.map((_, i) => i);
 
 const $ = s => document.querySelector(s);
@@ -188,10 +197,10 @@ function matches(c){
   if (filt.niveau.size && !filt.niveau.has(c.niveau)) return false;
   if (filt.type.size && !filt.type.has(c.type)) return false;
   if (filt.brune && !c.brune) return false;
-  if (filt.revoir && progress[c.id] !== "revoir") return false;
+  if (filt.etat.size && !filt.etat.has(progress[c.id])) return false;
   if (filt.famille && c.famille !== filt.famille) return false;
   if (filt.q){
-    const hay = norm([c.titre, c.iupac, c.cas, c.famille, c.descripteurs.join(" "), c.structures.map(s => s.nom).join(" ")].join(" "));
+    const hay = norm([c.titre, c.iupac, c.cas, c.famille, c.descripteurs.join(" "), c.structures.map(s => s.nom).join(" "), c.marqueur_de.map(p => p.nom).join(" ")].join(" "));
     if (!norm(filt.q).split(/\s+/).every(t => hay.includes(t))) return false;
   }
   return true;
@@ -212,15 +221,15 @@ function structsHTML(c, cls){
 }
 
 function frontHTML(c){
-  const kind = c.type === "mol" ? "Molécule" : "Produit naturel · molécule" + (c.structures.length > 1 ? "s marqueurs" : " marqueur");
-  const q = c.type === "mol" ? "Quelle est cette molécule ?" : "De quel produit naturel est-ce le marqueur ?";
+  const kind = c.type === "nat" ? "Produit naturel · molécule" + (c.structures.length > 1 ? "s marqueurs" : " marqueur") : c.type === "theo" ? "Molécule · théorique" : "Molécule";
+  const q = c.type === "nat" ? "De quel produit naturel est-ce le marqueur ?" : "Quelle est cette molécule ?";
   return `<div class="front"><div class="kind">${kind}</div>${structsHTML(c, "structs")}<div class="hint">${q}</div></div>`;
 }
 
 function backHTML(c){
   const badges = (c.brune ? `<span class="badge brown">Note brune</span>` : "") + `<span class="badge lvl" title="Indice de complexité de Bertz : ${c.bertz} (seuils ${DATA.seuils[0]} / ${DATA.seuils[1]})">Complexité : ${esc(c.niveau)}</span>`;
   let sub, meta = "";
-  if (c.type === "mol"){
+  if (c.type !== "nat"){
     sub = c.iupac ? `IUPAC : ${esc(c.iupac)}` : "";
     meta = [c.famille, c.formule, `${String(c.masse).replace(".", ",")} g/mol`, `CAS ${c.cas}`].map(x => `<span>${esc(x)}</span>`).join("");
   } else {
@@ -230,16 +239,25 @@ function backHTML(c){
   const desc = c.descripteurs.length
     ? `<div class="desc">${c.descripteurs.map(d => `<span class="${BROWN.has(d) ? "b" : ""}">${esc(d.toLowerCase())}</span>`).join("")}</div>`
     : `<div class="note">Descripteurs non renseignés.</div>`;
-  const parForme = c.descripteurs_par_forme ? `<div class="note" style="margin-top:6px">${c.descripteurs_par_forme.map(p => `<b>Forme ${esc(p.forme)}</b> : ${esc(p.descripteurs.join(", ").toLowerCase())}`).join("<br>")}</div>` : "";
-  const formes = c.type === "mol" && c.formes.length ? `<div class="note" style="margin-top:4px">Formes évaluées : ${esc(c.formes.join(", "))}</div>` : "";
+  const label = f => ["naturelle", "non précisée"].includes(f.forme) ? "Forme " + f.forme : f.forme === "produit naturel" ? "Produit naturel" : f.forme;
+  const ppm = f => f.ppm.length ? f.ppm.map(v => v.replace(".", ",")).join(" / ") + " ppm" : "";
+  const F = c.formes.filter(f => !["profil FEMA", "Wikipédia"].includes(f.forme));
+  let formes = "";
+  if (F.length === 1) formes = ppm(F[0]) ? `Dosage : ${ppm(F[0])}` : "";
+  else if (F.length > 1 && new Set(F.map(f => f.descripteurs.join("|"))).size === 1) formes = "Dosage : " + F.map(f => `${label(f).toLowerCase()} ${ppm(f) || "non renseigné"}`).join(" · ");
+  else if (F.length > 1) formes = F.map(f => `<b>${esc(label(f))}</b>${ppm(f) ? " · " + ppm(f) : ""} : ${esc(f.descripteurs.join(", ").toLowerCase()) || "—"}`).join("<br>");
+  formes = formes ? `<div class="note" style="margin-top:6px">${formes}</div>` : "";
+  const alias = c.marqueur_de.length ? `<p class="alias">Marqueur de : <b>${esc([...new Set(c.marqueur_de.map(p => p.nom))].join(" · "))}</b></p>` : "";
   const usage = `<div class="usage${c.brune ? " brown" : ""}">${esc(c.usages)}${c.origine ? `<span class="orig">Origine : ${esc(c.origine)}</span>` : ""}</div>`;
   const a = (text, url) => url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(text)}</a>` : esc(text);
   const src = [];
   if (c.type === "nat"){
     c.structures.forEach(s => src.push(`<li><b>${esc(s.nom)}</b> cité(e) par ${a("Wikipédia — " + s.source, s.url)}</li>`));
   }
+  c.marqueur_de.forEach(p => src.push(`<li>Marqueur de <b>${esc(p.nom)}</b> : ${a("Wikipédia — " + p.source, p.url)}</li>`));
   const S = c.sources || {};
   if (S.fema) src.push(`<li>${a("FEMA n° " + S.fema.numero, S.fema.url)}${S.fema.profil ? ` · profil aromatique : <i>${esc(S.fema.profil)}</i>` : ""}${S.fema.jecfa ? ` · JECFA n° ${esc(S.fema.jecfa)}` : ""}</li>`);
+  if (S.wiki) src.push(`<li>Descripteurs : « ${esc(S.wiki.citation)} » — ${a("Wikipédia — " + S.wiki.page, S.wiki.url)}</li>`);
   (S.odeur || []).forEach(o => src.push(`<li>Odeur : « ${esc(o.texte)} » — ${a(o.source || "PubChem", o.url)}</li>`));
   (S.gout || []).forEach(o => src.push(`<li>Goût : « ${esc(o.texte)} » — ${a(o.source || "PubChem", o.url)}</li>`));
   if (c.cid) src.push(`<li>${a("Fiche PubChem (CID " + c.cid + ")", "https://pubchem.ncbi.nlm.nih.gov/compound/" + c.cid)}</li>`);
@@ -247,9 +265,9 @@ function backHTML(c){
   if (c.type === "nat" && c.partage.length) remarks.push(`<div class="note">Même(s) marqueur(s) que : ${esc(c.partage.join(", "))}</div>`);
   const verif = `<div class="verif ok">✓ Structure${c.structures.length > 1 ? "s" : ""} vérifiée${c.structures.length > 1 ? "s" : ""} · ${c.verif.sources} sources concordantes · <a href="verification.html" target="_blank">rapport</a></div>`;
   return `<div class="back">${structsHTML(c, "thumb")}<div>
-    <h2>${esc(c.titre)}</h2><p class="sub">${sub}</p><div>${badges}</div><div class="meta">${meta}</div>
-    <div class="sec"><h3>Descripteurs</h3>${desc}${parForme}${formes}</div>
-    <div class="sec"><h3>Usages${c.brune ? " · note brune" : ""}</h3>${usage}</div>
+    <h2>${esc(c.titre)}</h2><p class="sub">${sub}</p>${alias}<div>${badges}</div><div class="meta">${meta}</div>
+    <div class="sec"><h3>Descripteurs${c.type === "theo" ? " · " + c.formes[0].forme : ""}</h3>${desc}${formes}</div>
+    <div class="sec"><h3>Usages · synthèse IA</h3>${usage}</div>
     ${src.length ? `<div class="sec"><h3>Sources</h3><ul class="srcs">${src.join("")}</ul></div>` : ""}
     ${remarks.length ? `<div class="sec"><h3>Remarques</h3>${remarks.join("")}</div>` : ""}
     ${verif}</div></div>`;
@@ -260,14 +278,17 @@ function render(){
   $("#stats").textContent = `${total} cartes · ${cards.filter(c => c.brune).length} notes brunes · ${sus} sues · ${rev} à revoir`;
   const el = $("#card");
   if (!deck.length){
+    el.className = "card";
     el.innerHTML = `<div class="empty">Aucune carte ne correspond à ces filtres.</div>`;
     $("#pos").textContent = ""; $("#score").textContent = "";
   } else {
     const c = cards[deck[pos]];
     el.innerHTML = flipped ? backHTML(c) : frontHTML(c);
     const st = progress[c.id];
+    el.className = "card" + (st ? " st-" + st : "");
     $("#pos").textContent = `Carte ${pos + 1} / ${deck.length}${shuffled ? " · ordre mélangé" : ""}`;
-    $("#score").innerHTML = st ? `<span class="dot ${st}"></span>${st === "sus" ? "sue" : "à revoir"}` : "";
+    $("#score").textContent = st === "sus" ? "✓ je sais" : st === "revoir" ? "à revoir" : "";
+    $("#score").className = st || "";
   }
   $("#prev").disabled = pos <= 0;
   $("#next").disabled = pos >= deck.length - 1;
@@ -282,8 +303,8 @@ function mark(v){ if (!deck.length) return; progress[cards[deck[pos]].id] = v; s
 function renderGrid(){
   $("#grid").innerHTML = deck.length ? deck.map((i, k) => {
     const c = cards[i], st = progress[c.id];
-    return `<button class="tile" data-k="${k}"><div class="pics${c.structures.length > 1 ? " two" : ""}">${c.structures.map(s => s.svg || "").join("")}</div>
-      <b>${st ? `<span class="dot ${st}"></span>` : ""}${esc(c.titre)}</b><small>${c.type === "nat" ? "produit naturel" : esc(c.famille)}${c.brune ? " · note brune" : ""}</small></button>`;
+    return `<button class="tile${st ? " st-" + st : ""}" data-k="${k}"><div class="pics${c.structures.length > 1 ? " two" : ""}">${c.structures.map(s => s.svg || "").join("")}</div>
+      <b>${esc(c.titre)}</b><small>${c.type === "nat" ? "produit naturel" : esc(c.famille) + (c.type === "theo" ? " · théorique" : "")}${c.brune ? " · note brune" : ""}</small></button>`;
   }).join("") : `<div class="empty">Aucune carte ne correspond à ces filtres.</div>`;
 }
 
@@ -301,7 +322,7 @@ document.querySelectorAll("#filters .chip").forEach(b => b.onclick = () => {
   const on = b.getAttribute("aria-pressed") !== "true";
   b.setAttribute("aria-pressed", on);
   const f = b.dataset.f;
-  if (f === "niveau" || f === "type") on ? filt[f].add(b.dataset.v) : filt[f].delete(b.dataset.v);
+  if (filt[f] instanceof Set) on ? filt[f].add(b.dataset.v) : filt[f].delete(b.dataset.v);
   else filt[f] = on;
   rebuild();
 });
@@ -329,6 +350,16 @@ document.addEventListener("keydown", e => {
   else if (e.key === "1") mark("revoir");
   else if (e.key === "2") mark("sus");
 });
+const dark = () => (document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")) === "dark";
+const themeLabel = () => $("#theme").textContent = dark() ? "☀ Clair" : "☾ Sombre";
+$("#theme").onclick = () => {
+  const t = dark() ? "light" : "dark";
+  document.documentElement.dataset.theme = t;
+  try { localStorage.setItem("flavoring-flashcards-theme", t); } catch(e){}
+  themeLabel();
+};
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", themeLabel);
+themeLabel();
 rebuild(null);
 </script>
 </body>

@@ -5193,6 +5193,17 @@
   "gout": [],
   "fema": null
  },
+ "carvone": {
+  "cid": 439570,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "2249",
+   "url": "https://www.femaflavor.org/flavor-library/carvone",
+   "profil": "Basil, Bitter, Caraway, Fennel, Mint",
+   "jecfa": "380"
+  }
+ },
  "egcg": {
   "cid": 65064,
   "odeur": [],
@@ -5297,5 +5308,809 @@
    "numero": "4601",
    "url": "https://www.femaflavor.org/flavor-library/rebaudioside"
   }
+ },
+ "acetylpyrroline": {
+  "cid": 522834,
+  "odeur": [],
+  "gout": [],
+  "fema": null
+ },
+ "acetaldehyde": {
+  "cid": 177,
+  "odeur": [
+   {
+    "texte": "Pungent, fruity odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/230"
+   },
+   {
+    "texte": "Pungent, suffocating odor that is somewhat fruity and quite pleasant in dilute concentrations.",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/230"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Tart taste (fruits containing acetaldehyde before ripening)",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/230"
+   }
+  ],
+  "fema": {
+   "numero": "2003",
+   "url": "https://www.femaflavor.org/flavor-library/acetaldehyde",
+   "profil": "Floral, Green Apple",
+   "jecfa": "80"
+  }
+ },
+ "nonanal": {
+  "cid": 31289,
+  "odeur": [
+   {
+    "texte": "Orange-rose odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7229"
+   },
+   {
+    "texte": "Floral, waxy, green",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7229"
+   }
+  ],
+  "gout": [],
+  "fema": {
+   "numero": "2782",
+   "url": "https://www.femaflavor.org/flavor-library/nonanal",
+   "profil": "Fat, Floral, Green, Lemon",
+   "jecfa": "101"
+  }
+ },
+ "cis_3_hexenal": {
+  "cid": 643941,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "2561",
+   "url": "https://www.femaflavor.org/flavor-library/cis-3-hexenal",
+   "jecfa": "316"
+  }
+ },
+ "trans_2_nonenal": {
+  "cid": 5283335,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3213",
+   "url": "https://www.femaflavor.org/flavor-library/2-nonenal",
+   "profil": "Paper",
+   "jecfa": "1362"
+  }
+ },
+ "octen_3_one": {
+  "cid": 61346,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3515",
+   "url": "https://www.femaflavor.org/flavor-library/1-octen-3-one",
+   "profil": "Earth, Mushroom",
+   "jecfa": "1148"
+  }
+ },
+ "pentylfuran_2": {
+  "cid": 19602,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3317",
+   "url": "https://www.femaflavor.org/flavor-library/2-pentylfuran",
+   "profil": "Butter, Floral, Fruit, Green Bean",
+   "jecfa": "1491"
+  }
+ },
+ "acetylthiazoline": {
+  "cid": 169110,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3817",
+   "url": "https://www.femaflavor.org/flavor-library/2-acetyl-2-thiazoline",
+   "profil": "Caramel, Popcorn, Roast",
+   "jecfa": "1759"
+  }
+ },
+ "acetyltetrahydropyridine": {
+  "cid": 520194,
+  "odeur": [],
+  "gout": [],
+  "fema": null
+ },
+ "acetylpyrrole_2": {
+  "cid": 14079,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3202",
+   "url": "https://www.femaflavor.org/flavor-library/methyl-2-pyrrolyl-ketone",
+   "profil": "Bread, Cocoa, Hazelnut, Licorice, Walnut",
+   "jecfa": "1307"
+  }
+ },
+ "diethylmethylpyrazine": {
+  "cid": 28905,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3336",
+   "url": "https://www.femaflavor.org/flavor-library/23-diethyl-5-methylpyrazine",
+   "profil": "Earth, Meat, Potato, Roast",
+   "jecfa": "777"
+  }
+ },
+ "mercaptomethylbutyl_formate": {
+  "cid": 526487,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3855",
+   "url": "https://www.femaflavor.org/flavor-library/3-mercapto-3-methylbutyl-formate",
+   "profil": "Black Currant, Roast",
+   "jecfa": "549"
+  }
+ },
+ "bis_methylfuryl_disulfide": {
+  "cid": 526624,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3259",
+   "url": "https://www.femaflavor.org/flavor-library/bis2-methyl-3-furyl-disulfide",
+   "profil": "Roasted Meat",
+   "jecfa": "1066"
+  }
+ },
+ "mesifurane": {
+  "cid": 61325,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3664",
+   "url": "https://www.femaflavor.org/flavor-library/25-dimethyl-4-methoxy-32h-furanone",
+   "profil": "Bread Crust, Butter, Caramel, Floral, Fruit",
+   "jecfa": "1451"
+  }
+ },
+ "furfuryl_alcohol": {
+  "cid": 7361,
+  "odeur": [
+   {
+    "texte": "Faint burning odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/711"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Bitter",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/711"
+   }
+  ],
+  "fema": {
+   "numero": "2491",
+   "url": "https://www.femaflavor.org/flavor-library/furfuryl-alcohol",
+   "profil": "Burnt, Caramel, Cooked",
+   "jecfa": "451"
+  }
+ },
+ "pentyl_pyrone": {
+  "cid": 33960,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3696",
+   "url": "https://www.femaflavor.org/flavor-library/5-hydroxy-24-decadienoic-acid-delta-lactone",
+   "profil": "Dairy",
+   "jecfa": "245"
+  }
+ },
+ "nootkatone": {
+  "cid": 1268142,
+  "odeur": [
+   {
+    "texte": "Grapefruit odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8272"
+   },
+   {
+    "texte": "Grapefruit, citrus, orange, sweet peely with a woody nuance",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8272"
+   },
+   {
+    "texte": "Powerful, sweet, citrus odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8272"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Grapefruit taste",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8272"
+   },
+   {
+    "texte": "Grapefruit, citrus, orange and bitter",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8272"
+   }
+  ],
+  "fema": {
+   "numero": "3166",
+   "url": "https://www.femaflavor.org/flavor-library/nootkatone",
+   "profil": "Grapefruit",
+   "jecfa": "1398"
+  }
+ },
+ "menthenethiol": {
+  "cid": 6427135,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3700",
+   "url": "https://www.femaflavor.org/flavor-library/1-p-menthene-8-thiol",
+   "profil": "Grapefruit",
+   "jecfa": "523"
+  }
+ },
+ "mmp_4": {
+  "cid": 88290,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3997",
+   "url": "https://www.femaflavor.org/flavor-library/4-mercapto-4-methyl-2-pentanone",
+   "profil": "Black Currant, Box Tree, Citrus, Meat",
+   "jecfa": "1293"
+  }
+ },
+ "mercaptohexanol_3": {
+  "cid": 521348,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3850",
+   "url": "https://www.femaflavor.org/flavor-library/3-mercaptohexanol",
+   "profil": "Black Currant, Grapefruit, Mango, Rhubarb, Sulfur",
+   "jecfa": "545"
+  }
+ },
+ "ethyl_decadienoate": {
+  "cid": 5281162,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3148",
+   "url": "https://www.femaflavor.org/flavor-library/ethyl-trans-2cis-4-decadienoate",
+   "profil": "Pear",
+   "jecfa": "1192"
+  }
+ },
+ "ethyl_methylphenylglycidate": {
+  "cid": 6501,
+  "odeur": [
+   {
+    "texte": "ON DILUTION, STRONG FRUITY ODOR",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1150"
+   },
+   {
+    "texte": "FRUITY, BERRY AROMA",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1150"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "CHARACTERISTIC SLIGHTLY ACID TASTE REMINISCENT OF STRAWBERRY",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1150"
+   },
+   {
+    "texte": "APPLE, BERRY TASTE",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1150"
+   }
+  ],
+  "fema": {
+   "numero": "2444",
+   "url": "https://www.femaflavor.org/flavor-library/ethyl-methylphenylglycidate",
+   "profil": "Fruit",
+   "jecfa": "1577"
+  }
+ },
+ "ethyl_methylthiopropionate": {
+  "cid": 61592,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3343",
+   "url": "https://www.femaflavor.org/flavor-library/ethyl-3-methylthiopropionate",
+   "profil": "Cabbage, Caramel, Grass, Menthol",
+   "jecfa": "476"
+  }
+ },
+ "allyl_isothiocyanate": {
+  "cid": 5971,
+  "odeur": [
+   {
+    "texte": "Very pungent",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/617"
+   },
+   {
+    "texte": "Mustard odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/617"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Acrid taste",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/617"
+   },
+   {
+    "texte": "Mustard taste",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/617"
+   }
+  ],
+  "fema": {
+   "numero": "2034",
+   "url": "https://www.femaflavor.org/flavor-library/allyl-isothiocyanate",
+   "profil": "Garlic, Pungent, Sulfur",
+   "jecfa": "1560"
+  }
+ },
+ "diallyl_disulfide": {
+  "cid": 16590,
+  "odeur": [
+   {
+    "texte": "GARLIC ODOR",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/595"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "SHARP, GARLIC FLAVOR",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/595"
+   }
+  ],
+  "fema": {
+   "numero": "2028",
+   "url": "https://www.femaflavor.org/flavor-library/allyl-disulfide",
+   "profil": "Garlic",
+   "jecfa": "572"
+  }
+ },
+ "dithiapentane": {
+  "cid": 15380,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3878",
+   "url": "https://www.femaflavor.org/flavor-library/bis-methylthiomethane"
+  }
+ },
+ "estragole": {
+  "cid": 8815,
+  "odeur": [
+   {
+    "texte": "Odor reminiscent of anise with a corresponding sweet taste (differing from anethole)",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5412"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Sweet taste reminiscent of anise (differing from anethole)",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5412"
+   }
+  ],
+  "fema": {
+   "numero": "2411",
+   "url": "https://www.femaflavor.org/flavor-library/estragole"
+  }
+ },
+ "thymol": {
+  "cid": 6989,
+  "odeur": [
+   {
+    "texte": "Odor of thyme",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/866"
+   },
+   {
+    "texte": "A spicy-herbal, slightly medicinal odor reminiscent of thyme",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/866"
+   },
+   {
+    "texte": "Aromatic odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/866"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Pungent, caustic",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/866"
+   },
+   {
+    "texte": "SWEET, MEDICINAL, SPICY",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/866"
+   },
+   {
+    "texte": "Aromatic taste",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/866"
+   }
+  ],
+  "fema": {
+   "numero": "3066",
+   "url": "https://www.femaflavor.org/flavor-library/thymol",
+   "profil": "Spice, Wood",
+   "jecfa": "709"
+  }
+ },
+ "carvacrol": {
+  "cid": 10364,
+  "odeur": [
+   {
+    "texte": "THYMOL ODOR",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/906"
+   },
+   {
+    "texte": "MEDICINAL SMOKE ODOR",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/906"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "EXCELLENT SMOKE TASTE, @ 1-5 PPM",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/906"
+   }
+  ],
+  "fema": {
+   "numero": "2245",
+   "url": "https://www.femaflavor.org/flavor-library/carvacrol",
+   "profil": "Caraway, Spice, Thyme",
+   "jecfa": "710"
+  }
+ },
+ "s_carvone": {
+  "cid": 16724,
+  "odeur": [],
+  "gout": [],
+  "fema": null
+ },
+ "alpha_ionone": {
+  "cid": 5282108,
+  "odeur": [
+   {
+    "texte": "It has a warm, woody, floral odor with balsamic and sweet tones and is strongly reminiscent of violet flowers.",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8268"
+   },
+   {
+    "texte": "Sweet-floral odor, reminiscent of violets",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8268"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Woody, floral, berry, fruity with powdery nuances",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8268"
+   }
+  ],
+  "fema": {
+   "numero": "2594",
+   "url": "https://www.femaflavor.org/flavor-library/alpha-ionone",
+   "profil": "Violet, Wood",
+   "jecfa": "388"
+  }
+ },
+ "cis_jasmone": {
+  "cid": 1549018,
+  "odeur": [
+   {
+    "texte": "Odor of jasmine",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8273"
+   },
+   {
+    "texte": "Woody, herbal and floral, with a citrus nuance",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8273"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Woody, bitter, tea, with a citrus and floral nuance at 25 ppm",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/8273"
+   }
+  ],
+  "fema": {
+   "numero": "3196",
+   "url": "https://www.femaflavor.org/flavor-library/3-methyl-2-2-pentenyl-2-cyclopenten-1-one",
+   "profil": "Floral",
+   "jecfa": "1114"
+  }
+ },
+ "rose_oxide": {
+  "cid": 27866,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3236",
+   "url": "https://www.femaflavor.org/flavor-library/tetrahydro-4-methyl-2-2-methylpropen-1-ylpyran",
+   "profil": "Green",
+   "jecfa": "1237"
+  }
+ },
+ "cuminaldehyde": {
+  "cid": 326,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "2341",
+   "url": "https://www.femaflavor.org/flavor-library/cuminaldehyde",
+   "profil": "Acid, Green, Herb, Sharp",
+   "jecfa": "868"
+  }
+ },
+ "camphor": {
+  "cid": 2537,
+  "odeur": [
+   {
+    "texte": "Fragrant and penetrating odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/37"
+   },
+   {
+    "texte": "Penetrating aromatic odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/37"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Pungent aromatic taste",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/37"
+   }
+  ],
+  "fema": {
+   "numero": "4513",
+   "url": "https://www.femaflavor.org/flavor-library/dl-camphor",
+   "profil": "Mint, Cool",
+   "jecfa": "2199"
+  }
+ },
+ "zingerone": {
+  "cid": 31211,
+  "odeur": [
+   {
+    "texte": "STRONG, PUNGENT ODOR REMINISCENT OF GINGER",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1064"
+   },
+   {
+    "texte": "SWEET, SPICY AROMA",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1064"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "SHARP TASTE SIMILAR TO GINGER",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1064"
+   },
+   {
+    "texte": "SWEET, SPICY TASTE",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1064"
+   }
+  ],
+  "fema": {
+   "numero": "3124",
+   "url": "https://www.femaflavor.org/flavor-library/zingerone",
+   "profil": "Heat",
+   "jecfa": "730"
+  }
+ },
+ "piperine": {
+  "cid": 638024,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "2909",
+   "url": "https://www.femaflavor.org/flavor-library/piperine",
+   "profil": "Spice",
+   "jecfa": "1600"
+  }
+ },
+ "skatole": {
+  "cid": 6736,
+  "odeur": [
+   {
+    "texte": "CHARACTERISTIC FECAL ODOR AT HIGH LEVELS, BECOMING PLEASANT, SWEET, AND WARM AT VERY LOW LEVELS",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/3511"
+   },
+   {
+    "texte": "Fecal odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/3511"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "WARM, OVER-RIPE, FRUITY FLAVOR BELOW 0.1 PPM",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/3511"
+   }
+  ],
+  "fema": {
+   "numero": "3019",
+   "url": "https://www.femaflavor.org/flavor-library/skatole",
+   "jecfa": "1304"
+  }
+ },
+ "trimethylamine": {
+  "cid": 1146,
+  "odeur": [
+   {
+    "texte": "Pungent, fishy, ammoniacal",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/808"
+   },
+   {
+    "texte": "Fishy, amine odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/808"
+   },
+   {
+    "texte": "A fish-like odor at low concentrations changing to an ammonia-like odor at higher concentrations.",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/808"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Old fish",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/808"
+   },
+   {
+    "texte": "Saline taste",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/808"
+   }
+  ],
+  "fema": {
+   "numero": "3241",
+   "url": "https://www.femaflavor.org/flavor-library/trimethylamine",
+   "jecfa": "1610"
+  }
+ },
+ "ethylphenol_4": {
+  "cid": 31242,
+  "odeur": [
+   {
+    "texte": "POWERFUL WOODY-PHENOLIC, YET SOMEWHAT SWEET",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5598"
+   },
+   {
+    "texte": "MEDICINAL, PHENOLIC",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5598"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "SWEET SMOKEY",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/5598"
+   }
+  ],
+  "fema": {
+   "numero": "3156",
+   "url": "https://www.femaflavor.org/flavor-library/p-ethylphenol",
+   "profil": "Leather, Phenol, Spice, Stable",
+   "jecfa": "694"
+  }
+ },
+ "prenylthiol": {
+  "cid": 146586,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3896",
+   "url": "https://www.femaflavor.org/flavor-library/prenylthiol",
+   "profil": "Almond, Coffee, Foxy, Spice",
+   "jecfa": "522"
+  }
+ },
+ "geosmin": {
+  "cid": 15559490,
+  "odeur": [],
+  "gout": [],
+  "fema": null
+ },
+ "methylisoborneol": {
+  "cid": 11062802,
+  "odeur": [],
+  "gout": [],
+  "fema": null
+ },
+ "tca": {
+  "cid": 6884,
+  "odeur": [],
+  "gout": [],
+  "fema": null
+ },
+ "methionol": {
+  "cid": 10448,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3415",
+   "url": "https://www.femaflavor.org/flavor-library/3-methylthiopropanol",
+   "profil": "Earth, Garlic, Potato, Soy",
+   "jecfa": "461"
+  }
+ },
+ "sulfurol": {
+  "cid": 1136,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3204",
+   "url": "https://www.femaflavor.org/flavor-library/4-methyl-5-thiazoleethanol",
+   "profil": "Nuts, Sulfur",
+   "jecfa": "1031"
+  }
+ },
+ "valencene": {
+  "cid": 9855795,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3443",
+   "url": "https://www.femaflavor.org/flavor-library/valencene",
+   "profil": "Citrus, Green, Oil, Wood",
+   "jecfa": "1337"
+  }
+ },
+ "rotundone": {
+  "cid": 5321003,
+  "odeur": [],
+  "gout": [],
+  "fema": null
  }
 }

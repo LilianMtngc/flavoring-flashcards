@@ -289,6 +289,7 @@ myristicin;Myristicine;myristicin;607-91-0;marqueur
 sabinene;Sabinène;sabinene;3387-41-5;marqueur
 whisky_lactone;Whisky lactone (β-méthyl-γ-octalactone);whisky lactone;39212-23-2;marqueur
 santalol;α-Santalol;alpha-santalol;115-71-9;marqueur
+carvone;(R)-(−)-Carvone;(R)-(-)-carvone;6485-40-1;theorique
 egcg;Gallate d'épigallocatéchine (EGCG);epigallocatechin gallate;989-51-5;marqueur
 coumarin;Coumarine;coumarin;91-64-5;marqueur
 patchoulol;Patchoulol;patchouli alcohol;5986-55-0;marqueur
@@ -296,3 +297,51 @@ sclareol;Sclaréol;sclareol;515-03-7;marqueur
 myrcene;Myrcène;myrcene;123-35-3;marqueur
 msg;Glutamate monosodique;monosodium glutamate;142-47-2;marqueur
 rebaudioside_a;Rébaudioside A;rebaudioside A;58543-16-1;marqueur
+acetylpyrroline;2-Acétyl-1-pyrroline;2-acetyl-1-pyrroline;85213-22-5;theorique
+acetaldehyde;Acétaldéhyde (éthanal);acetaldehyde;75-07-0;theorique
+nonanal;Nonanal;nonanal;124-19-6;theorique
+cis_3_hexenal;(Z)-3-Hexénal;cis-3-hexenal;6789-80-6;theorique
+trans_2_nonenal;(E)-2-Nonénal;trans-2-nonenal;18829-56-6;theorique
+octen_3_one;1-Octén-3-one;1-octen-3-one;4312-99-6;theorique
+pentylfuran_2;2-Pentylfurane;2-pentylfuran;3777-69-3;theorique
+acetylthiazoline;2-Acétyl-2-thiazoline;2-acetyl-2-thiazoline;29926-41-8;theorique
+acetyltetrahydropyridine;6-Acétyl-1,2,3,4-tétrahydropyridine;6-acetyl-1,2,3,4-tetrahydropyridine;27300-27-2;theorique
+acetylpyrrole_2;2-Acétylpyrrole;2-acetylpyrrole;1072-83-9;theorique
+diethylmethylpyrazine;2,3-Diéthyl-5-méthylpyrazine;2,3-diethyl-5-methylpyrazine;18138-04-0;theorique
+mercaptomethylbutyl_formate;Formiate de 3-mercapto-3-méthylbutyle;3-mercapto-3-methylbutyl formate;50746-10-6;theorique
+bis_methylfuryl_disulfide;Disulfure de bis(2-méthyl-3-furyle);bis(2-methyl-3-furyl) disulfide;28588-75-2;theorique
+mesifurane;Mésifurane (4-méthoxy-2,5-diméthyl-3(2H)-furanone);2,5-dimethyl-4-methoxy-3(2H)-furanone;4077-47-8;theorique
+furfuryl_alcohol;Alcool furfurylique;furfuryl alcohol;98-00-0;theorique
+pentyl_pyrone;6-Pentyl-α-pyrone;6-pentyl-2H-pyran-2-one;27593-23-3;theorique
+nootkatone;Nootkatone;nootkatone;4674-50-4;theorique
+menthenethiol;1-p-Menthène-8-thiol;1-p-menthene-8-thiol;71159-90-5;theorique
+mmp_4;4-Mercapto-4-méthylpentan-2-one (4MMP);4-mercapto-4-methyl-2-pentanone;19872-52-7;theorique
+mercaptohexanol_3;3-Mercaptohexan-1-ol (3MH);3-mercapto-1-hexanol;51755-83-0;theorique
+ethyl_decadienoate;(2E,4Z)-Décadiénoate d'éthyle;ethyl (2E,4Z)-2,4-decadienoate;3025-30-7;theorique
+ethyl_methylphenylglycidate;3-Méthyl-3-phénylglycidate d'éthyle;ethyl 3-methyl-3-phenylglycidate;77-83-8;theorique
+ethyl_methylthiopropionate;3-(Méthylthio)propionate d'éthyle;ethyl 3-(methylthio)propionate;13327-56-5;theorique
+allyl_isothiocyanate;Isothiocyanate d'allyle;allyl isothiocyanate;57-06-7;theorique
+diallyl_disulfide;Disulfure de diallyle;diallyl disulfide;2179-57-9;theorique
+dithiapentane;2,4-Dithiapentane (bis(méthylthio)méthane);bis(methylthio)methane;1618-26-4;theorique
+estragole;Estragole (méthylchavicol);4-allylanisole;140-67-0;theorique
+thymol;Thymol;thymol;89-83-8;theorique
+carvacrol;Carvacrol;carvacrol;499-75-2;theorique
+s_carvone;(S)-(+)-Carvone;(S)-(+)-carvone;2244-16-8;theorique
+alpha_ionone;α-Ionone;alpha-ionone;127-41-3;theorique
+cis_jasmone;cis-Jasmone;cis-jasmone;488-10-8;theorique
+rose_oxide;Oxyde de rose;rose oxide;16409-43-1;theorique
+cuminaldehyde;Cuminaldéhyde (4-isopropylbenzaldéhyde);4-isopropylbenzaldehyde;122-03-2;theorique
+camphor;Camphre;camphor;76-22-2;theorique
+zingerone;Zingérone;zingerone;122-48-5;theorique
+piperine;Pipérine;piperine;94-62-2;theorique
+skatole;Scatole (3-méthylindole);3-methylindole;83-34-1;theorique
+trimethylamine;Triméthylamine;trimethylamine;75-50-3;theorique
+ethylphenol_4;4-Éthylphénol;4-ethylphenol;123-07-9;theorique
+prenylthiol;3-Méthylbut-2-ène-1-thiol;3-methyl-2-butene-1-thiol;5287-45-6;theorique
+geosmin;Géosmine;geosmin;16423-19-1;theorique
+methylisoborneol;2-Méthylisobornéol;2-methylisoborneol;2371-42-8;theorique
+tca;2,4,6-Trichloroanisole (TCA);2,4,6-trichloroanisole;87-40-1;theorique
+methionol;Méthionol (3-(méthylthio)propan-1-ol);3-(methylthio)-1-propanol;505-10-2;theorique
+sulfurol;Sulfurol (4-méthyl-5-thiazoléthanol);4-methyl-5-thiazoleethanol;137-00-8;theorique
+valencene;Valencène;valencene;4630-07-3;theorique
+rotundone;Rotundone;rotundone;18374-76-6;theorique
