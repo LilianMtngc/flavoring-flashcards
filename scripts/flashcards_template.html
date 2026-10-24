@@ -41,6 +41,15 @@
 :root[data-theme="dark"]{color-scheme:dark}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark}}
 *{box-sizing:border-box}
+/* écrans tactiles : pas de surbrillance bleue du navigateur au toucher, ni de sélection de texte ou de menu contextuel
+   sur les boutons ; un léger enfoncement sert de retour visuel. L'anneau de focus reste réservé au clavier. */
+html{-webkit-tap-highlight-color:transparent}
+button,summary,.card{touch-action:manipulation}
+button,summary,.sidetab,.tabs{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+@media (hover:none){.card{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}}
+button:not(:disabled):active{transform:scale(.97)}
+.btn:not(.primary):not(:disabled):active,.chip:not([aria-pressed="true"]):active,.tile:active{background:var(--surface-2)}
+:focus:not(:focus-visible){outline:none}
 body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 .wrap{max-width:980px;margin:0 auto;padding:20px 16px 48px}
 /* titre : Young Serif (SIL OFL 1.1), sous-ensemble des seules lettres de « AromaCards », intégré à la page */
