@@ -79,8 +79,14 @@ h1.brand .c{color:var(--brand-cards)}
 .seg button[aria-pressed="true"]{background:var(--surface-2);color:var(--fg);font-weight:600}
 .seg span{margin-left:4px}
 .fsubrow{flex-basis:100%;display:flex;align-items:center;gap:4px;margin-top:4px}
-.subfold{display:inline-flex;align-items:center;gap:5px;height:26px;padding:0 9px;font:inherit;font-size:12px;border:1px solid var(--line-2);border-radius:999px;background:none;color:var(--fg-3);cursor:pointer}
-.subfold:hover{color:var(--fg-2);border-color:var(--fg-3)}
+/* une seule pastille : à gauche le groupe entier, à droite (séparée d'un trait) la flèche qui déplie les sous-familles */
+.chipgrp{display:inline-flex;align-items:stretch;border:1px solid var(--line-2);border-radius:999px;background:var(--surface);overflow:hidden}
+.chipgrp:hover{border-color:var(--fg-3)}
+.chipgrp > .chip{border:0;border-radius:0;padding-right:9px}
+.chipgrp:has(> .chip[aria-pressed="true"]){background:var(--fg);border-color:var(--fg)}
+.chipgrp:has(> .chip[aria-pressed="true"]) .subfold{color:var(--bg);border-left-color:color-mix(in srgb,var(--bg) 35%,transparent)}
+.subfold{display:inline-flex;align-items:center;gap:5px;padding:0 10px 0 8px;font:inherit;font-size:12px;border:0;border-left:1px solid var(--line-2);background:none;color:var(--fg-3);cursor:pointer}
+.subfold:hover{color:var(--fg)}
 .subfold::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(-45deg);transition:transform .15s}
 .subfold[aria-expanded="true"]::after{transform:rotate(45deg);margin-top:-3px}
 .subfold .fn{background:var(--accent);color:var(--surface);border-radius:999px;font-size:10.5px;padding:0 6px;line-height:16px}
@@ -230,6 +236,9 @@ svg.mol{max-width:100%;max-height:300px;height:auto;color:var(--fg)}
 figcaption{font-size:12.5px;color:var(--fg-2);text-align:center}
 .structs.many svg.mol{max-height:180px}
 .layout{display:block}
+/* onglet Analogues : pas de type de carte ni de recto, choix Fiches / Liste à la place */
+.seg.anaview{margin:0}
+body:not([data-tab="analogues"]) .anaview,body[data-tab="analogues"] .progress .modes,body[data-tab="analogues"] .cathead .modes,body[data-tab="analogues"] .typeg{display:none}
 .keys .more{font:inherit;background:none;border:0;border-bottom:1px dotted var(--fg-3);padding:0;color:var(--fg-2);cursor:pointer}
 .keys .more:hover,.keys .more[aria-expanded="true"]{color:var(--fg);border-bottom-style:solid}
 .keylist{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:6px 18px;max-width:640px;margin:10px auto 0;padding:10px 14px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:10px}
@@ -351,11 +360,10 @@ footer a:hover,.linkbtn:hover{text-decoration:underline}
     <button class="btn" id="fbtn" aria-expanded="false" aria-controls="fpanel">Filtres<span class="fcount" id="fcount" hidden></span></button>
   </div>
   <div class="fpanel" id="fpanel" hidden>
-    <div class="fgroup"><h4>Type de carte</h4><div class="fchips">
+    <div class="fgroup typeg"><h4>Type de carte</h4><div class="fchips">
       <button class="chip" data-f="type" data-v="mol" aria-pressed="false">Molécules</button>
       <button class="chip" data-f="type" data-v="nat" aria-pressed="false">Produits naturels</button>
       <button class="chip" data-f="type" data-v="theo" aria-pressed="false" title="Molécules de référence ajoutées pour l'apprentissage ; descripteurs : Wikipédia ou profil FEMA">Théoriques</button>
-      <button class="chip" data-f="type" data-v="sosie" aria-pressed="false" title="Cartes de comparaison : molécules aux structures très proches, différence surlignée">Sosies</button>
     </div></div>
     <div class="fgroup"><h4 title="Complexité structurale : tercile de l'indice de Bertz">Complexité</h4><div class="fchips">
       <button class="chip" data-f="niveau" data-v="Facile" aria-pressed="false">Facile</button>
@@ -393,10 +401,11 @@ footer a:hover,.linkbtn:hover{text-decoration:underline}
   <div class="tabs" role="tablist">
     <button role="tab" data-view="study" aria-selected="true">Étude</button>
     <button role="tab" data-view="catalog" aria-selected="false">Catalogue</button>
+    <button role="tab" data-view="analogues" aria-selected="false" title="Comparaisons de molécules aux structures très proches, différence surlignée">Analogues</button>
   </div>
 
   <section id="v-study">
-    <div class="progress"><span id="pos"></span><span class="r"><span id="score"></span><span class="modes" role="group" aria-label="Contenu du recto">Recto :<button data-mode="structure" title="Structure au recto (raccourci M pour changer)">Structure</button><button data-mode="nom" title="Nom au recto : retrouver la structure parmi 4">Nom</button><button data-mode="odeur" title="Descripteurs au recto : retrouver la molécule parmi 4">Odeur</button></span></span></div>
+    <div class="progress"><span id="pos"></span><span class="r"><span id="score"></span><span class="seg anaview" role="group" aria-label="Affichage des analogues">Affichage :<button data-ana="fiches">Fiches</button><button data-ana="liste">Liste</button></span><span class="modes" role="group" aria-label="Contenu du recto">Recto :<button data-mode="structure" title="Structure au recto (raccourci M pour changer)">Structure</button><button data-mode="nom" title="Nom au recto : retrouver la structure parmi 4">Nom</button><button data-mode="odeur" title="Descripteurs au recto : retrouver la molécule parmi 4">Odeur</button></span></span></div>
     <div class="card" id="card" tabindex="0" aria-live="polite"></div>
     <div class="controls">
       <div class="grp">
@@ -421,7 +430,7 @@ footer a:hover,.linkbtn:hover{text-decoration:underline}
       </div></div>
   </section>
   <section id="v-catalog" hidden>
-    <div class="cathead"><span id="catcount"></span><span class="modes" role="group" aria-label="Tri du catalogue">Tri :<button data-sort="alpha">Alphabétique</button><button data-sort="famille">Famille chimique</button></span></div>
+    <div class="cathead"><span id="catcount"></span><span class="seg anaview" role="group" aria-label="Affichage des analogues">Affichage :<button data-ana="fiches">Fiches</button><button data-ana="liste">Liste</button></span><span class="modes" role="group" aria-label="Tri du catalogue">Tri :<button data-sort="alpha">Alphabétique</button><button data-sort="famille">Famille chimique</button></span></div>
     <div class="grid" id="grid"></div>
   </section>
   </main>
@@ -490,8 +499,29 @@ const pdOf = id => PD.cards[id] || [];
 // couleur déjà donnée à ce descripteur sur une autre carte
 const pdColor = nom => { for (const l of Object.values(PD.cards)){ const d = l.find(x => norm(x.nom) === norm(nom)); if (d) return d.couleur; } return null; };
 let pdFormFor = null;  // {id, i} : formulaire ouvert (i = -1 : ajout)
-let deck = [], pos = 0, flipped = false, shuffled = false, order = cards.map((_, i) => i);
+let deck = [], pos = 0, flipped = false;
+let tab = "study";  // study, catalog, analogues ; les analogues (type sosie) ont leur propre onglet
+let anaView = (() => { try { return localStorage.getItem("flavoring-flashcards-analogues") === "liste" ? "liste" : "fiches"; } catch(e){ return "fiches"; } })();
+const lastIn = {};  // dernière carte affichée dans chaque ensemble (cartes, analogues)
 
+// parcours aléatoire : une permutation sans répétition ; les cartes vues récemment passent en fin de tirage
+const VKEY = "flavoring-flashcards-vues", RECENT = 40;
+let recent = (() => { try { return JSON.parse(localStorage.getItem(VKEY)) || []; } catch(e){ return []; } })();
+function seen(id){
+  if (recent[recent.length - 1] === id) return;
+  recent = recent.filter(x => x !== id).concat(id).slice(-RECENT);
+  try { localStorage.setItem(VKEY, JSON.stringify(recent)); } catch(e){}
+}
+function randomOrder(firstId){
+  const idx = Object.fromEntries(cards.map((c, i) => [c.id, i]));
+  const late = recent.filter(id => id in idx && id !== firstId).map(id => idx[id]);  // de la plus ancienne à la plus récente
+  const lateSet = new Set(late);
+  const rest = shuffle(cards.map((_, i) => i).filter(i => !lateSet.has(i) && cards[i].id !== firstId));
+  return (firstId in idx ? [idx[firstId]] : []).concat(rest, late);
+}
+
+const shuffle = a => { for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+let order = randomOrder(null);
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const norm = s => String(s).normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
@@ -504,8 +534,9 @@ const familles = [...new Set(cards.map(c => c.famille))].sort((a, b) => a.locale
 $("#famille").insertAdjacentHTML("beforeend", familles.map(f => `<option value="${esc(f)}">${esc(cap(f))}</option>`).join(""));
 
 function matches(c){
+  if ((c.type === "sosie") !== (tab === "analogues")) return false;  // analogues : onglet à part
   if (filt.niveau.size && !filt.niveau.has(c.niveau)) return false;
-  if (filt.type.size && !filt.type.has(c.type)) return false;
+  if (c.type !== "sosie" && filt.type.size && !filt.type.has(c.type)) return false;
   if (filt.etat.size && ![...filt.etat].some(v => v === "due" ? isDue(c.id) : (progress[c.id] || "none") === v)) return false;
   // familles olfactives (« Notes brunes » comprise) : OU = au moins une famille sélectionnée, ET = toutes
   const olfHits = [...filt.olf].map(f => c.olf.includes(f));
@@ -538,7 +569,6 @@ function structsHTML(c, cls, caption){
   return `<div class="${cls}${size}">` + c.structures.map((s, k) => `<figure>${s.svg || "<em>Structure indisponible</em>"}${caption ? `<figcaption>${esc(caption(s, k))}</figcaption>` : ""}</figure>`).join("") + `</div>`;
 }
 
-const shuffle = a => { for (let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
 // 3 leurres : les sosies d'abord, puis les cartes les plus proches (même famille chimique, ou descripteurs communs)
 function choicesFor(c, m){
   const key = m + ":" + c.id;
@@ -585,7 +615,7 @@ function frontHTML(c){
   if (mode === "odeur" && c.type !== "sosie" && c.descripteurs.length)
     return `<div class="front"><div class="kind">${nat ? "Produit naturel" : "Molécule"} · descripteurs</div><div class="qhead"><div class="qdesc">${c.descripteurs.slice(0, 7).map(d => `<span class="${BROWN.has(d) ? "b" : ""}${missing(c, d) ? " miss" : ""}" ${missing(c, d) ? `title="Absente de la réponse choisie"` : ""}>${esc(cap(d.toLowerCase()))}</span>`).join("")}</div><div class="qsub">${nat ? "Quel produit naturel ?" : "Quelle molécule ?"}</div></div>${quizHTML(c, "odeur")}</div>`;
   const na = mode !== "structure" ? `<div class="hint" style="margin-top:4px">Le recto « ${mode === "nom" ? "Nom" : "Odeur"} » ne s'applique pas à cette carte.</div>` : "";
-  if (c.type === "sosie") return `<div class="front"><div class="kind">Sosies · structures proches</div>${structsHTML(c, "structs", (s, k) => k + 1)}<div class="hint">Nommez chaque molécule : la différence est surlignée</div>${na}</div>`;
+  if (c.type === "sosie") return `<div class="front"><div class="kind">Analogues · structures proches</div>${structsHTML(c, "structs", (s, k) => k + 1)}<div class="hint">Nommez chaque molécule : la différence est surlignée</div>${na}</div>`;
   const kind = c.type === "nat" ? "Produit naturel · molécule" + (c.structures.length > 1 ? "s marqueurs" : " marqueur") : c.type === "theo" ? "Molécule · théorique" : "Molécule";
   const q = c.type === "nat" ? "De quel produit naturel est-ce le marqueur ?" : "Quelle est cette molécule ?";
   return `<div class="front"><div class="kind">${kind}</div>${structsHTML(c, "structs")}<div class="hint">${q}</div>${na}</div>`;
@@ -662,7 +692,7 @@ function sosieBack(c){
   const formules = [...new Set(c.membres.map(m => m.formule))].map(f => `<span>${esc(f)}</span>`).join("");
   const membres = c.membres.map((m, k) => `<div><button class="linkbtn t" data-go="${esc(m.id)}">${k + 1}. ${esc(m.titre)}</button><small>${esc(cap(m.famille))}</small>${m.descripteurs.length ? chipsHTML(m.descripteurs) : ""}</div>`).join("");
   return `<div class="back">${structsHTML(c, "hero", (s, k) => `${k + 1}. ${s.nom}`)}<div class="bl">
-    <h2>Sosies</h2><p class="sub">${esc(c.diff)}</p><div>${badges}</div><div class="meta">${formules}</div>${tagBoxHTML(c)}
+    <h2>Analogues</h2><p class="sub">${esc(c.diff)}</p><div>${badges}</div><div class="meta">${formules}</div>${tagBoxHTML(c)}
     <div class="verif ok">✓ Structures vérifiées · différence calculée et surlignée automatiquement (RDKit) · <a href="verification.html" target="_blank">Rapport</a></div></div>
     <div class="br"><div class="sec"><h3>Les molécules</h3><div class="cmp">${membres}</div></div></div></div>`;
 }
@@ -735,31 +765,42 @@ function render(){
   const total = cards.length, sus = cards.filter(c => progress[c.id] === "sus").length, rev = cards.filter(c => progress[c.id] === "revoir").length;
   $("#stats").innerHTML = `${total} cartes · ${cards.filter(c => c.brune && c.type !== "sosie").length} notes brunes · <span class="cnt sus">${ICON.sus} ${sus} sue${sus > 1 ? "s" : ""}</span> · <span class="cnt revoir">${ICON.revoir} ${rev} à revoir</span>`;
   document.querySelectorAll(".modes button").forEach(b => b.setAttribute("aria-pressed", b.dataset.mode === mode));
+  document.querySelectorAll("[data-ana]").forEach(b => b.setAttribute("aria-pressed", b.dataset.ana === anaView));
   if (!$("#v-study").hidden) updateHash();
   if ($("#drawer").classList.contains("open")) renderStats();
   const el = $("#card");
   if (!deck.length){
     el.className = "card";
-    el.innerHTML = `<div class="empty">Aucune carte ne correspond à ces filtres.</div>`;
+    el.innerHTML = `<div class="empty">${tab === "analogues" ? "Aucune comparaison ne correspond à ces filtres." : "Aucune carte ne correspond à ces filtres."}</div>`;
     $("#pos").textContent = ""; $("#score").textContent = "";
   } else {
     const c = cards[deck[pos]];
     el.innerHTML = flipped ? backHTML(c) : frontHTML(c);
     const st = progress[c.id];
     el.className = "card" + (st ? " st-" + st : "");
-    $("#pos").textContent = `Carte ${pos + 1} / ${deck.length}${shuffled ? " · ordre mélangé" : ""}`;
+    $("#pos").textContent = `${tab === "analogues" ? "Comparaison" : "Carte"} ${pos + 1} / ${deck.length}`;
+    lastIn[tab === "analogues" ? "ana" : "cards"] = c.id;
+    if (!$("#v-study").hidden) seen(c.id);
     $("#score").innerHTML = st === "sus" ? ICON.sus + " Je sais" : st === "revoir" ? ICON.revoir + " À revoir" : "";
     $("#score").className = st || "";
   }
   $("#prev").disabled = pos <= 0;
-  $("#next").disabled = pos >= deck.length - 1;
+  $("#next").disabled = deck.length < 2;  // en fin de tirage, « Suivant » relance un nouveau tirage
   if (!$("#v-catalog").hidden) renderGrid();
 }
 
 function animate(){ const el = $("#card"); el.classList.remove("anim"); void el.offsetWidth; el.classList.add("anim"); }
 function flip(){ if (!deck.length) return; flipped = !flipped; tagFormFor = pdFormFor = null; render(); animate(); }
-function go(d){ const n = pos + d; if (n < 0 || n >= deck.length) return; pos = n; flipped = false; tagFormFor = pdFormFor = null; render(); }
-function mark(v){ if (!deck.length) return; const id = cards[deck[pos]].id; progress[id] = v; store.set(progress); schedule(id, v); if (pos < deck.length - 1) { pos++; flipped = false; } render(); }
+function go(d){
+  let n = pos + d;
+  if (n < 0 || !deck.length) return;
+  if (n >= deck.length){  // fin du tirage : nouveau tirage, la carte actuelle en tête (« Précédent » y revient)
+    if (deck.length < 2) return;
+    order = randomOrder(cards[deck[pos]].id); deck = order.filter(i => matches(cards[i])); n = 1;
+  }
+  pos = n; flipped = false; tagFormFor = pdFormFor = null; render();
+}
+function mark(v){ if (!deck.length) return; const id = cards[deck[pos]].id; progress[id] = v; store.set(progress); schedule(id, v); deck.length > 1 ? go(1) : render(); }
 
 // tri du catalogue : on ignore les locants et préfixes de stéréo (« (E)-2- », « α- », « 2,3,5- »…)
 const sortKey = t => norm(t.replace(/^((\([^)]*\)|[\d,'′]+|[αβγδΔεω]\d*|[DLRSEZNnopm]|cis|trans)-)+/, "")).replace(/^[^a-z]+/, "");
@@ -773,39 +814,51 @@ document.querySelector(".cathead .modes").onclick = e => {
 };
 function renderGrid(){
   document.querySelectorAll(".cathead [data-sort]").forEach(b => b.setAttribute("aria-pressed", b.dataset.sort === catSort));
-  const fam = c => c.type === "nat" ? "produit naturel" : c.type === "sosie" ? "sosies" : c.famille;
-  const list = [...deck].sort((a, b) => catSort === "famille" && fam(cards[a]) !== fam(cards[b])
+  const fam = c => c.type === "nat" ? "produit naturel" : c.famille;
+  const bySort = catSort === "famille" && tab !== "analogues";  // tri du catalogue, indépendant de l'ordre aléatoire de l'étude
+  const list = [...deck].sort((a, b) => bySort && fam(cards[a]) !== fam(cards[b])
     ? fam(cards[a]).localeCompare(fam(cards[b]), "fr") : sortKey(cards[a].titre).localeCompare(sortKey(cards[b].titre), "fr"));
-  $("#catcount").textContent = `${deck.length} carte${deck.length > 1 ? "s" : ""}`;
+  $("#catcount").textContent = tab === "analogues" ? `${deck.length} comparaison${deck.length > 1 ? "s" : ""}` : `${deck.length} carte${deck.length > 1 ? "s" : ""}`;
   let last = null;
   $("#grid").innerHTML = deck.length ? list.map(i => {
     const c = cards[i], st = progress[c.id];
-    const head = catSort === "famille" && fam(c) !== last ? `<h3 class="ghead">${esc(cap(last = fam(c)))}</h3>` : "";
+    const head = bySort && fam(c) !== last ? `<h3 class="ghead">${esc(cap(last = fam(c)))}</h3>` : "";
     const n = c.structures.length;
-    const kind = (c.type === "nat" ? "Produit naturel" : c.type === "sosie" ? `Sosies · ${n} molécules` : cap(c.famille) + (c.type === "theo" ? " · Théorique" : "")) + (c.defaut ? " · Défaut" : "") + (c.cmr ? " · CMR/CIRC" : "");
+    const kind = (c.type === "nat" ? "Produit naturel" : c.type === "sosie" ? `Analogues · ${n} molécules` : cap(c.famille) + (c.type === "theo" ? " · Théorique" : "")) + (c.defaut ? " · Défaut" : "") + (c.cmr ? " · CMR/CIRC" : "");
     return head + `<button class="tile${st ? " st-" + st : ""}" data-id="${esc(c.id)}"><div class="pics${n > 2 ? " many" : n > 1 ? " two" : ""}">${c.structures.map(s => s.svg || "").join("")}</div>
       <b>${esc(c.titre)}</b><small>${kind}${c.brune ? " · Note brune" : ""}</small>${tagsOf(c.id).length ? `<div class="tdots">${tagsOf(c.id).map(t => `<span style="--c:${esc(T.defs[t].couleur)}" title="${esc(T.defs[t].nom)}"></span>`).join("")}</div>` : ""}</button>`;
   }).join("") : `<div class="empty">Aucune carte ne correspond à ces filtres.</div>`;
 }
 
-function showView(v){
+// onglets : Étude et Catalogue montrent les cartes, Analogues les comparaisons (en fiches ou en liste)
+function showView(v, keepId){
+  const wasAna = tab === "analogues";
+  tab = v; document.body.dataset.tab = v;
   document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.view === v));
-  ["study", "catalog"].forEach(x => $("#v-" + x).hidden = x !== v);
-  if (v === "catalog") renderGrid();
+  const list = v === "catalog" || (v === "analogues" && anaView === "liste");
+  $("#v-study").hidden = list; $("#v-catalog").hidden = !list;
+  if (wasAna !== (v === "analogues") || keepId !== undefined) rebuild(keepId ?? lastIn[v === "analogues" ? "ana" : "cards"] ?? null);
+  else render();
   window.scrollTo(0, 0);
 }
+function setAnaView(m){
+  anaView = m;
+  try { localStorage.setItem("flavoring-flashcards-analogues", m); } catch(e){}
+  showView("analogues");
+}
+document.querySelectorAll("[data-ana]").forEach(b => b.onclick = () => setAnaView(b.dataset.ana));
 // après un clic, le focus revient sur la carte : Espace la retourne au lieu de réactiver le bouton cliqué
 const focusCard = () => $("#card").focus({preventScroll: true});
 
 document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => showView(b.dataset.view));
 // ---- filtres : panneau repliable + filtres actifs en pastilles
-const LABELS = {type: {mol: "Molécules", nat: "Produits naturels", theo: "Théoriques", sosie: "Sosies"},
+const LABELS = {type: {mol: "Molécules", nat: "Produits naturels", theo: "Théoriques"},
                 etat: {none: "Pas encore vues", revoir: "À revoir", sus: "Je sais", due: "À réviser aujourd'hui"}};
 const olfChip = f => `<button class="chip" data-f="olf" data-v="${esc(f)}" aria-pressed="false">${esc(f)}</button>`;
 const olfGroups = [...new Set(Object.values(DATA.olfg))];
 $("#olffilters").insertAdjacentHTML("beforeend", DATA.olf.filter(f => !DATA.olfg[f]).map(olfChip).join("")
-  + olfGroups.map((g, k) => `<div class="fsubrow"><button class="chip" data-f="olfg" data-v="${esc(g)}" aria-pressed="false" title="Toutes les sensations : cartes ayant au moins une sensation en bouche">${esc(g)}</button>`
-    + `<button class="subfold" data-fold="groupe:${esc(g)}" aria-expanded="false" aria-controls="olfsub${k}" title="Détailler pour affiner" aria-label="Détailler : ${esc(g)}"><span class="fn" data-subn="${esc(g)}"></span></button></div>`
+  + olfGroups.map((g, k) => `<div class="fsubrow"><span class="chipgrp"><button class="chip" data-f="olfg" data-v="${esc(g)}" aria-pressed="false" title="Toutes les sensations : cartes ayant au moins une sensation en bouche">${esc(g)}</button>`
+    + `<button class="subfold" data-fold="groupe:${esc(g)}" aria-expanded="false" aria-controls="olfsub${k}" title="Détailler pour affiner" aria-label="Détailler : ${esc(g)}"><span class="fn" data-subn="${esc(g)}"></span></button></span></div>`
     + `<div class="fchips fsubchips" id="olfsub${k}">${DATA.olf.filter(f => DATA.olfg[f] === g).map(olfChip).join("")}</div>`).join(""));
 // sections repliables : fermées par défaut, état mémorisé dans ce navigateur
 const FKEY = "flavoring-flashcards-plis";
@@ -1014,6 +1067,9 @@ $("#card").onclick = e => {
 };
 // ouvre une carte précise (sosie, comparaison) ; si elle est masquée par les filtres, ceux-ci sont remis à zéro
 function goTo(id){
+  const ana = byId[id].type === "sosie";
+  if (ana) anaView = "fiches";
+  if (ana !== (tab === "analogues") || $("#v-study").hidden) showView(ana ? "analogues" : "study", id);
   if (!deck.some(i => cards[i].id === id)) clearFilters();
   tagFormFor = pdFormFor = null;
   rebuild(id);
@@ -1025,12 +1081,16 @@ $("#prev").onclick = () => go(-1);
 $("#next").onclick = () => go(1);
 $("#good").onclick = () => mark("sus");
 $("#again").onclick = () => mark("revoir");
-$("#shuffle").onclick = () => {
-  order = cards.map((_, i) => i);
-  for (let i = order.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [order[i], order[j]] = [order[j], order[i]]; }
-  shuffled = true; pos = 0; rebuild(null);
+$("#shuffle").onclick = () => {  // nouveau tirage ; la carte affichée reste en tête
+  const cur = deck.length ? cards[deck[pos]].id : null;
+  order = randomOrder(cur); rebuild(cur);
 };
-$("#grid").onclick = e => { const t = e.target.closest(".tile"); if (!t) return; pos = deck.findIndex(i => cards[i].id === t.dataset.id); flipped = false; showView("study"); render(); focusCard(); };
+$("#grid").onclick = e => {
+  const t = e.target.closest(".tile"); if (!t) return;
+  pos = deck.findIndex(i => cards[i].id === t.dataset.id); flipped = false;
+  if (tab === "analogues"){ anaView = "fiches"; try { localStorage.setItem("flavoring-flashcards-analogues", "fiches"); } catch(e){} }
+  showView(tab === "analogues" ? "analogues" : "study", t.dataset.id); focusCard();
+};
 document.querySelectorAll(".controls button").forEach(b => b.addEventListener("click", focusCard));
 $("#reset").onclick = () => { if (confirm("Effacer la progression (sues, à revoir, révisions) ? Les étiquettes et descripteurs personnels sont conservés.")) { progress = {}; store.set(progress); srs = {}; saveSrs(); render(); } };
 document.addEventListener("keydown", e => {
@@ -1099,6 +1159,8 @@ function readHash(){
   filt.famille = p.get("famille") || "";
   if (p.get("olfm") === "et") filt.olfMode = "et";
   filt.q = p.get("q") || ""; $("#q").value = filt.q;
+  const ana = filt.type.delete("sosie") || (byId[p.get("carte")] || {}).type === "sosie";
+  if (ana){ tab = "analogues"; anaView = "fiches"; }
   return p.get("carte");
 }
 
@@ -1133,7 +1195,7 @@ function renderGloss(){
 $("#glosstab").onclick = () => toggleGloss();
 $("#glossclose").onclick = () => toggleGloss(false);
 $("#gq").oninput = renderGloss;
-$("#glossbody").onclick = e => { const b = e.target.closest("[data-ggo]"); if (b){ showView("study"); goTo(b.dataset.ggo); if (innerWidth < 1100) toggleGloss(false); } };
+$("#glossbody").onclick = e => { const b = e.target.closest("[data-ggo]"); if (b){ goTo(b.dataset.ggo); if (innerWidth < 1100) toggleGloss(false); } };
 
 // ---- statistiques (panneau latéral)
 function toggleDrawer(open){
@@ -1155,7 +1217,7 @@ function renderStats(){
     ${row("Ensemble", cards)}
     <div class="legend"><span><i style="background:var(--ok)"></i>Sues</span><span><i style="background:var(--bad)"></i>À revoir</span><span><i style="background:var(--surface-2);border:1px solid var(--line-2)"></i>Pas encore vues</span></div>
     <p class="note">${due ? `<button class="linkbtn" data-sgo='{"etat":"due"}'>${due} carte${due > 1 ? "s" : ""} à réviser aujourd'hui</button>` : "Aucune carte à réviser aujourd'hui."}</p>
-    <h4>Par type de carte</h4>${Object.entries(LABELS.type).map(([k, l]) => row(l, cards.filter(c => c.type === k), {type: k})).join("")}
+    <h4>Par type de carte</h4>${Object.entries(LABELS.type).map(([k, l]) => row(l, cards.filter(c => c.type === k), {type: k})).join("")}${row("Analogues", cards.filter(c => c.type === "sosie"), {ana: 1})}
     <h4>Par complexité</h4>${["Facile", "Moyen", "Difficile"].map(l => row(l, base.filter(c => c.niveau === l), {niveau: l})).join("")}
     <h4>Par famille olfactive</h4>${row("Notes brunes", base.filter(c => c.brune), {brune: 1})}${DATA.olf.filter(f => !DATA.olfg[f]).map(f => row(f, base.filter(c => c.olf.includes(f)), {olf: f})).join("")}
     ${olfGroups.map(g => `<h4>${esc(g)}</h4>` + row("Toutes les sensations", base.filter(c => c.olf.some(f => DATA.olfg[f] === g)), {olfg: g}) + DATA.olf.filter(f => DATA.olfg[f] === g).map(f => row(f, base.filter(c => c.olf.includes(f)), {olf: f})).join("")).join("")}
@@ -1177,7 +1239,7 @@ $("#drawerbody").onclick = e => {
   if (g.olfg) filt.olfg.add(g.olfg);
   if (g.etat) filt.etat.add(g.etat);
   if (g.brune) filt.brune = true;
-  syncChips(); showView("study"); rebuild(null);
+  syncChips(); showView(g.ana ? "analogues" : "study"); rebuild(null);
 };
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("sw.js").catch(() => {});
 const dark = () => (document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")) === "dark";
@@ -1192,7 +1254,8 @@ matchMedia("(prefers-color-scheme: dark)").addEventListener("change", themeLabel
 themeLabel();
 const startId = readHash();
 syncChips();
-rebuild(startId);
+if (startId && byId[startId]) order = randomOrder(startId);  // carte de l'adresse en tête du tirage
+showView(tab, startId || null);
 </script>
 </body>
 </html>

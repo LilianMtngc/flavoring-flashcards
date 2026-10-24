@@ -48,7 +48,7 @@ BROWN = {
     "BRÛLÉ", "CROÛTE DE PAIN", "SUCRE BRUN", "SUCRE CUIT", "MÉLASSE", "CASSONADE", "TABAC", "NOIX", "FENUGREC", "SÉSAME",
 }
 NIVEAUX = ["Facile", "Moyen", "Difficile"]
-TYPES = {"mol": "Molécule", "theo": "Molécule · théorique", "nat": "Produit naturel", "sosie": "Sosies"}
+TYPES = {"mol": "Molécule", "theo": "Molécule · théorique", "nat": "Produit naturel", "sosie": "Analogues"}
 
 
 def read_csv(name):
@@ -475,7 +475,7 @@ def anki_fields(c):
         noms = " · ".join(f"{k}. {esc(m['titre'])}" for k, m in enumerate(c["membres"], 1))
         desc = "<br>".join(f"<b>{esc(m['titre'])}</b> : {chips(m['descripteurs'])}" for m in c["membres"])
         infos = (f"<span class='badge'>Note brune</span> " if c["brune"] else "")             + f"<span class='chip'>Complexité : {esc(c['niveau'])}</span>"             + "".join(f"<span class='chip'>{esc(f)}</span>" for f in dict.fromkeys(m["formule"] for m in c["membres"]))
-        return ["Sosies · nommez chaque molécule", structs, noms, esc(c["diff"]), infos, desc, "", ""]
+        return ["Analogues · nommez chaque molécule", structs, noms, esc(c["diff"]), infos, desc, "", ""]
     structs = "".join(f"<figure>{s['svg']}</figure>" for s in c["structures"])
     if c["type"] != "nat":
         sub = c.get("iupac", "")
@@ -514,7 +514,7 @@ def build_anki(cards):
     for c in cards:
         tags = [f"complexite_{c['niveau'].lower()}",
                 "famille_" + re.sub(r"\W+", "_", c["famille"].lower()).strip("_"),
-                {"nat": "naturel", "mol": "molecule", "theo": "theorique", "sosie": "sosies"}[c["type"]]]
+                {"nat": "naturel", "mol": "molecule", "theo": "theorique", "sosie": "analogues"}[c["type"]]]
         if c["brune"]:
             tags.append("note_brune")
         if c.get("defaut"):

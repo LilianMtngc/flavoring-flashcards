@@ -8,7 +8,7 @@ avec un focus sur les **notes brunes** (caramel, cacao, café, grillé, noisette
 - **Recto** : la structure chimique (ou, pour un produit naturel, sa ou ses molécules marqueurs).
 - **Verso** : le nom, la famille chimique, la formule, le numéro CAS, les descripteurs, le dosage, les usages et les sources.
 
-459 cartes : 278 molécules, 32 produits naturels, 86 molécules théoriques et 63 comparaisons de « sosies », dont 73 notes brunes (hors sosies), 31 molécules de défaut et 8 cartes avec une mention CMR / CIRC.
+459 cartes : 278 molécules, 32 produits naturels, 86 molécules théoriques et 63 comparaisons d'analogues, dont 73 notes brunes (hors analogues), 31 molécules de défaut et 8 cartes avec une mention CMR / CIRC.
 
 Quatre catégories :
 - **Molécules** et **produits naturels** du jeu de départ, avec leurs descripteurs et leur dosage d'évaluation (ppm) ;
@@ -17,14 +17,17 @@ Quatre catégories :
   énantiomères de la carvone et du limonène, terpènes, esters fruités, agents rafraîchissants, chauffants et picotants…). Leurs descripteurs viennent de leur page Wikipédia, citation à l'appui
   ([`data/theoriques_wiki.csv`](data/theoriques_wiki.csv)), ou à défaut du profil FEMA traduit terme à terme
   ([`data/glossaire_fema.csv`](data/glossaire_fema.csv)). Elles n'ont pas de dosage ;
-- **Sosies** : cartes de comparaison de 2 à 4 molécules aux structures très proches (furanéol / sotolon,
-  eugénol / isoeugénol, ionones / damascones, géraniol / nérol, carvones…), différence surlignée.
-  Chaque molécule concernée affiche aussi un encart « À ne pas confondre avec ».
+- **Analogues** (onglet à part, à côté d'Étude et Catalogue) : comparaisons de 2 à 4 molécules aux structures très proches
+  (furanéol / sotolon, eugénol / isoeugénol, ionones / damascones, géraniol / nérol, carvones…), différence surlignée,
+  en fiches ou en liste. Chaque molécule concernée affiche aussi un encart « À ne pas confondre avec ».
 
 ## Utilisation
 - **Navigateur** : [la page en ligne](https://lilianmtngc.github.io/aromacards/), ou `index.html`
   téléchargé et ouvert localement. Le fichier est autonome et fonctionne hors connexion.
   - Clic ou `Espace` : retourner la carte ; `←` / `→` : naviguer ; `1` : à revoir ; `2` : je sais.
+  - En Étude, l'ordre est aléatoire : un tirage sans répétition parmi les cartes filtrées, puis un nouveau tirage ;
+    les cartes vues récemment passent en fin de tirage. « Précédent » revient sur les cartes déjà vues.
+    Le Catalogue garde son tri alphabétique ou par famille.
   - Sur ordinateur, les filtres sont dans la colonne de gauche et le verso s'affiche sur deux colonnes ;
     sur mobile, ils s'ouvrent avec le bouton « Filtres ».
   - Filtres : type de carte, complexité, progression (pas encore vues, à revoir, je sais, à réviser aujourd'hui),
@@ -34,7 +37,7 @@ Quatre catégories :
     ou se déplie pour choisir une sensation précise.
     Les filtres actifs s'affichent en pastilles, effaçables d'un clic.
   - **Recto** au choix (en haut à droite de la carte) : la structure (par défaut), le nom (retrouver la structure parmi 4)
-    ou les descripteurs (retrouver la molécule parmi 4 ; les leurres sont les sosies et les molécules aux descripteurs proches).
+    ou les descripteurs (retrouver la molécule parmi 4 ; les leurres sont les analogues et les molécules aux descripteurs proches).
   - **Répétition espacée** : « Je sais » repousse la carte (1, 3, 7, 14, 30 puis 60 jours), « À revoir » la garde pour
     aujourd'hui. Le filtre « À réviser aujourd'hui » (ou le lien de l'onglet Statistiques) ouvre les cartes du jour.
   - **Statistiques** : onglet sur le bord droit (progression par type, complexité et famille olfactive, cartes les plus ratées).
@@ -102,7 +105,7 @@ aux terciles de cet indice sur l'ensemble des molécules :
 - Moyen : de 119 à 200 ;
 - Difficile : ≥ 200.
 
-Pour une carte de sosies, on retient la molécule la plus complexe.
+Pour une comparaison d'analogues, on retient la molécule la plus complexe.
 
 Pour un produit naturel, on retient le marqueur le plus complexe.
 
@@ -111,14 +114,14 @@ Deux cartes qui auraient exactement le même recto (même structure, stéréochi
 sont fusionnées. La carte porte le nom de la molécule ; les produits naturels dont elle est l'unique marqueur sont cités
 (« Marqueur de : … »), avec leurs propres descripteurs et dosages. Exemple : filbertone et noisette.
 
-### Sosies
-Calculés avec RDKit ([`scripts/sosies.py`](scripts/sosies.py)). Deux molécules sont sosies si :
+### Analogues
+Calculés avec RDKit ([`scripts/sosies.py`](scripts/sosies.py)). Deux molécules sont analogues si :
 - elles ont la même formule brute, ou ne diffèrent que d'une double liaison C=C en gardant les mêmes fonctions ;
 - leur plus grande sous-structure commune (ordres de liaison ignorés) couvre tous leurs atomes sauf un
   (sauf deux pour des isomères à cycles non aromatiques, comme furanéol / sotolon) ;
 - elles sont toutes deux des acides carboxyliques, ou aucune des deux.
 
-Les groupes comptent au plus 4 molécules, toutes sosies deux à deux ; les stéréo-isomères forment un groupe à part.
+Les groupes comptent au plus 4 molécules, toutes analogues deux à deux ; les stéréo-isomères forment un groupe à part.
 Les dessins sont alignés sur le squelette commun. Un halo orange semi-transparent souligne les liaisons vers les atomes
 placés ailleurs, les liaisons dont l'ordre change, ou les coins de stéréochimie et doubles liaisons E / Z. La nature de la différence est décrite automatiquement.
 
