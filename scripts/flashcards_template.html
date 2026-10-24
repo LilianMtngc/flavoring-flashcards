@@ -109,6 +109,11 @@ h1.brand .c{color:var(--brand-cards)}
 .chip.tag[aria-pressed="true"] small{color:rgba(255,255,255,.8)}
 .tagitem{display:inline-flex;align-items:center;gap:2px}
 .tagitem .linkbtn{color:var(--fg-3);padding:0 4px}
+/* crayon d'édition : visible au survol (ou au clavier) de son étiquette ; toujours visible sur écran tactile */
+@media (hover:hover){
+  .tagitem .linkbtn{opacity:0;transition:opacity .12s}
+  .tagitem:hover .linkbtn,.tagitem:focus-within .linkbtn{opacity:1}
+}
 .tag .x{border:0;background:none;color:var(--fg-3);cursor:pointer;padding:0 0 0 2px;font-size:15px;line-height:1}
 .tagbox{margin:0 0 12px}
 .mytags{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
