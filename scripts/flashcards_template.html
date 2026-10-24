@@ -64,6 +64,22 @@ h1.brand .c{color:var(--brand-cards)}
 .fgroup.wide{grid-column:1/-1}
 .fchips{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .tagtools{margin-top:8px;font-size:12.5px;color:var(--fg-3)}
+/* sections repliables du panneau des filtres (familles olfactives, étiquettes) */
+.foldbtn{display:flex;align-items:center;gap:6px;width:100%;font:inherit;letter-spacing:inherit;text-transform:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left}
+.foldbtn::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(-45deg);margin-left:auto;margin-right:4px;transition:transform .15s}
+.foldbtn[aria-expanded="true"]::after{transform:rotate(45deg)}
+.foldbtn:hover{color:var(--fg-2)}
+.foldbtn .fn{background:var(--accent);color:var(--surface);border-radius:999px;font-size:10.5px;letter-spacing:0;padding:0 6px;line-height:16px}
+.foldbtn .fn:empty{display:none}
+.foldbody[hidden]{display:none}
+.fgroup.fold h4{margin-bottom:0}
+.foldbody{margin-top:8px}
+.seg{display:inline-flex;align-items:center;gap:2px;font-size:12.5px;color:var(--fg-3);margin-bottom:8px;flex-wrap:wrap}
+.seg button{font:inherit;font-size:12.5px;border:0;background:none;color:var(--fg-3);padding:2px 7px;border-radius:6px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--surface-2);color:var(--fg);font-weight:600}
+.seg span{margin-left:4px}
+.fsub{flex-basis:100%;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--fg-3);margin-top:6px}
+.pnote{font-size:12px;color:var(--fg-3)}
 .fpanel-foot{grid-column:1/-1;display:flex;justify-content:flex-end;align-items:center;border-top:1px solid var(--line);padding-top:10px;font-size:13px}
 .active{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 14px;font-size:12.5px}
 .active:empty{margin:0 0 6px}
@@ -255,6 +271,12 @@ h2{font-size:24px;margin:0 0 2px;font-weight:650;letter-spacing:-.01em}
 .desc{display:flex;flex-wrap:wrap;gap:5px}
 .desc span{font-size:13px;border:1px solid var(--line-2);border-radius:999px;padding:1px 10px}
 .desc span.b{background:var(--accent-bg);border-color:var(--accent-line);color:var(--accent)}
+.desc .addchip{width:24px;height:24px;font-size:15px;color:var(--fg-3)}
+/* descripteurs personnels : sous les descripteurs communs, colorés, modifiables */
+.pdesc{margin-top:10px;padding-top:8px;border-top:1px dashed var(--line-2)}
+.pdlabel{display:block;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--fg-3);margin-bottom:5px}
+.desc .pd{font:inherit;font-size:13px;border:1px solid var(--c);background:color-mix(in srgb,var(--c) 16%,var(--surface));color:var(--fg);border-radius:999px;padding:1px 10px;cursor:pointer}
+.desc .pd:hover{background:color-mix(in srgb,var(--c) 28%,var(--surface))}
 .usage{background:var(--surface-2);border-radius:var(--radius);padding:10px 12px;font-size:14px}
 .usage.brown{background:var(--accent-bg);border:1px solid var(--accent-line)}
 .usage .orig{display:block;margin-top:4px;font-size:13px;color:var(--fg-2)}
@@ -345,11 +367,13 @@ footer a:hover,.linkbtn:hover{text-decoration:underline}
     <div class="fgroup"><h4>Famille chimique</h4><div class="fchips">
       <select id="famille" aria-label="Famille chimique"><option value="">Toutes les familles</option></select>
     </div></div>
-    <div class="fgroup wide"><h4 title="Calculées à partir des descripteurs : un descripteur de la famille parmi les 2 premiers, ou au moins 2">Familles olfactives</h4><div class="fchips" id="olffilters">
-      <button class="chip brown" data-f="brune" data-v="1" aria-pressed="false">Notes brunes</button>
-    </div></div>
-    <div class="fgroup wide"><h4>Mes étiquettes</h4><div class="fchips" id="tagfilters"></div>
-      <div id="tagedit"></div>
+    <div class="fgroup wide fold"><h4><button class="foldbtn" data-fold="olf" aria-expanded="false" aria-controls="olfbody" title="Calculées à partir des descripteurs : un descripteur de la famille parmi les 2 premiers, ou au moins 2">Familles olfactives <span class="fn" id="olfn"></span></button></h4>
+      <div class="foldbody" id="olfbody" hidden>
+        <div class="seg" role="group" aria-label="Combinaison des familles sélectionnées">Combiner :<button data-olfm="ou" title="Garder les cartes qui ont au moins une des familles sélectionnées">OU</button><button data-olfm="et" title="Garder seulement les cartes qui ont toutes les familles sélectionnées">ET</button><span id="olfmhint"></span></div>
+        <div class="fchips" id="olffilters"><button class="chip brown" data-f="brune" data-v="1" aria-pressed="false">Notes brunes</button></div>
+      </div></div>
+    <div class="fgroup wide fold"><h4><button class="foldbtn" data-fold="tags" aria-expanded="false" aria-controls="tagbody">Mes étiquettes <span class="fn" id="tagn"></span></button></h4>
+      <div class="foldbody" id="tagbody" hidden><div class="fchips" id="tagfilters"></div><div id="tagedit"></div></div>
       <input type="file" id="importfile" accept=".json,application/json" hidden>
     </div>
     <div class="fpanel-foot"><button class="btn" id="fclose">Fermer</button></div>
@@ -382,7 +406,8 @@ footer a:hover,.linkbtn:hover{text-decoration:underline}
       <div class="keylist" id="keylist" hidden role="region" aria-label="Raccourcis clavier">
         <span><kbd>1</kbd> À revoir</span><span><kbd>2</kbd> Je sais</span>
         <span><kbd>/</kbd> Rechercher</span><span><kbd>F</kbd> Filtres</span>
-        <span><kbd>E</kbd> Ajouter une étiquette</span><span><kbd>M</kbd> Changer de recto</span>
+        <span><kbd>E</kbd> Ajouter une étiquette</span><span><kbd>D</kbd> Ajouter un descripteur personnel</span>
+        <span><kbd>M</kbd> Changer de recto</span>
         <span><kbd>S</kbd> Statistiques</span><span><kbd>V</kbd> Vocabulaire</span>
         <span><kbd>Échap</kbd> Fermer un panneau</span><span><kbd>?</kbd> Afficher ces raccourcis</span>
       </div></div>
@@ -418,7 +443,8 @@ const store = {
   set(v){ try { localStorage.setItem(KEY, JSON.stringify(v)); } catch(e){} }
 };
 let progress = store.get();
-const filt = {niveau:new Set(), type:new Set(), etat:new Set(), tags:new Set(), olf:new Set(), brune:false, defaut:false, cmr:false, famille:"", q:""};
+const filt = {niveau:new Set(), type:new Set(), etat:new Set(), tags:new Set(), olf:new Set(), brune:false, defaut:false, cmr:false, famille:"", q:"",
+  olfMode: (() => { try { return localStorage.getItem("flavoring-flashcards-olfmode") === "et" ? "et" : "ou"; } catch(e){ return "ou"; } })()};
 
 // répétition espacée (boîtes de Leitner) : « Je sais » repousse la carte (1, 3, 7, 14, 30, 60 jours), « À revoir » la garde pour aujourd'hui
 const SKEY = "flavoring-flashcards-srs-v1", INTERVALS = [0, 1, 3, 7, 14, 30, 60];
@@ -445,6 +471,15 @@ const tagsOf = id => (T.cards[id] || []).filter(t => T.defs[t]);
 const tagByName = n => Object.keys(T.defs).find(id => norm(T.defs[id].nom) === norm(n));
 const nextColor = () => COLORS.find(c => !Object.values(T.defs).some(d => d.couleur === c)) || COLORS[Object.keys(T.defs).length % COLORS.length];
 let tagFormFor = null;  // carte dont le formulaire « + Étiquette » est ouvert
+
+// descripteurs personnels : propres à chaque carte, enregistrés dans ce navigateur (distincts des étiquettes)
+const PKEY = "flavoring-flashcards-descr-v1";
+let PD = (() => { try { const v = JSON.parse(localStorage.getItem(PKEY)); if (v && v.cards) return v; } catch(e){} return {cards: {}}; })();
+const savePD = () => { try { localStorage.setItem(PKEY, JSON.stringify(PD)); } catch(e){} };
+const pdOf = id => PD.cards[id] || [];
+// couleur déjà donnée à ce descripteur sur une autre carte
+const pdColor = nom => { for (const l of Object.values(PD.cards)){ const d = l.find(x => norm(x.nom) === norm(nom)); if (d) return d.couleur; } return null; };
+let pdFormFor = null;  // {id, i} : formulaire ouvert (i = -1 : ajout)
 let deck = [], pos = 0, flipped = false, shuffled = false, order = cards.map((_, i) => i);
 
 const $ = s => document.querySelector(s);
@@ -461,15 +496,17 @@ $("#famille").insertAdjacentHTML("beforeend", familles.map(f => `<option value="
 function matches(c){
   if (filt.niveau.size && !filt.niveau.has(c.niveau)) return false;
   if (filt.type.size && !filt.type.has(c.type)) return false;
-  if (filt.brune && !c.brune) return false;
   if (filt.etat.size && ![...filt.etat].some(v => v === "due" ? isDue(c.id) : (progress[c.id] || "none") === v)) return false;
-  if (filt.olf.size && !c.olf.some(f => filt.olf.has(f))) return false;
+  // familles olfactives (« Notes brunes » comprise) : OU = au moins une famille sélectionnée, ET = toutes
+  const olfHits = [...filt.olf].map(f => c.olf.includes(f));
+  if (filt.brune) olfHits.push(!!c.brune);
+  if (olfHits.length && !(filt.olfMode === "et" ? olfHits.every(Boolean) : olfHits.some(Boolean))) return false;
   if (filt.defaut && !c.defaut) return false;
   if (filt.cmr && !c.cmr) return false;
   if (filt.tags.size && !tagsOf(c.id).some(t => filt.tags.has(t))) return false;
   if (filt.famille && c.famille !== filt.famille) return false;
   if (filt.q){
-    const hay = norm([c.titre, c.iupac, c.cas, c.famille, c.descripteurs.join(" "), c.structures.map(s => s.nom).join(" "), c.marqueur_de.map(p => p.nom).join(" "), (c.membres || []).map(m => m.titre).join(" "), tagsOf(c.id).map(t => T.defs[t].nom).join(" ")].join(" "));
+    const hay = norm([c.titre, c.iupac, c.cas, c.famille, c.descripteurs.join(" "), pdOf(c.id).map(d => d.nom).join(" "), c.structures.map(s => s.nom).join(" "), c.marqueur_de.map(p => p.nom).join(" "), (c.membres || []).map(m => m.titre).join(" "), tagsOf(c.id).map(t => T.defs[t].nom).join(" ")].join(" "));
     if (!norm(filt.q).split(/\s+/).every(t => hay.includes(t))) return false;
   }
   return true;
@@ -545,15 +582,62 @@ function frontHTML(c){
 
 const chipsHTML = l => `<div class="desc">${l.map(d => `<span class="${BROWN.has(d) ? "b" : ""}">${esc(cap(d.toLowerCase()))}</span>`).join("")}</div>`;
 
+const swatchesHTML = (col, title) => `<div class="swatches" title="${title}">${COLORS.map(c => `<button type="button" class="sw" data-act="sw" data-c="${c}" style="--c:${c}" aria-pressed="${c === col}" aria-label="Couleur ${c}"></button>`).join("")}<input type="color" data-act="swc" value="${col}" title="Autre couleur"></div>`;
+function setFormColor(form, col){
+  form.dataset.color = col;
+  form.querySelectorAll(".sw").forEach(x => x.setAttribute("aria-pressed", x.dataset.c === col));
+  form.querySelector("input[type=color]").value = col;
+}
 function tagFormHTML(kind, id){
   const t = id ? T.defs[id] : null, col = t ? t.couleur : nextColor();
   const ph = kind === "add" ? "Nom de l'étiquette (nouvelle ou existante)" : "Nom de l'étiquette";
   return `<div class="tagform" data-kind="${kind}" data-id="${id || ""}" data-color="${col}">
     <input type="text" class="tagname" list="taglist" maxlength="40" placeholder="${ph}" value="${t ? esc(t.nom) : ""}" aria-label="${ph}">
-    <div class="swatches" title="Couleur (pour une nouvelle étiquette)">${COLORS.map(c => `<button type="button" class="sw" data-act="sw" data-c="${c}" style="--c:${c}" aria-pressed="${c === col}" aria-label="Couleur ${c}"></button>`).join("")}<input type="color" data-act="swc" value="${col}" title="Autre couleur"></div>
+    ${swatchesHTML(col, "Couleur (pour une nouvelle étiquette)")}
     <button type="button" class="btn primary" data-act="tag-save">${kind === "edit" ? "Enregistrer" : "Ajouter"}</button>
     ${kind === "edit" ? `<button type="button" class="btn again" data-act="tag-del">Supprimer</button>` : ""}
     <button type="button" class="btn" data-act="tag-cancel">Annuler</button></div>`;
+}
+
+// descripteurs communs + bouton « + » ; descripteurs personnels en dessous
+function descHTML(c){
+  const adding = pdFormFor && pdFormFor.id === c.id && pdFormFor.i < 0;
+  const plus = adding ? "" : `<button class="chip addchip" data-act="pd-open" title="Ajouter un descripteur personnel (D)" aria-label="Ajouter un descripteur personnel">+</button>`;
+  return `<div class="desc">${c.descripteurs.length ? c.descripteurs.map(d => `<span class="${BROWN.has(d) ? "b" : ""}">${esc(cap(d.toLowerCase()))}</span>`).join("") : `<span class="note" style="border:0;padding:0">Descripteurs non renseignés.</span>`}${plus}</div>`;
+}
+function pdFormHTML(c, i){
+  const d = i >= 0 ? pdOf(c.id)[i] : null, col = d ? d.couleur : COLORS[(pdOf(c.id).length + 5) % COLORS.length];
+  const names = [...new Set(Object.values(PD.cards).flat().map(x => x.nom))];
+  return `<div class="tagform pdform" data-i="${i}" data-color="${col}">
+    <input type="text" class="pdname" list="pdlist" maxlength="40" placeholder="Mon descripteur (ex. : caramel au beurre)" value="${d ? esc(d.nom) : ""}" aria-label="Descripteur personnel">
+    <datalist id="pdlist">${names.map(n => `<option value="${esc(n)}">`).join("")}</datalist>
+    ${swatchesHTML(col, "Couleur du descripteur")}
+    <button type="button" class="btn primary" data-act="pd-save">${d ? "Enregistrer" : "Ajouter"}</button>
+    ${d ? `<button type="button" class="btn again" data-act="pd-del">Supprimer</button>` : ""}
+    <button type="button" class="btn" data-act="pd-cancel">Annuler</button></div>`;
+}
+function pdHTML(c){
+  const mine = pdOf(c.id), open = pdFormFor && pdFormFor.id === c.id;
+  if (!mine.length && !open) return "";
+  return `<div class="pdesc"><span class="pdlabel">Mes descripteurs</span>${mine.length ? `<div class="desc">${mine.map((d, i) => `<button class="pd" style="--c:${esc(d.couleur)}" data-act="pd-edit" data-i="${i}" title="Modifier ou supprimer">${esc(d.nom)}</button>`).join("")}</div>` : ""}${open ? pdFormHTML(c, pdFormFor.i) : ""}</div>`;
+}
+function submitPdForm(form){
+  const nom = form.querySelector(".pdname").value.trim().replace(/\s+/g, " ");
+  if (!nom){ form.querySelector(".pdname").focus(); return; }
+  const id = pdFormFor.id, l = [...pdOf(id)], i = +form.dataset.i;
+  const dup = l.findIndex(d => norm(d.nom) === norm(nom));
+  if (dup >= 0 && dup !== i){ alert(`« ${nom} » figure déjà dans vos descripteurs de cette carte.`); return; }
+  const d = {nom, couleur: form.dataset.color};
+  i >= 0 ? l[i] = d : l.push(d);
+  PD.cards[id] = l; savePD();
+  pdFormFor = null; render(); focusCard();
+}
+function openPdForm(i){
+  const c = cards[deck[pos]];
+  if (c.type === "sosie") return;
+  if (!flipped){ flipped = true; animate(); }
+  pdFormFor = {id: c.id, i}; tagFormFor = null; render();
+  $("#card .pdname")?.focus();
 }
 
 function tagBoxHTML(c){
@@ -582,6 +666,12 @@ function secuHTML(c){
   return `<div class="secu">⚠ ${sc.marqueur ? `Marqueur ${esc(sc.marqueur)} : ` : ""}${parts.join(" · ")}<small>Danger de la substance pure, pas une évaluation du risque aux doses d'usage alimentaire · <a href="https://pubchem.ncbi.nlm.nih.gov/compound/${sc.cid}#section=Safety-and-Hazards" target="_blank" rel="noopener">Source : PubChem</a></small></div>`;
 }
 
+function olfLine(c){
+  const od = c.olf.filter(f => !DATA.olfg[f]), se = c.olf.filter(f => DATA.olfg[f]);
+  return (od.length ? `<div class="olfs">Familles olfactives : ${esc(od.join(" · "))}</div>` : "")
+    + (se.length ? `<div class="olfs">Sensations en bouche : ${esc(se.join(" · "))}</div>` : "");
+}
+
 function backHTML(c){
   if (c.type === "sosie") return sosieBack(c);
   const badges = (c.brune ? `<span class="badge brown">Note brune</span>` : "") + (c.defaut ? `<span class="badge def">Défaut · ${esc(c.defaut)}</span>` : "") + (c.cmr ? `<span class="badge cmr">${c.securite.clp.length ? "CMR" : "CIRC " + c.securite.iarc.join("/")}</span>` : "") + `<span class="badge lvl" title="Indice de complexité de Bertz : ${c.bertz} (seuils ${DATA.seuils[0]} / ${DATA.seuils[1]})">Complexité : ${esc(c.niveau)}</span>`;
@@ -593,7 +683,7 @@ function backHTML(c){
     sub = "Marqueur" + (c.structures.length > 1 ? "s" : "") + " : " + c.structures.map(s => esc(s.nom)).join(" · ");
     meta = c.structures.map(s => `<span>${esc(s.formule)} · CAS ${esc(s.cas)}</span>`).join("");
   }
-  const desc = c.descripteurs.length ? chipsHTML(c.descripteurs) : `<div class="note">Descripteurs non renseignés.</div>`;
+  const desc = descHTML(c);
   const label = f => ["naturelle", "non précisée"].includes(f.forme) ? "Forme " + f.forme : f.forme === "produit naturel" ? "Produit naturel" : f.forme;
   const ppm = f => f.ppm.length ? f.ppm.map(v => v.replace(".", ",")).join(" / ") + " ppm" : "";
   const F = c.formes.filter(f => !["profil FEMA", "Wikipédia"].includes(f.forme));
@@ -621,9 +711,9 @@ function backHTML(c){
   const verif = `<div class="verif ok">✓ Structure${c.structures.length > 1 ? "s" : ""} vérifiée${c.structures.length > 1 ? "s" : ""} · ${c.verif.sources} sources concordantes · <a href="verification.html" target="_blank">Rapport</a></div>`;
   const sos = c.sosies.length ? `<div class="sec"><h3>À ne pas confondre avec${sosieOf[c.id] ? ` · <button class="linkbtn" data-go="${esc(sosieOf[c.id])}">Voir la comparaison</button>` : ""}</h3><div class="sos">${c.sosies.map(o => `<button data-go="${esc(o.id)}">${byId[o.id].structures[0].svg}<span>${esc(o.titre)}<small>${esc(o.diff)}</small></span></button>`).join("")}</div></div>` : "";
   return `<div class="back"><div class="bl">${structsHTML(c, "hero", c.type === "nat" ? s => s.nom : null)}
-    <h2>${esc(c.titre)}</h2><p class="sub">${sub}</p>${alias}<div>${badges}</div><div class="meta">${meta}</div>${c.olf.length ? `<div class="olfs">Familles olfactives : ${esc(c.olf.join(" · "))}</div>` : ""}${secuHTML(c)}${tagBoxHTML(c)}
+    <h2>${esc(c.titre)}</h2><p class="sub">${sub}</p>${alias}<div>${badges}</div><div class="meta">${meta}</div>${olfLine(c)}${secuHTML(c)}${tagBoxHTML(c)}
     ${verif}</div>
-    <div class="br"><div class="sec"><h3>Descripteurs${c.type === "theo" ? " · " + c.formes[0].forme : ""}</h3>${desc}${formes}</div>
+    <div class="br"><div class="sec"><h3>Descripteurs${c.type === "theo" ? " · " + c.formes[0].forme : ""}</h3>${desc}${formes}${pdHTML(c)}</div>
     ${sos}
     <div class="sec"><h3>Usages · synthèse IA</h3>${usage}</div>
     ${src.length ? `<div class="sec"><h3>Sources</h3><ul class="srcs">${src.join("")}</ul></div>` : ""}
@@ -656,8 +746,8 @@ function render(){
 }
 
 function animate(){ const el = $("#card"); el.classList.remove("anim"); void el.offsetWidth; el.classList.add("anim"); }
-function flip(){ if (!deck.length) return; flipped = !flipped; tagFormFor = null; render(); animate(); }
-function go(d){ const n = pos + d; if (n < 0 || n >= deck.length) return; pos = n; flipped = false; tagFormFor = null; render(); }
+function flip(){ if (!deck.length) return; flipped = !flipped; tagFormFor = pdFormFor = null; render(); animate(); }
+function go(d){ const n = pos + d; if (n < 0 || n >= deck.length) return; pos = n; flipped = false; tagFormFor = pdFormFor = null; render(); }
 function mark(v){ if (!deck.length) return; const id = cards[deck[pos]].id; progress[id] = v; store.set(progress); schedule(id, v); if (pos < deck.length - 1) { pos++; flipped = false; } render(); }
 
 // tri du catalogue : on ignore les locants et préfixes de stéréo (« (E)-2- », « α- », « 2,3,5- »…)
@@ -700,7 +790,19 @@ document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => showVie
 // ---- filtres : panneau repliable + filtres actifs en pastilles
 const LABELS = {type: {mol: "Molécules", nat: "Produits naturels", theo: "Théoriques", sosie: "Sosies"},
                 etat: {none: "Pas encore vues", revoir: "À revoir", sus: "Je sais", due: "À réviser aujourd'hui"}};
-$("#olffilters").insertAdjacentHTML("beforeend", DATA.olf.map(f => `<button class="chip" data-f="olf" data-v="${esc(f)}" aria-pressed="false">${esc(f)}</button>`).join(""));
+const olfChip = f => `<button class="chip" data-f="olf" data-v="${esc(f)}" aria-pressed="false">${esc(f)}</button>`;
+const olfGroups = [...new Set(Object.values(DATA.olfg))];
+$("#olffilters").insertAdjacentHTML("beforeend", DATA.olf.filter(f => !DATA.olfg[f]).map(olfChip).join("")
+  + olfGroups.map(g => `<span class="fsub">${esc(g)}</span>` + DATA.olf.filter(f => DATA.olfg[f] === g).map(olfChip).join("")).join(""));
+// sections repliables : fermées par défaut, état mémorisé dans ce navigateur
+const FKEY = "flavoring-flashcards-plis";
+let folds = (() => { try { return JSON.parse(localStorage.getItem(FKEY)) || {}; } catch(e){ return {}; } })();
+function setFold(name, open){
+  const b = document.querySelector(`[data-fold="${name}"]`);
+  b.setAttribute("aria-expanded", open); $("#" + b.getAttribute("aria-controls")).hidden = !open;
+  folds[name] = open; try { localStorage.setItem(FKEY, JSON.stringify(folds)); } catch(e){}
+}
+document.querySelectorAll("[data-fold]").forEach(b => { setFold(b.dataset.fold, !!folds[b.dataset.fold]); b.onclick = () => setFold(b.dataset.fold, b.getAttribute("aria-expanded") !== "true"); });
 let removers = [];
 function syncChips(){
   document.querySelectorAll("#fpanel .chip[data-f]").forEach(b => {
@@ -708,6 +810,10 @@ function syncChips(){
     b.setAttribute("aria-pressed", f instanceof Set ? f.has(b.dataset.v) : !!f);
   });
   $("#famille").value = filt.famille;
+  document.querySelectorAll("[data-olfm]").forEach(b => b.setAttribute("aria-pressed", b.dataset.olfm === filt.olfMode));
+  $("#olfmhint").textContent = filt.olfMode === "et" ? "toutes les familles" : "au moins une famille";
+  $("#olfn").textContent = filt.olf.size + filt.brune || "";
+  $("#tagn").textContent = filt.tags.size || "";
   renderTagFilters();
 }
 function renderActive(){
@@ -722,8 +828,9 @@ function renderActive(){
   if (filt.famille) items.push([cap(filt.famille), () => filt.famille = ""]);
   filt.tags.forEach(id => T.defs[id] && items.push([T.defs[id].nom, () => filt.tags.delete(id), T.defs[id].couleur]));
   removers = items.map(i => i[1]);
+  const etNote = filt.olfMode === "et" && filt.olf.size + filt.brune > 1 ? `<span class="pnote">Familles : toutes à la fois (ET)</span>` : "";
   $("#active").innerHTML = items.map((it, k) => `<button class="pill${it[2] ? " tag" : ""}" data-k="${k}" ${it[2] ? `style="--c:${esc(it[2])}"` : ""} title="Retirer ce filtre">${esc(it[0])}</button>`).join("")
-    + (items.length > 1 ? `<button class="linkbtn" id="clearall">Tout effacer</button>` : "");
+    + etNote + (items.length > 1 ? `<button class="linkbtn" id="clearall">Tout effacer</button>` : "");
   $("#fcount").hidden = !items.length;
   $("#fcount").textContent = items.length;
 }
@@ -748,7 +855,11 @@ $("#fclose").onclick = () => setPanel(false);
 $("#fpanel").addEventListener("click", e => {
   const b = e.target.closest("button");
   if (!b) return;
-  if (b.dataset.f){
+  if (b.dataset.olfm){
+    filt.olfMode = b.dataset.olfm;
+    try { localStorage.setItem("flavoring-flashcards-olfmode", filt.olfMode); } catch(e){}
+    syncChips(); rebuild();
+  } else if (b.dataset.f){
     const on = b.getAttribute("aria-pressed") !== "true", f = b.dataset.f;
     if (filt[f] instanceof Set) on ? filt[f].add(b.dataset.v) : filt[f].delete(b.dataset.v);
     else filt[f] = on;
@@ -802,11 +913,17 @@ document.addEventListener("click", e => {
   const b = e.target.closest("[data-act]");
   if (!b) return;
   const form = b.closest(".tagform"), act = b.dataset.act;
-  if (act === "sw"){
-    form.dataset.color = b.dataset.c;
-    form.querySelectorAll(".sw").forEach(x => x.setAttribute("aria-pressed", x === b));
-    form.querySelector("input[type=color]").value = b.dataset.c;
-  } else if (act === "tag-save") submitTagForm(form);
+  if (act === "sw") setFormColor(form, b.dataset.c);
+  else if (act === "pd-open") openPdForm(-1);
+  else if (act === "pd-edit") openPdForm(+b.dataset.i);
+  else if (act === "pd-save") submitPdForm(form);
+  else if (act === "pd-cancel"){ pdFormFor = null; render(); focusCard(); }
+  else if (act === "pd-del"){
+    const id = pdFormFor.id, l = pdOf(id).filter((_, k) => k !== +form.dataset.i);
+    l.length ? PD.cards[id] = l : delete PD.cards[id];
+    savePD(); pdFormFor = null; render(); focusCard();
+  }
+  else if (act === "tag-save") submitTagForm(form);
   else if (act === "tag-cancel") closeTagForm(form);
   else if (act === "tag-del"){
     const id = form.dataset.id;
@@ -826,12 +943,19 @@ document.addEventListener("click", e => {
   }
 });
 document.addEventListener("input", e => {
+  // un descripteur déjà utilisé sur une autre carte reprend sa couleur
+  if (e.target.matches(".pdname")){ const col = pdColor(e.target.value.trim()); if (col) setFormColor(e.target.closest(".tagform"), col); return; }
   if (e.target.dataset.act !== "swc") return;
   const form = e.target.closest(".tagform");
   form.dataset.color = e.target.value;
   form.querySelectorAll(".sw").forEach(x => x.setAttribute("aria-pressed", "false"));
 });
 document.addEventListener("keydown", e => {
+  if (e.target.matches(".pdname")){
+    if (e.key === "Enter"){ e.preventDefault(); submitPdForm(e.target.closest(".tagform")); }
+    else if (e.key === "Escape"){ e.stopPropagation(); pdFormFor = null; render(); focusCard(); }
+    return;
+  }
   if (!e.target.matches(".tagname")) return;
   if (e.key === "Enter"){ e.preventDefault(); submitTagForm(e.target.closest(".tagform")); }
   else if (e.key === "Escape"){ e.stopPropagation(); closeTagForm(e.target.closest(".tagform")); }
@@ -839,7 +963,7 @@ document.addEventListener("keydown", e => {
 
 // ---- sauvegarde : progression et étiquettes dans un fichier JSON
 function exportData(){
-  const data = {app: "aromacards", version: 1, date: new Date().toISOString(), progression: progress, etiquettes: T, revisions: srs};
+  const data = {app: "aromacards", version: 1, date: new Date().toISOString(), progression: progress, etiquettes: T, revisions: srs, descripteurs: PD};
   const a = document.createElement("a");
   a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 1)], {type: "application/json"}));
   a.download = `aromacards-${new Date().toISOString().slice(0, 10)}.json`;
@@ -856,7 +980,13 @@ $("#importfile").onchange = async e => {
     Object.assign(srs, d.revisions || {}); saveSrs();
     Object.assign(T.defs, d.etiquettes.defs || {});
     Object.entries(d.etiquettes.cards || {}).forEach(([k, l]) => T.cards[k] = [...new Set([...(T.cards[k] || []), ...l])]);
-    saveT(); syncChips(); rebuild();
+    saveT();
+    Object.entries((d.descripteurs || {}).cards || {}).forEach(([k, l]) => {
+      const cur = [...pdOf(k)];
+      l.forEach(x => { if (!x || !x.nom) return; const j = cur.findIndex(y => norm(y.nom) === norm(x.nom)); j >= 0 ? cur[j] = x : cur.push(x); });
+      if (cur.length) PD.cards[k] = cur;
+    });
+    savePD(); syncChips(); rebuild();
   } catch(err){ alert("Fichier non reconnu : il doit venir de « Exporter mes données »."); }
 };
 $("#q").oninput = e => { filt.q = e.target.value.trim(); rebuild(); };
@@ -865,12 +995,12 @@ $("#card").onclick = e => {
   if (go) { e.stopPropagation(); goTo(go.dataset.go); return; }
   const ch = e.target.closest("[data-choice]");
   if (ch){ if (!ch.disabled){ answered[mode + ":" + cards[deck[pos]].id] = ch.dataset.choice; render(); focusCard(); } return; }
-  if (!e.target.closest("a, .tagbox, .choices")) flip();
+  if (!e.target.closest("a, .tagbox, .choices, .pdesc, [data-act]")) flip();
 };
 // ouvre une carte précise (sosie, comparaison) ; si elle est masquée par les filtres, ceux-ci sont remis à zéro
 function goTo(id){
   if (!deck.some(i => cards[i].id === id)) clearFilters();
-  tagFormFor = null;
+  tagFormFor = pdFormFor = null;
   rebuild(id);
   animate(); focusCard();
   window.scrollTo({top: 0, behavior: "smooth"});
@@ -887,7 +1017,7 @@ $("#shuffle").onclick = () => {
 };
 $("#grid").onclick = e => { const t = e.target.closest(".tile"); if (!t) return; pos = deck.findIndex(i => cards[i].id === t.dataset.id); flipped = false; showView("study"); render(); focusCard(); };
 document.querySelectorAll(".controls button").forEach(b => b.addEventListener("click", focusCard));
-$("#reset").onclick = () => { if (confirm("Effacer la progression (sues, à revoir, révisions) ? Les étiquettes sont conservées.")) { progress = {}; store.set(progress); srs = {}; saveSrs(); render(); } };
+$("#reset").onclick = () => { if (confirm("Effacer la progression (sues, à revoir, révisions) ? Les étiquettes et descripteurs personnels sont conservés.")) { progress = {}; store.set(progress); srs = {}; saveSrs(); render(); } };
 document.addEventListener("keydown", e => {
   if (e.key === "Escape" && $("#drawer").classList.contains("open")){ toggleDrawer(false); return; }
   if (e.key === "Escape" && $("#gloss").classList.contains("open")){ toggleGloss(false); return; }
@@ -915,8 +1045,9 @@ document.addEventListener("keydown", e => {
   else if (k === "e" && !$("#v-study").hidden && deck.length){
     e.preventDefault();
     if (!flipped){ flipped = true; animate(); }
-    tagFormFor = cards[deck[pos]].id; render(); $("#card .tagname")?.focus();
+    pdFormFor = null; tagFormFor = cards[deck[pos]].id; render(); $("#card .tagname")?.focus();
   }
+  else if (k === "d" && !$("#v-study").hidden && deck.length){ e.preventDefault(); openPdForm(-1); }
 });
 
 // ---- liste des raccourcis (« Autres raccourcis » ou touche ?)
@@ -940,6 +1071,7 @@ function updateHash(){
   if (deck.length) p.set("carte", cards[deck[pos]].id);
   ["type", "niveau", "etat", "olf"].forEach(f => filt[f].size && p.set(f, [...filt[f]].join(",")));
   ["brune", "defaut", "cmr"].forEach(f => filt[f] && p.set(f, "1"));
+  if (filt.olfMode === "et" && filt.olf.size + filt.brune > 1) p.set("olfm", "et");
   if (filt.famille) p.set("famille", filt.famille);
   if (filt.q) p.set("q", filt.q);
   const h = "#" + p.toString();
@@ -950,6 +1082,7 @@ function readHash(){
   ["type", "niveau", "etat", "olf"].forEach(f => p.get(f) && p.get(f).split(",").forEach(v => filt[f].add(v)));
   ["brune", "defaut", "cmr"].forEach(f => filt[f] = p.get(f) === "1");
   filt.famille = p.get("famille") || "";
+  if (p.get("olfm") === "et") filt.olfMode = "et";
   filt.q = p.get("q") || ""; $("#q").value = filt.q;
   return p.get("carte");
 }
@@ -1009,8 +1142,9 @@ function renderStats(){
     <p class="note">${due ? `<button class="linkbtn" data-sgo='{"etat":"due"}'>${due} carte${due > 1 ? "s" : ""} à réviser aujourd'hui</button>` : "Aucune carte à réviser aujourd'hui."}</p>
     <h4>Par type de carte</h4>${Object.entries(LABELS.type).map(([k, l]) => row(l, cards.filter(c => c.type === k), {type: k})).join("")}
     <h4>Par complexité</h4>${["Facile", "Moyen", "Difficile"].map(l => row(l, base.filter(c => c.niveau === l), {niveau: l})).join("")}
-    <h4>Par famille olfactive</h4>${row("Notes brunes", base.filter(c => c.brune), {brune: 1})}${DATA.olf.map(f => row(f, base.filter(c => c.olf.includes(f)), {olf: f})).join("")}
-    <h4>Mes données</h4><p class="note">Progression, révisions et étiquettes restent dans ce navigateur. Pour les garder ou changer d'appareil :</p>
+    <h4>Par famille olfactive</h4>${row("Notes brunes", base.filter(c => c.brune), {brune: 1})}${DATA.olf.filter(f => !DATA.olfg[f]).map(f => row(f, base.filter(c => c.olf.includes(f)), {olf: f})).join("")}
+    ${olfGroups.map(g => `<h4>${esc(g)}</h4>` + DATA.olf.filter(f => DATA.olfg[f] === g).map(f => row(f, base.filter(c => c.olf.includes(f)), {olf: f})).join("")).join("")}
+    <h4>Mes données</h4><p class="note">Progression, révisions, étiquettes et descripteurs personnels restent dans ce navigateur. Pour les garder ou changer d'appareil :</p>
     <p class="note"><button class="linkbtn" data-data="export">Exporter (fichier JSON)</button> · <button class="linkbtn" data-data="import">Importer</button></p>
     ${missed.length ? `<h4>Les plus ratées</h4><ul class="missed">${missed.map(([id, e]) => `<li><button class="linkbtn" data-sgo='${esc(JSON.stringify({carte: id}))}'>${esc(byId[id].titre)}</button><small>${e.ko} raté${e.ko > 1 ? "s" : ""}</small></li>`).join("")}</ul>` : ""}`;
 }

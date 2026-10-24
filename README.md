@@ -28,7 +28,9 @@ Quatre catégories :
   - Sur ordinateur, les filtres sont dans la colonne de gauche et le verso s'affiche sur deux colonnes ;
     sur mobile, ils s'ouvrent avec le bouton « Filtres ».
   - Filtres : type de carte, complexité, progression (pas encore vues, à revoir, je sais, à réviser aujourd'hui),
-    défauts, CMR / CIRC, famille chimique, familles olfactives (dont notes brunes), étiquettes.
+    défauts, CMR / CIRC, famille chimique, familles olfactives (dont notes brunes et sensations en bouche), étiquettes.
+    Les familles olfactives et les étiquettes se plient et se déplient. Plusieurs familles se combinent en **OU**
+    (au moins une) ou en **ET** (toutes à la fois).
     Les filtres actifs s'affichent en pastilles, effaçables d'un clic.
   - **Recto** au choix (en haut à droite de la carte) : la structure (par défaut), le nom (retrouver la structure parmi 4)
     ou les descripteurs (retrouver la molécule parmi 4 ; les leurres sont les sosies et les molécules aux descripteurs proches).
@@ -39,15 +41,18 @@ Quatre catégories :
   - **Vocabulaire** : onglet sur le bord gauche, par ordre alphabétique. Noms usuels et pièges (valéraldéhyde = pentanal, caproïque / caprylique /
     caprique, « aldéhydes C-n »…), stéréochimie, préfixes, fonctions, hétérocycles, terpènes, chimie des arômes, identifiants.
     Chaque entrée renvoie vers les cartes concernées ([`data/glossaire.csv`](data/glossaire.csv), rédigé avec assistance IA).
-  - **Raccourcis** : `/` rechercher, `F` filtres, `E` étiquette, `M` changer de recto, `S` statistiques, `V` vocabulaire,
+  - **Raccourcis** : `/` rechercher, `F` filtres, `E` étiquette, `M` changer de recto, `S` statistiques, `V` vocabulaire, `D` descripteur personnel,
     `?` liste des raccourcis (aussi sous la carte : « Autres raccourcis »).
   - L'adresse de la page suit la carte affichée et les filtres : on peut la copier pour partager une carte.
   - **Installable** sur mobile (« Ajouter à l'écran d'accueil ») et utilisable hors connexion.
   - **Étiquettes personnelles** : « + Étiquette » au verso d'une carte. Nom et couleur au choix ; on peut ensuite filtrer,
     renommer, recolorer ou supprimer une étiquette depuis le panneau des filtres.
+  - **Descripteurs personnels** : bouton « + » après les descripteurs d'une carte. Ils s'affichent en couleur sous les
+    descripteurs communs (rubrique « Mes descripteurs »), se modifient ou se suppriment d'un clic, et la recherche les trouve.
+    Ils ne changent ni les descripteurs communs ni leurs sources, et restent distincts des étiquettes.
   - Boutons ↻ « À revoir » et ✓ « Je sais » sous la carte : le contour des cartes sues devient vert, celui des cartes
     à revoir rouge. Bouton clair / sombre en haut à droite.
-  - La progression, les révisions et les étiquettes sont enregistrées dans le navigateur, sur cet appareil uniquement.
+  - La progression, les révisions, les étiquettes et les descripteurs personnels sont enregistrés dans le navigateur, sur cet appareil uniquement.
     « Exporter » (onglet Statistiques, rubrique « Mes données ») les sauvegarde dans un fichier JSON, à réimporter ailleurs.
 - **Anki** : [`aromacards.apkg`](aromacards.apkg), à importer avec Fichier → Importer.
   Les cartes sont taguées `note_brune`, `complexite_*`, `famille_*` et `molecule` / `naturel` / `theorique`.
@@ -117,7 +122,10 @@ Les dessins sont alignés sur le squelette commun. Un halo orange semi-transpare
 placés ailleurs, les liaisons dont l'ordre change, ou les coins de stéréochimie et doubles liaisons E / Z. La nature de la différence est décrite automatiquement.
 
 ### Familles olfactives
-Chaque descripteur est rattaché à une famille (hespéridé, fruité, floral, vert, lacté, épicé, boisé, soufré, terreux, phénolé…).
+Chaque descripteur est rattaché à une famille d'odeur (hespéridé, fruité, floral, vert, lacté, épicé, amandé, boisé, camphré, soufré,
+terreux, phénolique…) ou à une sensation en bouche (sucré, salé, amer, umami, acide, piquant, froid, autres sensations).
+« Froid » regroupe la fraîcheur mentholée ; le camphré est une famille d'odeur (voir l'entrée du vocabulaire).
+Une famille à laquelle aucune carte n'appartient n'apparaît pas dans les filtres.
 Une carte appartient à une famille selon la même règle que les notes brunes : un descripteur de la famille parmi ses deux premiers,
 ou au moins deux descripteurs de la famille.
 

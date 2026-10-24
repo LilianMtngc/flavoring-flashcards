@@ -322,8 +322,12 @@ def fmt_ppm(values):
 
 def build_html(cards, seuils):
     template = (ROOT / "scripts" / "flashcards_template.html").read_text(encoding="utf-8")
-    olf = [r["famille"] for r in read_csv("familles_olfactives.csv")]
-    payload = json.dumps({"cards": cards, "seuils": seuils, "olf": olf, "glossaire": glossaire(cards)},
+    fams = read_csv("familles_olfactives.csv")
+    olf = [r["famille"] for r in fams if any(r["famille"] in c["olf"] for c in cards)]  # pas de filtre sans carte
+    if len(olf) < len(fams):
+        print(f"familles sans carte (filtre masqué) : {', '.join(r['famille'] for r in fams if r['famille'] not in olf)}")
+    olfg = {r["famille"]: r["groupe"] for r in fams if r["groupe"]}  # sous-familles (« Sensations en bouche »)
+    payload = json.dumps({"cards": cards, "seuils": seuils, "olf": olf, "olfg": olfg, "glossaire": glossaire(cards)},
                          ensure_ascii=False).replace("</", "<\\/")
     # police du titre (Young Serif, sous-ensemble « AromaCards ») intégrée : la page reste autonome hors connexion
     font = base64.b64encode((ROOT / "fonts" / "YoungSerif-titre.woff2").read_bytes()).decode()
