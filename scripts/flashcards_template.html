@@ -399,7 +399,7 @@ dialog.dlg::backdrop{background:rgba(0,0,0,.45)}
     <div class="fgroup typeg"><h4>Type de carte</h4><div class="fchips">
       <button class="chip" data-f="type" data-v="mol" aria-pressed="false">Molécules</button>
       <button class="chip" data-f="type" data-v="nat" aria-pressed="false">Produits naturels</button>
-      <button class="chip" data-f="type" data-v="theo" aria-pressed="false" title="Molécules de référence ajoutées pour l'apprentissage ; descripteurs : Wikipédia ou profil FEMA">Théoriques</button>
+      <button class="chip" data-f="type" data-v="theo" aria-pressed="false" title="Molécules de référence ajoutées pour l'apprentissage ; descripteurs : Wikipédia, profil FEMA ou HSDB">Théoriques</button>
     </div></div>
     <div class="fgroup"><h4 title="Complexité structurale : tercile de l'indice de Bertz">Complexité</h4><div class="fchips">
       <button class="chip" data-f="niveau" data-v="Facile" aria-pressed="false">Facile</button>
@@ -780,7 +780,7 @@ function backHTML(c){
   const desc = descHTML(c);
   const label = f => ["naturelle", "non précisée"].includes(f.forme) ? "Forme " + f.forme : f.forme === "produit naturel" ? "Produit naturel" : f.forme;
   const ppm = f => f.ppm.length ? f.ppm.map(v => v.replace(".", ",")).join(" / ") + " ppm" : "";
-  const F = c.formes.filter(f => !["profil FEMA", "Wikipédia"].includes(f.forme));
+  const F = c.formes.filter(f => !["profil FEMA", "Wikipédia", "HSDB (PubChem)"].includes(f.forme));
   let formes = "";
   if (F.length === 1) formes = ppm(F[0]) ? `Dosage : ${ppm(F[0])}` : "";
   else if (F.length > 1 && new Set(F.map(f => f.descripteurs.join("|"))).size === 1) formes = "Dosage : " + F.map(f => `${label(f).toLowerCase()} ${ppm(f) || "non renseigné"}`).join(" · ");
@@ -806,8 +806,9 @@ function backHTML(c){
   const S = c.sources || {};
   if (S.fema) src.push(`<li>${a("FEMA n° " + S.fema.numero, S.fema.url)}${S.fema.profil ? ` · profil aromatique : <i>${esc(S.fema.profil)}</i>` : ""}${S.fema.jecfa ? ` · JECFA n° ${esc(S.fema.jecfa)}` : ""}</li>`);
   if (S.wiki) src.push(`<li>Descripteurs : « ${esc(S.wiki.citation)} » — ${a("Wikipédia — " + S.wiki.page, S.wiki.url)}</li>`);
-  (S.odeur || []).forEach(o => src.push(`<li>Odeur : « ${esc(o.texte)} » — ${a(o.source || "PubChem", o.url)}</li>`));
-  (S.gout || []).forEach(o => src.push(`<li>Goût : « ${esc(o.texte)} » — ${a(o.source || "PubChem", o.url)}</li>`));
+  if (S.hsdb) src.push(`<li>Descripteurs : « ${esc(S.hsdb.texte)} » — ${a("Hazardous Substances Data Bank (HSDB)", S.hsdb.url)}</li>`);
+  (S.odeur || []).filter(o => !S.hsdb || o.texte !== S.hsdb.texte).forEach(o => src.push(`<li>Odeur : « ${esc(o.texte)} » — ${a(o.source || "PubChem", o.url)}</li>`));
+  (S.gout || []).filter(o => !S.hsdb || o.texte !== S.hsdb.texte).forEach(o => src.push(`<li>Goût : « ${esc(o.texte)} » — ${a(o.source || "PubChem", o.url)}</li>`));
   if (c.cid) src.push(`<li>${a("Fiche PubChem (CID " + c.cid + ")", "https://pubchem.ncbi.nlm.nih.gov/compound/" + c.cid)}</li>`);
   const remarks = c.notes.map(x => `<div class="note">${esc(x)}</div>`);
   if (c.type === "nat" && c.partage.length) remarks.push(`<div class="note">Même(s) marqueur(s) que : ${esc(c.partage.join(", "))}</div>`);

@@ -6701,6 +6701,33 @@
   ],
   "fema": null
  },
+ "citric_acid": {
+  "cid": 311,
+  "odeur": [
+   {
+    "texte": "Odorless",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/911"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Strongly acidic taste",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/911"
+   },
+   {
+    "texte": "Pleasant, sweet, tart taste",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/911"
+   }
+  ],
+  "fema": {
+   "numero": "2306",
+   "url": "https://www.femaflavor.org/flavor-library/citric-acid",
+   "jecfa": "218"
+  }
+ },
  "malic_acid": {
   "cid": 525,
   "odeur": [

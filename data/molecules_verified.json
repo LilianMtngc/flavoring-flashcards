@@ -7810,5 +7810,25 @@
   "problems": [],
   "notes": [],
   "marqueur_seul": false
+ },
+ "citric_acid": {
+  "key": "citric_acid",
+  "nom_fr": "Acide citrique",
+  "cas": "77-92-9",
+  "cid": 311,
+  "smiles": "C(C(=O)O)C(CC(=O)O)(C(=O)O)O",
+  "inchikey": "KRKNYBCHXYNGOX-UHFFFAOYSA-N",
+  "formule": "C6H8O7",
+  "masse": 192.12,
+  "iupac": "2-hydroxypropane-1,2,3-tricarboxylic acid",
+  "famille": "acide",
+  "sources_ok": 5,
+  "controles_chimiques": [
+   "acide carboxylique"
+  ],
+  "status": "ok",
+  "problems": [],
+  "notes": [],
+  "marqueur_seul": false
  }
 }

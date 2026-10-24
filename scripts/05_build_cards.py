@@ -15,7 +15,8 @@ Trois catégories de cartes :
 - « theo » : molécule de référence ajoutée pour l'apprentissage (note « theorique »
   dans molecules_ref.csv) ; ses descripteurs viennent de la page Wikipédia de la
   molécule quand elle figure dans data/theoriques_wiki.csv (citation à l'appui),
-  sinon du profil FEMA traduit (data/glossaire_fema.csv).
+  sinon du profil FEMA traduit (data/glossaire_fema.csv), sinon d'une description
+  d'odeur ou de goût HSDB (PubChem) choisie dans data/theoriques_hsdb.csv.
 Les cartes dont le recto serait identique (même structure, stéréo comprise) sont
 fusionnées : le nom de la molécule est affiché, les produits naturels sont cités.
 """
@@ -125,6 +126,7 @@ def build():
     usages = {r["key"]: r for r in read_csv("usages.csv")}
     glossaire = {r["en"].lower(): r["fr"] for r in read_csv("glossaire_fema.csv")}
     wiki = {r["key"]: r for r in read_csv("theoriques_wiki.csv")}
+    hsdb = {r["key"]: r for r in read_csv("theoriques_hsdb.csv")} if (D / "theoriques_hsdb.csv").exists() else {}
 
     # identifiants (codes) de chaque forme : affichés seulement avec les étiquettes PROVA / PROUTS
     ids = defaultdict(list)
@@ -160,6 +162,14 @@ def build():
                              "url": "https://en.wikipedia.org/wiki/" + w["wiki"].replace(" ", "_")}
             elif fema:
                 e["formes"] = [{"forme": "profil FEMA", "ppm": [], "descripteurs": fema}]
+            elif key in hsdb:  # ni Wikipédia ni FEMA : description HSDB citée telle qu'elle figure dans PubChem
+                h = hsdb[key]
+                cites = [x for kind in ("odeur", "gout") for x in (sources.get(key) or {}).get(kind, [])
+                         if x["texte"] == h["texte"] and "HSDB" in (x["source"] or "")]
+                if not cites:
+                    raise SystemExit(f"citation HSDB introuvable dans sources_cache.json : {key} « {h['texte']} »")
+                e["formes"] = [{"forme": "HSDB (PubChem)", "ppm": [], "descripteurs": h["descripteurs"].split("|")}]
+                e["hsdb"] = {"texte": h["texte"], "url": cites[0]["url"]}
             else:
                 raise SystemExit(f"molécule théorique sans descripteur sourcé : {key}")
             entries.append(e)
@@ -204,6 +214,8 @@ def build():
         for e in members:
             if e.get("wiki"):
                 card["sources"]["wiki"] = e["wiki"]
+            if e.get("hsdb"):
+                card["sources"]["hsdb"] = e["hsdb"]
         cards.append(card)
 
     # produits naturels qui partagent un marqueur (sans avoir exactement les mêmes)
@@ -474,8 +486,13 @@ def sources_html(c):
     if src.get("wiki"):
         w = src["wiki"]
         parts.append(f"Descripteurs : « {esc(w['citation'])} » — {link('Wikipédia — ' + w['page'], w['url'])}")
+    if src.get("hsdb"):
+        h = src["hsdb"]
+        parts.append(f"Descripteurs : « {esc(h['texte'])} » — {link('Hazardous Substances Data Bank (HSDB)', h['url'])}")
     for kind, label in (("odeur", "Odeur"), ("gout", "Goût")):
         for it in src.get(kind, []):
+            if src.get("hsdb") and it["texte"] == src["hsdb"]["texte"]:
+                continue  # déjà cité comme source des descripteurs
             parts.append(f"{label} : « {esc(it['texte'])} » — {link(it['source'] or 'PubChem', it['url'])}")
     if c.get("cid"):
         parts.append(link(f"PubChem CID {c['cid']}", f"https://pubchem.ncbi.nlm.nih.gov/compound/{c['cid']}"))

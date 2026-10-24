@@ -8,7 +8,7 @@ avec un focus sur les **notes brunes** (caramel, cacao, café, grillé, noisette
 - **Recto** : la structure chimique (ou, pour un produit naturel, sa ou ses molécules marqueurs).
 - **Verso** : le nom, la famille chimique, la formule, le numéro CAS, les descripteurs, le dosage, les usages et les sources.
 
-472 cartes : 278 molécules, 32 produits naturels, 98 molécules théoriques et 64 comparaisons d'analogues, dont 75 notes brunes (hors analogues), 31 molécules de défaut et 10 cartes avec une mention CMR / CIRC.
+473 cartes : 278 molécules, 32 produits naturels, 99 molécules théoriques et 64 comparaisons d'analogues, dont 75 notes brunes (hors analogues), 31 molécules de défaut et 10 cartes avec une mention CMR / CIRC.
 
 Quatre catégories :
 - **Molécules** et **produits naturels** du jeu de départ, avec leurs descripteurs et leur dosage d'évaluation (ppm) ;
@@ -16,7 +16,8 @@ Quatre catégories :
   (2-acétyl-1-pyrroline, thiols du pamplemousse et du cassis, défauts comme le TCA, la géosmine ou le trans-2-nonénal,
   énantiomères de la carvone et du limonène, terpènes, esters fruités, agents rafraîchissants, chauffants et picotants…). Leurs descripteurs viennent de leur page Wikipédia, citation à l'appui
   ([`data/theoriques_wiki.csv`](data/theoriques_wiki.csv)), ou à défaut du profil FEMA traduit terme à terme
-  ([`data/glossaire_fema.csv`](data/glossaire_fema.csv)). Elles n'ont pas de dosage ;
+  ([`data/glossaire_fema.csv`](data/glossaire_fema.csv)), ou à défaut d'une description d'odeur ou de goût de la
+  Hazardous Substances Data Bank citée par PubChem ([`data/theoriques_hsdb.csv`](data/theoriques_hsdb.csv)). Elles n'ont pas de dosage ;
 - **Analogues** (onglet à part, à côté d'Étude et Catalogue) : comparaisons de 2 à 4 molécules aux structures très proches
   (furanéol / sotolon, eugénol / isoeugénol, ionones / damascones, géraniol / nérol, carvones…), différence surlignée,
   en fiches ou en liste. Chaque molécule concernée affiche aussi un encart « À ne pas confondre avec ».
@@ -72,7 +73,7 @@ Quatre catégories :
 | N° FEMA, profil aromatique, n° JECFA | [FEMA Flavor Library](https://www.femaflavor.org/flavor-library), lien sur chaque carte |
 | Descriptions d'odeur et de goût | PubChem, en majorité Hazardous Substances Data Bank (HSDB), lien sur chaque carte |
 | Marqueurs des produits naturels | Wikipédia (anglais), lien sur chaque carte |
-| Descripteurs et dosages (ppm) | Évaluation sensorielle interne ; pour les molécules théoriques, Wikipédia ou profil FEMA |
+| Descripteurs et dosages (ppm) | Évaluation sensorielle interne ; pour les molécules théoriques, Wikipédia, profil FEMA ou, à défaut, HSDB (PubChem) |
 | Complexité | Calculée à partir de la structure (voir plus bas) |
 | Usages et origine des notes | Synthèse rédigée avec assistance IA, non sourcée ligne à ligne |
 | Classification CMR et CIRC | PubChem : classification harmonisée européenne (règlement CLP, annexe VI) et groupes du CIRC |
