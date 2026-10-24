@@ -1,7 +1,7 @@
 // AromaCards hors connexion : réseau d'abord (la page reste à jour), copie locale sans réseau ou si le réseau traîne.
 // Le nom du cache porte la version publiée : à chaque publication, le nouveau service worker remplace l'ancien
 // et supprime son cache (personne ne reste bloqué sur une ancienne copie).
-const CACHE = "aromacards-af9d9f12ca94";
+const CACHE = "aromacards-05e4030db72c";
 const PRECACHE = ["./", "index.html", "manifest.webmanifest", "favicon.svg", "favicon-32.png", "apple-touch-icon.png",
                   "icon-192.png", "icon-512.png", "icon-maskable-192.png", "icon-maskable-512.png"];
 self.addEventListener("install", e => {
