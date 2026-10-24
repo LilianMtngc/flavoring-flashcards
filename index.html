@@ -1127,6 +1127,8 @@ $("#card").onclick = e => {
   if (go) { e.stopPropagation(); goTo(go.dataset.go); return; }
   const ch = e.target.closest("[data-choice]");
   if (ch){ if (!ch.disabled){ answered[mode + ":" + cards[deck[pos]].id] = ch.dataset.choice; render(); focusCard(); } return; }
+  // recto « Nom » / « Odeur » sans réponse : un clic hors des propositions ne retourne pas la carte
+  if (!flipped && $("#card .choices") && !answered[mode + ":" + cards[deck[pos]].id]) return;
   if (!e.target.closest("a, .tagbox, .choices, .pdesc, [data-act]")) flip();
 };
 // ouvre une carte précise (sosie, comparaison) ; si elle est masquée par les filtres, ceux-ci sont remis à zéro
@@ -1309,7 +1311,7 @@ $("#drawerbody").onclick = e => {
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("sw.js").catch(() => {});
 
 // ---- mises à jour : la page compare sa version à celle publiée (au retour sur l'onglet ou l'application, et toutes les 30 min)
-const BUILD = "4cdf7239bc59";
+const BUILD = "af9d9f12ca94";
 let updateLater = false;
 async function checkUpdate(){
   if (!location.protocol.startsWith("http")) return;

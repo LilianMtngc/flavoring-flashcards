@@ -1127,6 +1127,8 @@ $("#card").onclick = e => {
   if (go) { e.stopPropagation(); goTo(go.dataset.go); return; }
   const ch = e.target.closest("[data-choice]");
   if (ch){ if (!ch.disabled){ answered[mode + ":" + cards[deck[pos]].id] = ch.dataset.choice; render(); focusCard(); } return; }
+  // recto « Nom » / « Odeur » sans réponse : un clic hors des propositions ne retourne pas la carte
+  if (!flipped && $("#card .choices") && !answered[mode + ":" + cards[deck[pos]].id]) return;
   if (!e.target.closest("a, .tagbox, .choices, .pdesc, [data-act]")) flip();
 };
 // ouvre une carte précise (sosie, comparaison) ; si elle est masquée par les filtres, ceux-ci sont remis à zéro
