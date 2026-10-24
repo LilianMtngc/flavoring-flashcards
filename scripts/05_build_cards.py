@@ -125,12 +125,17 @@ def build():
     glossaire = {r["en"].lower(): r["fr"] for r in read_csv("glossaire_fema.csv")}
     wiki = {r["key"]: r for r in read_csv("theoriques_wiki.csv")}
 
+    # identifiants (codes) de chaque forme : affichés seulement avec les étiquettes PROVA / PROUTS
+    ids = defaultdict(list)
+    for r in read_csv("identifiants.csv"):
+        ids[(r["type"], r["key"], r["forme"])].append({"code": r["code"], "ppm": r["ppm"], "version": r["version"]})
     groups = {}
     for r in descr_rows:
         groups.setdefault((r["type"], r["key"]), []).append({
             "forme": r["forme"],
             "descripteurs": [d for d in r["descripteurs"].split("|") if d],
-            "ppm": [p for p in r["ppm"].split("|") if p]})
+            "ppm": [p for p in r["ppm"].split("|") if p],
+            "ids": ids.get((r["type"], r["key"], r["forme"]), [])})
     confirmed = {k: [x for x in v if x["source"]] for k, v in marker_src.items()}
 
     # 1. entrées brutes : molécules évaluées, molécules théoriques, produits naturels avec marqueur sourcé

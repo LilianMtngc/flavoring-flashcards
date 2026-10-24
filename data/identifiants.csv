@@ -1,0 +1,488 @@
+type;key;forme;code;ppm;version
+mol;acetal;naturelle;N312K;2;
+mol;acetal;non précisée;S310K;2;
+mol;allyl_heptanoate;non précisée;S186K;4;
+mol;allyl_hexanoate;non précisée;S449K;4;
+mol;isoamyl_alcohol;naturelle;N375K;40;
+mol;isoamyl_alcohol;non précisée;S106K;40;
+mol;amyl_butyrate;non précisée;S326K;20;
+mol;isoamyl_butyrate;naturelle;N256K;40;
+mol;isoamyl_butyrate;non précisée;S001K;40;
+mol;benzyl_alcohol;naturelle;N313K;500;
+mol;benzyl_alcohol;non précisée;S023K;500;
+mol;isobutyl_alcohol;naturelle;N217K;60;
+mol;isobutyl_alcohol;non précisée;S322K;60;
+mol;butyl_butyrate;non précisée;S323K;80;
+mol;butyl_butyryl_lactate;non précisée;F021K;25;
+mol;butyl_butyryl_lactate;naturelle;F409K;20;
+nat;chamomile_roman;produit naturel;N058K;10;
+nat;coriander_oil;produit naturel;N031K;4;
+nat;davana_oil;produit naturel;N110K;2;
+mol;decanal;non précisée;F035K;20;
+mol;diethyl_malonate;non précisée;S314K;80;
+mol;dimethoxybenzene_13;non précisée;S524K;40;
+mol;ethyl_cinnamate;non précisée;F052K;10;
+mol;ethyl_heptanoate;non précisée;S422K;80;
+mol;ethyl_levulinate;naturelle;N468K;200;
+mol;ethyl_levulinate;non précisée;S317K;200;
+mol;ethyl_2_methylbutyrate;naturelle;N361K;4;
+mol;ethyl_2_methylbutyrate;non précisée;S019K;4;
+mol;ethyl_propionate;non précisée;F153K;20;
+mol;ethyl_propionate;naturelle;F180K;20;
+mol;ethyl_valerate;non précisée;S175K;80;
+mol;ethyl_isovalerate;naturelle;N184K;80;
+mol;ethyl_isovalerate;non précisée;S335K;80;
+mol;gamma_heptalactone;non précisée;S104K;30;
+mol;ambrettolide;naturelle;N062K;10;
+mol;hexanedione_23;non précisée;F009K;60;
+mol;hexanedione_23;naturelle;F399K;60;
+mol;trans_2_hexenal;non précisée;F076K;20;
+mol;trans_2_hexenol;non précisée;F056K;30;
+mol;lactic_acid;naturelle;N225K;1000;
+mol;lactic_acid;non précisée;S380K;1000;
+mol;lauric_acid;naturelle;P083K;40;
+nat;licorice;produit naturel;P046K;100;
+mol;menthyl_acetate;naturelle;N091K;20;
+mol;menthyl_acetate;non précisée;S058K;20;
+mol;methylguaiacol_4;naturelle;N334K;2;
+mol;methylguaiacol_4;non précisée;S051K;2;
+mol;vinylguaiacol_4;naturelle;N449K;50;
+mol;vinylguaiacol_4;non précisée;S170K;2;
+mol;methylacetophenone_4;non précisée;S119K;4;
+mol;methylfurfural_5;naturelle;F192K;60;
+mol;methylfurfural_5;non précisée;F022K;60;
+mol;methyl_furoate;non précisée;S448K;20;
+mol;methylheptenone;non précisée;S048K;50;
+mol;methanethiol;non précisée;F302K;20;
+mol;methyl_n_methylanthranilate;naturelle;N048K;50;
+mol;methyl_n_methylanthranilate;non précisée;S385K;50;
+nat;mountain_maple;produit naturel;N466K;1000;
+mol;myristic_acid;naturelle;P084K;60;
+mol;nonanoic_acid;non précisée;S061K;60;
+mol;octanal;non précisée;F032K;20;
+mol;octanone_2;non précisée;S078K;50;
+mol;octanal;naturelle;N162K;20;
+mol;pentanone_2;non précisée;S146K;50;
+nat;black_pepper;produit naturel;N104K;5;
+mol;alpha_phellandrene;naturelle;N489;20;
+mol;phenethyl_alcohol;naturelle;N120K;20;
+mol;phenethyl_alcohol;non précisée;S147K;20;
+mol;phenethyl_phenylacetate;non précisée;S413K;60;
+mol;phenylacetaldehyde;non précisée;F051K;10;
+mol;phenylacetaldehyde;naturelle;F108K;100;10%-alc.nat.phenylacetaldéhyde
+mol;phenylacetaldehyde;naturelle;F412K;2;PHENYLACETaldéhyde NATUREL 10% TRIACETINE
+mol;propenyl_guaethol;non précisée;P022K;40;
+mol;cinnamyl_alcohol;naturelle;N061K;100;
+mol;alpha_terpineol;naturelle;P073K;40;
+mol;alpha_terpineol;non précisée;S352K;40;
+mol;undecanone_2;naturelle;N264K;50;
+mol;undecanone_2;non précisée;S171K;50;
+mol;tetramethylpyrazine;non précisée;F243K;60;
+mol;tetramethylpyrazine;naturelle;F207K;60;
+mol;difurfuryl_disulfide;non précisée;F304K;0.4;
+mol;difurfuryl_disulfide;naturelle;F380K;0.4;
+mol;trimethylpyrazine;non précisée;F220K;3;
+mol;furfuryl_methyl_sulfide;non précisée;F315K;0.2;
+mol;furfuryl_thioacetate;non précisée;F310K;0.8;
+mol;methoxycinnamaldehyde_2;naturelle;N430K;10;
+mol;dimethylpyrazine_23;non précisée;F212K;300;
+mol;dimethylpyrazine_25;non précisée;F210K;300;
+mol;cocoa_hexenal;naturelle;N458K;20;
+mol;cocoa_hexenal;non précisée;F124K;20;
+mol;methylquinoxaline_5;non précisée;F227K;20;
+mol;methylthiophenecarboxaldehyde;non précisée;F044K;20;
+mol;trans_2_octenal;non précisée;F127K;20;
+mol;dipropyl_disulfide;non précisée;F362K;0.4;
+mol;delta_undecalactone;non précisée;S466K;40;
+mol;ketoisophorone;non précisée;F159K;300;
+mol;acetic_acid;naturelle;N240K;1000;
+mol;acetic_acid;non précisée;S024K;1000;
+mol;acetoin;naturelle;F030K;150;Acetoine naturel poudre
+mol;acetoin;naturelle;F123K;150;Acetoine naturel liquide
+mol;acetophenone;naturelle;N426K;4;
+mol;acetophenone;non précisée;S025K;4;
+nat;bitter_almond_oil;produit naturel;N102K;20;HE amandon-amande amère
+nat;bitter_almond_oil;produit naturel;N445K;20;ALL- almond oil bitter natural
+mol;isoamyl_acetate;naturelle;N216K;50;
+mol;isoamyl_acetate;non précisée;S034K;50;
+mol;anethole;naturelle;N244K;2;
+mol;anethole;non précisée;S031K;2;
+mol;anisyl_acetate;naturelle;N260K;20;
+mol;anisyl_acetate;non précisée;S027K;20;
+mol;anisyl_alcohol;naturelle;N026K;40;
+mol;anisyl_alcohol;non précisée;S028K;40;
+nat;peru_balsam;produit naturel;N023K;40;
+mol;benzaldehyde;naturelle;N001K;20;
+mol;benzaldehyde;non précisée;S044K;20;
+nat;benzoin_sumatra;produit naturel;N020K;80;
+mol;benzyl_acetate;naturelle;N177K;50;
+mol;benzyl_acetate;non précisée;S041K;50;
+nat;bergamot_oil;produit naturel;N035K;10;
+nat;buchu_oil;produit naturel;N469K;2;
+mol;isobutyraldehyde;non précisée;F013K;30;
+mol;isobutyraldehyde;naturelle;F068K;30;
+mol;butyric_acid;naturelle;F026K;400;
+mol;butyric_acid;non précisée;F041K;400;
+mol;isobutyric_acid;non précisée;S122K;500;
+mol;isobutyric_acid;naturelle;F070K;500;
+mol;caffeine;non précisée;P121K;300;
+mol;caffeine;naturelle;P122K;300;
+nat;capsicum;produit naturel;F404K;60;
+nat;cardamom_oil;produit naturel;N363K;20;
+mol;terpinen_4_ol;naturelle;N372K;20;
+mol;caryophyllene;non précisée;S096K;20;
+mol;caryophyllene;naturelle;N065K;20;
+nat;cassia_oil;produit naturel;N451K;20;Cannelle chine essence extra
+nat;cassia_oil;produit naturel;N037K;20;Cannelle chine essence
+mol;cinnamaldehyde;naturelle;F010K;10;
+mol;cinnamaldehyde;non précisée;F053K;10;
+mol;cinnamic_acid;naturelle;N462K;20;
+nat;cinnamon_ceylon;produit naturel;N446K;20;Cinnamon bark oil (60% Cinnamaldehyde)
+nat;cinnamon_ceylon;produit naturel;N490K;20;HE CANNELLE CEYLAN LOW SAFROL
+mol;cinnamyl_alcohol;non précisée;P001K;100;
+mol;citral;naturelle;N252K;20;
+mol;citral;non précisée;S052K;20;
+mol;citronellal;non précisée;S343K;4;
+nat;lemongrass_oil;produit naturel;N358K;2;
+mol;citronellol;non précisée;S414K;4;
+mol;p_cresol;non précisée;S016K;0.6;
+mol;p_cresol;naturelle;N472K;60;
+mol;gamma_decalactone;naturelle;F050K;20;
+mol;gamma_decalactone;non précisée;S065K;20;
+mol;delta_decalactone;naturelle;N006K;10;
+mol;delta_decalactone;non précisée;S062K;15;
+mol;decanoic_acid;non précisée;F002K;20;
+mol;decanoic_acid;naturelle;N223K;20;
+mol;diacetyl;naturelle;F015K;60;
+mol;dihydrocoumarin;naturelle;N398K;20;
+mol;dihydrocoumarin;non précisée;S064K;20;
+mol;melonal;naturelle;N419K;10;
+mol;gamma_dodecalactone;naturelle;N401K;40;
+mol;gamma_dodecalactone;non précisée;S067K;40;
+mol;delta_dodecalactone;non précisée;N362K;40;Delta dodecalactonenaturel
+mol;delta_dodecalactone;non précisée;S066K;40;Dodecalactonedelta
+mol;ethyl_acetate;naturelle;F151K;100;
+mol;ethyl_acetate;non précisée;F152K;100;
+mol;ethyl_butyrate;naturelle;F049K;80;
+mol;ethyl_butyrate;non précisée;F067K;80;
+mol;ethyl_decanoate;naturelle;N289K;80;
+mol;ethyl_decanoate;non précisée;S478K;80;
+mol;ethylguaiacol_4;naturelle;N307K;4;
+mol;ethylguaiacol_4;non précisée;S329K;4;
+mol;ethyl_hexanoate;naturelle;N044K;80;
+mol;ethyl_hexanoate;non précisée;S379K;80;
+mol;ethyl_laurate;naturelle;N290K;80;
+mol;ethyl_laurate;non précisée;S113K;80;
+mol;ethyl_phenylacetate;naturelle;N431K;20;
+mol;ethyl_phenylacetate;non précisée;S035K;20;
+mol;ethyl_vanillin;non précisée;P024K;20;
+nat;eucalyptus_oil;produit naturel;N420K;20;
+mol;eugenol;naturelle;N222K;20;
+mol;isoeugenol;naturelle;N457K;20;
+mol;isoeugenol;non précisée;S069K;20;
+nat;fenugreek;produit naturel;N108K;40;
+mol;furfurylthiol;non précisée;F301K;0.1;
+mol;furfurylthiol;naturelle;F326K;0.1;
+mol;geraniol;non précisée;S415K;6;
+nat;geranium_oil;produit naturel;N303K;8;
+mol;geranyl_acetate;naturelle;N210K;20;
+nat;ginger_oil;produit naturel;N115K;1;
+nat;ginger_oleoresin;produit naturel;N402K;40;Ginger supersoluble
+nat;ginger_oleoresin;produit naturel;N484K;20;Oléorésine de gingembre
+mol;guaiacol;naturelle;F014K;2;
+mol;heptanal;naturelle;N474K;20;
+mol;heptanone_2;naturelle;N263K;50;
+mol;heptanone_2;non précisée;S089K;50;
+mol;gamma_hexalactone;naturelle;N410K;100;
+mol;gamma_hexalactone;non précisée;S105K;100;
+mol;hexanal;non précisée;F004K;20;
+mol;hexanal;naturelle;F134K;20;
+mol;hexanoic_acid;non précisée;F001K;20;
+mol;hexanoic_acid;naturelle;N336K;20;
+mol;cis_3_hexenol;naturelle;N314K;20;
+mol;trans_2_hexenyl_acetate;non précisée;S337K;20;
+mol;hexyl_acetate;naturelle;N191K;4;
+mol;hexyl_acetate;non précisée;S340K;4;
+mol;raspberry_ketone;non précisée;P011K;20;
+mol;raspberry_ketone;naturelle;P095K;20;
+mol;indole;naturelle;N371K;2;
+mol;indole;non précisée;P008K;2;
+mol;beta_ionone;naturelle;N413K;20;
+mol;beta_ionone;non précisée;S108K;20;
+nat;lavender_oil;produit naturel;N473K;2;
+nat;lemon_zest;produit naturel;F197K;20;
+mol;limonene;non précisée;S116K;40;
+mol;linalool;naturelle;N211K;10;
+mol;linalool;non précisée;S114K;10;
+mol;linalyl_acetate;naturelle;N060K;30;
+mol;linalyl_acetate;non précisée;S387K;30;
+mol;maltol;naturelle;P019K;50;
+mol;maltol;non précisée;P037K;50;
+mol;menthol;naturelle;P113K;20;
+mol;anisaldehyde;naturelle;N011K;20;
+mol;anisaldehyde;non précisée;S030K;20;
+mol;methyl_anthranilate;naturelle;N151K;50;
+mol;methyl_anthranilate;non précisée;S232K;50;
+mol;styrallyl_acetate;naturelle;N441K;20;
+mol;styrallyl_acetate;non précisée;S176K;20;
+mol;isovaleraldehyde;non précisée;F037K;30;
+mol;isovaleraldehyde;naturelle;F084K;30;
+mol;methyl_cinnamate;non précisée;P018K;10;
+mol;methyl_cinnamate;naturelle;P029K;10;
+mol;mcp;naturelle;P020K;200;
+mol;mcp;non précisée;P040K;200;
+mol;methyl_salicylate;naturelle;N054K;20;
+mol;dms;non précisée;C009K;2;
+mol;dms;naturelle;C010K;2;
+mol;methional;non précisée;F324K;0.2;
+mol;methional;naturelle;F393K;4;
+mol;naringin;non précisée;N470K;100;
+mol;nerol;non précisée;S416K;20;
+nat;neroli_oil;produit naturel;N324K;10;
+mol;nerolidol;naturelle;N050K;10;
+mol;nerolidol;non précisée;S439K;10;
+mol;nonadienol;non précisée;S545K;12;
+mol;gamma_nonalactone;non précisée;N396K;14;Gamma nonalactonenaturel
+mol;gamma_nonalactone;non précisée;S353K;14;Nonalactonegamma
+mol;nonanone_2;naturelle;N117K;50;
+nat;nutmeg_oil;produit naturel;N482K;20;
+nat;oak_chips;produit naturel;N395K;3000;
+mol;gamma_octalactone;naturelle;N009K;10;
+mol;gamma_octalactone;non précisée;S131K;10;
+mol;octanoic_acid;naturelle;N079K;75;
+mol;octanoic_acid;non précisée;S363K;75;
+mol;octenol;naturelle;N463K;2;
+mol;octenol;non précisée;S136K;2;
+mol;oleic_acid;naturelle;F092K;100;
+nat;orange_flower;produit naturel;N347K;4;
+nat;orange_deterpenated;produit naturel;N418K;20;
+mol;limonene;naturelle;F161K;40;
+nat;orange_oil;produit naturel;F113K;20;Orange ess floride type = alcool
+nat;orange_oil;produit naturel;F147K;40;Orange specialite
+nat;orange_oil;produit naturel;N136K;40;Orange oil
+nat;orange_oil;produit naturel;N447K;40;Orange oil spain
+nat;orange_oil;produit naturel;N448K;20;Huille essentielle orange pera bresil
+mol;geraniol;naturelle;N072K;6;
+mol;pentanedione_23;naturelle;N316K;30;
+nat;peppermint_oil;produit naturel;N085K;2;
+mol;phenethyl_acetate;naturelle;N119K;20;
+mol;phenethyl_acetate;non précisée;S158K;20;
+mol;phenylacetic_acid;non précisée;P004K;200;
+mol;phenylacetic_acid;naturelle;P078K;200;
+mol;alpha_pinene;naturelle;N374K;200;
+mol;alpha_pinene;non précisée;S083K;200;
+mol;piperonal;non précisée;P031K;60;
+mol;piperonal;naturelle;P077K;60;
+mol;propionic_acid;naturelle;N241K;500;
+mol;propionic_acid;non précisée;S345K;500;
+nat;saffron;produit naturel;N443K;40;
+nat;sandalwood_oil;produit naturel;N310K;2;
+nat;tolu_balsam;produit naturel;N019K;40;
+mol;vanillin;naturelle;P015K;60;
+mol;vanillin;non précisée;P026K;60;Vanilline
+mol;vanillin;non précisée;S544K;60;Ex clove vanillin
+mol;veratraldehyde;non précisée;P028K;150;
+mol;veratraldehyde;naturelle;P126K;150;
+mol;acetylpyrazine;naturelle;F403K;20;
+mol;isopropylmethoxypyrazine;non précisée;F244K;0.2;
+mol;decadienal;non précisée;C004K;20;
+mol;decadienal;naturelle;C012K;20;
+mol;cis_3_hexenyl_acetate;naturelle;N092K;4;
+mol;cis_3_hexenyl_acetate;non précisée;S338K;4;
+mol;furaneol;non précisée;F059K;400;
+mol;furaneol;naturelle;F062K;400;Furaneol naturel 15% - PG
+mol;furaneol;naturelle;N442K;400;15% in EtoH furanone natural
+mol;furaneol;naturelle;C002K;;Furaneol naturel
+mol;thiomenthone;non précisée;F309K;0.06;
+mol;thiomenthone;naturelle;F325K;0.06;
+mol;methylfuranthiol;non précisée;F322K;0.02;
+mol;methylfuranthiol;naturelle;F392K;0.6;5%.-alc nat.2-methyl-3-furanthiol
+mol;methylfuranthiol;naturelle;C015K;0.4;2-Methyl-3-Furanthiol Naturel
+mol;dimethylpyrazine_26;non précisée;F218K;30;
+mol;delta_octalactone;non précisée;S132K;100;
+mol;o_thiocresol;non précisée;F346K;0.2;
+mol;beta_damascone;non précisée;S521K;4;
+mol;acetylpyrazine;non précisée;F201K;20;
+mol;acetylpyridine_2;non précisée;F045K;20;
+mol;dmts;non précisée;C011K;0.02;
+mol;furfurylpyrrole;non précisée;S444K;2;
+mol;cis_4_heptenal;non précisée;S538K;20;
+mol;methyl_thiobutyrate;non précisée;F300K;0.2;
+mol;methyl_thiobutyrate;naturelle;F364K;0.2;
+mol;butylidenephthalide;non précisée;S130K;10;
+mol;nonadienal;non précisée;S125K;12;
+mol;safranal;non précisée;C005K;0.6;
+mol;beta_damascenone;naturelle;C014K;4;Natural Beta Damascenone
+mol;beta_damascenone;naturelle;N479K;80;NATURAL DAMASCENONE BETA 1% ETHANOL
+mol;beta_damascenone;non précisée;S057K;4;
+mol;cis_6_nonenol;non précisée;S530K;20;
+mol;ethyl_crotonate;non précisée;S042K;5;
+mol;ethyl_maltol;non précisée;P027K;20;
+mol;dmds;non précisée;F348K;0.4;
+mol;isopropylmethylthiazole;non précisée;N408K;2;2-isopropyl-4-methyl thiazol 1%-alc
+mol;isopropylmethylthiazole;non précisée;F303K;0.06;2-isopropyl 4-methyl thiazole
+mol;sotolon;naturelle;C017K;20;
+mol;massoia_lactone;non précisée;N262K;3;
+mol;filbertone;naturelle;N381K;8;1%-triac. Nat filbertone
+mol;filbertone;naturelle;N412K;8;1% in EtoH-filbertone nat
+mol;filbertone;naturelle;N481K;0.08;Filbertone naturelle pure
+mol;filbertone;non précisée;S012K;0.08;
+mol;methyl_thioacetate;non précisée;F355K;0.2;
+mol;thialdine;naturelle;N438K;0.8;
+nat;green_tea;produit naturel;N161K;40;Thé vert resinoide extra
+nat;green_tea;produit naturel;N373K;3000;Thé vert infusion
+nat;mate;produit naturel;N127K;40;
+nat;tonka;produit naturel;N166K;20;
+nat;patchouli;produit naturel;N359;1;
+nat;matcha;produit naturel;N488K;1000;
+mol;ethyl_crotonate;naturelle;N504K;;
+mol;ethyl_formate;naturelle;N455K;100;
+nat;cocoa_butter;produit naturel;N487K;1000;
+mol;acetanisole;non précisée;P003K;40;
+mol;isoamyl_hexanoate;naturelle;N040K;40;
+mol;isoamyl_phenylacetate;naturelle;N391K;20;
+mol;isoamyl_phenylacetate;non précisée;S036K;20;
+mol;isoamyl_isovalerate;non précisée;S312K;40;
+mol;benzyl_benzoate;naturelle;N461K;15;
+mol;benzyl_benzoate;non précisée;S013K;15;
+mol;benzyl_butyrate;non précisée;F081K;10;
+mol;benzyl_phenylacetate;non précisée;S140K;40;
+mol;bornyl_acetate;non précisée;S528K;20;
+nat;butter_extract;produit naturel;N486K;250;ALL Extrait de beurre distillé CO2
+nat;butter_extract;produit naturel;P125K;2000;ALL EXTRAIT DE BEURRE NATUREL
+mol;butyl_acetate;naturelle;N133K;100;
+mol;isobutyl_acetate;non précisée;S333K;100;
+mol;butanol;non précisée;S200K;100;
+mol;isobutyl_isobutyrate;non précisée;S430K;100;
+mol;butyl_lactate;non précisée;S110K;80;
+mol;isobutyl_phenylacetate;non précisée;S432K;20;
+mol;butyl_isovalerate;non précisée;S008K;40;
+nat;clary_sage;produit naturel;N156K;10;
+nat;clove_leaf;produit naturel;N228K;20;
+mol;diethyl_succinate;non précisée;S327K;200;
+mol;dimethyl_succinate;non précisée;S129K;80;
+mol;ethyl_benzoate;naturelle;F406K;4;
+mol;ethyl_benzoate;non précisée;S141K;4;
+mol;ethyl_lactate;naturelle;F023K;300;
+mol;ethyl_lactate;non précisée;S115K;300;
+mol;ethyl_myristate;naturelle;N287K;200;
+mol;ethyl_nonanoate;non précisée;S142K;80;
+mol;ethyl_nonanoate;naturelle;N036K;80;
+mol;ethyl_octanoate;naturelle;N311K;80;
+mol;ethyl_octanoate;non précisée;S135K;80;
+mol;ethyl_palmitate;naturelle;N353K;120;
+mol;ethyl_palmitate;non précisée;S139K;120;
+mol;farnesol;non précisée;S195K;20;
+mol;fenchone;naturelle;N070;8;
+mol;furfuryl_acetate;non précisée;F040K;20;
+mol;hexanol;naturelle;N315K;40;
+mol;hexanol;non précisée;S002K;40;
+nat;juniper;produit naturel;N452K;20;
+mol;styrallyl_propionate;non précisée;S526K;20;
+mol;methylbutanal_2;non précisée;F133K;40;
+mol;methyl_butyrate;non précisée;S342K;30;
+mol;methylbutyric_acid_2;non précisée;S361K;400;
+mol;methyl_laurate;non précisée;S109;100;
+mol;methyl_phenylacetate;non précisée;S462K;80;
+mol;octyl_acetate;non précisée;S364K;10;
+mol;octyl_butyrate;naturelle;N063K;100;
+mol;palmitic_acid;naturelle;P072K;400;
+mol;propyl_acetate;naturelle;N181K;30;
+mol;propyl_acetate;non précisée;S038K;30;
+mol;propanol;naturelle;N215K;300;
+mol;isopropanol;non précisée;S157K;2000;
+mol;propyl_butyrate;naturelle;N460K;30;
+mol;gamma_undecalactone;naturelle;N417K;30;
+mol;gamma_undecalactone;non précisée;S172K;30;
+mol;pentanal;non précisée;F006K;20;
+mol;valeric_acid;non précisée;S365K;400;
+mol;isovaleric_acid;non précisée;F175K;400;
+mol;isovaleric_acid;naturelle;F069K;400;
+mol;syringol;non précisée;P104K;80;
+mol;syringol;naturelle;N483K;80;
+mol;beta_sinensal;naturelle;F184K;2;
+mol;ethyl_cyclopentenolone;non précisée;S092K;50;
+mol;maple_furanone;naturelle;C016K;60;
+mol;diethylpyrazine_23;non précisée;F211K;0.4;
+mol;acetylfuran_2;non précisée;F110K;300;
+mol;acetylfuran_2;naturelle;F411K;300;
+mol;hexanedione_34;non précisée;F191K;60;
+mol;acetyl_ethylpyrazine;non précisée;F221K;9;
+mol;acetyl_methylpyrazine;non précisée;F222K;10;
+mol;acetyl_dimethylpyrazine;non précisée;F237K;6;
+mol;undecylenic_acid;naturelle;N433K;100;
+mol;ethyl_dimethylpyrazine;non précisée;F208K;20;
+mol;tetrahydrothiophenone_3;non précisée;F306K;20;
+mol;ethyl_methylpyrazine;non précisée;F200K;7;
+mol;isobutylmethoxypyrazine;non précisée;F202K;0.1;
+mol;methoxy_methylpyrazine;non précisée;F217K;4;
+mol;methoxypyrazine;non précisée;F226K;10;
+mol;dimethylthiazole_45;non précisée;F335K;2;
+mol;gamma_butyrolactone;non précisée;S021K;1000;
+mol;methoxy_methylpyrazine;naturelle;F413K;4;
+mol;methylpyrazine;non précisée;F206K;200;
+mol;methylvinylthiazole;non précisée;F320K;2;
+mol;tetrahydroquinoxaline;non précisée;F224K;6;
+mol;trimethylthiazole;non précisée;F308K;4;
+mol;methylthio_methylpyrazine;non précisée;F219K;8;
+mol;acetylthiazole;non précisée;F334K;20;
+mol;heptanoic_acid;naturelle;N453K;100;
+mol;heptanoic_acid;non précisée;S487K;200;
+mol;delta_nonalactone;non précisée;S467K;30;
+mol;methyl_methylthiofuran;non précisée;F361K;1;
+mol;methyltetrahydrofuranone;non précisée;N491K;450;
+mol;tridecanone_2;non précisée;S169K;50;
+mol;ethylpyridine_3;non précisée;F100K;0.4;
+mol;cis_3_hexenyl_butyrate;non précisée;S339K;4;
+mol;trimethyldioxolane;non précisée;F074K;40;
+mol;dimethyl_dihydroxy_dithiane;non précisée;F379K;0.8;
+mol;trithioacetone;non précisée;F378K;0.6;
+mol;methyltetrahydrothiophenone;non précisée;F352K;0.4;
+mol;octanol_3;non précisée;S133K;4;
+mol;delta_tetradecalactone;non précisée;S549K;60;
+mol;xylenol_25;non précisée;P109K;20;
+mol;methylthiobutanol;non précisée;F354K;3;
+mol;propionylthiazole;non précisée;F356K;0.6;
+mol;homofuraneol;non précisée;N421K;160;2-ethyl-5-methyl-4-hydroxy-3(2h)furanone
+mol;homofuraneol;non précisée;S153K;160;2-ethyl-4-hydroxy-5-methyl-3(2h)furanone
+mol;sotolon;non précisée;N424K;10;1% alc 4.5-dimethyl-3-hydroxy-2(5)-furanone
+mol;sotolon;non précisée;F365K;20;4,5 dimethl 3 hydroxy 2,5 dihydro furan 2 one
+mol;diphenyl_oxide;non précisée;S532K;2;
+mol;ethyl_furfurylthiopropionate;non précisée;F313K;2;
+mol;pentadecanone_2;non précisée;S485K;60;
+mol;milk_lactone;non précisée;S550K;40;
+mol;linalool_oxide;non précisée;S077K;60;
+nat;litsea;produit naturel;N084K;2;
+mol;amyl_acetate;non précisée;S543;20;
+nat;sweet_vernal_grass;produit naturel;N106K;20;Flouve absolu extra
+nat;sweet_vernal_grass;produit naturel;N195K;20;Flouve essence speciale 89,3°
+nat;coffee;produit naturel;N157K;1000;Coffee oil real café
+nat;coffee;produit naturel;N242K;2500;café alcoolat 70°
+nat;coffee;produit naturel;N280K;40;Coffee co2 expresso
+nat;coffee;produit naturel;N456K;40;Absolue café salvador
+nat;hazelnut;produit naturel;N193K;5000;ALL- noisette infusion 70% alcool
+nat;hazelnut;produit naturel;N207K;5000;ALL- noisette alcoolat 75°
+nat;hazelnut;produit naturel;N464K;5000;ALL- noisette infusion bio
+nat;honey;produit naturel;N203K;5000;Miel alcoolat 55%
+nat;honey;produit naturel;N440K;10000;Organic honey distillate
+nat;honey;produit naturel;N388K;;Miel arome 55% etoh
+nat;cocoa;produit naturel;N276K;1000;Cacao poudre alcoolat 50%
+nat;cocoa;produit naturel;N277K;1000;Cacao feves infusion 70%
+nat;cocoa;produit naturel;N278K;1000;Cacao feves alcoolat 70%
+nat;cocoa;produit naturel;N480K;1000;Extrait de beurre de cacao CO2-se
+nat;smoked_paprika;produit naturel;N411K;150;
+nat;tamarind;produit naturel;N467K;4000;
+mol;trimethylpyrazine;naturelle;F242K;3;
+nat;almond_alcoholate;produit naturel;N475;1200;ALL AMANDÉ alcoolat concentré BIO
+nat;almond_alcoholate;produit naturel;N393K;5000;ALL - AMANDÉ douce alcoolat
+nat;almond_alcoholate;produit naturel;N471K;;All - AMANDÉ bio alcoolat
+mol;ethyl_salicylate;non précisée;S548K;4;
+nat;cinnamon_oleoresin;produit naturel;N485K;20;
+nat;yeast_umami;produit naturel;P123;0.1;
+nat;stevia;produit naturel;P124K;40;EXTRAIT DE STEVIA - NSF-13
+nat;stevia;produit naturel;N478K;40;Extrait de stevia
+mol;cis_4_heptenal;naturelle;N435K;20;
+mol;furfural;naturelle;N192K;;
+nat;maraschino_cherry;produit naturel;N090K;500;
+mol;tartaric_acid;non précisée;I184K;1000;
+nat;rum_ether;produit naturel;N012K;;

@@ -174,4 +174,5 @@ python scripts/05_build_cards.py  # index.html, aromacards.apkg, data/cartes.jso
 | `data/naturels_ref.csv`, `data/naturels_wiki.csv` | produits naturels, marqueurs, pages Wikipédia consultées |
 | `data/revue_manuelle.csv`, `data/overrides.csv` | décisions manuelles de vérification, avec leur justification |
 | `data/usages.csv` | usages et origine des notes |
+| `data/identifiants.csv` | identifiants des molécules et produits évalués, par forme (et version quand il y en a plusieurs) |
 | `fonts/` | police du titre : [Young Serif](https://github.com/noirblancrouge/YoungSerif), réduite aux lettres de « AromaCards » (licence SIL OFL 1.1) |

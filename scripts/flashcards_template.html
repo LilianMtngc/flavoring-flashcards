@@ -290,6 +290,8 @@ h2{font-size:24px;margin:0 0 2px;font-weight:650;letter-spacing:-.01em}
 .desc span.b{background:var(--accent-bg);border-color:var(--accent-line);color:var(--accent)}
 .desc .addchip{width:24px;height:24px;font-size:15px;color:var(--fg-3)}
 /* descripteurs personnels : sous les descripteurs communs, colorés, modifiables */
+.ids{font-size:13px;line-height:1.6;margin-top:8px;padding:6px 10px;border-left:3px solid var(--accent);background:var(--surface-2);border-radius:6px;color:var(--fg-2)}
+.ids code{font:600 12.5px ui-monospace,Consolas,monospace;color:var(--fg)}
 .pdesc{margin-top:10px;padding-top:8px;border-top:1px dashed var(--line-2)}
 .pdlabel{display:block;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--fg-3);margin-bottom:5px}
 .desc .pd{font:inherit;font-size:13px;border:1px solid var(--c);background:color-mix(in srgb,var(--c) 16%,var(--surface));color:var(--fg);border-radius:999px;padding:1px 10px;cursor:pointer}
@@ -490,6 +492,12 @@ const tagsOf = id => (T.cards[id] || []).filter(t => T.defs[t]);
 const tagByName = n => Object.keys(T.defs).find(id => norm(T.defs[id].nom) === norm(n));
 const nextColor = () => COLORS.find(c => !Object.values(T.defs).some(d => d.couleur === c)) || COLORS[Object.keys(T.defs).length % COLORS.length];
 let tagFormFor = null;  // carte dont le formulaire « + Étiquette » est ouvert
+// étiquettes spéciales (nom exact) : activées comme filtre, elles affichent les identifiants sous les dosages.
+// PROVA ne garde que les cartes qui ont un identifiant (prioritaire) ; PROUTS garde toutes les cartes.
+// Elles ne filtrent pas comme une étiquette ordinaire.
+const SPECIAL = ["PROVA", "PROUTS"];
+const idMode = () => { const n = [...filt.tags].map(id => T.defs[id] && T.defs[id].nom); return n.includes("PROVA") ? "prova" : n.includes("PROUTS") ? "prouts" : null; };
+const idsOf = c => (c.formes || []).flatMap(f => f.ids || []);
 
 // descripteurs personnels : propres à chaque carte, enregistrés dans ce navigateur (distincts des étiquettes)
 const PKEY = "flavoring-flashcards-descr-v1";
@@ -545,10 +553,12 @@ function matches(c){
   if (olfHits.length && !(filt.olfMode === "et" ? olfHits.every(Boolean) : olfHits.some(Boolean))) return false;
   if (filt.defaut && !c.defaut) return false;
   if (filt.cmr && !c.cmr) return false;
-  if (filt.tags.size && !tagsOf(c.id).some(t => filt.tags.has(t))) return false;
+  const tagF = [...filt.tags].filter(id => !SPECIAL.includes(T.defs[id] && T.defs[id].nom));
+  if (tagF.length && !tagsOf(c.id).some(t => tagF.includes(t))) return false;
+  if (c.type !== "sosie" && idMode() === "prova" && !idsOf(c).length) return false;
   if (filt.famille && c.famille !== filt.famille) return false;
   if (filt.q){
-    const hay = norm([c.titre, c.iupac, c.cas, c.famille, c.descripteurs.join(" "), pdOf(c.id).map(d => d.nom).join(" "), c.structures.map(s => s.nom).join(" "), c.marqueur_de.map(p => p.nom).join(" "), (c.membres || []).map(m => m.titre).join(" "), tagsOf(c.id).map(t => T.defs[t].nom).join(" ")].join(" "));
+    const hay = norm([c.titre, c.iupac, c.cas, c.famille, c.descripteurs.join(" "), idMode() ? idsOf(c).map(x => x.code).join(" ") : "", pdOf(c.id).map(d => d.nom).join(" "), c.structures.map(s => s.nom).join(" "), c.marqueur_de.map(p => p.nom).join(" "), (c.membres || []).map(m => m.titre).join(" "), tagsOf(c.id).map(t => T.defs[t].nom).join(" ")].join(" "));
     if (!norm(filt.q).split(/\s+/).every(t => hay.includes(t))) return false;
   }
   return true;
@@ -733,6 +743,15 @@ function backHTML(c){
   else if (F.length > 1 && new Set(F.map(f => f.descripteurs.join("|"))).size === 1) formes = "Dosage : " + F.map(f => `${label(f).toLowerCase()} ${ppm(f) || "non renseigné"}`).join(" · ");
   else if (F.length > 1) formes = F.map(f => `<b>${esc(label(f))}</b>${ppm(f) ? " · " + ppm(f) : ""} : ${esc(f.descripteurs.join(", ").toLowerCase()) || "—"}`).join("<br>");
   formes = formes ? `<div class="note" style="margin-top:6px">${formes}</div>` : "";
+  // identifiants (étiquettes PROVA / PROUTS) : la forme, et la version si plusieurs codes partagent une forme
+  let ids = "";
+  if (idMode()){
+    const withIds = F.filter(f => f.ids && f.ids.length), n = withIds.reduce((k, f) => k + f.ids.length, 0);
+    const one = x => `<code>${esc(x.code)}</code>${x.version ? ` (${esc(x.version)}${x.ppm ? " · " + esc(x.ppm.replace(".", ",")) + " ppm" : ""})` : ""}`;
+    ids = !n ? `<div class="ids">Aucun identifiant</div>`
+      : n === 1 ? `<div class="ids">Identifiant : ${one(withIds[0].ids[0])}${withIds.length && F.length > 1 ? ` · ${esc(label(withIds[0]).toLowerCase())}` : ""}</div>`
+      : `<div class="ids">${withIds.map(f => `<b>${esc(label(f))}</b> : ${f.ids.map(one).join(" · ")}`).join("<br>")}</div>`;
+  }
   const alias = c.marqueur_de.length ? `<p class="alias">Marqueur de : <b>${esc([...new Set(c.marqueur_de.map(p => p.nom))].join(" · "))}</b></p>` : "";
   const usage = `<div class="usage${c.brune ? " brown" : ""}">${esc(c.usages)}${c.origine ? `<span class="orig">Origine : ${esc(c.origine)}</span>` : ""}</div>`;
   const a = (text, url) => url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(text)}</a>` : esc(text);
@@ -754,7 +773,7 @@ function backHTML(c){
   return `<div class="back"><div class="bl">${structsHTML(c, "hero", c.type === "nat" ? s => s.nom : null)}
     <h2>${esc(c.titre)}</h2><p class="sub">${sub}</p>${alias}<div>${badges}</div><div class="meta">${meta}</div>${olfLine(c)}${secuHTML(c)}${tagBoxHTML(c)}
     ${verif}</div>
-    <div class="br"><div class="sec"><h3>Descripteurs${c.type === "theo" ? " · " + c.formes[0].forme : ""}</h3>${desc}${formes}${pdHTML(c)}</div>
+    <div class="br"><div class="sec"><h3>Descripteurs${c.type === "theo" ? " · " + c.formes[0].forme : ""}</h3>${desc}${formes}${ids}${pdHTML(c)}</div>
     ${sos}
     <div class="sec"><h3>Usages · synthèse IA</h3>${usage}</div>
     ${src.length ? `<div class="sec"><h3>Sources</h3><ul class="srcs">${src.join("")}</ul></div>` : ""}
@@ -974,7 +993,8 @@ function submitTagForm(form){
   saveT();
   if (kind === "add") tagFormFor = null;
   else $("#tagedit").innerHTML = "";
-  renderTagFilters(); renderActive(); render();
+  renderTagFilters();
+  if (kind === "edit") rebuild(); else { renderActive(); render(); }  // un renommage peut (dés)activer PROVA / PROUTS
   if (kind === "add") focusCard();
 }
 document.addEventListener("click", e => {
