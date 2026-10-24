@@ -30,7 +30,8 @@ Quatre catégories :
   - Filtres : type de carte, complexité, progression (pas encore vues, à revoir, je sais, à réviser aujourd'hui),
     défauts, CMR / CIRC, famille chimique, familles olfactives (dont notes brunes et sensations en bouche), étiquettes.
     Les familles olfactives et les étiquettes se plient et se déplient. Plusieurs familles se combinent en **OU**
-    (au moins une) ou en **ET** (toutes à la fois).
+    (au moins une) ou en **ET** (toutes à la fois). « Sensations en bouche » se sélectionne en entier (toutes les sensations)
+    ou se déplie pour choisir une sensation précise.
     Les filtres actifs s'affichent en pastilles, effaçables d'un clic.
   - **Recto** au choix (en haut à droite de la carte) : la structure (par défaut), le nom (retrouver la structure parmi 4)
     ou les descripteurs (retrouver la molécule parmi 4 ; les leurres sont les sosies et les molécules aux descripteurs proches).

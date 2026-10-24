@@ -78,7 +78,15 @@ h1.brand .c{color:var(--brand-cards)}
 .seg button{font:inherit;font-size:12.5px;border:0;background:none;color:var(--fg-3);padding:2px 7px;border-radius:6px;cursor:pointer}
 .seg button[aria-pressed="true"]{background:var(--surface-2);color:var(--fg);font-weight:600}
 .seg span{margin-left:4px}
-.fsub{flex-basis:100%;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--fg-3);margin-top:6px}
+.fsubrow{flex-basis:100%;display:flex;align-items:center;gap:4px;margin-top:4px}
+.subfold{display:inline-flex;align-items:center;gap:5px;height:26px;padding:0 9px;font:inherit;font-size:12px;border:1px solid var(--line-2);border-radius:999px;background:none;color:var(--fg-3);cursor:pointer}
+.subfold:hover{color:var(--fg-2);border-color:var(--fg-3)}
+.subfold::after{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(-45deg);transition:transform .15s}
+.subfold[aria-expanded="true"]::after{transform:rotate(45deg);margin-top:-3px}
+.subfold .fn{background:var(--accent);color:var(--surface);border-radius:999px;font-size:10.5px;padding:0 6px;line-height:16px}
+.subfold .fn:empty{display:none}
+.fsubchips{flex-basis:100%;margin:0 0 2px 12px;padding-left:10px;border-left:2px solid var(--line-2)}
+.fsubchips[hidden]{display:none}
 .pnote{font-size:12px;color:var(--fg-3)}
 .fpanel-foot{grid-column:1/-1;display:flex;justify-content:flex-end;align-items:center;border-top:1px solid var(--line);padding-top:10px;font-size:13px}
 .active{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 14px;font-size:12.5px}
@@ -443,8 +451,10 @@ const store = {
   set(v){ try { localStorage.setItem(KEY, JSON.stringify(v)); } catch(e){} }
 };
 let progress = store.get();
-const filt = {niveau:new Set(), type:new Set(), etat:new Set(), tags:new Set(), olf:new Set(), brune:false, defaut:false, cmr:false, famille:"", q:"",
+const filt = {niveau:new Set(), type:new Set(), etat:new Set(), tags:new Set(), olf:new Set(), olfg:new Set(), brune:false, defaut:false, cmr:false, famille:"", q:"",
   olfMode: (() => { try { return localStorage.getItem("flavoring-flashcards-olfmode") === "et" ? "et" : "ou"; } catch(e){ return "ou"; } })()};
+
+const olfCount = () => filt.olf.size + filt.olfg.size + filt.brune;  // familles, groupes et notes brunes sélectionnés
 
 // répétition espacée (boîtes de Leitner) : « Je sais » repousse la carte (1, 3, 7, 14, 30, 60 jours), « À revoir » la garde pour aujourd'hui
 const SKEY = "flavoring-flashcards-srs-v1", INTERVALS = [0, 1, 3, 7, 14, 30, 60];
@@ -500,6 +510,7 @@ function matches(c){
   // familles olfactives (« Notes brunes » comprise) : OU = au moins une famille sélectionnée, ET = toutes
   const olfHits = [...filt.olf].map(f => c.olf.includes(f));
   if (filt.brune) olfHits.push(!!c.brune);
+  filt.olfg.forEach(g => olfHits.push(c.olf.some(f => DATA.olfg[f] === g)));  // groupe entier : au moins une de ses sous-familles
   if (olfHits.length && !(filt.olfMode === "et" ? olfHits.every(Boolean) : olfHits.some(Boolean))) return false;
   if (filt.defaut && !c.defaut) return false;
   if (filt.cmr && !c.cmr) return false;
@@ -793,7 +804,9 @@ const LABELS = {type: {mol: "Molécules", nat: "Produits naturels", theo: "Théo
 const olfChip = f => `<button class="chip" data-f="olf" data-v="${esc(f)}" aria-pressed="false">${esc(f)}</button>`;
 const olfGroups = [...new Set(Object.values(DATA.olfg))];
 $("#olffilters").insertAdjacentHTML("beforeend", DATA.olf.filter(f => !DATA.olfg[f]).map(olfChip).join("")
-  + olfGroups.map(g => `<span class="fsub">${esc(g)}</span>` + DATA.olf.filter(f => DATA.olfg[f] === g).map(olfChip).join("")).join(""));
+  + olfGroups.map((g, k) => `<div class="fsubrow"><button class="chip" data-f="olfg" data-v="${esc(g)}" aria-pressed="false" title="Toutes les sensations : cartes ayant au moins une sensation en bouche">${esc(g)}</button>`
+    + `<button class="subfold" data-fold="groupe:${esc(g)}" aria-expanded="false" aria-controls="olfsub${k}" title="Détailler pour affiner" aria-label="Détailler : ${esc(g)}"><span class="fn" data-subn="${esc(g)}"></span></button></div>`
+    + `<div class="fchips fsubchips" id="olfsub${k}">${DATA.olf.filter(f => DATA.olfg[f] === g).map(olfChip).join("")}</div>`).join(""));
 // sections repliables : fermées par défaut, état mémorisé dans ce navigateur
 const FKEY = "flavoring-flashcards-plis";
 let folds = (() => { try { return JSON.parse(localStorage.getItem(FKEY)) || {}; } catch(e){ return {}; } })();
@@ -812,7 +825,8 @@ function syncChips(){
   $("#famille").value = filt.famille;
   document.querySelectorAll("[data-olfm]").forEach(b => b.setAttribute("aria-pressed", b.dataset.olfm === filt.olfMode));
   $("#olfmhint").textContent = filt.olfMode === "et" ? "toutes les familles" : "au moins une famille";
-  $("#olfn").textContent = filt.olf.size + filt.brune || "";
+  $("#olfn").textContent = olfCount() || "";
+  document.querySelectorAll("[data-subn]").forEach(s => s.textContent = [...filt.olf].filter(f => DATA.olfg[f] === s.dataset.subn).length || "");
   $("#tagn").textContent = filt.tags.size || "";
   renderTagFilters();
 }
@@ -822,13 +836,14 @@ function renderActive(){
   filt.niveau.forEach(v => items.push(["Complexité : " + v, () => filt.niveau.delete(v)]));
   filt.etat.forEach(v => items.push([LABELS.etat[v], () => filt.etat.delete(v)]));
   if (filt.brune) items.push(["Notes brunes", () => filt.brune = false]);
+  filt.olfg.forEach(v => items.push([v + " (toutes)", () => filt.olfg.delete(v)]));
   filt.olf.forEach(v => items.push([v, () => filt.olf.delete(v)]));
   if (filt.defaut) items.push(["Défauts", () => filt.defaut = false]);
   if (filt.cmr) items.push(["CMR / CIRC", () => filt.cmr = false]);
   if (filt.famille) items.push([cap(filt.famille), () => filt.famille = ""]);
   filt.tags.forEach(id => T.defs[id] && items.push([T.defs[id].nom, () => filt.tags.delete(id), T.defs[id].couleur]));
   removers = items.map(i => i[1]);
-  const etNote = filt.olfMode === "et" && filt.olf.size + filt.brune > 1 ? `<span class="pnote">Familles : toutes à la fois (ET)</span>` : "";
+  const etNote = filt.olfMode === "et" && olfCount() > 1 ? `<span class="pnote">Familles : toutes à la fois (ET)</span>` : "";
   $("#active").innerHTML = items.map((it, k) => `<button class="pill${it[2] ? " tag" : ""}" data-k="${k}" ${it[2] ? `style="--c:${esc(it[2])}"` : ""} title="Retirer ce filtre">${esc(it[0])}</button>`).join("")
     + etNote + (items.length > 1 ? `<button class="linkbtn" id="clearall">Tout effacer</button>` : "");
   $("#fcount").hidden = !items.length;
@@ -844,7 +859,7 @@ function renderTagFilters(){
   $("#taglist").innerHTML = ids.map(id => `<option value="${esc(T.defs[id].nom)}">`).join("");
 }
 function clearFilters(){
-  filt.niveau.clear(); filt.type.clear(); filt.etat.clear(); filt.tags.clear(); filt.olf.clear();
+  filt.niveau.clear(); filt.type.clear(); filt.etat.clear(); filt.tags.clear(); filt.olf.clear(); filt.olfg.clear();
   filt.brune = filt.defaut = filt.cmr = false; filt.famille = ""; filt.q = "";
   $("#q").value = "";
   syncChips();
@@ -1069,9 +1084,9 @@ document.querySelector(".modes").onclick = e => { const b = e.target.closest("[d
 function updateHash(){
   const p = new URLSearchParams();
   if (deck.length) p.set("carte", cards[deck[pos]].id);
-  ["type", "niveau", "etat", "olf"].forEach(f => filt[f].size && p.set(f, [...filt[f]].join(",")));
+  ["type", "niveau", "etat", "olf", "olfg"].forEach(f => filt[f].size && p.set(f, [...filt[f]].join(",")));
   ["brune", "defaut", "cmr"].forEach(f => filt[f] && p.set(f, "1"));
-  if (filt.olfMode === "et" && filt.olf.size + filt.brune > 1) p.set("olfm", "et");
+  if (filt.olfMode === "et" && olfCount() > 1) p.set("olfm", "et");
   if (filt.famille) p.set("famille", filt.famille);
   if (filt.q) p.set("q", filt.q);
   const h = "#" + p.toString();
@@ -1079,7 +1094,7 @@ function updateHash(){
 }
 function readHash(){
   const p = new URLSearchParams(location.hash.slice(1));
-  ["type", "niveau", "etat", "olf"].forEach(f => p.get(f) && p.get(f).split(",").forEach(v => filt[f].add(v)));
+  ["type", "niveau", "etat", "olf", "olfg"].forEach(f => p.get(f) && p.get(f).split(",").forEach(v => filt[f].add(v)));
   ["brune", "defaut", "cmr"].forEach(f => filt[f] = p.get(f) === "1");
   filt.famille = p.get("famille") || "";
   if (p.get("olfm") === "et") filt.olfMode = "et";
@@ -1143,7 +1158,7 @@ function renderStats(){
     <h4>Par type de carte</h4>${Object.entries(LABELS.type).map(([k, l]) => row(l, cards.filter(c => c.type === k), {type: k})).join("")}
     <h4>Par complexité</h4>${["Facile", "Moyen", "Difficile"].map(l => row(l, base.filter(c => c.niveau === l), {niveau: l})).join("")}
     <h4>Par famille olfactive</h4>${row("Notes brunes", base.filter(c => c.brune), {brune: 1})}${DATA.olf.filter(f => !DATA.olfg[f]).map(f => row(f, base.filter(c => c.olf.includes(f)), {olf: f})).join("")}
-    ${olfGroups.map(g => `<h4>${esc(g)}</h4>` + DATA.olf.filter(f => DATA.olfg[f] === g).map(f => row(f, base.filter(c => c.olf.includes(f)), {olf: f})).join("")).join("")}
+    ${olfGroups.map(g => `<h4>${esc(g)}</h4>` + row("Toutes les sensations", base.filter(c => c.olf.some(f => DATA.olfg[f] === g)), {olfg: g}) + DATA.olf.filter(f => DATA.olfg[f] === g).map(f => row(f, base.filter(c => c.olf.includes(f)), {olf: f})).join("")).join("")}
     <h4>Mes données</h4><p class="note">Progression, révisions, étiquettes et descripteurs personnels restent dans ce navigateur. Pour les garder ou changer d'appareil :</p>
     <p class="note"><button class="linkbtn" data-data="export">Exporter (fichier JSON)</button> · <button class="linkbtn" data-data="import">Importer</button></p>
     ${missed.length ? `<h4>Les plus ratées</h4><ul class="missed">${missed.map(([id, e]) => `<li><button class="linkbtn" data-sgo='${esc(JSON.stringify({carte: id}))}'>${esc(byId[id].titre)}</button><small>${e.ko} raté${e.ko > 1 ? "s" : ""}</small></li>`).join("")}</ul>` : ""}`;
@@ -1159,6 +1174,7 @@ $("#drawerbody").onclick = e => {
   if (g.type) filt.type.add(g.type);
   if (g.niveau) filt.niveau.add(g.niveau);
   if (g.olf) filt.olf.add(g.olf);
+  if (g.olfg) filt.olfg.add(g.olfg);
   if (g.etat) filt.etat.add(g.etat);
   if (g.brune) filt.brune = true;
   syncChips(); showView("study"); rebuild(null);
