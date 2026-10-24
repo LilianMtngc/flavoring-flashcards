@@ -20,6 +20,7 @@ Les cartes dont le recto serait identique (même structure, stéréo comprise) s
 fusionnées : le nom de la molécule est affiché, les produits naturels sont cités.
 """
 import base64
+import hashlib
 import csv
 import html
 import json
@@ -341,8 +342,10 @@ def build_html(cards, seuils):
     import icone
     page = (template.replace("/*__DATA__*/null", payload).replace("__FONT_TITRE__", font)
             .replace("<!--__ICONE__-->", icone.svg(False).replace("<svg ", "<svg aria-hidden='true' ", 1)))
-    (ROOT / "index.html").write_text(page, encoding="utf-8")
-    write_pwa()
+    # numéro de version : empreinte de la page ; la page le compare à version.json pour proposer la mise à jour
+    build = hashlib.sha256(page.encode("utf-8")).hexdigest()[:12]
+    (ROOT / "index.html").write_text(page.replace("__BUILD__", build), encoding="utf-8")
+    write_pwa(build)
 
 
 def glossaire(cards):
@@ -362,34 +365,54 @@ def glossaire(cards):
     return out
 
 
-SW = """// cache hors connexion : réseau d'abord (la page reste à jour), copie locale si pas de réseau
-const CACHE = "aromacards";
+SW = """// AromaCards hors connexion : réseau d'abord (la page reste à jour), copie locale sans réseau ou si le réseau traîne.
+// Le nom du cache porte la version publiée : à chaque publication, le nouveau service worker remplace l'ancien
+// et supprime son cache (personne ne reste bloqué sur une ancienne copie).
+const CACHE = "aromacards-__BUILD__";
+const PRECACHE = ["./", "index.html", "manifest.webmanifest", "favicon.svg", "favicon-32.png", "apple-touch-icon.png",
+                  "icon-192.png", "icon-512.png", "icon-maskable-192.png", "icon-maskable-512.png"];
 self.addEventListener("install", e => {
   self.skipWaiting();
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(["./", "index.html", "manifest.webmanifest", "icon-192.png"])));
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(PRECACHE.map(u => new Request(u, {cache: "reload"})))));
 });
-self.addEventListener("activate", e => e.waitUntil(self.clients.claim()));
+self.addEventListener("activate", e => e.waitUntil(
+  caches.keys().then(keys => Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener("fetch", e => {
-  if (e.request.method !== "GET" || new URL(e.request.url).origin !== location.origin) return;
-  e.respondWith(fetch(e.request)
-    .then(r => { const copy = r.clone(); caches.open(CACHE).then(c => c.put(e.request, copy)); return r; })
-    .catch(() => caches.match(e.request, {ignoreSearch: true}).then(r => r || caches.match("index.html"))));
+  const url = new URL(e.request.url);
+  if (e.request.method !== "GET" || url.origin !== location.origin) return;
+  if (url.pathname.endsWith("/version.json")) return;  // contrôle de version : toujours le réseau, jamais de copie
+  const nav = e.request.mode === "navigate";
+  // pages : revalidées auprès du serveur (pas de copie HTTP périmée)
+  const net = fetch(nav ? new Request(url.origin + url.pathname, {cache: "no-cache", credentials: "same-origin"}) : e.request)
+    .then(r => { if (r.ok){ const copy = r.clone(); caches.open(CACHE).then(c => c.put(nav ? url.origin + url.pathname : e.request, copy)); } return r; });
+  const local = () => caches.match(e.request, {ignoreSearch: true}).then(r => r || (nav ? caches.match("index.html") : undefined));
+  if (!nav){ e.respondWith(net.catch(() => local().then(r => r || Response.error()))); return; }
+  // page : au-delà de 4 s sans réponse, la copie locale s'affiche (un bandeau proposera la mise à jour)
+  e.respondWith(new Promise(resolve => {
+    let done = false;
+    const give = r => { if (r && !done){ done = true; resolve(r); } };
+    const timer = setTimeout(() => local().then(give), 4000);
+    net.then(r => { clearTimeout(timer); give(r); })
+       .catch(() => local().then(r => { clearTimeout(timer); give(r || Response.error()); }));
+  }));
 });
 """
 
 
-def write_pwa():
-    """Manifeste, service worker et icônes : la page s'installe sur mobile et marche hors connexion."""
+def write_pwa(build):
+    """Manifeste, service worker, version et icônes : la page s'installe sur mobile et marche hors connexion."""
     import icone
     manifest = {
-        "name": "AromaCards", "short_name": "AromaCards", "lang": "fr",
-        "description": "Flash cards de molécules aromatiques : structure, descripteurs, usages.",
-        "start_url": "./", "scope": "./", "display": "standalone",
+        "id": "./", "name": "AromaCards", "short_name": "AromaCards", "lang": "fr", "dir": "ltr",
+        "description": "Flash cards de molécules aromatiques : structure chimique, descripteurs, usages et sources.",
+        "start_url": "./", "scope": "./", "display": "standalone", "categories": ["education"],
         "background_color": "#171614", "theme_color": "#3d2414",
-        "icons": [{"src": f"icon-{n}.png", "sizes": f"{n}x{n}", "type": "image/png", "purpose": "any"} for n in (192, 512)],
+        "icons": [{"src": f"icon-{n}.png", "sizes": f"{n}x{n}", "type": "image/png", "purpose": "any"} for n in (192, 512)]
+                 + [{"src": f"icon-maskable-{n}.png", "sizes": f"{n}x{n}", "type": "image/png", "purpose": "maskable"} for n in (192, 512)],
     }
     (ROOT / "manifest.webmanifest").write_text(json.dumps(manifest, indent=1, ensure_ascii=False), encoding="utf-8")
-    (ROOT / "sw.js").write_text(SW, encoding="utf-8")
+    (ROOT / "sw.js").write_text(SW.replace("__BUILD__", build), encoding="utf-8")
+    (ROOT / "version.json").write_text(json.dumps({"build": build}), encoding="utf-8")
     icone.write_all(ROOT)  # icônes « application » (fond dégradé) et « onglet » (sans fond)
 
 

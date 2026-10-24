@@ -12,6 +12,9 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <style>
 :root{
   --bg:#f6f4ef; --surface:#fffdf9; --surface-2:#f0ede6; --fg:#1f1e1b; --fg-2:#5d5b55; --fg-3:#8b8880;
@@ -342,6 +345,20 @@ footer p{margin:4px 0}
 footer a{text-decoration:none}
 footer a:hover,.linkbtn:hover{text-decoration:underline}
 .keys{font-size:12.5px;color:var(--fg-3);margin-top:14px;text-align:center}
+/* bandeaux (installation, mise à jour) et fenêtre d'aide à l'installation */
+.banner{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;background:var(--accent-bg);border:1px solid var(--accent-line);border-radius:12px;padding:9px 14px;margin:0 0 14px;font-size:13.5px}
+.banner[hidden]{display:none}
+.banner .grow{flex:1 1 220px}
+.banner .btn{padding:5px 12px;font-size:13px}
+dialog.dlg{width:min(540px,calc(100vw - 32px));max-height:calc(100vh - 48px);border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--fg);padding:0;box-shadow:0 12px 40px rgba(0,0,0,.35)}
+dialog.dlg::backdrop{background:rgba(0,0,0,.45)}
+.dlg .dhead{position:sticky;top:0;background:var(--surface)}
+.dlg .dbody{padding:12px 20px 20px;font-size:14px}
+.dlg h4{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3);margin:16px 0 6px;font-weight:600}
+.dlg ol{margin:4px 0;padding-left:20px}.dlg li{margin:3px 0}
+.dlg details{margin-top:14px;border-top:1px solid var(--line);padding-top:8px}
+.dlg summary{cursor:pointer;color:var(--fg-2);font-size:13.5px}
+.dlg .note{margin:6px 0}
 @media (max-width:640px){
   .sidetab{top:auto;bottom:90px}
   .qname{font-size:24px}
@@ -360,6 +377,8 @@ footer a:hover,.linkbtn:hover{text-decoration:underline}
     <h1 class="brand"><svg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect x='140.1' y='47.4' width='305.0' height='402.6' rx='41.5' fill='rgb(234, 165, 90)' transform='rotate(-12 292.6 248.7)'/><rect x='74.2' y='57.0' width='319.6' height='419.7' rx='41.5' fill='rgb(246, 232, 207)' transform='rotate(6 234.0 266.9)'/><path d='M244.8,165.0 L305.9,209.4 L298.0,284.6 L228.9,315.4 L167.7,271.0 L175.7,195.7 L244.8,165.0' fill='none' stroke='rgb(58, 34, 16)' stroke-width='15.9' stroke-linecap='round' stroke-linejoin='round'/><path d='M244.8,165.0 L251.6,99.4' fill='none' stroke='rgb(58, 34, 16)' stroke-width='15.9' stroke-linecap='round' stroke-linejoin='round'/><path d='M228.9,315.4 L222.1,380.9' fill='none' stroke='rgb(58, 34, 16)' stroke-width='15.9' stroke-linecap='round' stroke-linejoin='round'/><path d='M222.1,380.9 L161.9,407.7' fill='none' stroke='rgb(58, 34, 16)' stroke-width='15.9' stroke-linecap='round' stroke-linejoin='round'/><path d='M222.1,380.9 L275.4,419.7' fill='none' stroke='rgb(58, 34, 16)' stroke-width='15.9' stroke-linecap='round' stroke-linejoin='round'/><path d='M280.1,230.1 L277.0,259.0' fill='none' stroke='rgb(58, 34, 16)' stroke-width='11.9' stroke-linecap='round' stroke-linejoin='round'/><path d='M224.0,282.6 L200.5,265.6' fill='none' stroke='rgb(58, 34, 16)' stroke-width='11.9' stroke-linecap='round' stroke-linejoin='round'/><path d='M206.5,207.8 L233.1,196.0' fill='none' stroke='rgb(58, 34, 16)' stroke-width='11.9' stroke-linecap='round' stroke-linejoin='round'/></svg><span>Aroma<span class="c">Cards</span></span></h1>
     <div class="head-r"><div class="stats" id="stats"></div><button class="theme" id="theme" aria-label="Changer de thème"></button></div>
   </header>
+  <div class="banner" id="updatebar" role="status" hidden><span class="grow">Une nouvelle version d'AromaCards est disponible.</span><button class="btn primary" id="updatenow">Mettre à jour</button><button class="linkbtn" id="updatelater">Plus tard</button></div>
+  <div class="banner" id="installbar" hidden><span class="grow">Installer AromaCards sur l'écran d'accueil ? C'est facultatif : le site reste utilisable ici.</span><button class="btn primary" id="installgo">Installer</button><button class="linkbtn" id="installno">Non merci</button></div>
   <div class="layout">
   <aside class="side">
   <div class="toolbar">
@@ -451,8 +470,12 @@ footer a:hover,.linkbtn:hover{text-decoration:underline}
     <div class="dhead"><h3>Vocabulaire</h3><button class="btn close" id="glossclose">Fermer</button>
       <input type="search" class="gsearch" id="gq" placeholder="Chercher un terme…" aria-label="Chercher dans le vocabulaire"></div>
     <div class="dbody"><div class="note">Noms usuels, préfixes et notions utiles. Rédigé avec assistance IA.</div><div id="glossbody"></div></div></aside>
+  <dialog class="dlg" id="installdlg" aria-labelledby="installtitle">
+    <div class="dhead"><h3 id="installtitle">Installer AromaCards</h3><button class="btn close" id="installclose">Fermer</button></div>
+    <div class="dbody" id="installbody"></div>
+  </dialog>
   <footer>
-    <p>Lilian Montagnac (Bioinformatics Engineer) · <a href="https://github.com/LilianMtngc/aromacards" title="github.com/LilianMtngc/aromacards">GitHub</a> · <a href="aromacards.apkg" title="Paquet à importer dans Anki">Deck Anki</a> · <button class="linkbtn" id="reset">Effacer ma progression</button></p>
+    <p>Lilian Montagnac (Bioinformatics Engineer) · <a href="https://github.com/LilianMtngc/aromacards" title="github.com/LilianMtngc/aromacards">GitHub</a> · <a href="aromacards.apkg" title="Paquet à importer dans Anki">Deck Anki</a><span id="installitem"> · <button class="linkbtn" id="installlink">Installer l'application</button></span> · <button class="linkbtn" id="reset">Effacer ma progression</button></p>
   </footer>
 </div>
 <script>
@@ -1119,6 +1142,7 @@ $("#grid").onclick = e => {
 document.querySelectorAll(".controls button").forEach(b => b.addEventListener("click", focusCard));
 $("#reset").onclick = () => { if (confirm("Effacer la progression (sues, à revoir, révisions) ? Les étiquettes et descripteurs personnels sont conservés.")) { progress = {}; store.set(progress); srs = {}; saveSrs(); render(); } };
 document.addEventListener("keydown", e => {
+  if ($("#installdlg").open) return;
   if (e.key === "Escape" && $("#drawer").classList.contains("open")){ toggleDrawer(false); return; }
   if (e.key === "Escape" && $("#gloss").classList.contains("open")){ toggleGloss(false); return; }
   if (e.key === "Escape" && !$("#fpanel").hidden){ setPanel(false); return; }
@@ -1134,7 +1158,7 @@ document.addEventListener("keydown", e => {
   else if (e.key === "2") mark("sus");
 });
 document.addEventListener("keydown", e => {
-  if (e.target.matches("input, select, textarea") || e.ctrlKey || e.metaKey || e.altKey) return;
+  if ($("#installdlg").open || e.target.matches("input, select, textarea") || e.ctrlKey || e.metaKey || e.altKey) return;
   const k = e.key.toLowerCase();
   if (e.key === "/"){ e.preventDefault(); $("#q").focus(); }
   else if (e.key === "?") toggleKeys();
@@ -1267,8 +1291,70 @@ $("#drawerbody").onclick = e => {
   syncChips(); showView(g.ana ? "analogues" : "study"); rebuild(null);
 };
 if ("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("sw.js").catch(() => {});
+
+// ---- mises à jour : la page compare sa version à celle publiée (au retour sur l'onglet ou l'application, et toutes les 30 min)
+const BUILD = "fa009a8edc8b";
+let updateLater = false;
+async function checkUpdate(){
+  if (!location.protocol.startsWith("http")) return;
+  try {
+    const v = (await (await fetch("version.json", {cache: "no-store"})).json()).build;
+    if (v && v !== BUILD && !updateLater) $("#updatebar").hidden = false;
+  } catch(e){}  // hors connexion : rien à faire
+  if ("serviceWorker" in navigator) navigator.serviceWorker.getRegistration().then(r => r && r.update()).catch(() => {});
+}
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") checkUpdate(); });
+setInterval(checkUpdate, 30 * 60 * 1000);
+setTimeout(checkUpdate, 5000);
+$("#updatenow").onclick = () => location.reload();
+$("#updatelater").onclick = () => { updateLater = true; $("#updatebar").hidden = true; };
+
+// ---- installation (facultative) : bouton du navigateur quand il existe, sinon la marche à suivre selon l'appareil
+const ua = navigator.userAgent;
+const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const isAndroid = /Android/.test(ua);
+const standalone = () => matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+let installPrompt = null;
+const IKEY = "flavoring-flashcards-installation";
+const installDismissed = () => { try { return localStorage.getItem(IKEY) === "non"; } catch(e){ return false; } };
+const STEPS = {
+  ios: `<h4>iPhone et iPad</h4><ol><li>Touchez le bouton <b>Partager</b> (un carré avec une flèche vers le haut : en bas de l'écran dans Safari, dans la barre d'adresse dans Chrome).</li><li>Choisissez <b>Sur l'écran d'accueil</b> (faites défiler la liste si besoin).</li><li>Touchez <b>Ajouter</b>.</li></ol><p class="note">Avec iOS 16.3 ou plus ancien, seul Safari permet l'installation.</p>`,
+  android: `<h4>Android</h4><ol><li><b>Chrome</b> ou <b>Edge</b> : menu ⋮ puis <b>Installer l'application</b> (ou <b>Ajouter à l'écran d'accueil</b>).</li><li><b>Samsung Internet</b> : menu ☰ puis <b>Ajouter la page à</b>, <b>Écran d'accueil</b>.</li><li><b>Firefox</b> : menu ⋮ puis <b>Installer</b>.</li></ol>`,
+  desktop: `<h4>Ordinateur</h4><ol><li><b>Chrome</b> ou <b>Edge</b> : icône d'installation à droite de la barre d'adresse, ou menu puis <b>Installer AromaCards</b>.</li><li><b>Safari</b> (macOS 14 ou plus) : menu Fichier puis <b>Ajouter au Dock</b>.</li><li><b>Firefox</b> sur ordinateur ne propose pas l'installation : le site s'utilise normalement.</li></ol>`
+};
+function renderInstall(){
+  const here = isIOS ? "ios" : isAndroid ? "android" : "desktop";
+  $("#installbody").innerHTML = `<p class="note">Facultatif : AromaCards s'ouvre alors comme une application, depuis l'écran d'accueil, et fonctionne hors connexion. Le site reste utilisable normalement dans le navigateur.</p>`
+    + (standalone() ? `<p><b>AromaCards est déjà ouvert en mode application.</b></p>` : "")
+    + (installPrompt ? `<p><button class="btn primary" id="installnow">Installer maintenant</button></p>` : "")
+    + STEPS[here]
+    + `<h4>Bon à savoir</h4><ul class="note" style="padding-left:18px"><li>Progression, étiquettes et descripteurs personnels restent sur l'appareil. Sur iPhone et iPad, l'application installée a son propre stockage, séparé de Safari : pour y retrouver votre progression, utilisez <b>Exporter</b> puis <b>Importer</b> (Statistiques, « Mes données »).</li><li>Les mises à jour arrivent seules : un bandeau propose de recharger quand une nouvelle version est publiée.</li><li>Pour désinstaller : appui long sur l'icône, puis Supprimer (ou Désinstaller).</li></ul>`
+    + `<details><summary>Autres appareils</summary>${Object.keys(STEPS).filter(k => k !== here).map(k => STEPS[k]).join("")}</details>`;
+}
+function openInstall(){
+  if (installPrompt){ installPrompt.prompt(); installPrompt.userChoice.finally(() => { installPrompt = null; syncInstall(); }); return; }
+  renderInstall(); $("#installdlg").showModal();
+}
+function syncInstall(){
+  const inApp = standalone();
+  $("#installitem").hidden = inApp;
+  $("#installbar").hidden = inApp || installDismissed() || !(isIOS || isAndroid);  // bandeau sur téléphone seulement
+  $("#installgo").textContent = installPrompt ? "Installer" : "Comment faire ?";
+}
+window.addEventListener("beforeinstallprompt", e => { e.preventDefault(); installPrompt = e; syncInstall(); });
+window.addEventListener("appinstalled", () => { installPrompt = null; try { localStorage.setItem(IKEY, "non"); } catch(e){} syncInstall(); });
+$("#installlink").onclick = () => { renderInstall(); $("#installdlg").showModal(); };
+$("#installgo").onclick = openInstall;
+$("#installno").onclick = () => { try { localStorage.setItem(IKEY, "non"); } catch(e){} syncInstall(); };
+$("#installclose").onclick = () => $("#installdlg").close();
+$("#installdlg").onclick = e => {
+  if (e.target === $("#installdlg")) $("#installdlg").close();  // clic à côté de la fenêtre
+  if (e.target.id === "installnow") openInstall();
+};
+syncInstall();
 const dark = () => (document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")) === "dark";
-const themeLabel = () => $("#theme").textContent = dark() ? "☀ Clair" : "☾ Sombre";
+// barre d'état du téléphone (et de l'application installée) assortie au thème
+const themeLabel = () => { $("#theme").textContent = dark() ? "☀ Clair" : "☾ Sombre"; document.querySelector('meta[name="theme-color"]').content = dark() ? "#171614" : "#f6f4ef"; };
 $("#theme").onclick = () => {
   const t = dark() ? "light" : "dark";
   document.documentElement.dataset.theme = t;

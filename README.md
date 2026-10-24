@@ -48,7 +48,9 @@ Quatre catégories :
   - **Raccourcis** : `/` rechercher, `F` filtres, `E` étiquette, `M` changer de recto, `S` statistiques, `V` vocabulaire, `D` descripteur personnel,
     `?` liste des raccourcis (aussi sous la carte : « Autres raccourcis »).
   - L'adresse de la page suit la carte affichée et les filtres : on peut la copier pour partager une carte.
-  - **Installable** sur mobile (« Ajouter à l'écran d'accueil ») et utilisable hors connexion.
+  - **Installable** comme une application (Android, iPhone, iPad, Chrome et Edge sur ordinateur), c'est facultatif :
+    lien « Installer l'application » en bas de page, avec la marche à suivre selon l'appareil. Une fois installée,
+    elle fonctionne hors connexion ; quand une nouvelle version est publiée, un bandeau propose de recharger.
   - **Étiquettes personnelles** : « + Étiquette » au verso d'une carte. Nom et couleur au choix ; on peut ensuite filtrer,
     renommer, recolorer ou supprimer une étiquette depuis le panneau des filtres.
   - **Descripteurs personnels** : bouton « + » après les descripteurs d'une carte. Ils s'affichent en couleur sous les

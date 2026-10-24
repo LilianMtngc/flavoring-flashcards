@@ -1,11 +1,16 @@
 {
+ "id": "./",
  "name": "AromaCards",
  "short_name": "AromaCards",
  "lang": "fr",
- "description": "Flash cards de molécules aromatiques : structure, descripteurs, usages.",
+ "dir": "ltr",
+ "description": "Flash cards de molécules aromatiques : structure chimique, descripteurs, usages et sources.",
  "start_url": "./",
  "scope": "./",
  "display": "standalone",
+ "categories": [
+  "education"
+ ],
  "background_color": "#171614",
  "theme_color": "#3d2414",
  "icons": [
@@ -20,6 +25,18 @@
    "sizes": "512x512",
    "type": "image/png",
    "purpose": "any"
+  },
+  {
+   "src": "icon-maskable-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "maskable"
+  },
+  {
+   "src": "icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
   }
  ]
 }

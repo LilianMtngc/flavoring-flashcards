@@ -1,7 +1,10 @@
 """Icône du site : deux flash cards, un p-cymène vertical sur celle du dessus.
 
 - version « application » (fond en dégradé, foncé en bas à gauche, plus clair en haut à droite) : icon-192.png, icon-512.png ;
-- version « onglet » sans fond : favicon.svg (net à toutes les tailles) et favicon-32.png / favicon-64.png.
+- version « onglet » sans fond : favicon.svg (net à toutes les tailles) et favicon-32.png / favicon-64.png ;
+- versions carrées, fond jusqu'aux bords : apple-touch-icon.png (iOS arrondit lui-même les coins : des coins transparents
+  deviendraient noirs) et icon-maskable-192/512.png (Android découpe l'icône en cercle ou en carré arrondi : le dessin est
+  réduit pour rester dans la zone sûre, un cercle de 40 % de la taille).
 Le dessin est décrit une seule fois (coordonnées sur 512) et rendu en SVG et en PNG (Pillow, suréchantillonné).
 """
 import io
@@ -73,10 +76,11 @@ def svg(background=True):
 
 # ---------------------------------------------------------------- PNG
 
-def png(size, background=True):
+def png(size, background=True, square=False, fill=None):
+    """`square` : fond jusqu'aux bords (iOS, icônes masquables) ; `fill` : échelle du dessin."""
     k = 4 * size / 512                               # suréchantillonnage x4 puis réduction
     S = int(512 * k)
-    back, front, lines = geometry(1.0 if background else 1.22)
+    back, front, lines = geometry(fill or (1.0 if background else 1.22))
     img = Image.new("RGBA", (S, S), (0, 0, 0, 0))
     if background:
         grad = Image.new("RGBA", (S, S))
@@ -85,8 +89,9 @@ def png(size, background=True):
             for x in range(S):
                 t = (x + (S - 1 - y)) / (2 * (S - 1))
                 px[x, y] = tuple(int(DARK[i] + (LIGHT[i] - DARK[i]) * t) for i in range(3)) + (255,)
-        mask = Image.new("L", (S, S), 0)
-        ImageDraw.Draw(mask).rounded_rectangle([0, 0, S - 1, S - 1], radius=int(112 * k), fill=255)
+        mask = Image.new("L", (S, S), 255 if square else 0)
+        if not square:
+            ImageDraw.Draw(mask).rounded_rectangle([0, 0, S - 1, S - 1], radius=int(112 * k), fill=255)
         img.paste(grad, (0, 0), mask)
 
     def card_layer(card, color, offset=(0, 0)):
@@ -116,7 +121,9 @@ def write_all(root):
     """Écrit les icônes du site dans `root`."""
     for n in (192, 512):
         png(n, True).save(root / f"icon-{n}.png")
-    png(180, True).save(root / "apple-touch-icon.png")
+    png(180, True, square=True).save(root / "apple-touch-icon.png")
+    for n in (192, 512):
+        png(n, True, square=True, fill=0.82).save(root / f"icon-maskable-{n}.png")
     for n in (32, 64):
         png(n, False).save(root / f"favicon-{n}.png")
     (root / "favicon.svg").write_text(svg(False), encoding="utf-8")
