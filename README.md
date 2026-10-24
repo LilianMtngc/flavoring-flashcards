@@ -76,6 +76,7 @@ Quatre catégories :
 | Complexité | Calculée à partir de la structure (voir plus bas) |
 | Usages et origine des notes | Synthèse rédigée avec assistance IA, non sourcée ligne à ligne |
 | Classification CMR et CIRC | PubChem : classification harmonisée européenne (règlement CLP, annexe VI) et groupes du CIRC |
+| Statut réglementaire dans l'UE | Règlements européens ([EUR-Lex](https://eur-lex.europa.eu/)), cités sur la carte ([`data/reglementation.csv`](data/reglementation.csv)) |
 | Défauts | Liste éditoriale ([`data/defauts.csv`](data/defauts.csv)), rédigée avec assistance IA |
 | Familles olfactives | Calculées à partir des descripteurs ([`data/familles_olfactives.csv`](data/familles_olfactives.csv)) |
 
@@ -177,5 +178,6 @@ python scripts/05_build_cards.py  # index.html, aromacards.apkg, data/cartes.jso
 | `data/naturels_ref.csv`, `data/naturels_wiki.csv` | produits naturels, marqueurs, pages Wikipédia consultées |
 | `data/revue_manuelle.csv`, `data/overrides.csv` | décisions manuelles de vérification, avec leur justification |
 | `data/usages.csv` | usages et origine des notes |
+| `data/reglementation.csv` | statut réglementaire dans l'UE (mention, règlement, lien EUR-Lex) |
 | `data/identifiants.csv` | identifiants des molécules et produits évalués, par forme (et version quand il y en a plusieurs) |
 | `fonts/` | police du titre : [Young Serif](https://github.com/noirblancrouge/YoungSerif), réduite aux lettres de « AromaCards » (licence SIL OFL 1.1) |

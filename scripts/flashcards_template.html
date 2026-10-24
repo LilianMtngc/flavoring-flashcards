@@ -755,6 +755,11 @@ function secuHTML(c){
   return `<div class="secu">⚠ ${sc.marqueur ? `Marqueur ${esc(sc.marqueur)} : ` : ""}${parts.join(" · ")}<small>Danger de la substance pure, pas une évaluation du risque aux doses d'usage alimentaire · <a href="https://pubchem.ncbi.nlm.nih.gov/compound/${sc.cid}#section=Safety-and-Hazards" target="_blank" rel="noopener">Source : PubChem</a></small></div>`;
 }
 
+function reglHTML(c){
+  const r = c.reglementation;
+  return r ? `<div class="secu">⚖ UE : ${esc(r.mention)}<small><a href="${esc(r.url)}" target="_blank" rel="noopener">Source : ${esc(r.source)}</a></small></div>` : "";
+}
+
 function olfLine(c){
   const od = c.olf.filter(f => !DATA.olfg[f]), se = c.olf.filter(f => DATA.olfg[f]);
   return (od.length ? `<div class="olfs">Familles olfactives : ${esc(od.join(" · "))}</div>` : "")
@@ -809,7 +814,7 @@ function backHTML(c){
   const verif = `<div class="verif ok">✓ Structure${c.structures.length > 1 ? "s" : ""} vérifiée${c.structures.length > 1 ? "s" : ""} · ${c.verif.sources} sources concordantes · <a href="verification.html" target="_blank">Rapport</a></div>`;
   const sos = c.sosies.length ? `<div class="sec"><h3>À ne pas confondre avec${sosieOf[c.id] ? ` · <button class="linkbtn" data-go="${esc(sosieOf[c.id])}">Voir la comparaison</button>` : ""}</h3><div class="sos">${c.sosies.map(o => `<button data-go="${esc(o.id)}">${byId[o.id].structures[0].svg}<span>${esc(o.titre)}<small>${esc(o.diff)}</small></span></button>`).join("")}</div></div>` : "";
   return `<div class="back"><div class="bl">${structsHTML(c, "hero", c.type === "nat" ? s => s.nom : null)}
-    <h2>${esc(c.titre)}</h2><p class="sub">${sub}</p>${alias}<div>${badges}</div><div class="meta">${meta}</div>${olfLine(c)}${secuHTML(c)}${tagBoxHTML(c)}
+    <h2>${esc(c.titre)}</h2><p class="sub">${sub}</p>${alias}<div>${badges}</div><div class="meta">${meta}</div>${olfLine(c)}${secuHTML(c)}${reglHTML(c)}${tagBoxHTML(c)}
     ${verif}</div>
     <div class="br"><div class="sec"><h3>Descripteurs${c.type === "theo" ? " · " + c.formes[0].forme : ""}</h3>${desc}${formes}${ids}${pdHTML(c)}</div>
     ${sos}

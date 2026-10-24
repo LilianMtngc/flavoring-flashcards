@@ -1633,7 +1633,9 @@
   ],
   "status": "ok",
   "problems": [],
-  "notes": [],
+  "notes": [
+   "Mélange de géranial (E) et de néral (Z), souvent en proportions inégales : le géranial est dessiné"
+  ],
   "marqueur_seul": false
  },
  "citronellal": {
@@ -2046,7 +2048,9 @@
   ],
   "status": "ok",
   "problems": [],
-  "notes": [],
+  "notes": [
+   "Existe en isomères cis (Z) et trans (E) : le trans-isoeugénol est dessiné"
+  ],
   "marqueur_seul": false
  },
  "furfurylthiol": {
@@ -2677,7 +2681,9 @@
   ],
   "status": "ok",
   "problems": [],
-  "notes": [],
+  "notes": [
+   "Quatre isomères, (E) / (Z) et R / S ; la plupart des usages emploient un mélange : le (E)-nérolidol est dessiné, sans stéréocentre précisé"
+  ],
   "marqueur_seul": false
  },
  "nonadienol": {
@@ -4653,7 +4659,7 @@
   "status": "ok",
   "problems": [],
   "notes": [
-   "mélange d'isomères 3,5 / 3,6 : l'isomère 3,5 est dessiné"
+   "Mélange d'isomères 3,5 / 3,6 : l'isomère 3,5 est dessiné"
   ],
   "marqueur_seul": false
  },
@@ -4695,7 +4701,7 @@
   "status": "ok",
   "problems": [],
   "notes": [
-   "mélange d'isomères 3,5 / 3,6 : l'isomère 3,5 est dessiné"
+   "Mélange d'isomères 3,5 / 3,6 : l'isomère 3,5 est dessiné"
   ],
   "marqueur_seul": false
  },
@@ -4940,7 +4946,7 @@
   "status": "ok",
   "problems": [],
   "notes": [
-   "« méthylthiométhylpyrazine » = mélange d'isomères : l'isomère 2,3 est dessiné"
+   "« Méthylthiométhylpyrazine » = mélange d'isomères : l'isomère 2,3 est dessiné"
   ],
   "marqueur_seul": false
  },
@@ -5378,7 +5384,7 @@
   "status": "ok",
   "problems": [],
   "notes": [
-   "nom commercial « milk lactone » = mélange d'acides 5- et 6-décénoïques : l'isomère (E)-5 est dessiné"
+   "Nom commercial « milk lactone » = mélange d'acides 5- et 6-décénoïques : l'isomère (E)-5 est dessiné"
   ],
   "marqueur_seul": false
  },
@@ -5400,7 +5406,7 @@
   "notes": [
    "CID imposé manuellement : oxyde de linalol commercial (CAS 1365-19-1) = forme furanoïde ; CACTUS et OPSIN renvoient la forme pyranoïde",
    "revue manuelle : CID 22310 imposé (forme furanoïde du produit commercial) (signalé : désaccord : CACTUS (nom), CACTUS (CAS), OPSIN)",
-   "mélange d'isomères cis/trans : stéréo non précisée"
+   "Mélange d'isomères cis / trans : stéréo non précisée"
   ],
   "marqueur_seul": false
  },

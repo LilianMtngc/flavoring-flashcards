@@ -3,7 +3,7 @@
 Entrées : data/descripteurs.csv, data/molecules_ref.csv, data/molecules_verified.json,
           data/naturels_ref.csv, data/marqueurs_sources.json, data/sources_cache.json,
           data/usages.csv, data/glossaire_fema.csv, data/theoriques_wiki.csv, data/familles_olfactives.csv,
-          data/defauts.csv, data/securite_cache.json, data/glossaire.csv, structures/*.svg
+          data/defauts.csv, data/securite_cache.json, data/reglementation.csv, data/glossaire.csv, structures/*.svg
 Sorties : data/cartes.json, index.html (flash cards), aromacards.apkg (Anki),
           manifest.webmanifest, sw.js, icônes (scripts/icone.py) : page installable, hors connexion
 
@@ -274,6 +274,8 @@ def enrich(cards):
     order = [r["famille"] for r in read_csv("familles_olfactives.csv")]
     in_mouth = {r["famille"] for r in read_csv("familles_olfactives.csv") if r["groupe"]}  # sensations en bouche
     defauts = {r["key"]: r["defaut"] for r in read_csv("defauts.csv")}
+    regl = {r["key"]: {"mention": r["mention"], "source": r["source"], "url": r["url"]}
+            for r in read_csv("reglementation.csv")} if (D / "reglementation.csv").exists() else {}
     secu_path = D / "securite_cache.json"
     secu = json.loads(secu_path.read_text(encoding="utf-8")) if secu_path.exists() else {}
     unmapped = defaultdict(int)
@@ -294,6 +296,7 @@ def enrich(cards):
         c["olf"] = [f for f in order if top[f] >= 2 or (f in in_mouth and top[f] >= 1)]
         key = c["structures"][0]["key"] if c["type"] in ("mol", "theo") else None
         c["defaut"] = defauts.get(key, "")
+        c["reglementation"] = regl.get(key)  # statut réglementaire UE, sourcé (EUR-Lex)
         sc, marqueur = secu.get(key) or {}, ""
         if c["type"] == "nat":  # produit naturel : classification de son marqueur, s'il y en a une
             flagged = [st for st in c["structures"] if (secu.get(st["key"]) or {}).get("clp") or (secu.get(st["key"]) or {}).get("iarc")]
@@ -522,6 +525,9 @@ def anki_fields(c):
         infos = f"<span class='badge'>Défaut : {esc(c['defaut'])}</span> " + infos
     if c.get("securite"):
         infos = f"<span class='badge'>{esc(secu_text(c['securite']))}</span> " + infos
+    if c.get("reglementation"):
+        r = c["reglementation"]
+        infos = f"<span class='badge'>UE : {esc(r['mention'])} ({link(r['source'], r['url'])})</span> " + infos
     infos = (f"<span class='badge'>Note brune</span> " if c["brune"] else "") \
         + f"<span class='chip'>Complexité : {esc(c['niveau'])}</span>" + infos
     desc = chips(c["descripteurs"]) or "<i>descripteurs non renseignés</i>"

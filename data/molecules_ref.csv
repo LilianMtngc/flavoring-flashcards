@@ -80,7 +80,7 @@ terpinen_4_ol;Terpinén-4-ol;terpinen-4-ol;562-74-3;
 caryophyllene;β-Caryophyllène;beta-caryophyllene;87-44-5;
 cinnamaldehyde;Cinnamaldéhyde;cinnamaldehyde;104-55-2;
 cinnamic_acid;Acide trans-cinnamique;trans-cinnamic acid;140-10-3;
-citral;Citral;citral;5392-40-5;
+citral;Citral;citral;5392-40-5;Mélange de géranial (E) et de néral (Z), souvent en proportions inégales : le géranial est dessiné
 citronellal;Citronellal;citronellal;106-23-0;
 citronellol;Citronellol;citronellol;106-22-9;
 p_cresol;p-Crésol;p-cresol;106-44-5;
@@ -101,7 +101,7 @@ ethyl_laurate;Laurate d'éthyle;ethyl laurate;106-33-2;
 ethyl_phenylacetate;Phénylacétate d'éthyle;ethyl phenylacetate;101-97-3;
 ethyl_vanillin;Éthylvanilline;ethyl vanillin;121-32-4;
 eugenol;Eugénol;eugenol;97-53-0;
-isoeugenol;Isoeugénol;isoeugenol;97-54-1;
+isoeugenol;Isoeugénol;isoeugenol;97-54-1;Existe en isomères cis (Z) et trans (E) : le trans-isoeugénol est dessiné
 furfurylthiol;2-Furfurylthiol (furfurylmercaptan);2-furanmethanethiol;98-02-2;
 geraniol;Géraniol;geraniol;106-24-1;
 geranyl_acetate;Acétate de géranyle;geranyl acetate;105-87-3;
@@ -133,7 +133,7 @@ dms;Sulfure de diméthyle (DMS);dimethyl sulfide;75-18-3;
 methional;Méthional;methional;3268-49-3;
 naringin;Naringine;naringin;10236-47-2;
 nerol;Nérol;nerol;106-25-2;
-nerolidol;Nérolidol;nerolidol;7212-44-4;
+nerolidol;Nérolidol;nerolidol;7212-44-4;"Quatre isomères, (E) / (Z) et R / S ; la plupart des usages emploient un mélange : le (E)-nérolidol est dessiné, sans stéréocentre précisé"
 nonadienol;Trans-2,cis-6-nonadién-1-ol;trans-2,cis-6-nonadien-1-ol;28069-72-9;
 gamma_nonalactone;γ-Nonalactone;gamma-nonalactone;104-61-0;
 nonanone_2;2-Nonanone (méthylheptylcétone);2-nonanone;821-55-6;
@@ -233,9 +233,9 @@ acetylfuran_2;2-Acétylfurane;2-acetylfuran;1192-62-7;
 hexanedione_34;3,4-Hexanedione;3,4-hexanedione;4437-51-8;
 acetyl_ethylpyrazine;2-Acétyl-3-éthylpyrazine;2-acetyl-3-ethylpyrazine;32974-92-8;
 acetyl_methylpyrazine;2-Acétyl-3-méthylpyrazine;2-acetyl-3-methylpyrazine;23787-80-6;
-acetyl_dimethylpyrazine;2-Acétyl-3,5-diméthylpyrazine;2-acetyl-3,5-dimethylpyrazine;54300-08-2;mélange d'isomères 3,5 / 3,6 : l'isomère 3,5 est dessiné
+acetyl_dimethylpyrazine;2-Acétyl-3,5-diméthylpyrazine;2-acetyl-3,5-dimethylpyrazine;54300-08-2;Mélange d'isomères 3,5 / 3,6 : l'isomère 3,5 est dessiné
 undecylenic_acid;Acide undécylénique (acide 10-undécénoïque);10-undecenoic acid;112-38-9;
-ethyl_dimethylpyrazine;2-Éthyl-3,5-diméthylpyrazine;2-ethyl-3,5-dimethylpyrazine;13925-07-0;mélange d'isomères 3,5 / 3,6 : l'isomère 3,5 est dessiné
+ethyl_dimethylpyrazine;2-Éthyl-3,5-diméthylpyrazine;2-ethyl-3,5-dimethylpyrazine;13925-07-0;Mélange d'isomères 3,5 / 3,6 : l'isomère 3,5 est dessiné
 tetrahydrothiophenone_3;Dihydro-3(2H)-thiophénone (3-tétrahydrothiophénone);dihydro-3(2H)-thiophenone;1003-04-9;
 ethyl_methylpyrazine;2-Éthyl-3-méthylpyrazine;2-ethyl-3-methylpyrazine;15707-23-0;
 isobutylmethoxypyrazine;2-Isobutyl-3-méthoxypyrazine;2-isobutyl-3-methoxypyrazine;24683-00-9;
@@ -247,7 +247,7 @@ methylpyrazine;2-Méthylpyrazine;2-methylpyrazine;109-08-0;
 methylvinylthiazole;4-Méthyl-5-vinylthiazole;4-methyl-5-vinylthiazole;1759-28-0;
 tetrahydroquinoxaline;5,6,7,8-Tétrahydroquinoxaline;5,6,7,8-tetrahydroquinoxaline;34413-35-9;
 trimethylthiazole;2,4,5-Triméthylthiazole;2,4,5-trimethylthiazole;13623-11-5;
-methylthio_methylpyrazine;2-Méthyl-3-(méthylthio)pyrazine;2-methyl-3-(methylthio)pyrazine;2882-20-4;« méthylthiométhylpyrazine » = mélange d'isomères : l'isomère 2,3 est dessiné
+methylthio_methylpyrazine;2-Méthyl-3-(méthylthio)pyrazine;2-methyl-3-(methylthio)pyrazine;2882-20-4;« Méthylthiométhylpyrazine » = mélange d'isomères : l'isomère 2,3 est dessiné
 acetylthiazole;2-Acétylthiazole;2-acetylthiazole;24295-03-2;
 heptanoic_acid;Acide heptanoïque;heptanoic acid;111-14-8;
 delta_nonalactone;δ-Nonalactone;delta-nonalactone;3301-94-8;
@@ -269,8 +269,8 @@ homofuraneol;Homofuranéol (2-éthyl-4-hydroxy-5-méthyl-3(2H)-furanone);2-ethyl
 diphenyl_oxide;Oxyde de diphényle;diphenyl ether;101-84-8;
 ethyl_furfurylthiopropionate;3-(Furfurylthio)propionate d'éthyle;ethyl 3-(furfurylthio)propionate;94278-27-0;
 pentadecanone_2;2-Pentadécanone;2-pentadecanone;2345-28-0;
-milk_lactone;Milk lactone (acide trans-déc-5-énoïque);(E)-5-decenoic acid;85392-03-6;nom commercial « milk lactone » = mélange d'acides 5- et 6-décénoïques : l'isomère (E)-5 est dessiné
-linalool_oxide;Oxyde de linalol (furanoïde);linalool oxide;1365-19-1;mélange d'isomères cis/trans : stéréo non précisée
+milk_lactone;Milk lactone (acide trans-déc-5-énoïque);(E)-5-decenoic acid;85392-03-6;Nom commercial « milk lactone » = mélange d'acides 5- et 6-décénoïques : l'isomère (E)-5 est dessiné
+linalool_oxide;Oxyde de linalol (furanoïde);linalool oxide;1365-19-1;Mélange d'isomères cis / trans : stéréo non précisée
 amyl_acetate;Acétate d'amyle;pentyl acetate;628-63-7;
 ethyl_salicylate;Salicylate d'éthyle;ethyl salicylate;118-61-6;
 furfural;Furfural;furfural;98-01-1;
