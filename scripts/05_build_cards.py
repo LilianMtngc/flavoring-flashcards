@@ -358,7 +358,11 @@ def glossaire(cards):
     for r in read_csv("glossaire.csv"):
         keys = [k for k in r["cles"].split("|") if k]
         missing += [k for k in keys if k not in by_key]
-        out.append({"rubrique": r["rubrique"], "terme": r["terme"], "definition": r["definition"],
+        # sources : pages Wikipédia notées « en:Titre|fr:Titre »
+        src = [{"lang": s.split(":", 1)[0], "page": s.split(":", 1)[1],
+                "url": f"https://{s.split(':', 1)[0]}.wikipedia.org/wiki/" + s.split(":", 1)[1].replace(" ", "_")}
+               for s in (r.get("source") or "").split("|") if ":" in s]
+        out.append({"rubrique": r["rubrique"], "terme": r["terme"], "definition": r["definition"], "sources": src,
                     "cartes": [{"id": by_key[k]["id"], "titre": by_key[k]["titre"]} for k in keys if k in by_key]})
     if missing:
         raise SystemExit(f"glossaire.csv : molécules sans carte : {', '.join(missing)}")

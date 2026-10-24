@@ -192,6 +192,7 @@ h1.brand .c{color:var(--brand-cards)}
 .gentry li{margin:1px 0}
 .gentry .gl{margin-top:6px;display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12.5px}
 .gentry .gl::before{content:"Cartes :";color:var(--fg-3)}
+.gentry .gsrc{margin-top:4px;font-size:12px;color:var(--fg-3)}
 .drawer.open{transform:none}
 .drawer h3{font-size:16px;margin:0 0 4px}
 .drawer h4{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3);margin:18px 0 8px;font-weight:600}
@@ -478,7 +479,7 @@ dialog.dlg::backdrop{background:rgba(0,0,0,.45)}
   <aside class="drawer left" id="gloss" aria-label="Vocabulaire" aria-hidden="true">
     <div class="dhead"><h3>Vocabulaire</h3><button class="btn close" id="glossclose">Fermer</button>
       <input type="search" class="gsearch" id="gq" placeholder="Chercher un terme…" aria-label="Chercher dans le vocabulaire"></div>
-    <div class="dbody"><div class="note">Noms usuels, préfixes et notions utiles. Rédigé avec assistance IA.</div><div id="glossbody"></div></div></aside>
+    <div class="dbody"><div class="note">Noms usuels, préfixes et notions utiles. Rédigé avec assistance IA ; sources indiquées sous les entrées qui en ont.</div><div id="glossbody"></div></div></aside>
   <dialog class="dlg" id="installdlg" aria-labelledby="installtitle">
     <div class="dhead"><h3 id="installtitle">Installer AromaCards</h3><button class="btn close" id="installclose">Fermer</button></div>
     <div class="dbody" id="installbody"></div>
@@ -859,7 +860,7 @@ function go(d){
 function mark(v){ if (!deck.length) return; const id = cards[deck[pos]].id; progress[id] = v; store.set(progress); schedule(id, v); deck.length > 1 ? go(1) : render(); }
 
 // tri du catalogue : on ignore les locants et préfixes de stéréo (« (E)-2- », « α- », « 2,3,5- »…)
-const sortKey = t => norm(t.replace(/^((\([^)]*\)|[\d,'′]+|[αβγδΔεω]\d*|[DLRSEZNnopm]|cis|trans)-)+/, "")).replace(/^[^a-z]+/, "");
+const sortKey = t => norm(t.replace(/^((\([^)]*\)|[\d,'′]+|[αβγδΔεω]\d*|[DLRSEZNnopm]|(?:[Cc]is|[Tt]rans)(?:-\d+)?(?:,(?:cis|trans)(?:-\d+)?)*)-)+/, "")).replace(/^[^a-z]+/, "");
 let catSort = (() => { try { return localStorage.getItem("flavoring-flashcards-tri") || "alpha"; } catch(e){ return "alpha"; } })();
 document.querySelector(".cathead .modes").onclick = e => {
   const b = e.target.closest("[data-sort]");
@@ -1247,7 +1248,7 @@ function renderGloss(){
   $("#glossbody").innerHTML = items.length ? items.map(g => {
     const l = sortKey(g.terme)[0].toUpperCase();
     const head = l !== letter ? `<div class="gletter">${esc(letter = l)}</div>` : "";
-    return head + `<div class="gentry"><div class="gt"><b>${esc(g.terme)}</b><span class="grub">${esc(g.rubrique)}</span></div>${defHTML(g.definition)}${g.cartes.length ? `<div class="gl">${g.cartes.map(c => `<button class="linkbtn" data-ggo="${esc(c.id)}">${esc(c.titre)}</button>`).join("")}</div>` : ""}</div>`;
+    return head + `<div class="gentry"><div class="gt"><b>${esc(g.terme)}</b><span class="grub">${esc(g.rubrique)}</span></div>${defHTML(g.definition)}${(g.sources || []).length ? `<div class="gsrc">Source${g.sources.length > 1 ? "s" : ""} : ${g.sources.map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">Wikipédia${s.lang === "en" ? " (en)" : ""} — ${esc(s.page)}</a>`).join(" · ")}</div>` : ""}${g.cartes.length ? `<div class="gl">${g.cartes.map(c => `<button class="linkbtn" data-ggo="${esc(c.id)}">${esc(c.titre)}</button>`).join("")}</div>` : ""}</div>`;
   }).join("") : `<p class="note">Aucun terme ne correspond.</p>`;
 }
 $("#glosstab").onclick = () => toggleGloss();

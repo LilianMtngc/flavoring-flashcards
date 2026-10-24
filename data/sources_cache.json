@@ -6585,5 +6585,16 @@
   "odeur": [],
   "gout": [],
   "fema": null
+ },
+ "difurfuryl_ether": {
+  "cid": 263034,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3337",
+   "url": "https://www.femaflavor.org/flavor-library/difurfuryl-ether",
+   "profil": "Savory",
+   "jecfa": "1522"
+  }
  }
 }

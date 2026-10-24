@@ -11085,5 +11085,34 @@
   "cactus_name": "BXKLSVWRSUPMBO-UHFFFAOYSA-N",
   "cactus_cas": null,
   "opsin": "BXKLSVWRSUPMBO-UHFFFAOYSA-N"
+ },
+ "difurfuryl_ether": {
+  "query": "difurfuryl ether",
+  "cas": "4437-22-3",
+  "pubchem_name": {
+   "CID": 263034,
+   "MolecularFormula": "C10H10O3",
+   "MolecularWeight": "178.18",
+   "SMILES": "C1=COC(=C1)COCC2=CC=CO2",
+   "ConnectivitySMILES": "C1=COC(=C1)COCC2=CC=CO2",
+   "InChIKey": "YEQMNLGBLPBBNI-UHFFFAOYSA-N",
+   "IUPACName": "2-(furan-2-ylmethoxymethyl)furan",
+   "Title": "Difurfuryl ether",
+   "n_cids": 1
+  },
+  "pubchem_cas": {
+   "CID": 263034,
+   "MolecularFormula": "C10H10O3",
+   "MolecularWeight": "178.18",
+   "SMILES": "C1=COC(=C1)COCC2=CC=CO2",
+   "ConnectivitySMILES": "C1=COC(=C1)COCC2=CC=CO2",
+   "InChIKey": "YEQMNLGBLPBBNI-UHFFFAOYSA-N",
+   "IUPACName": "2-(furan-2-ylmethoxymethyl)furan",
+   "Title": "Difurfuryl ether",
+   "n_cids": 1
+  },
+  "cactus_name": "YEQMNLGBLPBBNI-UHFFFAOYSA-N",
+  "cactus_cas": "YEQMNLGBLPBBNI-UHFFFAOYSA-N",
+  "opsin": "YEQMNLGBLPBBNI-UHFFFAOYSA-N"
  }
 }

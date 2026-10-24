@@ -8,12 +8,12 @@ avec un focus sur les **notes brunes** (caramel, cacao, café, grillé, noisette
 - **Recto** : la structure chimique (ou, pour un produit naturel, sa ou ses molécules marqueurs).
 - **Verso** : le nom, la famille chimique, la formule, le numéro CAS, les descripteurs, le dosage, les usages et les sources.
 
-459 cartes : 278 molécules, 32 produits naturels, 86 molécules théoriques et 63 comparaisons d'analogues, dont 73 notes brunes (hors analogues), 31 molécules de défaut et 8 cartes avec une mention CMR / CIRC.
+460 cartes : 278 molécules, 32 produits naturels, 87 molécules théoriques et 63 comparaisons d'analogues, dont 73 notes brunes (hors analogues), 31 molécules de défaut et 8 cartes avec une mention CMR / CIRC.
 
 Quatre catégories :
 - **Molécules** et **produits naturels** du jeu de départ, avec leurs descripteurs et leur dosage d'évaluation (ppm) ;
 - **Théoriques** : molécules de référence ajoutées parce qu'il serait gênant de les ignorer quand on apprend l'aromatique
-  (2-acétyl-1-pyrroline, thiols du pamplemousse et du cassis, défauts comme le TCA, la géosmine ou le (E)-2-nonénal,
+  (2-acétyl-1-pyrroline, thiols du pamplemousse et du cassis, défauts comme le TCA, la géosmine ou le trans-2-nonénal,
   énantiomères de la carvone et du limonène, terpènes, esters fruités, agents rafraîchissants, chauffants et picotants…). Leurs descripteurs viennent de leur page Wikipédia, citation à l'appui
   ([`data/theoriques_wiki.csv`](data/theoriques_wiki.csv)), ou à défaut du profil FEMA traduit terme à terme
   ([`data/glossaire_fema.csv`](data/glossaire_fema.csv)). Elles n'ont pas de dosage ;
@@ -44,6 +44,7 @@ Quatre catégories :
   - **Catalogue** : tri alphabétique (par défaut) ou par famille chimique, bouton en haut à droite.
   - **Vocabulaire** : onglet sur le bord gauche, par ordre alphabétique. Noms usuels et pièges (valéraldéhyde = pentanal, caproïque / caprylique /
     caprique, « aldéhydes C-n »…), stéréochimie, préfixes, fonctions, hétérocycles, terpènes, chimie des arômes, identifiants.
+    Les entrées ajoutées depuis octobre 2026 citent leurs sources (Wikipédia).
     Chaque entrée renvoie vers les cartes concernées ([`data/glossaire.csv`](data/glossaire.csv), rédigé avec assistance IA).
   - **Raccourcis** : `/` rechercher, `F` filtres, `E` étiquette, `M` changer de recto, `S` statistiques, `V` vocabulaire, `D` descripteur personnel,
     `?` liste des raccourcis (aussi sous la carte : « Autres raccourcis »).
@@ -104,8 +105,8 @@ Elle est calculée à partir de l'indice de complexité topologique de Bertz
 (S. H. Bertz, *J. Am. Chem. Soc.* 1981, 103, 3599), via RDKit (`BertzCT`). Les trois niveaux correspondent
 aux terciles de cet indice sur l'ensemble des molécules :
 - Facile : indice < 119 ;
-- Moyen : de 119 à 200 ;
-- Difficile : ≥ 200.
+- Moyen : de 119 à 201 ;
+- Difficile : ≥ 201.
 
 Pour une comparaison d'analogues, on retient la molécule la plus complexe.
 

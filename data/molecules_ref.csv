@@ -22,8 +22,8 @@ ethyl_isovalerate;Isovalérate d'éthyle;ethyl isovalerate;108-64-5;
 gamma_heptalactone;γ-Heptalactone;gamma-heptalactone;105-21-5;
 ambrettolide;Ambrettolide;ambrettolide;7779-50-2;
 hexanedione_23;2,3-Hexanedione;2,3-hexanedione;3848-24-6;
-trans_2_hexenal;(E)-2-Hexénal;trans-2-hexenal;6728-26-3;
-trans_2_hexenol;(E)-2-Hexén-1-ol;trans-2-hexen-1-ol;928-95-0;
+trans_2_hexenal;Trans-2-hexénal;trans-2-hexenal;6728-26-3;
+trans_2_hexenol;Trans-2-hexén-1-ol;trans-2-hexen-1-ol;928-95-0;
 lactic_acid;Acide lactique;lactic acid;50-21-5;
 lauric_acid;Acide laurique;lauric acid;143-07-7;
 menthyl_acetate;Acétate de menthyle;menthyl acetate;89-48-5;
@@ -59,7 +59,7 @@ dimethylpyrazine_25;2,5-Diméthylpyrazine;2,5-dimethylpyrazine;123-32-0;
 cocoa_hexenal;5-Méthyl-2-phényl-2-hexénal;5-methyl-2-phenyl-2-hexenal;21834-92-4;
 methylquinoxaline_5;5-Méthylquinoxaline;5-methylquinoxaline;13708-12-8;
 methylthiophenecarboxaldehyde;5-Méthyl-2-thiophènecarboxaldéhyde;5-methyl-2-thiophenecarboxaldehyde;13679-70-4;
-trans_2_octenal;(E)-2-Octénal;trans-2-octenal;2548-87-0;
+trans_2_octenal;Trans-2-octénal;trans-2-octenal;2548-87-0;
 dipropyl_disulfide;Disulfure de dipropyle;dipropyl disulfide;629-19-6;
 delta_undecalactone;δ-Undécalactone;delta-undecalactone;710-04-3;
 ketoisophorone;4-Oxoisophorone (kétoisophorone);4-oxoisophorone;1125-21-9;
@@ -67,7 +67,7 @@ acetic_acid;Acide acétique;acetic acid;64-19-7;
 acetoin;Acétoïne;acetoin;513-86-0;
 acetophenone;Acétophénone;acetophenone;98-86-2;
 isoamyl_acetate;Acétate d'isoamyle;isoamyl acetate;123-92-2;
-anethole;trans-Anéthole;trans-anethole;4180-23-8;
+anethole;Trans-anéthole;trans-anethole;4180-23-8;
 anisyl_acetate;Acétate d'anisyle;anisyl acetate;104-21-2;
 anisyl_alcohol;Alcool anisique;anisyl alcohol;105-13-5;
 benzaldehyde;Benzaldéhyde;benzaldehyde;100-52-7;
@@ -111,8 +111,8 @@ heptanone_2;2-Heptanone (méthylamylcétone);2-heptanone;110-43-0;
 gamma_hexalactone;γ-Hexalactone;gamma-hexalactone;695-06-7;
 hexanal;Hexanal;hexanal;66-25-1;
 hexanoic_acid;Acide hexanoïque (caproïque);hexanoic acid;142-62-1;
-cis_3_hexenol;(Z)-3-Hexén-1-ol;cis-3-hexen-1-ol;928-96-1;
-trans_2_hexenyl_acetate;Acétate de (E)-2-hexényle;trans-2-hexenyl acetate;2497-18-9;
+cis_3_hexenol;Cis-3-hexén-1-ol;cis-3-hexen-1-ol;928-96-1;
+trans_2_hexenyl_acetate;Acétate de trans-2-hexényle;trans-2-hexenyl acetate;2497-18-9;
 hexyl_acetate;Acétate d'hexyle;hexyl acetate;142-92-7;
 raspberry_ketone;Cétone de framboise (frambinone);raspberry ketone;5471-51-2;
 indole;Indole;indole;120-72-9;
@@ -134,7 +134,7 @@ methional;Méthional;methional;3268-49-3;
 naringin;Naringine;naringin;10236-47-2;
 nerol;Nérol;nerol;106-25-2;
 nerolidol;Nérolidol;nerolidol;7212-44-4;
-nonadienol;(E,Z)-2,6-Nonadién-1-ol;trans-2,cis-6-nonadien-1-ol;28069-72-9;
+nonadienol;Trans-2,cis-6-nonadién-1-ol;trans-2,cis-6-nonadien-1-ol;28069-72-9;
 gamma_nonalactone;γ-Nonalactone;gamma-nonalactone;104-61-0;
 nonanone_2;2-Nonanone (méthylheptylcétone);2-nonanone;821-55-6;
 gamma_octalactone;γ-Octalactone;gamma-octalactone;104-50-7;
@@ -151,8 +151,8 @@ vanillin;Vanilline;vanillin;121-33-5;
 veratraldehyde;Vératraldéhyde;veratraldehyde;120-14-9;
 acetylpyrazine;2-Acétylpyrazine;acetylpyrazine;22047-25-2;
 isopropylmethoxypyrazine;2-Isopropyl-3-méthoxypyrazine;2-isopropyl-3-methoxypyrazine;25773-40-4;
-decadienal;(E,E)-2,4-Décadiénal;(2E,4E)-2,4-decadienal;25152-84-5;
-cis_3_hexenyl_acetate;Acétate de (Z)-3-hexényle;cis-3-hexenyl acetate;3681-71-8;
+decadienal;Trans,trans-2,4-décadiénal;(2E,4E)-2,4-decadienal;25152-84-5;
+cis_3_hexenyl_acetate;Acétate de cis-3-hexényle;cis-3-hexenyl acetate;3681-71-8;
 furaneol;Furanéol (4-hydroxy-2,5-diméthyl-3(2H)-furanone);furaneol;3658-77-3;
 thiomenthone;8-Mercapto-p-menthan-3-one (thiomenthone);8-mercapto-p-menthan-3-one;38462-22-5;
 methylfuranthiol;2-Méthyl-3-furanthiol;2-methyl-3-furanthiol;28588-74-1;
@@ -163,20 +163,20 @@ beta_damascone;β-Damascone;beta-damascone;23726-91-2;
 acetylpyridine_2;2-Acétylpyridine;2-acetylpyridine;1122-62-9;
 dmts;Trisulfure de diméthyle;dimethyl trisulfide;3658-80-8;
 furfurylpyrrole;1-Furfurylpyrrole;1-furfurylpyrrole;1438-94-4;
-cis_4_heptenal;(Z)-4-Hepténal;cis-4-heptenal;6728-31-0;
+cis_4_heptenal;Cis-4-hepténal;cis-4-heptenal;6728-31-0;
 methyl_thiobutyrate;Thiobutyrate de S-méthyle;S-methyl thiobutyrate;2432-51-1;
 butylidenephthalide;3-Butylidènephtalide;3-butylidenephthalide;551-08-6;
-nonadienal;(E,Z)-2,6-Nonadiénal;trans-2,cis-6-nonadienal;557-48-2;
+nonadienal;Trans-2,cis-6-nonadiénal;trans-2,cis-6-nonadienal;557-48-2;
 safranal;Safranal;safranal;116-26-7;
 beta_damascenone;β-Damascénone;beta-damascenone;23696-85-7;
-cis_6_nonenol;(Z)-6-Nonén-1-ol;cis-6-nonen-1-ol;35854-86-5;
-ethyl_crotonate;Crotonate d'éthyle ((E)-but-2-énoate d'éthyle);ethyl crotonate;623-70-1;
+cis_6_nonenol;Cis-6-nonén-1-ol;cis-6-nonen-1-ol;35854-86-5;
+ethyl_crotonate;Crotonate d'éthyle (trans-but-2-énoate d'éthyle);ethyl crotonate;623-70-1;
 ethyl_maltol;Éthylmaltol;ethyl maltol;4940-11-8;
 dmds;Disulfure de diméthyle;dimethyl disulfide;624-92-0;
 isopropylmethylthiazole;2-Isopropyl-4-méthylthiazole;2-isopropyl-4-methylthiazole;15679-13-7;
 sotolon;Sotolon (4,5-diméthyl-3-hydroxy-2(5H)-furanone);sotolon;28664-35-9;
 massoia_lactone;Lactone de massoia;massoia lactone;54814-64-1;
-filbertone;Filbertone ((E)-5-méthylhept-2-én-4-one);filbertone;81925-81-7;
+filbertone;Filbertone (trans-5-méthylhept-2-én-4-one);filbertone;81925-81-7;
 methyl_thioacetate;Thioacétate de S-méthyle;S-methyl thioacetate;1534-08-3;
 thialdine;Thialdine;thialdine;638-17-5;
 ethyl_formate;Formiate d'éthyle;ethyl formate;109-94-4;
@@ -255,7 +255,7 @@ methyl_methylthiofuran;5-Méthyl-2-(méthylthio)furane;5-methyl-2-(methylthio)fu
 methyltetrahydrofuranone;2-Méthyltétrahydrofuran-3-one;2-methyltetrahydrofuran-3-one;3188-00-9;
 tridecanone_2;2-Tridécanone;2-tridecanone;593-08-8;
 ethylpyridine_3;3-Éthylpyridine;3-ethylpyridine;536-78-7;
-cis_3_hexenyl_butyrate;Butyrate de (Z)-3-hexényle;cis-3-hexenyl butyrate;16491-36-4;
+cis_3_hexenyl_butyrate;Butyrate de cis-3-hexényle;cis-3-hexenyl butyrate;16491-36-4;
 trimethyldioxolane;2,2,4-Triméthyl-1,3-dioxolane;2,2,4-trimethyl-1,3-dioxolane;1193-11-9;
 dimethyl_dihydroxy_dithiane;2,5-Diméthyl-2,5-dihydroxy-1,4-dithiane;2,5-dimethyl-1,4-dithiane-2,5-diol;55704-78-4;
 trithioacetone;Trithioacétone;trithioacetone;828-26-2;
@@ -269,7 +269,7 @@ homofuraneol;Homofuranéol (2-éthyl-4-hydroxy-5-méthyl-3(2H)-furanone);2-ethyl
 diphenyl_oxide;Oxyde de diphényle;diphenyl ether;101-84-8;
 ethyl_furfurylthiopropionate;3-(Furfurylthio)propionate d'éthyle;ethyl 3-(furfurylthio)propionate;94278-27-0;
 pentadecanone_2;2-Pentadécanone;2-pentadecanone;2345-28-0;
-milk_lactone;Milk lactone (acide (E)-déc-5-énoïque);(E)-5-decenoic acid;85392-03-6;nom commercial « milk lactone » = mélange d'acides 5- et 6-décénoïques : l'isomère (E)-5 est dessiné
+milk_lactone;Milk lactone (acide trans-déc-5-énoïque);(E)-5-decenoic acid;85392-03-6;nom commercial « milk lactone » = mélange d'acides 5- et 6-décénoïques : l'isomère (E)-5 est dessiné
 linalool_oxide;Oxyde de linalol (furanoïde);linalool oxide;1365-19-1;mélange d'isomères cis/trans : stéréo non précisée
 amyl_acetate;Acétate d'amyle;pentyl acetate;628-63-7;
 ethyl_salicylate;Salicylate d'éthyle;ethyl salicylate;118-61-6;
@@ -301,8 +301,8 @@ rebaudioside_a;Rébaudioside A;rebaudioside A;58543-16-1;marqueur
 acetylpyrroline;2-Acétyl-1-pyrroline;2-acetyl-1-pyrroline;85213-22-5;theorique
 acetaldehyde;Acétaldéhyde (éthanal);acetaldehyde;75-07-0;theorique
 nonanal;Nonanal;nonanal;124-19-6;theorique
-cis_3_hexenal;(Z)-3-Hexénal;cis-3-hexenal;6789-80-6;theorique
-trans_2_nonenal;(E)-2-Nonénal;trans-2-nonenal;18829-56-6;theorique
+cis_3_hexenal;Cis-3-hexénal;cis-3-hexenal;6789-80-6;theorique
+trans_2_nonenal;Trans-2-nonénal;trans-2-nonenal;18829-56-6;theorique
 octen_3_one;1-Octén-3-one;1-octen-3-one;4312-99-6;theorique
 pentylfuran_2;2-Pentylfurane;2-pentylfuran;3777-69-3;theorique
 acetylthiazoline;2-Acétyl-2-thiazoline;2-acetyl-2-thiazoline;29926-41-8;theorique
@@ -312,13 +312,13 @@ diethylmethylpyrazine;2,3-Diéthyl-5-méthylpyrazine;2,3-diethyl-5-methylpyrazin
 mercaptomethylbutyl_formate;Formiate de 3-mercapto-3-méthylbutyle;3-mercapto-3-methylbutyl formate;50746-10-6;theorique
 bis_methylfuryl_disulfide;Disulfure de bis(2-méthyl-3-furyle);bis(2-methyl-3-furyl) disulfide;28588-75-2;theorique
 mesifurane;Mésifurane (4-méthoxy-2,5-diméthyl-3(2H)-furanone);2,5-dimethyl-4-methoxy-3(2H)-furanone;4077-47-8;theorique
-furfuryl_alcohol;Alcool furfurylique;furfuryl alcohol;98-00-0;theorique
+furfuryl_alcohol;Alcool furfurylique (furfuranol);furfuryl alcohol;98-00-0;theorique
 pentyl_pyrone;6-Pentyl-α-pyrone;6-pentyl-2H-pyran-2-one;27593-23-3;theorique
 nootkatone;Nootkatone;nootkatone;4674-50-4;theorique
 menthenethiol;1-p-Menthène-8-thiol;1-p-menthene-8-thiol;71159-90-5;theorique
 mmp_4;4-Mercapto-4-méthylpentan-2-one (4MMP);4-mercapto-4-methyl-2-pentanone;19872-52-7;theorique
 mercaptohexanol_3;3-Mercaptohexan-1-ol (3MH);3-mercapto-1-hexanol;51755-83-0;theorique
-ethyl_decadienoate;(2E,4Z)-Décadiénoate d'éthyle;ethyl (2E,4Z)-2,4-decadienoate;3025-30-7;theorique
+ethyl_decadienoate;Trans-2,cis-4-décadiénoate d'éthyle;ethyl (2E,4Z)-2,4-decadienoate;3025-30-7;theorique
 ethyl_methylphenylglycidate;3-Méthyl-3-phénylglycidate d'éthyle;ethyl 3-methyl-3-phenylglycidate;77-83-8;theorique
 ethyl_methylthiopropionate;3-(Méthylthio)propionate d'éthyle;ethyl 3-(methylthio)propionate;13327-56-5;theorique
 allyl_isothiocyanate;Isothiocyanate d'allyle;allyl isothiocyanate;57-06-7;theorique
@@ -329,7 +329,7 @@ thymol;Thymol;thymol;89-83-8;theorique
 carvacrol;Carvacrol;carvacrol;499-75-2;theorique
 s_carvone;(S)-(+)-Carvone;(S)-(+)-carvone;2244-16-8;theorique
 alpha_ionone;α-Ionone;alpha-ionone;127-41-3;theorique
-cis_jasmone;cis-Jasmone;cis-jasmone;488-10-8;theorique
+cis_jasmone;Cis-jasmone;cis-jasmone;488-10-8;theorique
 rose_oxide;Oxyde de rose;rose oxide;16409-43-1;theorique
 cuminaldehyde;Cuminaldéhyde (4-isopropylbenzaldéhyde);4-isopropylbenzaldehyde;122-03-2;theorique
 camphor;Camphre;camphor;76-22-2;theorique
@@ -350,7 +350,7 @@ gamma_terpinene;γ-Terpinène;gamma-terpinene;99-85-4;theorique
 terpinolene;Terpinolène;terpinolene;586-62-9;theorique
 p_cymene;p-Cymène;p-cymene;99-87-6;theorique
 dodecanal;Dodécanal;dodecanal;112-54-9;theorique
-trans_2_dodecenal;(E)-2-Dodécénal;trans-2-dodecenal;20407-84-5;theorique
+trans_2_dodecenal;Trans-2-dodécénal;trans-2-dodecenal;20407-84-5;theorique
 perillaldehyde;Périllaldéhyde;perillaldehyde;2111-75-3;theorique
 citronellyl_acetate;Acétate de citronellyle;citronellyl acetate;150-84-5;theorique
 hexyl_butyrate;Butyrate d'hexyle;hexyl butyrate;2639-63-6;theorique
@@ -359,7 +359,7 @@ methyl_methylbutyrate;2-Méthylbutyrate de méthyle;methyl 2-methylbutyrate;868-
 prenyl_acetate;Acétate de prényle (acétate de 3-méthylbut-2-ényle);3-methyl-2-butenyl acetate;1191-16-8;theorique
 allyl_cyclohexylpropionate;3-Cyclohexylpropionate d'allyle;allyl cyclohexanepropionate;2705-87-5;theorique
 methyl_hexanoate;Hexanoate de méthyle;methyl hexanoate;106-70-7;theorique
-cis_6_nonenal;(Z)-6-Nonénal;cis-6-nonenal;2277-19-2;theorique
+cis_6_nonenal;Cis-6-nonénal;cis-6-nonenal;2277-19-2;theorique
 mercaptohexyl_acetate;Acétate de 3-mercaptohexyle (3MHA);3-mercaptohexyl acetate;136954-20-6;theorique
 aminoacetophenone;2-Aminoacétophénone;2'-aminoacetophenone;551-93-9;theorique
 beta_pinene;β-Pinène;beta-pinene;127-91-3;theorique
@@ -382,3 +382,4 @@ spilanthol;Spilanthol;(2E,6Z,8E)-N-(2-methylpropyl)deca-2,6,8-trienamide;25394-5
 sanshool;Hydroxy-α-sanshool;(2E,6Z,8E,10E)-N-(2-hydroxy-2-methylpropyl)dodeca-2,6,8,10-tetraenamide;83883-10-7;theorique
 tba;2,4,6-Tribromoanisole (TBA);2,4,6-tribromoanisole;607-99-8;theorique
 mdmp;2-Méthoxy-3,5-diméthylpyrazine;2-methoxy-3,5-dimethylpyrazine;92508-08-2;theorique
+difurfuryl_ether;Éther difurfurylique;difurfuryl ether;4437-22-3;theorique

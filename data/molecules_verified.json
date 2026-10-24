@@ -447,7 +447,7 @@
  },
  "trans_2_hexenal": {
   "key": "trans_2_hexenal",
-  "nom_fr": "(E)-2-Hexénal",
+  "nom_fr": "Trans-2-hexénal",
   "cas": "6728-26-3",
   "cid": 5281168,
   "smiles": "CCC/C=C/C=O",
@@ -467,7 +467,7 @@
  },
  "trans_2_hexenol": {
   "key": "trans_2_hexenol",
-  "nom_fr": "(E)-2-Hexén-1-ol",
+  "nom_fr": "Trans-2-hexén-1-ol",
   "cas": "928-95-0",
   "cid": 5318042,
   "smiles": "CCC/C=C/CO",
@@ -1198,7 +1198,7 @@
  },
  "trans_2_octenal": {
   "key": "trans_2_octenal",
-  "nom_fr": "(E)-2-Octénal",
+  "nom_fr": "Trans-2-octénal",
   "cas": "2548-87-0",
   "cid": 5283324,
   "smiles": "CCCCC/C=C/C=O",
@@ -1356,7 +1356,7 @@
  },
  "anethole": {
   "key": "anethole",
-  "nom_fr": "trans-Anéthole",
+  "nom_fr": "Trans-anéthole",
   "cas": "4180-23-8",
   "cid": 637563,
   "smiles": "C/C=C/C1=CC=C(C=C1)OC",
@@ -2233,7 +2233,7 @@
  },
  "cis_3_hexenol": {
   "key": "cis_3_hexenol",
-  "nom_fr": "(Z)-3-Hexén-1-ol",
+  "nom_fr": "Cis-3-hexén-1-ol",
   "cas": "928-96-1",
   "cid": 5281167,
   "smiles": "CC/C=C\\CCO",
@@ -2253,7 +2253,7 @@
  },
  "trans_2_hexenyl_acetate": {
   "key": "trans_2_hexenyl_acetate",
-  "nom_fr": "Acétate de (E)-2-hexényle",
+  "nom_fr": "Acétate de trans-2-hexényle",
   "cas": "2497-18-9",
   "cid": 2733294,
   "smiles": "CCC/C=C/COC(=O)C",
@@ -2682,7 +2682,7 @@
  },
  "nonadienol": {
   "key": "nonadienol",
-  "nom_fr": "(E,Z)-2,6-Nonadién-1-ol",
+  "nom_fr": "Trans-2,cis-6-nonadién-1-ol",
   "cas": "28069-72-9",
   "cid": 5362833,
   "smiles": "CC/C=C\\CC/C=C/CO",
@@ -3022,7 +3022,7 @@
  },
  "decadienal": {
   "key": "decadienal",
-  "nom_fr": "(E,E)-2,4-Décadiénal",
+  "nom_fr": "Trans,trans-2,4-décadiénal",
   "cas": "25152-84-5",
   "cid": 5283349,
   "smiles": "CCCCC/C=C/C=C/C=O",
@@ -3042,7 +3042,7 @@
  },
  "cis_3_hexenyl_acetate": {
   "key": "cis_3_hexenyl_acetate",
-  "nom_fr": "Acétate de (Z)-3-hexényle",
+  "nom_fr": "Acétate de cis-3-hexényle",
   "cas": "3681-71-8",
   "cid": 5363388,
   "smiles": "CC/C=C\\CCOC(=O)C",
@@ -3270,7 +3270,7 @@
  },
  "cis_4_heptenal": {
   "key": "cis_4_heptenal",
-  "nom_fr": "(Z)-4-Hepténal",
+  "nom_fr": "Cis-4-hepténal",
   "cas": "6728-31-0",
   "cid": 5362814,
   "smiles": "CC/C=C\\CCC=O",
@@ -3326,7 +3326,7 @@
  },
  "nonadienal": {
   "key": "nonadienal",
-  "nom_fr": "(E,Z)-2,6-Nonadiénal",
+  "nom_fr": "Trans-2,cis-6-nonadiénal",
   "cas": "557-48-2",
   "cid": 643731,
   "smiles": "CC/C=C\\CC/C=C/C=O",
@@ -3386,7 +3386,7 @@
  },
  "cis_6_nonenol": {
   "key": "cis_6_nonenol",
-  "nom_fr": "(Z)-6-Nonén-1-ol",
+  "nom_fr": "Cis-6-nonén-1-ol",
   "cas": "35854-86-5",
   "cid": 5362792,
   "smiles": "CC/C=C\\CCCCCO",
@@ -3406,7 +3406,7 @@
  },
  "ethyl_crotonate": {
   "key": "ethyl_crotonate",
-  "nom_fr": "Crotonate d'éthyle ((E)-but-2-énoate d'éthyle)",
+  "nom_fr": "Crotonate d'éthyle (trans-but-2-énoate d'éthyle)",
   "cas": "623-70-1",
   "cid": 429065,
   "smiles": "CCOC(=O)/C=C/C",
@@ -3520,7 +3520,7 @@
  },
  "filbertone": {
   "key": "filbertone",
-  "nom_fr": "Filbertone ((E)-5-méthylhept-2-én-4-one)",
+  "nom_fr": "Filbertone (trans-5-méthylhept-2-én-4-one)",
   "cas": "81925-81-7",
   "cid": 5362588,
   "smiles": "CCC(C)C(=O)/C=C/C",
@@ -5086,7 +5086,7 @@
  },
  "cis_3_hexenyl_butyrate": {
   "key": "cis_3_hexenyl_butyrate",
-  "nom_fr": "Butyrate de (Z)-3-hexényle",
+  "nom_fr": "Butyrate de cis-3-hexényle",
   "cas": "16491-36-4",
   "cid": 5352438,
   "smiles": "CCCC(=O)OCC/C=C\\CC",
@@ -5362,7 +5362,7 @@
  },
  "milk_lactone": {
   "key": "milk_lactone",
-  "nom_fr": "Milk lactone (acide (E)-déc-5-énoïque)",
+  "nom_fr": "Milk lactone (acide trans-déc-5-énoïque)",
   "cas": "85392-03-6",
   "cid": 5362593,
   "smiles": "CCCC/C=C/CCCC(=O)O",
@@ -5990,7 +5990,7 @@
  },
  "cis_3_hexenal": {
   "key": "cis_3_hexenal",
-  "nom_fr": "(Z)-3-Hexénal",
+  "nom_fr": "Cis-3-hexénal",
   "cas": "6789-80-6",
   "cid": 643941,
   "smiles": "CC/C=C\\CC=O",
@@ -6010,7 +6010,7 @@
  },
  "trans_2_nonenal": {
   "key": "trans_2_nonenal",
-  "nom_fr": "(E)-2-Nonénal",
+  "nom_fr": "Trans-2-nonénal",
   "cas": "18829-56-6",
   "cid": 5283335,
   "smiles": "CCCCCC/C=C/C=O",
@@ -6211,7 +6211,7 @@
  },
  "furfuryl_alcohol": {
   "key": "furfuryl_alcohol",
-  "nom_fr": "Alcool furfurylique",
+  "nom_fr": "Alcool furfurylique (furfuranol)",
   "cas": "98-00-0",
   "cid": 7361,
   "smiles": "C1=COC(=C1)CO",
@@ -6332,7 +6332,7 @@
  },
  "ethyl_decadienoate": {
   "key": "ethyl_decadienoate",
-  "nom_fr": "(2E,4Z)-Décadiénoate d'éthyle",
+  "nom_fr": "Trans-2,cis-4-décadiénoate d'éthyle",
   "cas": "3025-30-7",
   "cid": 5281162,
   "smiles": "CCCCC/C=C\\C=C\\C(=O)OCC",
@@ -6544,7 +6544,7 @@
  },
  "cis_jasmone": {
   "key": "cis_jasmone",
-  "nom_fr": "cis-Jasmone",
+  "nom_fr": "Cis-jasmone",
   "cas": "488-10-8",
   "cid": 1549018,
   "smiles": "CC/C=C\\CC1=C(CCC1=O)C",
@@ -6950,7 +6950,7 @@
  },
  "trans_2_dodecenal": {
   "key": "trans_2_dodecenal",
-  "nom_fr": "(E)-2-Dodécénal",
+  "nom_fr": "Trans-2-dodécénal",
   "cas": "20407-84-5",
   "cid": 5283361,
   "smiles": "CCCCCCCCC/C=C/C=O",
@@ -7128,7 +7128,7 @@
  },
  "cis_6_nonenal": {
   "key": "cis_6_nonenal",
-  "nom_fr": "(Z)-6-Nonénal",
+  "nom_fr": "Cis-6-nonénal",
   "cas": "2277-19-2",
   "cid": 5362720,
   "smiles": "CC/C=C\\CCCCC=O",
@@ -7562,6 +7562,26 @@
   "controles_chimiques": [
    "cycle pyrazine",
    "méthoxy"
+  ],
+  "status": "ok",
+  "problems": [],
+  "notes": [],
+  "marqueur_seul": false
+ },
+ "difurfuryl_ether": {
+  "key": "difurfuryl_ether",
+  "nom_fr": "Éther difurfurylique",
+  "cas": "4437-22-3",
+  "cid": 263034,
+  "smiles": "C1=COC(=C1)COCC2=CC=CO2",
+  "inchikey": "YEQMNLGBLPBBNI-UHFFFAOYSA-N",
+  "formule": "C10H10O3",
+  "masse": 178.19,
+  "iupac": "2-(furan-2-ylmethoxymethyl)furan",
+  "famille": "furane",
+  "sources_ok": 5,
+  "controles_chimiques": [
+   "cycle furane"
   ],
   "status": "ok",
   "problems": [],
