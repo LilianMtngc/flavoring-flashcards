@@ -3,7 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Flavoring flashcards</title>
+<title>AromaCards</title>
+<meta name="application-name" content="AromaCards">
+<meta name="apple-mobile-web-app-title" content="AromaCards">
 <meta name="description" content="Flash cards de molécules aromatiques : structure chimique au recto, nom, descripteurs, usages et sources au verso. Focus sur les notes brunes.">
 <meta name="theme-color" content="#3d2414">
 <link rel="manifest" href="manifest.webmanifest">
@@ -15,21 +17,22 @@
   --bg:#f6f4ef; --surface:#fffdf9; --surface-2:#f0ede6; --fg:#1f1e1b; --fg-2:#5d5b55; --fg-3:#8b8880;
   --line:#e2ded4; --line-2:#cfcac0; --accent:#7a4a1c; --accent-bg:#f6e7d3; --accent-line:#e3c49c;
   --ok:#2f6b3a; --ok-bg:#e6f2e4; --ok-line:#9cc79f; --warn:#8a5a00; --warn-bg:#fbf0d8; --bad:#9b2c2c; --bad-bg:#faeae7; --bad-line:#e2aaa3;
-  --tint:rgba(255,255,255,.55); --radius:10px; --shadow:0 1px 2px rgba(40,30,10,.06),0 4px 16px rgba(40,30,10,.06);
+  --brand-ink:#3a2210; --brand-cards:#965c2d;
+  --radius:10px; --shadow:0 1px 2px rgba(40,30,10,.06),0 4px 16px rgba(40,30,10,.06);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#171614; --surface:#211f1c; --surface-2:#2a2824; --fg:#ecebe6; --fg-2:#b5b2aa; --fg-3:#8a877f;
     --line:#35322d; --line-2:#48443d; --accent:#e9b77d; --accent-bg:#3a2a18; --accent-line:#6b4a24;
     --ok:#8fd19a; --ok-bg:#1c2e20; --ok-line:#3d6b46; --warn:#f0c46a; --warn-bg:#3a2e14; --bad:#f0a0a0; --bad-bg:#33201e; --bad-line:#6e3a36;
-    --tint:rgba(0,0,0,.22); --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
+    --brand-ink:#f6e8cf; --brand-cards:#eaa55a; --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
   }
 }
 :root[data-theme="dark"]{
   --bg:#171614; --surface:#211f1c; --surface-2:#2a2824; --fg:#ecebe6; --fg-2:#b5b2aa; --fg-3:#8a877f;
   --line:#35322d; --line-2:#48443d; --accent:#e9b77d; --accent-bg:#3a2a18; --accent-line:#6b4a24;
   --ok:#8fd19a; --ok-bg:#1c2e20; --ok-line:#3d6b46; --warn:#f0c46a; --warn-bg:#3a2e14; --bad:#f0a0a0; --bad-bg:#33201e; --bad-line:#6e3a36;
-  --tint:rgba(0,0,0,.22); --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
+  --brand-ink:#f6e8cf; --brand-cards:#eaa55a; --shadow:0 1px 2px rgba(0,0,0,.3),0 4px 16px rgba(0,0,0,.25);
 }
 :root{color-scheme:light}
 :root[data-theme="dark"]{color-scheme:dark}
@@ -37,9 +40,16 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 .wrap{max-width:980px;margin:0 auto;padding:20px 16px 48px}
-header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 16px;margin-bottom:14px}
-h1{font-size:22px;margin:0;font-weight:650;letter-spacing:-.01em}
+/* titre : Young Serif (SIL OFL 1.1), sous-ensemble des seules lettres de « AromaCards », intégré à la page */
+@font-face{font-family:"Young Serif";src:url(data:font/woff2;base64,__FONT_TITRE__) format("woff2");font-display:swap}
+header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;margin-bottom:14px}
+h1.brand{display:flex;align-items:center;gap:10px;margin:0;font:400 28px/1.1 "Young Serif",Georgia,"Times New Roman",serif;letter-spacing:-.005em;color:var(--brand-ink)}
+h1.brand svg{width:38px;height:38px;flex:none;margin:-4px 0}
+h1.brand .c{color:var(--brand-cards)}
 .stats{color:var(--fg-3);font-size:13px}
+.ico{width:1.15em;height:1.15em;vertical-align:-.2em;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.cnt{white-space:nowrap}
+.cnt.sus .ico{color:var(--ok)}.cnt.revoir .ico{color:var(--bad)}
 .tabs{display:flex;gap:4px;background:var(--surface-2);padding:3px;border-radius:9px;width:max-content;max-width:100%;overflow-x:auto}
 .tabs button{border:0;background:transparent;color:var(--fg-2);padding:6px 14px;border-radius:7px;font:inherit;font-size:14px;cursor:pointer;white-space:nowrap}
 .tabs button[aria-selected="true"]{background:var(--surface);color:var(--fg);box-shadow:var(--shadow)}
@@ -54,7 +64,7 @@ h1{font-size:22px;margin:0;font-weight:650;letter-spacing:-.01em}
 .fgroup.wide{grid-column:1/-1}
 .fchips{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .tagtools{margin-top:8px;font-size:12.5px;color:var(--fg-3)}
-.fpanel-foot{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:10px;font-size:13px}
+.fpanel-foot{grid-column:1/-1;display:flex;justify-content:flex-end;align-items:center;border-top:1px solid var(--line);padding-top:10px;font-size:13px}
 .active{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 14px;font-size:12.5px}
 .active:empty{margin:0 0 6px}
 .pill{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:12.5px;border:1px solid var(--line-2);background:var(--surface-2);color:var(--fg-2);border-radius:999px;padding:2px 8px 2px 10px;cursor:pointer}
@@ -115,15 +125,16 @@ h1{font-size:22px;margin:0;font-weight:650;letter-spacing:-.01em}
 .secu small{display:block;color:var(--fg-3);font-size:12px}
 .badge.def{background:var(--warn-bg);color:var(--warn)}
 .badge.cmr{background:var(--bad-bg);color:var(--bad);font-weight:600}
-.due{font:inherit;font-size:13px;background:none;border:0;padding:0;color:var(--accent);cursor:pointer}
-.due:hover{text-decoration:underline}
 .sidetab{position:fixed;top:240px;width:34px;height:116px;text-align:center;box-sizing:border-box;line-height:20px;writing-mode:vertical-rl;font:inherit;font-size:13px;font-weight:500;letter-spacing:.03em;background:var(--surface);color:var(--fg-2);border:1px solid var(--line-2);padding:14px 7px;cursor:pointer;z-index:5;box-shadow:var(--shadow);-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
 .sidetab.right{right:0;border-right:0;border-radius:8px 0 0 8px}
 .sidetab.left{left:0;border-left:0;border-radius:0 8px 8px 0}
 .sidetab:hover{color:var(--fg)}
-.drawer{position:fixed;top:0;right:0;height:100%;width:min(380px,92vw);background:var(--surface);border-left:1px solid var(--line);box-shadow:-8px 0 24px rgba(0,0,0,.18);z-index:10;overflow-y:auto;padding:18px 18px 28px;transform:translateX(105%);transition:transform .22s ease-out}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(380px,92vw);background:var(--surface);border-left:1px solid var(--line);box-shadow:-8px 0 24px rgba(0,0,0,.18);z-index:10;display:flex;flex-direction:column;transform:translateX(105%);transition:transform .22s ease-out}
+.dhead{flex:none;display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;padding:14px 18px 12px;border-bottom:1px solid var(--line)}
+.dhead h3{flex:1;margin:0}
+.dbody{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:12px 18px 28px}
 .drawer.left{left:0;right:auto;border-left:0;border-right:1px solid var(--line);box-shadow:8px 0 24px rgba(0,0,0,.18);transform:translateX(-105%)}
-.gsearch{width:100%;margin:10px 0 4px}
+.gsearch{flex:1 1 100%;width:100%}
 .gletter{font-size:13px;font-weight:700;color:var(--accent);margin:16px 0 2px;padding-bottom:3px;border-bottom:1px solid var(--line-2)}
 .gentry{padding:10px 0 10px;border-bottom:1px solid var(--line);font-size:13.5px;line-height:1.55}
 .gentry .gt{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:3px}
@@ -137,7 +148,6 @@ h1{font-size:22px;margin:0;font-weight:650;letter-spacing:-.01em}
 .drawer.open{transform:none}
 .drawer h3{font-size:16px;margin:0 0 4px}
 .drawer h4{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3);margin:18px 0 8px;font-weight:600}
-.drawer .close{position:absolute;top:12px;right:12px}
 .srow{display:grid;grid-template-columns:minmax(0,1fr) 46px;gap:2px 8px;align-items:center;font-size:12.5px;margin:6px 0}
 .srow small{color:var(--fg-3);text-align:right}
 .srow .linkbtn{color:var(--fg-2)}
@@ -153,6 +163,9 @@ h1{font-size:22px;margin:0;font-weight:650;letter-spacing:-.01em}
 .tile .tdots span{width:9px;height:9px;border-radius:50%;background:var(--c)}
 .chip{border:1px solid var(--line-2);background:var(--surface);color:var(--fg-2);border-radius:999px;padding:4px 12px;font:inherit;font-size:13px;cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--fg);border-color:var(--fg);color:var(--bg)}
+.chip .ico{width:1.05em;height:1.05em;vertical-align:-.17em}
+.chip[data-v="sus"] .ico{color:var(--ok)}.chip[data-v="revoir"] .ico{color:var(--bad)}
+.chip[aria-pressed="true"] .ico{color:inherit}
 .chip.brown[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--surface)}
 .sep{width:1px;height:20px;background:var(--line-2);margin:0 2px}
 select,input[type=search]{font:inherit;font-size:13px;color:var(--fg);background:var(--surface);border:1px solid var(--line-2);border-radius:8px;padding:5px 10px}
@@ -162,10 +175,13 @@ input[type=search]{min-width:0;flex:1 1 180px}
 .btn.primary{background:var(--fg);color:var(--bg);border-color:var(--fg)}
 .btn.good{border-color:var(--ok);color:var(--ok)}
 .btn.again{border-color:var(--bad);color:var(--bad)}
+.btn.icon{display:inline-flex;align-items:center;justify-content:center;min-width:48px;padding:6px 12px}
+.btn.icon .ico{width:21px;height:21px}
+.btn.good.icon:hover{background:var(--ok-bg)}.btn.again.icon:hover{background:var(--bad-bg)}
 .btn:disabled{opacity:.4;cursor:default}
 .progress{display:flex;justify-content:space-between;font-size:13px;color:var(--fg-3);margin-bottom:8px;gap:8px;flex-wrap:wrap}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);min-height:440px;padding:22px 24px;cursor:pointer;position:relative;outline:none}
-.card:focus-visible{box-shadow:0 0 0 3px var(--accent-line)}
+.card{--ring:0 0 0 0 transparent;background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--ring),var(--shadow);min-height:440px;padding:22px 24px;cursor:pointer;position:relative;outline:none}
+.card:focus-visible{box-shadow:var(--ring),0 0 0 4px var(--accent-line)}
 .card.anim{animation:flip .28s ease-out}
 @keyframes flip{from{transform:perspective(900px) rotateY(80deg);opacity:.2}to{transform:none;opacity:1}}
 .kind{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--fg-3);text-align:center}
@@ -190,7 +206,12 @@ svg.mol{max-width:100%;max-height:300px;height:auto;color:var(--fg)}
 figcaption{font-size:12.5px;color:var(--fg-2);text-align:center}
 .structs.many svg.mol{max-height:180px}
 .layout{display:block}
-.keys .more{cursor:help;border-bottom:1px dotted var(--fg-3)}
+.keys .more{font:inherit;background:none;border:0;border-bottom:1px dotted var(--fg-3);padding:0;color:var(--fg-2);cursor:pointer}
+.keys .more:hover,.keys .more[aria-expanded="true"]{color:var(--fg);border-bottom-style:solid}
+.keylist{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:6px 18px;max-width:640px;margin:10px auto 0;padding:10px 14px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+.keylist[hidden]{display:none}
+.keylist span{display:flex;align-items:center;gap:8px}
+.keylist kbd{min-width:22px;text-align:center}
 /* écran large : filtres en colonne à gauche, verso en deux colonnes */
 @media (min-width:1100px){
   .wrap{max-width:1500px;padding:20px 52px 48px}
@@ -202,7 +223,7 @@ figcaption{font-size:12.5px;color:var(--fg-2);text-align:center}
   .fpanel .fgroup{margin-bottom:14px}
   .fpanel .chip{font-size:12.5px;padding:3px 10px}
   .fpanel select{width:100%}
-  .fpanel-foot{padding-top:8px}
+  .fpanel-foot{display:none}
   .main .tabs{margin-bottom:12px}
   .back{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:0 30px}
   .back > .hero{grid-column:1/-1}
@@ -255,9 +276,10 @@ h2{font-size:24px;margin:0 0 2px;font-weight:650;letter-spacing:-.01em}
 .tile .pics.many svg.mol{width:31%!important}
 .tile b{font-size:13px;line-height:1.3;font-weight:600}
 .tile small{color:var(--fg-3);font-size:12px}
-.card.st-sus,.tile.st-sus{background:var(--ok-bg);border-color:var(--ok-line)}
-.card.st-revoir,.tile.st-revoir{background:var(--bad-bg);border-color:var(--bad-line)}
-.card.st-sus .usage,.card.st-revoir .usage,.card.st-sus .meta span,.card.st-revoir .meta span,.card.st-sus .badge.lvl,.card.st-revoir .badge.lvl{background:var(--tint)}
+.card.st-sus{border-color:var(--ok);--ring:0 0 0 1px var(--ok)}
+.card.st-revoir{border-color:var(--bad);--ring:0 0 0 1px var(--bad)}
+.tile.st-sus{border-color:var(--ok);box-shadow:0 0 0 1px var(--ok)}
+.tile.st-revoir{border-color:var(--bad);box-shadow:0 0 0 1px var(--bad)}
 #score.sus{color:var(--ok)}#score.revoir{color:var(--bad)}
 .theme{font:inherit;font-size:13px;border:1px solid var(--line-2);background:var(--surface);color:var(--fg-2);border-radius:999px;padding:3px 11px;cursor:pointer}
 .head-r{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
@@ -289,8 +311,8 @@ footer a:hover,.linkbtn:hover{text-decoration:underline}
 <body>
 <div class="wrap">
   <header>
-    <h1>Flavoring flashcards</h1>
-    <div class="head-r"><div class="stats"><span id="stats"></span><button class="due" id="due" hidden title="Cartes dont la date de révision est arrivée (répétition espacée)"></button></div><button class="theme" id="theme" aria-label="Changer de thème"></button></div>
+    <h1 class="brand"><!--__ICONE__--><span>Aroma<span class="c">Cards</span></span></h1>
+    <div class="head-r"><div class="stats" id="stats"></div><button class="theme" id="theme" aria-label="Changer de thème"></button></div>
   </header>
   <div class="layout">
   <aside class="side">
@@ -312,8 +334,8 @@ footer a:hover,.linkbtn:hover{text-decoration:underline}
     </div></div>
     <div class="fgroup"><h4>Progression</h4><div class="fchips">
       <button class="chip" data-f="etat" data-v="none" aria-pressed="false">Pas encore vues</button>
-      <button class="chip" data-f="etat" data-v="revoir" aria-pressed="false">À revoir</button>
-      <button class="chip" data-f="etat" data-v="sus" aria-pressed="false">Je sais</button>
+      <button class="chip" data-f="etat" data-v="revoir" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.35-5.65L4 8.5"/><path d="M4 3.5v5h5"/></svg> À revoir</button>
+      <button class="chip" data-f="etat" data-v="sus" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg> Je sais</button>
       <button class="chip" data-f="etat" data-v="due" aria-pressed="false" title="Répétition espacée : cartes dont la date de révision est arrivée">À réviser aujourd'hui</button>
     </div></div>
     <div class="fgroup"><h4>Défauts et sécurité</h4><div class="fchips">
@@ -330,7 +352,7 @@ footer a:hover,.linkbtn:hover{text-decoration:underline}
       <div id="tagedit"></div>
       <input type="file" id="importfile" accept=".json,application/json" hidden>
     </div>
-    <div class="fpanel-foot"><button class="linkbtn" id="fclear">Tout réinitialiser</button><button class="btn" id="fclose">Fermer</button></div>
+    <div class="fpanel-foot"><button class="btn" id="fclose">Fermer</button></div>
   </div>
   <div class="active" id="active"></div>
   <datalist id="taglist"></datalist>
@@ -351,12 +373,19 @@ footer a:hover,.linkbtn:hover{text-decoration:underline}
         <button class="btn" id="next">Suivant →</button>
       </div>
       <div class="grp">
-        <button class="btn again" id="again">À revoir</button>
-        <button class="btn good" id="good">Je sais</button>
+        <button class="btn again icon" id="again" aria-label="À revoir" title="À revoir (1)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.35-5.65L4 8.5"/><path d="M4 3.5v5h5"/></svg></button>
+        <button class="btn good icon" id="good" aria-label="Je sais" title="Je sais (2)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg></button>
         <button class="btn" id="shuffle">Mélanger</button>
       </div>
     </div>
-    <div class="keys"><kbd>Espace</kbd> retourner · <kbd>←</kbd> <kbd>→</kbd> naviguer · <span class="more" title="1 : à revoir · 2 : je sais · / : rechercher · F : filtres · E : étiquette · M : changer de recto · S : statistiques · V : vocabulaire">Autres raccourcis</span></div>
+    <div class="keys"><kbd>Espace</kbd> retourner · <kbd>←</kbd> <kbd>→</kbd> naviguer · <button class="more" id="morekeys" aria-expanded="false" aria-controls="keylist" title="Afficher tous les raccourcis (?)">Autres raccourcis</button>
+      <div class="keylist" id="keylist" hidden role="region" aria-label="Raccourcis clavier">
+        <span><kbd>1</kbd> À revoir</span><span><kbd>2</kbd> Je sais</span>
+        <span><kbd>/</kbd> Rechercher</span><span><kbd>F</kbd> Filtres</span>
+        <span><kbd>E</kbd> Ajouter une étiquette</span><span><kbd>M</kbd> Changer de recto</span>
+        <span><kbd>S</kbd> Statistiques</span><span><kbd>V</kbd> Vocabulaire</span>
+        <span><kbd>Échap</kbd> Fermer un panneau</span><span><kbd>?</kbd> Afficher ces raccourcis</span>
+      </div></div>
   </section>
   <section id="v-catalog" hidden>
     <div class="cathead"><span id="catcount"></span><span class="modes" role="group" aria-label="Tri du catalogue">Tri :<button data-sort="alpha">Alphabétique</button><button data-sort="famille">Famille chimique</button></span></div>
@@ -365,19 +394,24 @@ footer a:hover,.linkbtn:hover{text-decoration:underline}
   </main>
   </div>
   <button class="sidetab right" id="statstab" aria-controls="drawer" aria-expanded="false">Statistiques</button>
-  <aside class="drawer" id="drawer" aria-label="Statistiques" aria-hidden="true"><button class="btn close" id="drawerclose">Fermer</button><div id="drawerbody"></div></aside>
+  <aside class="drawer" id="drawer" aria-label="Statistiques" aria-hidden="true">
+    <div class="dhead"><h3>Statistiques</h3><button class="btn close" id="drawerclose">Fermer</button></div>
+    <div class="dbody" id="drawerbody"></div></aside>
   <button class="sidetab left" id="glosstab" aria-controls="gloss" aria-expanded="false">Vocabulaire</button>
-  <aside class="drawer left" id="gloss" aria-label="Vocabulaire" aria-hidden="true"><button class="btn close" id="glossclose">Fermer</button>
-    <h3>Vocabulaire</h3><div class="note">Noms usuels, préfixes et notions utiles. Rédigé avec assistance IA.</div>
-    <input type="search" class="gsearch" id="gq" placeholder="Chercher un terme…" aria-label="Chercher dans le vocabulaire"><div id="glossbody"></div></aside>
+  <aside class="drawer left" id="gloss" aria-label="Vocabulaire" aria-hidden="true">
+    <div class="dhead"><h3>Vocabulaire</h3><button class="btn close" id="glossclose">Fermer</button>
+      <input type="search" class="gsearch" id="gq" placeholder="Chercher un terme…" aria-label="Chercher dans le vocabulaire"></div>
+    <div class="dbody"><div class="note">Noms usuels, préfixes et notions utiles. Rédigé avec assistance IA.</div><div id="glossbody"></div></div></aside>
   <footer>
-    <p>Lilian Montagnac (Bioinformatics Engineer) · <a href="https://github.com/LilianMtngc/flavoring-flashcards" title="github.com/LilianMtngc/flavoring-flashcards">GitHub</a> · <a href="flavoring-flashcards.apkg" title="Paquet à importer dans Anki">Deck Anki</a> · <button class="linkbtn" id="reset">Effacer ma progression</button></p>
+    <p>Lilian Montagnac (Bioinformatics Engineer) · <a href="https://github.com/LilianMtngc/aromacards" title="github.com/LilianMtngc/aromacards">GitHub</a> · <a href="aromacards.apkg" title="Paquet à importer dans Anki">Deck Anki</a> · <button class="linkbtn" id="reset">Effacer ma progression</button></p>
   </footer>
 </div>
 <script>
 const DATA = /*__DATA__*/null;
+const ICON = {sus: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12.5l5 5 10-11"/></svg>', revoir: '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.35-5.65L4 8.5"/><path d="M4 3.5v5h5"/></svg>'};
 const BROWN = new Set(["CARAMEL","CARAMEL AMBRÉ","CARAMEL BRÛLÉ","CACAO","POUDRÉ CACAO","CHOCOLAT","CHOCOLAT NOIR","CAFÉ","MOUTURE","GRILLÉ","NOISETTE","NUTTY","PRALINÉ","CACAHUÈTE","ÉRABLE","POUDRÉ VANILLÉ","VANILLE","FUMÉ","BACON","CENDRE","MALT","BISCUITÉ","PAIN","CÉRÉALE","POP-CORN","RIZ BASMATI","BRÛLÉ","CROÛTE DE PAIN","SUCRE BRUN","SUCRE CUIT","MÉLASSE","CASSONADE","TABAC","NOIX","FENUGREC","SÉSAME"]);
 const cards = DATA.cards;
+// les clés du navigateur gardent l'ancien nom du site : la progression et les étiquettes déjà enregistrées sont conservées
 const KEY = "flavoring-flashcards-progress-v1";
 const store = {
   get(){ try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ return {}; } },
@@ -598,10 +632,7 @@ function backHTML(c){
 
 function render(){
   const total = cards.length, sus = cards.filter(c => progress[c.id] === "sus").length, rev = cards.filter(c => progress[c.id] === "revoir").length;
-  $("#stats").textContent = `${total} cartes · ${cards.filter(c => c.brune && c.type !== "sosie").length} notes brunes · ${sus} sues · ${rev} à revoir`;
-  const due = cards.filter(c => isDue(c.id)).length;
-  $("#due").hidden = !due;
-  $("#due").textContent = ` · ${due} à réviser`;
+  $("#stats").innerHTML = `${total} cartes · ${cards.filter(c => c.brune && c.type !== "sosie").length} notes brunes · <span class="cnt sus">${ICON.sus} ${sus} sue${sus > 1 ? "s" : ""}</span> · <span class="cnt revoir">${ICON.revoir} ${rev} à revoir</span>`;
   document.querySelectorAll(".modes button").forEach(b => b.setAttribute("aria-pressed", b.dataset.mode === mode));
   if (!$("#v-study").hidden) updateHash();
   if ($("#drawer").classList.contains("open")) renderStats();
@@ -616,7 +647,7 @@ function render(){
     const st = progress[c.id];
     el.className = "card" + (st ? " st-" + st : "");
     $("#pos").textContent = `Carte ${pos + 1} / ${deck.length}${shuffled ? " · ordre mélangé" : ""}`;
-    $("#score").textContent = st === "sus" ? "✓ Je sais" : st === "revoir" ? "À revoir" : "";
+    $("#score").innerHTML = st === "sus" ? ICON.sus + " Je sais" : st === "revoir" ? ICON.revoir + " À revoir" : "";
     $("#score").className = st || "";
   }
   $("#prev").disabled = pos <= 0;
@@ -714,7 +745,6 @@ function clearFilters(){
 const setPanel = open => { $("#fpanel").hidden = !open; $("#fbtn").setAttribute("aria-expanded", open); };
 $("#fbtn").onclick = () => setPanel($("#fpanel").hidden);
 $("#fclose").onclick = () => setPanel(false);
-$("#fclear").onclick = () => { clearFilters(); rebuild(); };
 $("#fpanel").addEventListener("click", e => {
   const b = e.target.closest("button");
   if (!b) return;
@@ -809,10 +839,10 @@ document.addEventListener("keydown", e => {
 
 // ---- sauvegarde : progression et étiquettes dans un fichier JSON
 function exportData(){
-  const data = {app: "flavoring-flashcards", version: 1, date: new Date().toISOString(), progression: progress, etiquettes: T, revisions: srs};
+  const data = {app: "aromacards", version: 1, date: new Date().toISOString(), progression: progress, etiquettes: T, revisions: srs};
   const a = document.createElement("a");
   a.href = URL.createObjectURL(new Blob([JSON.stringify(data, null, 1)], {type: "application/json"}));
-  a.download = `flavoring-flashcards-${new Date().toISOString().slice(0, 10)}.json`;
+  a.download = `aromacards-${new Date().toISOString().slice(0, 10)}.json`;
   a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }
 $("#importfile").onchange = async e => {
@@ -820,7 +850,7 @@ $("#importfile").onchange = async e => {
   if (!f) return;
   try {
     const d = JSON.parse(await f.text());
-    if (d.app !== "flavoring-flashcards" || !d.etiquettes || !d.progression) throw new Error("format");
+    if (!["aromacards", "flavoring-flashcards"].includes(d.app) || !d.etiquettes || !d.progression) throw new Error("format");  // ancien nom accepté
     if (!confirm("Fusionner ce fichier avec vos données ? En cas de conflit, le fichier l'emporte.")) return;
     Object.assign(progress, d.progression); store.set(progress);
     Object.assign(srs, d.revisions || {}); saveSrs();
@@ -862,6 +892,7 @@ document.addEventListener("keydown", e => {
   if (e.key === "Escape" && $("#drawer").classList.contains("open")){ toggleDrawer(false); return; }
   if (e.key === "Escape" && $("#gloss").classList.contains("open")){ toggleGloss(false); return; }
   if (e.key === "Escape" && !$("#fpanel").hidden){ setPanel(false); return; }
+  if (e.key === "Escape" && !$("#keylist").hidden){ toggleKeys(false); return; }
   if (e.target.matches("input, select, textarea") || $("#v-study").hidden) return;
   if (e.key === " " || e.key === "Enter"){
     if (e.target.closest("button")) return;  // laisse le bouton réagir normalement
@@ -876,6 +907,7 @@ document.addEventListener("keydown", e => {
   if (e.target.matches("input, select, textarea") || e.ctrlKey || e.metaKey || e.altKey) return;
   const k = e.key.toLowerCase();
   if (e.key === "/"){ e.preventDefault(); $("#q").focus(); }
+  else if (e.key === "?") toggleKeys();
   else if (k === "f") setPanel($("#fpanel").hidden);
   else if (k === "s") toggleDrawer();
   else if (k === "v") toggleGloss();
@@ -887,6 +919,13 @@ document.addEventListener("keydown", e => {
   }
 });
 
+// ---- liste des raccourcis (« Autres raccourcis » ou touche ?)
+function toggleKeys(open){
+  const o = open ?? $("#keylist").hidden;
+  $("#keylist").hidden = !o; $("#morekeys").setAttribute("aria-expanded", o);
+}
+$("#morekeys").onclick = () => toggleKeys();
+
 // ---- recto : structure, nom ou descripteurs
 function setMode(m){
   mode = m;
@@ -894,9 +933,6 @@ function setMode(m){
   flipped = false; render(); animate(); focusCard();
 }
 document.querySelector(".modes").onclick = e => { const b = e.target.closest("[data-mode]"); if (b) setMode(b.dataset.mode); };
-
-// ---- révisions du jour
-$("#due").onclick = () => { clearFilters(); filt.etat.add("due"); syncChips(); showView("study"); rebuild(null); };
 
 // ---- lien partageable : carte affichée et filtres dans l'adresse (les étiquettes, personnelles, n'y figurent pas)
 function updateHash(){
@@ -967,7 +1003,7 @@ function renderStats(){
   const base = cards.filter(c => c.type !== "sosie");
   const due = cards.filter(c => isDue(c.id)).length;
   const missed = Object.entries(srs).filter(([id, e]) => e.ko && byId[id]).sort((a, b) => b[1].ko - a[1].ko || a[1].ok - b[1].ok).slice(0, 8);
-  $("#drawerbody").innerHTML = `<h3>Statistiques</h3><div class="note">Enregistrées dans ce navigateur.</div>
+  $("#drawerbody").innerHTML = `<div class="note">Enregistrées dans ce navigateur.</div>
     ${row("Ensemble", cards)}
     <div class="legend"><span><i style="background:var(--ok)"></i>Sues</span><span><i style="background:var(--bad)"></i>À revoir</span><span><i style="background:var(--surface-2);border:1px solid var(--line-2)"></i>Pas encore vues</span></div>
     <p class="note">${due ? `<button class="linkbtn" data-sgo='{"etat":"due"}'>${due} carte${due > 1 ? "s" : ""} à réviser aujourd'hui</button>` : "Aucune carte à réviser aujourd'hui."}</p>

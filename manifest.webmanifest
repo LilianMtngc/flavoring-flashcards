@@ -1,6 +1,6 @@
 {
- "name": "Flavoring flashcards",
- "short_name": "Flashcards",
+ "name": "AromaCards",
+ "short_name": "AromaCards",
  "lang": "fr",
  "description": "Flash cards de molécules aromatiques : structure, descripteurs, usages.",
  "start_url": "./",

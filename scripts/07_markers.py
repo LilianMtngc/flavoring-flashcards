@@ -18,7 +18,7 @@ import requests
 ROOT = Path(__file__).resolve().parent.parent
 D = ROOT / "data"
 API = "https://en.wikipedia.org/w/api.php"
-UA = {"User-Agent": "flavoring-flashcards (https://github.com/LilianMtngc/flavoring-flashcards)"}
+UA = {"User-Agent": "AromaCards (https://github.com/LilianMtngc/aromacards)"}
 
 # noms usuels en anglais qui ne se déduisent pas du nom de requête
 EXTRA = {

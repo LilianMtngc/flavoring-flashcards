@@ -1,9 +1,9 @@
-# Flavoring flashcards
+<h1><img src="icon-192.png" alt="" width="48" height="48" align="absmiddle">&nbsp;AromaCards</h1>
 
 Flash cards pour apprendre à reconnaître les molécules aromatiques à partir de leur structure chimique,
 avec un focus sur les **notes brunes** (caramel, cacao, café, grillé, noisette, érable, vanille, fumé…).
 
-**▶ Ouvrir les cartes : https://lilianmtngc.github.io/flavoring-flashcards/**
+**▶ Ouvrir les cartes : https://lilianmtngc.github.io/aromacards/**
 
 - **Recto** : la structure chimique (ou, pour un produit naturel, sa ou ses molécules marqueurs).
 - **Verso** : le nom, la famille chimique, la formule, le numéro CAS, les descripteurs, le dosage, les usages et les sources.
@@ -22,7 +22,7 @@ Quatre catégories :
   Chaque molécule concernée affiche aussi un encart « À ne pas confondre avec ».
 
 ## Utilisation
-- **Navigateur** : [la page en ligne](https://lilianmtngc.github.io/flavoring-flashcards/), ou `index.html`
+- **Navigateur** : [la page en ligne](https://lilianmtngc.github.io/aromacards/), ou `index.html`
   téléchargé et ouvert localement. Le fichier est autonome et fonctionne hors connexion.
   - Clic ou `Espace` : retourner la carte ; `←` / `→` : naviguer ; `1` : à revoir ; `2` : je sais.
   - Sur ordinateur, les filtres sont dans la colonne de gauche et le verso s'affiche sur deux colonnes ;
@@ -33,21 +33,23 @@ Quatre catégories :
   - **Recto** au choix (en haut à droite de la carte) : la structure (par défaut), le nom (retrouver la structure parmi 4)
     ou les descripteurs (retrouver la molécule parmi 4 ; les leurres sont les sosies et les molécules aux descripteurs proches).
   - **Répétition espacée** : « Je sais » repousse la carte (1, 3, 7, 14, 30 puis 60 jours), « À revoir » la garde pour
-    aujourd'hui. Le compteur « N à réviser » en haut de page ouvre les cartes du jour.
+    aujourd'hui. Le filtre « À réviser aujourd'hui » (ou le lien de l'onglet Statistiques) ouvre les cartes du jour.
   - **Statistiques** : onglet sur le bord droit (progression par type, complexité et famille olfactive, cartes les plus ratées).
   - **Catalogue** : tri alphabétique (par défaut) ou par famille chimique, bouton en haut à droite.
   - **Vocabulaire** : onglet sur le bord gauche, par ordre alphabétique. Noms usuels et pièges (valéraldéhyde = pentanal, caproïque / caprylique /
     caprique, « aldéhydes C-n »…), stéréochimie, préfixes, fonctions, hétérocycles, terpènes, chimie des arômes, identifiants.
     Chaque entrée renvoie vers les cartes concernées ([`data/glossaire.csv`](data/glossaire.csv), rédigé avec assistance IA).
-  - **Raccourcis** : `/` rechercher, `F` filtres, `E` étiquette, `M` changer de recto, `S` statistiques, `V` vocabulaire.
+  - **Raccourcis** : `/` rechercher, `F` filtres, `E` étiquette, `M` changer de recto, `S` statistiques, `V` vocabulaire,
+    `?` liste des raccourcis (aussi sous la carte : « Autres raccourcis »).
   - L'adresse de la page suit la carte affichée et les filtres : on peut la copier pour partager une carte.
   - **Installable** sur mobile (« Ajouter à l'écran d'accueil ») et utilisable hors connexion.
   - **Étiquettes personnelles** : « + Étiquette » au verso d'une carte. Nom et couleur au choix ; on peut ensuite filtrer,
     renommer, recolorer ou supprimer une étiquette depuis le panneau des filtres.
-  - Les cartes sues sont teintées en vert, celles à revoir en rouge. Bouton clair / sombre en haut à droite.
+  - Boutons ↻ « À revoir » et ✓ « Je sais » sous la carte : le contour des cartes sues devient vert, celui des cartes
+    à revoir rouge. Bouton clair / sombre en haut à droite.
   - La progression, les révisions et les étiquettes sont enregistrées dans le navigateur, sur cet appareil uniquement.
     « Exporter » (onglet Statistiques, rubrique « Mes données ») les sauvegarde dans un fichier JSON, à réimporter ailleurs.
-- **Anki** : [`flavoring-flashcards.apkg`](flavoring-flashcards.apkg), à importer avec Fichier → Importer.
+- **Anki** : [`aromacards.apkg`](aromacards.apkg), à importer avec Fichier → Importer.
   Les cartes sont taguées `note_brune`, `complexite_*`, `famille_*` et `molecule` / `naturel` / `theorique`.
 
 ## D'où viennent les informations
@@ -75,7 +77,7 @@ Des contrôles chimiques automatiques s'ajoutent : cycle des γ- et δ-lactones,
 présence de N et S, stéréo E/Z ou énantiomère quand le nom l'exige.
 
 Les rares désaccords ont été tranchés à la main, avec la raison tracée. Le détail figure dans
-[`verification.html`](https://lilianmtngc.github.io/flavoring-flashcards/verification.html).
+[`verification.html`](https://lilianmtngc.github.io/aromacards/verification.html).
 
 ### Marqueurs des produits naturels
 Un couple « produit → molécule » n'est retenu que dans deux cas :
@@ -149,7 +151,7 @@ python scripts/04_render.py       # dessins 2D (RDKit) -> structures/*.svg
 python scripts/06_sources.py      # FEMA et PubChem (cache : data/sources_cache.json)
 python scripts/07_markers.py      # sources Wikipédia des marqueurs -> data/marqueurs_sources.json
 python scripts/08_securite.py     # classifications CLP harmonisées et CIRC (cache : data/securite_cache.json)
-python scripts/05_build_cards.py  # index.html, flavoring-flashcards.apkg, data/cartes.json
+python scripts/05_build_cards.py  # index.html, aromacards.apkg, data/cartes.json
 ```
 
 | Fichier | Contenu |
@@ -160,3 +162,4 @@ python scripts/05_build_cards.py  # index.html, flavoring-flashcards.apkg, data/
 | `data/naturels_ref.csv`, `data/naturels_wiki.csv` | produits naturels, marqueurs, pages Wikipédia consultées |
 | `data/revue_manuelle.csv`, `data/overrides.csv` | décisions manuelles de vérification, avec leur justification |
 | `data/usages.csv` | usages et origine des notes |
+| `fonts/` | police du titre : [Young Serif](https://github.com/noirblancrouge/YoungSerif), réduite aux lettres de « AromaCards » (licence SIL OFL 1.1) |

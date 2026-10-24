@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parent.parent
 MOLS = ROOT / "data" / "molecules_verified.json"
 CACHE = ROOT / "data" / "sources_cache.json"
 VIEW = "https://pubchem.ncbi.nlm.nih.gov/rest/pug_view/data/compound/{cid}/JSON?heading={h}"
-UA = {"User-Agent": "flavoring-flashcards (https://github.com/LilianMtngc/flavoring-flashcards)"}
+UA = {"User-Agent": "AromaCards (https://github.com/LilianMtngc/aromacards)"}
 
 
 def get(url, timeout=30):

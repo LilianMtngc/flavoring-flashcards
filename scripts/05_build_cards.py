@@ -4,7 +4,7 @@ Entrées : data/descripteurs.csv, data/molecules_ref.csv, data/molecules_verifie
           data/naturels_ref.csv, data/marqueurs_sources.json, data/sources_cache.json,
           data/usages.csv, data/glossaire_fema.csv, data/theoriques_wiki.csv, data/familles_olfactives.csv,
           data/defauts.csv, data/securite_cache.json, data/glossaire.csv, structures/*.svg
-Sorties : data/cartes.json, index.html (flash cards), flavoring-flashcards.apkg (Anki),
+Sorties : data/cartes.json, index.html (flash cards), aromacards.apkg (Anki),
           manifest.webmanifest, sw.js, icônes (scripts/icone.py) : page installable, hors connexion
 
 Trois catégories de cartes :
@@ -19,6 +19,7 @@ Trois catégories de cartes :
 Les cartes dont le recto serait identique (même structure, stéréo comprise) sont
 fusionnées : le nom de la molécule est affiché, les produits naturels sont cités.
 """
+import base64
 import csv
 import html
 import json
@@ -324,7 +325,12 @@ def build_html(cards, seuils):
     olf = [r["famille"] for r in read_csv("familles_olfactives.csv")]
     payload = json.dumps({"cards": cards, "seuils": seuils, "olf": olf, "glossaire": glossaire(cards)},
                          ensure_ascii=False).replace("</", "<\\/")
-    (ROOT / "index.html").write_text(template.replace("/*__DATA__*/null", payload), encoding="utf-8")
+    # police du titre (Young Serif, sous-ensemble « AromaCards ») intégrée : la page reste autonome hors connexion
+    font = base64.b64encode((ROOT / "fonts" / "YoungSerif-titre.woff2").read_bytes()).decode()
+    import icone
+    page = (template.replace("/*__DATA__*/null", payload).replace("__FONT_TITRE__", font)
+            .replace("<!--__ICONE__-->", icone.svg(False).replace("<svg ", "<svg aria-hidden='true' ", 1)))
+    (ROOT / "index.html").write_text(page, encoding="utf-8")
     write_pwa()
 
 
@@ -346,7 +352,7 @@ def glossaire(cards):
 
 
 SW = """// cache hors connexion : réseau d'abord (la page reste à jour), copie locale si pas de réseau
-const CACHE = "flavoring-flashcards";
+const CACHE = "aromacards";
 self.addEventListener("install", e => {
   self.skipWaiting();
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(["./", "index.html", "manifest.webmanifest", "icon-192.png"])));
@@ -365,7 +371,7 @@ def write_pwa():
     """Manifeste, service worker et icônes : la page s'installe sur mobile et marche hors connexion."""
     import icone
     manifest = {
-        "name": "Flavoring flashcards", "short_name": "Flashcards", "lang": "fr",
+        "name": "AromaCards", "short_name": "AromaCards", "lang": "fr",
         "description": "Flash cards de molécules aromatiques : structure, descripteurs, usages.",
         "start_url": "./", "scope": "./", "display": "standalone",
         "background_color": "#171614", "theme_color": "#3d2414",
@@ -493,12 +499,12 @@ def anki_fields(c):
 
 def build_anki(cards):
     model = genanki.Model(
-        1607392320, "Flavoring flashcards — structure → nom",
+        1607392320, "AromaCards — structure → nom",
         fields=[{"name": n} for n in ["Type", "Structure", "Nom", "Sous_titre", "Infos", "Descripteurs", "Usages", "Sources"]],
         templates=[{"name": "Structure → nom", "qfmt": FRONT, "afmt": BACK}],
         css=ANKI_CSS,
     )
-    deck = genanki.Deck(2059400111, "Flavoring flashcards::Structures (notes brunes)")
+    deck = genanki.Deck(2059400111, "AromaCards::Structures (notes brunes)")
     for c in cards:
         tags = [f"complexite_{c['niveau'].lower()}",
                 "famille_" + re.sub(r"\W+", "_", c["famille"].lower()).strip("_"),
@@ -511,7 +517,7 @@ def build_anki(cards):
             tags.append("cmr_circ")
         tags += ["olf_" + re.sub(r"\W+", "_", f.lower()).strip("_") for f in c.get("olf", [])]
         deck.add_note(genanki.Note(model=model, fields=anki_fields(c), tags=tags, guid=genanki.guid_for(c["id"])))
-    genanki.Package(deck).write_to_file(str(ROOT / "flavoring-flashcards.apkg"))
+    genanki.Package(deck).write_to_file(str(ROOT / "aromacards.apkg"))
 
 
 def main():
