@@ -126,8 +126,8 @@ Chaque descripteur est rattaché à une famille d'odeur (hespéridé, fruité, f
 terreux, phénolique…) ou à une sensation en bouche (sucré, salé, amer, umami, acide, piquant, froid, autres sensations).
 « Froid » regroupe la fraîcheur mentholée ; le camphré est une famille d'odeur (voir l'entrée du vocabulaire).
 Une famille à laquelle aucune carte n'appartient n'apparaît pas dans les filtres.
-Une carte appartient à une famille selon la même règle que les notes brunes : un descripteur de la famille parmi ses deux premiers,
-ou au moins deux descripteurs de la famille.
+Une carte appartient à une famille d'odeur selon la même règle que les notes brunes : un descripteur de la famille parmi ses deux premiers,
+ou au moins deux descripteurs de la famille. Pour une sensation en bouche, il suffit que la carte porte le descripteur, quelle que soit sa position.
 
 ### Mention CMR / CIRC
 Une carte porte la mention dans deux cas :

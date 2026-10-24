@@ -2840,7 +2840,8 @@
    }
   ],
   "olf": [
-   "Fruité"
+   "Fruité",
+   "Froid"
   ],
   "defaut": "",
   "securite": null,
@@ -3101,7 +3102,8 @@
   "bertz": 269,
   "sosies": [],
   "olf": [
-   "Boisé et résineux"
+   "Boisé et résineux",
+   "Froid"
   ],
   "defaut": "",
   "securite": null,
@@ -5862,7 +5864,9 @@
   "sosies": [],
   "olf": [
    "Lacté",
-   "Gras et aldéhydé"
+   "Gras et aldéhydé",
+   "Amer",
+   "Froid"
   ],
   "defaut": "",
   "securite": null,
@@ -6679,7 +6683,8 @@
   "sosies": [],
   "olf": [
    "Fruité",
-   "Alcoolique et vineux"
+   "Alcoolique et vineux",
+   "Froid"
   ],
   "defaut": "",
   "securite": null,
@@ -7361,7 +7366,9 @@
    "Vert et végétal",
    "Soufré, alliacé et viandé",
    "Terreux et moisi",
-   "Phénolique et médicinal"
+   "Phénolique et médicinal",
+   "Sucré",
+   "Amer"
   ],
   "defaut": "Bière : goût de maïs cuit",
   "securite": null,
@@ -9677,7 +9684,8 @@
   "sosies": [],
   "olf": [
    "Camphré",
-   "Phénolique et médicinal"
+   "Phénolique et médicinal",
+   "Froid"
   ],
   "defaut": "",
   "securite": null,
@@ -12489,7 +12497,8 @@
    "Vert et végétal",
    "Lacté",
    "Gras et aldéhydé",
-   "Solvant et plastique"
+   "Solvant et plastique",
+   "Sucré"
   ],
   "defaut": "",
   "securite": null,
@@ -17243,7 +17252,8 @@
   "sosies": [],
   "olf": [
    "Camphré",
-   "Phénolique et médicinal"
+   "Phénolique et médicinal",
+   "Froid"
   ],
   "defaut": "",
   "securite": {
@@ -22435,7 +22445,8 @@
   "olf": [
    "Boisé et résineux",
    "Terreux et moisi",
-   "Solvant et plastique"
+   "Solvant et plastique",
+   "Froid"
   ],
   "defaut": "",
   "securite": null,
@@ -22710,7 +22721,8 @@
    "Terreux et moisi",
    "Animal et fermenté",
    "Alcoolique et vineux",
-   "Solvant et plastique"
+   "Solvant et plastique",
+   "Amer"
   ],
   "defaut": "",
   "securite": null,
@@ -24865,7 +24877,8 @@
   "sosies": [],
   "olf": [
    "Floral",
-   "Vert et végétal"
+   "Vert et végétal",
+   "Froid"
   ],
   "defaut": "",
   "securite": null,
@@ -26728,7 +26741,10 @@
   "sosies": [],
   "olf": [
    "Soufré, alliacé et viandé",
-   "Métallique"
+   "Métallique",
+   "Salé",
+   "Umami",
+   "Autres sensations"
   ],
   "defaut": "",
   "securite": null,
@@ -27814,7 +27830,8 @@
   ],
   "olf": [
    "Camphré",
-   "Phénolique et médicinal"
+   "Phénolique et médicinal",
+   "Piquant"
   ],
   "defaut": "",
   "securite": null,
@@ -28444,7 +28461,8 @@
   "sosies": [],
   "olf": [
    "Vert et végétal",
-   "Acide"
+   "Acide",
+   "Froid"
   ],
   "defaut": "",
   "securite": null,
@@ -28932,7 +28950,8 @@
   "olf": [
    "Vert et végétal",
    "Épicé",
-   "Sucré"
+   "Sucré",
+   "Froid"
   ],
   "defaut": "",
   "securite": null,
@@ -29130,7 +29149,8 @@
   "bertz": 83,
   "sosies": [],
   "olf": [
-   "Soufré, alliacé et viandé"
+   "Soufré, alliacé et viandé",
+   "Froid"
   ],
   "defaut": "",
   "securite": null,
@@ -29576,7 +29596,8 @@
   ],
   "olf": [
    "Hespéridé",
-   "Fruité"
+   "Fruité",
+   "Froid"
   ],
   "defaut": "",
   "securite": null,
@@ -31097,7 +31118,9 @@
   ],
   "olf": [
    "Fruité",
-   "Gras et aldéhydé"
+   "Gras et aldéhydé",
+   "Acide",
+   "Piquant"
   ],
   "defaut": "",
   "securite": null,
@@ -32642,7 +32665,8 @@
   "sosies": [],
   "olf": [
    "Lacté",
-   "Boisé et résineux"
+   "Boisé et résineux",
+   "Sucré"
   ],
   "defaut": "",
   "securite": null,
@@ -33788,7 +33812,8 @@
   "bertz": 57,
   "olf": [
    "Lacté",
-   "Animal et fermenté"
+   "Animal et fermenté",
+   "Acide"
   ],
   "defaut": "",
   "securite": null,
@@ -33889,7 +33914,8 @@
    "Hespéridé",
    "Boisé et résineux",
    "Camphré",
-   "Phénolique et médicinal"
+   "Phénolique et médicinal",
+   "Piquant"
   ],
   "defaut": "",
   "securite": null,
@@ -33974,7 +34000,8 @@
    "Hespéridé",
    "Floral",
    "Boisé et résineux",
-   "Camphré"
+   "Camphré",
+   "Froid"
   ],
   "defaut": "",
   "securite": null,
@@ -34060,7 +34087,9 @@
    "Vert et végétal",
    "Épicé",
    "Boisé et résineux",
-   "Gras et aldéhydé"
+   "Gras et aldéhydé",
+   "Acide",
+   "Piquant"
   ],
   "defaut": "",
   "securite": null,
@@ -34336,7 +34365,8 @@
   "olf": [
    "Hespéridé",
    "Floral",
-   "Gras et aldéhydé"
+   "Gras et aldéhydé",
+   "Froid"
   ],
   "defaut": "",
   "securite": null,
@@ -34563,7 +34593,8 @@
   "olf": [
    "Vert et végétal",
    "Épicé",
-   "Sucré"
+   "Sucré",
+   "Froid"
   ],
   "defaut": "",
   "securite": null,
@@ -34670,7 +34701,8 @@
   "bertz": 89,
   "olf": [
    "Fruité",
-   "Animal et fermenté"
+   "Animal et fermenté",
+   "Froid"
   ],
   "defaut": "",
   "securite": null,
@@ -35088,7 +35120,9 @@
    "sources": 3
   },
   "bertz": 181,
-  "olf": [],
+  "olf": [
+   "Sucré"
+  ],
   "defaut": "",
   "securite": null,
   "cmr": false,
@@ -35826,7 +35860,8 @@
   "olf": [
    "Hespéridé",
    "Fruité",
-   "Vert et végétal"
+   "Vert et végétal",
+   "Froid"
   ],
   "defaut": "",
   "securite": null,

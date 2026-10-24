@@ -266,6 +266,7 @@ def enrich(cards):
         for d in r["descripteurs"].split("|"):
             fam_of[d] = r["famille"]
     order = [r["famille"] for r in read_csv("familles_olfactives.csv")]
+    in_mouth = {r["famille"] for r in read_csv("familles_olfactives.csv") if r["groupe"]}  # sensations en bouche
     defauts = {r["key"]: r["defaut"] for r in read_csv("defauts.csv")}
     secu_path = D / "securite_cache.json"
     secu = json.loads(secu_path.read_text(encoding="utf-8")) if secu_path.exists() else {}
@@ -275,7 +276,8 @@ def enrich(cards):
             lists = [m["descripteurs"] for m in c["membres"]]
         else:
             lists = [f["descripteurs"] for f in c["formes"]] or [c["descripteurs"]]
-        # même règle que les notes brunes : un descripteur de la famille parmi les 2 premiers, ou au moins 2
+        # même règle que les notes brunes : un descripteur de la famille parmi les 2 premiers, ou au moins 2 ;
+        # sensations en bouche : le descripteur suffit, quelle que soit sa position
         top = defaultdict(int)
         for l in lists:
             for i, d in enumerate(l):
@@ -283,7 +285,7 @@ def enrich(cards):
                     top[fam_of[d]] += 2 if i < 2 else 1
                 elif d not in BROWN:
                     unmapped[d] += 1
-        c["olf"] = [f for f in order if top[f] >= 2]
+        c["olf"] = [f for f in order if top[f] >= 2 or (f in in_mouth and top[f] >= 1)]
         key = c["structures"][0]["key"] if c["type"] in ("mol", "theo") else None
         c["defaut"] = defauts.get(key, "")
         sc, marqueur = secu.get(key) or {}, ""
