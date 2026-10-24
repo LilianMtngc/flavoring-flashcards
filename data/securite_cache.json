@@ -2322,5 +2322,75 @@
   "clp": [],
   "iarc": [],
   "iarc_url": ""
+ },
+ "theobromine": {
+  "cid": 5429,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": "https://monographs.iarc.who.int/list-of-classifications"
+ },
+ "propionylpyrroline": {
+  "cid": 529251,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "hmf": {
+  "cid": 237332,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "phenol": {
+  "cid": 996,
+  "clp": [
+   "H341"
+  ],
+  "iarc": [],
+  "iarc_url": "https://monographs.iarc.who.int/list-of-classifications"
+ },
+ "sucrose": {
+  "cid": 5988,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "malic_acid": {
+  "cid": 525,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "quinine": {
+  "cid": 3034034,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "ethanol": {
+  "cid": 702,
+  "clp": [],
+  "iarc": [
+   "1"
+  ],
+  "iarc_url": "https://monographs.iarc.who.int/list-of-classifications"
+ },
+ "isobutylthiazole": {
+  "cid": 62725,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "tdn": {
+  "cid": 121677,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
+ },
+ "diallyl_trisulfide": {
+  "cid": 16315,
+  "clp": [],
+  "iarc": [],
+  "iarc_url": ""
  }
 }

@@ -6596,5 +6596,215 @@
    "profil": "Savory",
    "jecfa": "1522"
   }
+ },
+ "theobromine": {
+  "cid": 5429,
+  "odeur": [],
+  "gout": [
+   {
+    "texte": "Bitter tasting alkaloid",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7332"
+   }
+  ],
+  "fema": {
+   "numero": "3591",
+   "url": "https://www.femaflavor.org/flavor-library/theobromine"
+  }
+ },
+ "propionylpyrroline": {
+  "cid": 529251,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "4063",
+   "url": "https://www.femaflavor.org/flavor-library/2-propionylpyrroline",
+   "profil": "Popcorn, Roast",
+   "jecfa": "1605"
+  }
+ },
+ "hmf": {
+  "cid": 237332,
+  "odeur": [
+   {
+    "texte": "Odor of chamomile flowers",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7982"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Butter, caramel, musty",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/7982"
+   }
+  ],
+  "fema": null
+ },
+ "phenol": {
+  "cid": 996,
+  "odeur": [
+   {
+    "texte": "Distinct aromatic, somewhat sickening sweet and acrid odor, discernable at 0.5 to 5 ppm",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/113"
+   },
+   {
+    "texte": "Sweet, tarry odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/113"
+   },
+   {
+    "texte": "Somewhat sickeningly sweet and acrid",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/113"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Sharp, burning taste",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/113"
+   },
+   {
+    "texte": "When in very weak solution it has a sweetish taste.",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/113"
+   }
+  ],
+  "fema": {
+   "numero": "3223",
+   "url": "https://www.femaflavor.org/flavor-library/phenol",
+   "jecfa": "690"
+  }
+ },
+ "sucrose": {
+  "cid": 5988,
+  "odeur": [
+   {
+    "texte": "Characteristic caramel",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/500"
+   },
+   {
+    "texte": "... Odorless ... [Note: May have a characteristic caramel odor when heated].",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/500"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Sweet",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/500"
+   }
+  ],
+  "fema": null
+ },
+ "malic_acid": {
+  "cid": 525,
+  "odeur": [
+   {
+    "texte": "Characteristic",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1202"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Smoothly tart",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1202"
+   },
+   {
+    "texte": "Sour taste",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/1202"
+   }
+  ],
+  "fema": null
+ },
+ "quinine": {
+  "cid": 3034034,
+  "odeur": [
+   {
+    "texte": "ODORLESS",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/2501"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Very bitter taste",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/2501"
+   }
+  ],
+  "fema": null
+ },
+ "ethanol": {
+  "cid": 702,
+  "odeur": [
+   {
+    "texte": "Pleasant",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/82"
+   },
+   {
+    "texte": "Fragrant odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/82"
+   },
+   {
+    "texte": "Alcohol odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/82"
+   },
+   {
+    "texte": "Weak, ethereal, vinous odor",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/82"
+   }
+  ],
+  "gout": [
+   {
+    "texte": "Burning",
+    "source": "Hazardous Substances Data Bank (HSDB)",
+    "url": "https://pubchem.ncbi.nlm.nih.gov/source/hsdb/82"
+   }
+  ],
+  "fema": {
+   "numero": "2419",
+   "url": "https://www.femaflavor.org/flavor-library/ethyl-alcohol",
+   "jecfa": "41"
+  }
+ },
+ "isobutylthiazole": {
+  "cid": 62725,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3134",
+   "url": "https://www.femaflavor.org/flavor-library/2-isobutylthiazole",
+   "profil": "Green, Tomato, Tomato Leaf, Wine",
+   "jecfa": "1034"
+  }
+ },
+ "tdn": {
+  "cid": 121677,
+  "odeur": [],
+  "gout": [],
+  "fema": null
+ },
+ "diallyl_trisulfide": {
+  "cid": 16315,
+  "odeur": [],
+  "gout": [],
+  "fema": {
+   "numero": "3265",
+   "url": "https://www.femaflavor.org/flavor-library/diallyl-trisulfide",
+   "profil": "Savory",
+   "jecfa": "587"
+  }
  }
 }

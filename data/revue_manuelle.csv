@@ -17,3 +17,5 @@ rotundone;ok;"nom trivial lu seulement par PubChem et CACTUS, CAS 18374-76-6 abs
 allyl_cyclohexylpropionate;ok;"les 5 sources concordent ; la règle « ester propionique » attend un CH3 terminal, ici le propionate porte un cyclohexyle en position 3"
 wine_lactone;ok;règles « cétone » et « cycle benzénique » déclenchées par le nom systématique (benzofuran-2-one hydrogéné) : c'est une lactone bicyclique, les sources concordent
 spilanthol;ok;"CACTUS par CAS renvoie un autre isomère ; PubChem (nom et CAS), CACTUS (nom) et OPSIN (nom systématique (2E,6Z,8E)) concordent"
+theobromine;ok;"théobromine = 3,7-diméthylxanthine : les quatre azotes sont ceux du noyau purine, que le nom trivial ne dit pas ; 5 sources concordantes"
+quinine;ok;"alcaloïde : azotes de la quinoléine et de la quinuclidine, absents du nom trivial ; 3 sources concordantes dont une hors PubChem, stéréo complète"
